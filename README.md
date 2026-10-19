@@ -72,7 +72,7 @@ $env:AEGML_API_KEY = ""
 
 Все настройки — переменные окружения. `.env.example` — образец; файл `.env` автоматически не загружается. Чтобы вернуться к демонстрации, задайте `$env:AEGML_PROVIDER = "mock"`.
 
-Протокол локальных серверов: [Ollama compatibility](https://docs.ollama.com/api/openai-compatibility), [vLLM compatible server](https://docs.vllm.ai/en/latest/serving/openai_compatible_server/). Вызовы настоящих моделей в подготовке основы не проверялись.
+Протокол локальных серверов: [Ollama compatibility](https://docs.ollama.com/api/openai-compatibility), [vLLM compatible server](https://docs.vllm.ai/en/latest/serving/online_serving/openai_compatible_server/). Вызовы настоящих моделей в подготовке основы не проверялись.
 
 ## Работа команды и следующие шаги
 
@@ -83,4 +83,4 @@ $env:AEGML_API_KEY = ""
 
 Сначала получаем ТЗ, фиксируем метрику и воспроизводимый baseline. Обучение целевой ML-модели может входить в сам кейс; дообучение LLM — отдельная гипотеза, полезность которой нужно измерить. До получения задания зависимости ML, агентские фреймворки и интерфейс заранее не выбираем.
 
-Код: `src/aegml/`; проверки: `tests/`. CI запускает тесты и демонстрационный сценарий на Python 3.11/3.12/3.13. Наличие workflow не означает, что удалённый CI уже прошёл: его результат фиксируется отдельно в состоянии проекта.
+Код: `src/aegml/`; проверки: `tests/`. Для реализации `8f1245f` [CI прошёл](https://github.com/osirust/AegMLAI-agent/actions/runs/39179505198): установка, 21 тест и демонстрационный сценарий на Python 3.11/3.12/3.13. Подробности и ограничения — в состоянии проекта.
