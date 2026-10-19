@@ -1,0 +1,35 @@
+{
+  "status": "PASS_MINIMAL_ENVIRONMENT_ONLY",
+  "python": "3.12.3",
+  "executable": "/home/aegml/venvs/aegml-py312/bin/python",
+  "prefix": "/home/aegml/venvs/aegml-py312",
+  "base_prefix": "/usr",
+  "uid": 1000,
+  "cpu_logical_visible": 12,
+  "ram_visible_bytes": 16301989888,
+  "pip_installed": false,
+  "ml_packages_installed": false,
+  "source_code_executed": false,
+  "training_executed": false,
+  "live_llm_calls": false,
+  "host_storage_path": "E:\\WSL\\AegML-Hackathon",
+  "wsl_distro": "AegML-Hackathon",
+  "user": "aegml",
+  "scope": "minimal environment only; not competition-runtime acceptance or security isolation",
+  "registration": [
+    {
+      "name": "AegML-Hackathon",
+      "base_path": "E:\\WSL\\AegML-Hackathon",
+      "version": 2,
+      "default": false
+    },
+    {
+      "name": "Ubuntu-24.04",
+      "base_path": "C:\\AEGYX\\wsl\\Ubuntu-24.04",
+      "version": 2,
+      "default": true
+    }
+  ],
+  "previous_distro_preserved": true,
+  "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
+}

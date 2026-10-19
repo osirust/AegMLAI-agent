@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "stage": "H00",
-  "status": "completed_documentation_and_read_only_intake_scope",
-  "next_stage": "H01 by owner's next instruction; no automatic implementation",
+  "stage": "H00 plus separately authorized minimal environment setup",
+  "status": "completed_specification_and_minimal_environment_scope; competition agent not implemented",
+  "next_stage": "H01.1 from WORK_BLOCKS by owner's next instruction; do not recreate minimal environment",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
   "previous_documentation_commit": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
   "runtime_changed_in_this_stage": false,
@@ -10,22 +10,63 @@
   "live_llm_calls_executed": false,
   "submission_zip_built": false,
   "platform_submitted": false,
-  "packages_downloaded_or_installed": false,
+  "third_party_python_packages_downloaded_or_installed": false,
+  "ubuntu_os_image_downloaded_and_installed": true,
   "original_data_uploaded_to_git": false,
   "repository_visibility": "private",
+  "minimal_environment": {
+    "status": "PASS_MINIMAL_ENVIRONMENT_ONLY",
+    "python": "3.12.3",
+    "executable": "/home/aegml/venvs/aegml-py312/bin/python",
+    "prefix": "/home/aegml/venvs/aegml-py312",
+    "base_prefix": "/usr",
+    "uid": 1000,
+    "cpu_logical_visible": 12,
+    "ram_visible_bytes": 16301989888,
+    "pip_installed": false,
+    "ml_packages_installed": false,
+    "source_code_executed": false,
+    "training_executed": false,
+    "live_llm_calls": false,
+    "host_storage_path": "E:\\WSL\\AegML-Hackathon",
+    "wsl_distro": "AegML-Hackathon",
+    "user": "aegml",
+    "scope": "minimal environment only; not competition-runtime acceptance or security isolation",
+    "registration": [
+      {
+        "name": "AegML-Hackathon",
+        "base_path": "E:\\WSL\\AegML-Hackathon",
+        "version": 2,
+        "default": false
+      },
+      {
+        "name": "Ubuntu-24.04",
+        "base_path": "C:\\AEGYX\\wsl\\Ubuntu-24.04",
+        "version": 2,
+        "default": true
+      }
+    ],
+    "previous_distro_preserved": true,
+    "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
+  },
   "verification": {
     "status": "PASS",
-    "scope": "documentation and exact source identity only; no runtime tests/training/LLM",
+    "scope": "documentation and exact source identity only; planned tests are not executed",
     "verified_original_source_files": 14,
-    "markdown_files_checked": 11,
+    "markdown_files_checked": 14,
     "H_stages": 13,
     "Q_statuses": 21,
+    "planned_test_scenarios_in_main_spec": 49,
     "runtime_files_changed": false,
+    "minimal_environment_receipt_present": true,
     "failures": []
   },
   "review": {
     "independent_document_review": "completed; corrections read back",
-    "closed_document_finding": "SPEC-DOC-001 methodology only",
+    "closed_document_findings": [
+      "SPEC-DOC-001 methodology only",
+      "SPEC-DOC-002 minimal-environment scope synchronization only"
+    ],
     "previous_closed_runtime_findings": [
       "CORE-REV-001",
       "CORE-REV-002"
@@ -50,19 +91,23 @@
     "scope": "old demo scaffold only; no new runtime tests in H00"
   },
   "document_sha256": {
-    "README.md": "a2e45c7e5d216084d2605625132bcbea2873e7c681c6522b91ddebb00130bbb8",
-    "AGENTS.md": "5af55a0c56c25ea6a09daef3dab3812598a499f7859c3f2ebb01f71213d7b1a2",
-    "PROJECT_STATE.md": "369ab4e10ec752876d652b2b8e4ef3c9dcf9de0be2ece18446f34b806562b3a6",
+    "README.md": "c2fce7e6da40bcf60cd085622f2215a82ad3a64b78c5e7050500cd22433e915a",
+    "AGENTS.md": "6d438bd899d599e2583b15015b1cb2ada66f21c9c2a4b888ef76370aea778b99",
+    "PROJECT_STATE.md": "162fe79c275039053e70069832b4ddfcefd953880c1fad487e0960eb40d4729a",
     ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
     "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
     "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
-    "docs/LOCAL_ENVIRONMENT.md": "e806a1b35b52d157275822b874cca5b7a1b8d86167ec5bc082f82c55e4276e2d",
-    "docs/NEXT_SESSION.md": "42113120a9844d6eb97c2558415987c020e13e0dde5ba6b6c5f00ab236d7de2b",
-    "docs/ORGANIZER_QUESTIONS.md": "d1993de563ff57368189450eec07207dd6ddefdc3984831257451e10b7d7f97f",
-    "docs/ROADMAP.md": "4d7f6e56ec4dfa3787482f451b6ae826942154115537b19001d9acd005b10700",
+    "docs/LOCAL_ENVIRONMENT.md": "d54478b8ead4d757364ea668cb1a5bf01643626e3f6528d23d6a485964995994",
+    "docs/NEXT_SESSION.md": "d206ee960c5783f6b6cf63ba65793a585bf69fd0d6499893f38fc2d975e31c32",
+    "docs/ORGANIZER_QUESTIONS.md": "a4b8ebf54d144df705648c2be1386a25637e4ab5aa3fbb5c504247c8a21830a0",
+    "docs/READ_FIRST.md": "fa0e5598dc0a4de0fef645c38b3257efc3221bb84ac3c361e7a7404cbb2c6cc9",
+    "docs/ROADMAP.md": "16215d42eb62243b3d2c28c4749bb645dc9b60e0114c9e6621334140a355e336",
     "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
-    "docs/TECHNICAL_SPEC.md": "f8c8c4c67006859c7c47873557ef4439952e7ed16034bc1be86c191b77a1c702",
-    "docs/SOURCE_MANIFEST.json": "bfeb0f20bb12e57043fdc433c87488ba915c604ff7799fabed283161b2f2182c"
+    "docs/TECHNICAL_SPEC.md": "0972c1ae09a9a9650cf2317a8244707810901d7d0eb58e9f393b750052f892ba",
+    "docs/TEST_MATRIX.md": "40d1c47f19e9a330a13dfb18d5636777e2c8fe2de58eb9b38f30c6e75c168cbc",
+    "docs/WORK_BLOCKS.md": "0478209f3bf0d072e213b8d2061b37ce058d93d49b118bc0507bf6831778bfbb",
+    "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
+    "docs/SOURCE_MANIFEST.json": "fb4896f6ca808e10890b57d287b75fe893ef487c9671991cea6224684b752795"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
