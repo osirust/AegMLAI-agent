@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "stage": "H00",
+  "status": "completed_documentation_and_read_only_intake_scope",
+  "next_stage": "H01 by owner's next instruction; no automatic implementation",
+  "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
+  "previous_documentation_commit": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
+  "runtime_changed_in_this_stage": false,
+  "training_executed": false,
+  "live_llm_calls_executed": false,
+  "submission_zip_built": false,
+  "platform_submitted": false,
+  "packages_downloaded_or_installed": false,
+  "original_data_uploaded_to_git": false,
+  "repository_visibility": "private",
+  "verification": {
+    "status": "PASS",
+    "scope": "documentation and exact source identity only; no runtime tests/training/LLM",
+    "verified_original_source_files": 14,
+    "markdown_files_checked": 11,
+    "H_stages": 13,
+    "Q_statuses": 21,
+    "runtime_files_changed": false,
+    "failures": []
+  },
+  "review": {
+    "independent_document_review": "completed; corrections read back",
+    "closed_document_finding": "SPEC-DOC-001 methodology only",
+    "previous_closed_runtime_findings": [
+      "CORE-REV-001",
+      "CORE-REV-002"
+    ],
+    "remaining_open": [
+      "SPEC-BASE-001",
+      "SPEC-BASE-002",
+      "SPEC-BASE-003",
+      "SPEC-BASE-004",
+      "SPEC-BASE-005",
+      "SPEC-BASE-006",
+      "SPEC-ADAPT-001",
+      "SPEC-ADAPT-002",
+      "SPEC-ADAPT-003",
+      "SPEC-DATA-001"
+    ]
+  },
+  "historical_runtime_check": {
+    "tests_passed": 21,
+    "source_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
+    "ci_url": "https://github.com/osirust/AegMLAI-agent/actions/runs/39179505198",
+    "scope": "old demo scaffold only; no new runtime tests in H00"
+  },
+  "document_sha256": {
+    "README.md": "a2e45c7e5d216084d2605625132bcbea2873e7c681c6522b91ddebb00130bbb8",
+    "AGENTS.md": "5af55a0c56c25ea6a09daef3dab3812598a499f7859c3f2ebb01f71213d7b1a2",
+    "PROJECT_STATE.md": "369ab4e10ec752876d652b2b8e4ef3c9dcf9de0be2ece18446f34b806562b3a6",
+    ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
+    "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
+    "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
+    "docs/LOCAL_ENVIRONMENT.md": "e806a1b35b52d157275822b874cca5b7a1b8d86167ec5bc082f82c55e4276e2d",
+    "docs/NEXT_SESSION.md": "42113120a9844d6eb97c2558415987c020e13e0dde5ba6b6c5f00ab236d7de2b",
+    "docs/ORGANIZER_QUESTIONS.md": "d1993de563ff57368189450eec07207dd6ddefdc3984831257451e10b7d7f97f",
+    "docs/ROADMAP.md": "4d7f6e56ec4dfa3787482f451b6ae826942154115537b19001d9acd005b10700",
+    "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
+    "docs/TECHNICAL_SPEC.md": "f8c8c4c67006859c7c47873557ef4439952e7ed16034bc1be86c191b77a1c702",
+    "docs/SOURCE_MANIFEST.json": "bfeb0f20bb12e57043fdc433c87488ba915c604ff7799fabed283161b2f2182c"
+  },
+  "unchanged_runtime_file_sha256": {
+    "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
+    "src/aegml/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/aegml/cli.py": "c852a3407fc3e9756e6b876ea45abf4b0622715b518f691648a3dea92a5b0535",
+    "src/aegml/config.py": "1b43d0f25dcccdd1a8a2f3d5712aec9ecc693a4631bb2bae96705bcf6ef2610a",
+    "src/aegml/contracts.py": "a54a7c427dcae8c852e9d9e993949167ec5ab5d62265ccc151e02253d2ba1d17",
+    "src/aegml/profiling.py": "d01f526c3c316e227a54738efd4994b1d56e3f58dabe50b58f23adbb2985fc1f",
+    "src/aegml/providers.py": "8d8e09ad5e8520320a585c97632b3cbb078228aa21799fb426edd418d1f1e6cf",
+    "src/aegml/runner.py": "7d785d947c1425fca8174000a44506a026193c08f0c8749d8c57fa63f8eb6c76",
+    "tests/test_core.py": "bf5c43f474cdb25d7e1ae6fa650a1c8cae800b2736a92995d18533d5126acee9",
+    "tests/test_providers.py": "7b81797990f60e23d0008fbf1960775a5bdb881462bc7615d3b7a352f565201c",
+    "pyproject.toml": "01a1bd97f829875d23942eb65605f74f1b18c62f95e7d2a1a9102f0186f61d9b",
+    ".github/workflows/ci.yml": "4fb89937080a5db5974e22181cf7072df4c53ed87ce4f43192384672b423ea2e",
+    ".env.example": "6a3fd7ea7b7225987671bd1fdcbe11fd5c972d0a156f90b6d57d8a991b1804ad"
+  },
+  "self_hash_omitted": true
+}

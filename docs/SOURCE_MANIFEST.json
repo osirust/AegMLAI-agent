@@ -1,0 +1,438 @@
+{
+  "schema_version": "1.0",
+  "spec_revision_date": "2026-10-20",
+  "status": "read_only_intake_no_training_no_llm_calls",
+  "repository_source_head_before_spec": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
+  "local_source_root_hint": "drive-download-20261019T181414Z-1-001",
+  "sources": {
+    "SRC-PDF": {
+      "file": "Альфа Хак_AutoML .pdf",
+      "pages": 20,
+      "bytes": 7373706,
+      "sha256": "ed782a34f5bd8893f7175b997ca040cf89bbde63b1e56795ae73defa39c646b3"
+    },
+    "SRC-BASE": {
+      "file": "baseline.py",
+      "sha256": "ecf66e8d7c054624eeca710c13e2b82c1ac22a03314db8a45ff1778fa16e372d",
+      "byte_equal_download_copy": true
+    },
+    "SRC-REQ": {
+      "file": "drive-download-20261019T181414Z-1-001/requirements.txt",
+      "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+      "explicit_pinned_count": 37,
+      "container_installed_versions_verified": false
+    },
+    "SRC-PUB-REG": {
+      "file": "drive-download-20261019T181414Z-1-001/Регрессия/task.md",
+      "sha256": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+    },
+    "SRC-PUB-CLASS": {
+      "file": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md",
+      "sha256": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+    },
+    "SRC-DATA": {
+      "method": "stdlib streaming CSV, exact-byte SHA256, no fitting",
+      "raw_rows_published": false
+    },
+    "SRC-PERIOD": {
+      "method": "stdlib Counter Year_Factor on source files identified by inventory SHA",
+      "counts": {
+        "train.csv": {
+          "1": 2117,
+          "2": 9058,
+          "3": 10879,
+          "4": 12946,
+          "5": 18308
+        },
+        "test.csv": {
+          "6": 22449
+        }
+      }
+    },
+    "SRC-CHAT": {
+      "origin": "answers forwarded by owner from chat dated 2026-10-19; not independently authenticated",
+      "statements": [
+        "mcp not installed in container; submission script supplies and executes tools",
+        "platform has execution-time limit, no fixed request/token quota reported",
+        "keys to captains next day, receipt not verified",
+        "task.md uses common template",
+        "private inputs are textual/tabular, no image/audio/video support required"
+      ]
+    },
+    "SRC-OWNER": {
+      "statements": [
+        "three days independent team versions then common selection and separate improvements",
+        "current work is owner's variant with Codex on his PC",
+        "do not use 600 RUB development budget in work planning",
+        "write staged technical specification before implementation",
+        "separate research AutoML vs agent and assess multiple agents"
+      ]
+    },
+    "SRC-UPLOAD-UI": {
+      "origin": "owner screenshot",
+      "zip_compressed_limit_display": "128 MB",
+      "exact_byte_units_verified": false
+    },
+    "SRC-CHAT-20261020": {
+      "origin": "organizer reply forwarded by owner, 2026-10-20 00:14 Europe/Moscow; not independently authenticated",
+      "working_directory": "task directory; solution.py and task.md colocated; solution executed there",
+      "submission_output": "submission.csv in the same task directory",
+      "writable_locations": [
+        "working directory and subdirectories",
+        "/tmp"
+      ],
+      "approximate_free_disk_GB": [
+        30,
+        35
+      ],
+      "separate_per_run_disk_quota": false,
+      "separate_file_count_limit": false,
+      "actual_container_checked": false
+    }
+  },
+  "official_links_supplied_by_owner": {
+    "stage": "https://changellenge.com/personal/championships/stage/927270/",
+    "baseline": "https://changellenge.com/upload/iblock/9c2/c5usiwveoqktnd668wdt5mcis50ovg8q",
+    "requirements": "https://changellenge.com/upload/iblock/b88/jb3k2ascfpyuhwr2oceut88ra9i7f737.txt",
+    "case_pdf": "https://changellenge.com/upload/iblock/caf/0bebyh89t4cypcah6g6sedc69f7rejwf.pdf"
+  },
+  "live_official_site_verified": false,
+  "source_file_inventory": [
+    {
+      "path": "baseline.py",
+      "bytes": 3917,
+      "sha256": "ecf66e8d7c054624eeca710c13e2b82c1ac22a03314db8a45ff1778fa16e372d"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 748,
+      "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    {
+      "path": "Многоклассовая классификация/data_dictionary.csv",
+      "bytes": 3532,
+      "sha256": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+    },
+    {
+      "path": "Многоклассовая классификация/sample_submission.csv",
+      "bytes": 565229,
+      "sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+    },
+    {
+      "path": "Многоклассовая классификация/task.md",
+      "bytes": 4699,
+      "sha256": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+    },
+    {
+      "path": "Многоклассовая классификация/test.csv",
+      "bytes": 7556373,
+      "sha256": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862"
+    },
+    {
+      "path": "Многоклассовая классификация/train.csv",
+      "bytes": 16567584,
+      "sha256": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0"
+    },
+    {
+      "path": "Регрессия/data_dictionary.csv",
+      "bytes": 7408,
+      "sha256": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+    },
+    {
+      "path": "Регрессия/sample_submission.csv",
+      "bytes": 222554,
+      "sha256": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+    },
+    {
+      "path": "Регрессия/task.md",
+      "bytes": 11089,
+      "sha256": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+    },
+    {
+      "path": "Регрессия/test.csv",
+      "bytes": 18346633,
+      "sha256": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095"
+    },
+    {
+      "path": "Регрессия/train.csv",
+      "bytes": 43416931,
+      "sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775"
+    }
+  ],
+  "data_summary": {
+    "Регрессия": {
+      "train_shape": [
+        53308,
+        64
+      ],
+      "test_shape": [
+        22449,
+        63
+      ],
+      "train_column_order": [
+        "Year_Factor",
+        "State_Factor",
+        "building_class",
+        "facility_type",
+        "floor_area",
+        "year_built",
+        "energy_star_rating",
+        "ELEVATION",
+        "january_min_temp_c",
+        "january_avg_temp_c",
+        "january_max_temp_c",
+        "february_min_temp_c",
+        "february_avg_temp_c",
+        "february_max_temp_c",
+        "march_min_temp_c",
+        "march_avg_temp_c",
+        "march_max_temp_c",
+        "april_min_temp_c",
+        "april_avg_temp_c",
+        "april_max_temp_c",
+        "may_min_temp_c",
+        "may_avg_temp_c",
+        "may_max_temp_c",
+        "june_min_temp_c",
+        "june_avg_temp_c",
+        "june_max_temp_c",
+        "july_min_temp_c",
+        "july_avg_temp_c",
+        "july_max_temp_c",
+        "august_min_temp_c",
+        "august_avg_temp_c",
+        "august_max_temp_c",
+        "september_min_temp_c",
+        "september_avg_temp_c",
+        "september_max_temp_c",
+        "october_min_temp_c",
+        "october_avg_temp_c",
+        "october_max_temp_c",
+        "november_min_temp_c",
+        "november_avg_temp_c",
+        "november_max_temp_c",
+        "december_min_temp_c",
+        "december_avg_temp_c",
+        "december_max_temp_c",
+        "cooling_degree_days_c",
+        "heating_degree_days_c",
+        "precipitation_inches",
+        "snowfall_inches",
+        "snowdepth_inches",
+        "avg_temp_c",
+        "days_below_minus1C",
+        "days_below_minus7C",
+        "days_below_minus12C",
+        "days_below_minus18C",
+        "days_above_27C",
+        "days_above_32C",
+        "days_above_38C",
+        "days_above_43C",
+        "direction_max_wind_speed",
+        "direction_peak_wind_speed",
+        "max_wind_speed",
+        "days_with_fog",
+        "site_eui",
+        "id"
+      ],
+      "target_summary": {
+        "name": "site_eui",
+        "finite_count": 53308,
+        "nonfinite_count": 0,
+        "nonnumeric_count": 0,
+        "min": 1.001169302,
+        "max": 993.4282595
+      },
+      "train_missing_nonzero": {
+        "year_built": 1727,
+        "energy_star_rating": 22222,
+        "direction_max_wind_speed": 26309,
+        "direction_peak_wind_speed": 27038,
+        "max_wind_speed": 26309,
+        "days_with_fog": 32928
+      },
+      "test_missing_nonzero": {
+        "year_built": 110,
+        "energy_star_rating": 4487,
+        "direction_max_wind_speed": 14773,
+        "direction_peak_wind_speed": 14773,
+        "max_wind_speed": 14773,
+        "days_with_fog": 12868
+      },
+      "dictionary_shape": [
+        64,
+        5
+      ],
+      "dictionary_roles": {
+        "feature": 62,
+        "target": 1,
+        "id": 1
+      },
+      "dictionary_complete_for_train": true,
+      "checks": {
+        "train_only_columns": [
+          "site_eui"
+        ],
+        "test_only_columns": [],
+        "sample_row_count_matches_test": true,
+        "sample_id_vs_test_id_order_equal": true,
+        "sample_id_vs_test_id_mismatch_count": 0,
+        "train_test_id_overlap_count": 0,
+        "train_sample_id_overlap_count": 0
+      }
+    },
+    "Многоклассовая классификация": {
+      "train_shape": [
+        87670,
+        44
+      ],
+      "test_shape": [
+        41166,
+        43
+      ],
+      "train_column_order": [
+        "id",
+        "dur",
+        "proto",
+        "service",
+        "state",
+        "spkts",
+        "dpkts",
+        "sbytes",
+        "dbytes",
+        "rate",
+        "sttl",
+        "dttl",
+        "sload",
+        "dload",
+        "sloss",
+        "dloss",
+        "sinpkt",
+        "dinpkt",
+        "sjit",
+        "djit",
+        "swin",
+        "stcpb",
+        "dtcpb",
+        "dwin",
+        "tcprtt",
+        "synack",
+        "ackdat",
+        "smean",
+        "dmean",
+        "trans_depth",
+        "response_body_len",
+        "ct_srv_src",
+        "ct_state_ttl",
+        "ct_dst_ltm",
+        "ct_src_dport_ltm",
+        "ct_dst_sport_ltm",
+        "ct_dst_src_ltm",
+        "is_ftp_login",
+        "ct_ftp_cmd",
+        "ct_flw_http_mthd",
+        "ct_src_ltm",
+        "ct_srv_dst",
+        "is_sm_ips_ports",
+        "attack_cat"
+      ],
+      "target_summary": {
+        "name": "attack_cat",
+        "value_counts": {
+          "Analysis": 1000,
+          "Backdoor": 873,
+          "DoS": 6132,
+          "Exploits": 16696,
+          "Fuzzers": 9092,
+          "Generic": 20000,
+          "Normal": 28000,
+          "Reconnaissance": 5245,
+          "Shellcode": 567,
+          "Worms": 65
+        },
+        "class_count": 10
+      },
+      "train_missing_nonzero": {},
+      "test_missing_nonzero": {},
+      "dictionary_shape": [
+        44,
+        5
+      ],
+      "dictionary_roles": {
+        "id": 1,
+        "feature": 42,
+        "target": 1
+      },
+      "dictionary_complete_for_train": true,
+      "checks": {
+        "train_only_columns": [
+          "attack_cat"
+        ],
+        "test_only_columns": [],
+        "sample_row_count_matches_test": true,
+        "sample_id_vs_test_id_order_equal": true,
+        "sample_id_vs_test_id_mismatch_count": 0,
+        "train_test_id_overlap_count": 41166,
+        "train_sample_id_overlap_count": 41166
+      }
+    }
+  },
+  "local_hardware_readonly": {
+    "cpu": "AMD Ryzen 5 9600X",
+    "physical_cores": 6,
+    "logical_processors": 12,
+    "installed_ram_bytes": 34359738368,
+    "ram_type": "DDR5",
+    "modules": "2 x 16 GiB",
+    "SMBIOSMemoryType": 34,
+    "ConfiguredClockSpeed": 5600,
+    "bandwidth_benchmarked": false,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "reported_vram_MiB": 16303,
+    "os": "Windows 11 Pro",
+    "docker_cli_found_in_path": false,
+    "wsl_command_found": true,
+    "linux_container_ready_verified": false,
+    "wsl_inventory": {
+      "distro_started_by_inspection": false,
+      "wslconfig_exists": false,
+      "commands": [
+        {
+          "command": [
+            "wsl.exe",
+            "--list",
+            "--verbose"
+          ],
+          "return_code": 0,
+          "stdout": "NAME            STATE           VERSION\r\n* Ubuntu-24.04    Stopped         2"
+        },
+        {
+          "command": [
+            "wsl.exe",
+            "--version"
+          ],
+          "return_code": 0,
+          "stdout": "Версия WSL: 3.0.3.0\r\nВерсия ядра: 6.18.54.1-1\r\nВерсия WSLg: 1.0.79\r\nВерсия MSRDC: 1.2.7391\r\nВерсия Direct3D: 1.611.1-81528511\r\nВерсия DXCore: 10.0.26100.1-240331-1435.ge-release\r\nВерсия Windows: 10.0.26200.9711"
+        }
+      ]
+    }
+  },
+  "holds": [
+    "official image/entry command/layout",
+    "Qwen endpoint/model ID/tool-call live verification",
+    "official baseline metric identity/values",
+    "private schema/metric adapter guarantees",
+    "private best/last selection",
+    "failed submission quota policy",
+    "exact deadline"
+  ],
+  "repository_visibility_verified": {
+    "status": "verified",
+    "repository": "osirust/AegMLAI-agent",
+    "private": true,
+    "visibility": "private",
+    "permissions_admin": true,
+    "previous_private": false,
+    "updated_at": "2026-10-19T21:15:24Z"
+  }
+}

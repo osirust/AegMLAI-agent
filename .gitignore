@@ -11,3 +11,8 @@ runs/
 data/
 models/
 .pytest_cache/
+# Исходные материалы кейса остаются локальными; в Git только их SHA/сводка.
+/baseline.py
+/drive-download-20261019T181414Z-1-001/
+/drive-download-20261019T181414Z-1-001.zip
+/Альфа Хак_AutoML .pdf
