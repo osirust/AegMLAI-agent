@@ -1,0 +1,133 @@
+{
+  "stage": "M00",
+  "status": "PASS_LOCAL_TECHNICAL_PROBE_ONLY",
+  "build": {
+    "zip": "/mnt/e/work/AegMLAI-agent/dist/testmini.zip",
+    "bytes": 5001,
+    "zip_sha256": "3681b720a2b2ef2f642814cd6b7aec17ff3f3821e9d9f3a7927ab3e660112667",
+    "solution_sha256": "c79390b43c03220f09915e815443426c5863c14817bf9806a3f10aa7551e316a",
+    "entries": [
+      "solution.py"
+    ],
+    "mode": "technical_probe_optional_api",
+    "platform_submitted": false
+  },
+  "public_and_fixture_checks": {
+    "status": "PASS_TESTMINI_LOCAL_ONLY",
+    "mode": "technical_probe_optional_api",
+    "proof_root": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T135943Z-d9de6215",
+    "environment": {
+      "python": "3.12.3",
+      "executable": "/home/aegml/venvs/aegml-py312/bin/python",
+      "official_image": false
+    },
+    "checks": [
+      {
+        "check_id": "MC-PUBLIC-REG",
+        "status": "PASS",
+        "scope": "input/constant baseline/format only",
+        "train_rows": 53308,
+        "output_rows": 22449,
+        "elapsed_seconds": 3.0592,
+        "submission_sha256": "1e33ba1dc6c7ecb6a32b364f5bdc77299d99d5f0eaf9906c18a17bc5679b740c",
+        "cwd": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T135943Z-d9de6215/regression"
+      },
+      {
+        "check_id": "MC-PUBLIC-CLS",
+        "status": "PASS",
+        "scope": "input/constant baseline/format only",
+        "train_rows": 87670,
+        "output_rows": 41166,
+        "elapsed_seconds": 1.7288,
+        "submission_sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "cwd": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T135943Z-d9de6215/classification"
+      },
+      {
+        "check_id": "MC-RENAMED",
+        "status": "PASS",
+        "scope": "renamed target/id, target first, leading-zero IDs, sample placeholders ignored"
+      },
+      {
+        "check_id": "MC-BAD-ID",
+        "status": "PASS",
+        "scope": "mismatched sample order rejected; last valid CSV preserved"
+      },
+      {
+        "check_id": "MC-ZIP",
+        "status": "PASS",
+        "scope": "single root solution.py extracted and executed; original input identities unchanged",
+        "zip_bytes": 5001,
+        "zip_sha256": "3681b720a2b2ef2f642814cd6b7aec17ff3f3821e9d9f3a7927ab3e660112667",
+        "original_files_unchanged": 12
+      }
+    ],
+    "project_49_tests_executed": false,
+    "quality_assessed": false,
+    "api_used": false,
+    "platform_submitted": false,
+    "official_acceptance_confirmed": false
+  },
+  "api_stub_checks": {
+    "status": "PASS",
+    "scope": "13 loopback API self-checks; synthetic credentials/data only",
+    "observed_stdout": {
+      "check": "testmini_api_loopback",
+      "status": "passed",
+      "python": "3.12.3",
+      "tests": 13,
+      "failed": [],
+      "live_api_used": false,
+      "user_data_used": false
+    },
+    "exit_code": 0,
+    "command": [
+      "wsl",
+      "-d",
+      "AegML-Hackathon",
+      "--exec",
+      "/home/aegml/venvs/aegml-py312/bin/python",
+      "-I",
+      "/mnt/e/work/AegMLAI-agent/testmini/check_api.py"
+    ],
+    "evidence_origin": "actual final-file execution reported by delegated llm_provider agent in this session",
+    "recorded_at_utc": "2026-10-20T14:05:43.421057+00:00",
+    "check_source_sha256": "fa99eadc3c0700462c51e38d288d669491c40dcea1fc6e4272f5890605e84d92",
+    "solution_sha256": "c79390b43c03220f09915e815443426c5863c14817bf9806a3f10aa7551e316a",
+    "checks": [
+      "no settings",
+      "partial configuration",
+      "valid POST/assistant",
+      "HTTP401 sanitized/no retry",
+      "redirect blocked/no key forwarding",
+      "empty/malformed/nonUTF8",
+      "invalid JSON shape",
+      "oversize",
+      "reasoning without final text",
+      "truncated Content-Length",
+      "truncated chunked IncompleteRead",
+      "deep JSON RecursionError",
+      "CSV/diagnostics preserved despite API error"
+    ],
+    "related_closed_finding": "M00-API-001 mini-only",
+    "fixture_correction": "initial deep-JSON fixture was below Python3.12 C decoder limit; replaced by 20KiB nesting; final 13/13 after correction",
+    "additional_platform_check": {
+      "environment": "Windows bundled Python3.12.14",
+      "tests": 13,
+      "status": "passed"
+    },
+    "live_api_used": false,
+    "user_data_used": false,
+    "packages_installed": false
+  },
+  "live_qwen_checked": false,
+  "platform_submitted": false,
+  "quality_assessed": false,
+  "autoresearch_performed": false,
+  "main_49_tests_executed": false,
+  "remaining": [
+    "live Qwen/API_WAIT",
+    "official container/platform acceptance",
+    "score",
+    "full agent"
+  ]
+}

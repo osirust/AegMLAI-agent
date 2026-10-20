@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "stage": "H00 plus separately authorized minimal environment setup",
-  "status": "completed_specification_and_minimal_environment_scope; competition agent not implemented",
-  "next_stage": "H01.1 from WORK_BLOCKS by owner's next instruction; do not recreate minimal environment",
+  "stage": "M00 local lightweight diagnostic probe",
+  "status": "mini code/ZIP locally verified; full competition agent not implemented",
+  "next_stage": "deliver mini ZIP; platform only on owner instruction; then continue specification discussion",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
-  "previous_documentation_commit": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
-  "runtime_changed_in_this_stage": false,
+  "previous_documentation_commit": "d941c722993cb9ad06798380d4f2097bdb8da517",
+  "runtime_changed_in_this_stage": true,
   "training_executed": false,
   "live_llm_calls_executed": false,
-  "submission_zip_built": false,
+  "submission_zip_built": true,
   "platform_submitted": false,
   "third_party_python_packages_downloaded_or_installed": false,
   "ubuntu_os_image_downloaded_and_installed": true,
@@ -51,15 +51,14 @@
   },
   "verification": {
     "status": "PASS",
-    "scope": "documentation and exact source identity only; planned tests are not executed",
+    "scope": "mini local receipts, ZIP identity, source/document identity only; not official runtime",
     "verified_original_source_files": 14,
-    "markdown_files_checked": 14,
-    "H_stages": 13,
-    "Q_statuses": 21,
-    "planned_test_scenarios_in_main_spec": 49,
-    "runtime_files_changed": false,
-    "minimal_environment_receipt_present": true,
-    "failures": []
+    "markdown_files_checked": 17,
+    "mini_public_fixture_checks_passed": 5,
+    "mini_http_stub_checks_passed": 13,
+    "main_49_scenarios": "NOT_RUN",
+    "api_live": "API_WAIT",
+    "official_image": "NOT_RUN"
   },
   "review": {
     "independent_document_review": "completed; corrections read back",
@@ -81,33 +80,41 @@
       "SPEC-ADAPT-001",
       "SPEC-ADAPT-002",
       "SPEC-ADAPT-003",
-      "SPEC-DATA-001"
+      "SPEC-DATA-001",
+      "SPEC-DOC-003"
+    ],
+    "closed_mini_findings": [
+      "M00-API-001 optional-probe HTTP/JSON failure only"
     ]
   },
   "historical_runtime_check": {
     "tests_passed": 21,
     "source_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
     "ci_url": "https://github.com/osirust/AegMLAI-agent/actions/runs/39179505198",
-    "scope": "old demo scaffold only; no new runtime tests in H00"
+    "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "README.md": "c2fce7e6da40bcf60cd085622f2215a82ad3a64b78c5e7050500cd22433e915a",
-    "AGENTS.md": "6d438bd899d599e2583b15015b1cb2ada66f21c9c2a4b888ef76370aea778b99",
-    "PROJECT_STATE.md": "162fe79c275039053e70069832b4ddfcefd953880c1fad487e0960eb40d4729a",
-    ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
+    "README.md": "494dff2cd550ba343ef8ada6e23d691a173e2eec7b4dab092e42267336c89cb1",
+    "AGENTS.md": "b0137b4fe49d629da5a748060a929244bb174da847e7acdc2e8c12ce88eeead1",
+    "PROJECT_STATE.md": "edb8bb6ca62c6c6c5b1e0206a54e9354e50fae5620d9b84e99f875c2a4ece821",
     "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
+    "docs/BACKEND_CONTRACT.md": "60fef359c6d5471f4056e16cca54647378113e569c8d8123c4034504b9a35baa",
     "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
     "docs/LOCAL_ENVIRONMENT.md": "d54478b8ead4d757364ea668cb1a5bf01643626e3f6528d23d6a485964995994",
-    "docs/NEXT_SESSION.md": "d206ee960c5783f6b6cf63ba65793a585bf69fd0d6499893f38fc2d975e31c32",
+    "docs/NEXT_SESSION.md": "9794712f734e447d0d94721e8f7d10a3bd35a1e0064630e350ce395b8f8fb870",
     "docs/ORGANIZER_QUESTIONS.md": "a4b8ebf54d144df705648c2be1386a25637e4ab5aa3fbb5c504247c8a21830a0",
-    "docs/READ_FIRST.md": "fa0e5598dc0a4de0fef645c38b3257efc3221bb84ac3c361e7a7404cbb2c6cc9",
-    "docs/ROADMAP.md": "16215d42eb62243b3d2c28c4749bb645dc9b60e0114c9e6621334140a355e336",
+    "docs/READ_FIRST.md": "c5f22a22615798451172905e8f87c4eeb64326dd15aa5c4d8aba5a86f6ea3d5f",
+    "docs/ROADMAP.md": "266b7dab104885ed8b5d0e7762fe2bae894865c84e835184ce96a57e36c3c947",
     "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
-    "docs/TECHNICAL_SPEC.md": "0972c1ae09a9a9650cf2317a8244707810901d7d0eb58e9f393b750052f892ba",
-    "docs/TEST_MATRIX.md": "40d1c47f19e9a330a13dfb18d5636777e2c8fe2de58eb9b38f30c6e75c168cbc",
-    "docs/WORK_BLOCKS.md": "0478209f3bf0d072e213b8d2061b37ce058d93d49b118bc0507bf6831778bfbb",
+    "docs/TECHNICAL_SPEC.md": "246b875aff9c3f17a45168a89ec80a437bc6cd66b2a3f9488d03b8ac2e7da124",
+    "docs/TEST_MATRIX.md": "5b007296244452bd06f45ad816c5cc2963a824c5429a1eea22d8c4b57f46c344",
+    "docs/TESTMINI_PLAN.md": "8d7c67f135435d591d74a09c9759ac3541ed90e373f199bca267843455992649",
+    "docs/WORK_BLOCKS.md": "6004d62ebbb1509df474e24e9e24a0a411a5d7e32ff8744b0de1d8821ab3c8ca",
+    "testmini/README.md": "56014f3a1bfade487e5133e41c402950bde7adf7e4b8b8240a5bea55de751d2c",
+    ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
     "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
-    "docs/SOURCE_MANIFEST.json": "fb4896f6ca808e10890b57d287b75fe893ef487c9671991cea6224684b752795"
+    "docs/SOURCE_MANIFEST.json": "1b07c26c7ff19c5993476ea3e1bb5ee3363c8fa2c1dcde927bb935d5ea75a0fb",
+    "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -124,5 +131,19 @@
     ".github/workflows/ci.yml": "4fb89937080a5db5974e22181cf7072df4c53ed87ce4f43192384672b423ea2e",
     ".env.example": "6a3fd7ea7b7225987671bd1fdcbe11fd5c972d0a156f90b6d57d8a991b1804ad"
   },
-  "self_hash_omitted": true
+  "self_hash_omitted": true,
+  "old_demo_runtime_unchanged": true,
+  "constant_target_statistics_fitted": true,
+  "feature_based_ml_training_executed": false,
+  "local_http_stub_checked": true,
+  "testmini_receipt": {
+    "path": "docs/TESTMINI_RESULT.json",
+    "sha256": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4"
+  },
+  "testmini_source_sha256": {
+    "testmini/build_zip.py": "cd1115413e1f4134a1ebc37456be9ca0a9da2134f09be6abb5226e8c1e392c0c",
+    "testmini/check_api.py": "fa99eadc3c0700462c51e38d288d669491c40dcea1fc6e4272f5890605e84d92",
+    "testmini/check_local.py": "f28ee264cbd773e19209d728fffc55e5d8e45b77eb50b2aa860dc521780af522",
+    "testmini/solution.py": "c79390b43c03220f09915e815443426c5863c14817bf9806a3f10aa7551e316a"
+  }
 }

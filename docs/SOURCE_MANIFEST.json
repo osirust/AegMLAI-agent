@@ -478,5 +478,10 @@
     "managed_collection": "AegMLAI-agent/hardening/aegml-worker-boundary-20261020",
     "source": "supplied baseline static review plus project specification; original source remains unchanged",
     "runtime_security_tests": "NOT_RUN"
+  },
+  "testmini_receipt": {
+    "path": "docs/TESTMINI_RESULT.json",
+    "sha256": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
+    "scope": "local constant-baseline/CSV and HTTP stub only; no live Qwen or platform"
   }
 }
