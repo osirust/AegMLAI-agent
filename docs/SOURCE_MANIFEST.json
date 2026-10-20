@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "spec_revision_date": "2026-10-20",
-  "status": "read_only_intake_no_training_no_llm_calls",
+  "status": "source_intake_preserved; H02.1 local subset checked, no model fitting or live LLM",
   "repository_source_head_before_spec": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
   "local_source_root_hint": "drive-download-20261019T181414Z-1-001",
   "sources": {
@@ -20,7 +20,12 @@
       "file": "drive-download-20261019T181414Z-1-001/requirements.txt",
       "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
       "explicit_pinned_count": 37,
-      "container_installed_versions_verified": false
+      "container_installed_versions_verified": false,
+      "root_submission_copy": {
+        "file": "requirements.txt",
+        "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+        "byte_equal_source": true
+      }
     },
     "SRC-PUB-REG": {
       "file": "drive-download-20261019T181414Z-1-001/Регрессия/task.md",
@@ -88,6 +93,22 @@
       "separate_per_run_disk_quota": false,
       "separate_file_count_limit": false,
       "actual_container_checked": false
+    },
+    "SRC-PLATFORM-TXT-20261020": {
+      "file": "C:\\Users\\ggdro\\.codex\\attachments\\aa7510c6-ade0-4441-a9a7-5a50925aaca9\\Вставленный текст.txt",
+      "bytes": 10015,
+      "sha256": "d857f92de00756e3f3a791925d5f900916c45d2d727d0a642b2c77493cb56f79",
+      "provenance": "user-pasted updated platform instructions, not authenticated live platform read",
+      "alias": "SRC-PLATFORM-TXT",
+      "separate_from_named_sets_12_14": true,
+      "rules": [
+        "ZIP<=100000000bytes",
+        "only root .py and unchanged provided requirements.txt selectively copied",
+        "python3 solution.py task.md",
+        "platform installs requirements before runtime; runtime pip unavailable",
+        "runtime subdirs and /tmp allowed",
+        "queue is not completed evaluation; technical logs may be admin-only"
+      ]
     }
   },
   "official_links_supplied_by_owner": {
@@ -524,5 +545,20 @@
     "sha256": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
     "cases": 16,
     "scope": "stdlib arithmetic only; not future metric adapters or trained models"
+  },
+  "h02_1_environment": {
+    "receipt": "docs/environment-lock.json",
+    "sha256": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c",
+    "status": "PASS_H02_1_LOCAL_SUBSET_ONLY",
+    "full_platform_image_verified": false,
+    "real_llm_calls": 0,
+    "fit_calls": 0
+  },
+  "web_workflow": {
+    "path": "docs/WEB_WORKFLOW.md",
+    "chat1_role": "research sources",
+    "chat2_role": "independent teacher",
+    "user_created_chats": true,
+    "read_by_user_signal": true
   }
 }

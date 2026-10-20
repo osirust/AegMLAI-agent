@@ -2,7 +2,10 @@
 
 Редакция: 20.10.2026. Статус: **исследование и протокол будущей реализации; все приёмочные сценарии NOT_RUN**.
 Прочитаны [BACKEND_CONTRACT](BACKEND_CONTRACT.md), [RUNTIME_AND_FAILURES](RUNTIME_AND_FAILURES.md) и [математический план](MATHEMATICS_AND_VALIDATION.md).
-Это проект CLI в `solution.py` / `agent_runtime/`, не новый сервис и не изменение исторической testmini.
+Это проект CLI: `solution.py` и плоские корневые модули `aegml_*.py`, не новый сервис и не изменение исторической testmini.
+По полученной инструкции платформы ZIP содержит только корневые `.py` и неизменённый предоставленный `requirements.txt`, без папок.
+Консервативный предел — `100000000` байт (100 МБ); запуск точно задан: `python3 solution.py task.md`.
+Каталоги пакетов, JSON/YAML-конфиги, prompt/schema assets и сторонние библиотеки платформа не копирует; схемы и prompts встраиваются в `aegml_schemas.py` / `aegml_prompts.py`.
 Исследование не включало запусков кода, WSL, установки пакетов, обучения, скачивания весов или запросов к LLM API.
 
 ## HARN.1. Назначение и основания дизайна
@@ -327,12 +330,16 @@ CSV сохранён после позднего отказа — факт со�
 
 ## HARN.15. Реализация по существующей карте модулей
 
-Сначала `contracts.py/tools.py/llm.py`: схемы, adapters и безопасная H06 fixture; без запуска кандидатов.
-Затем `artifacts.py/budget.py/executor.py`: intent/commit, изоляция, bounded outputs и snapshot; безопасность H05 остаётся обязательной предпосылкой.
-`metrics.py/validation.py/submission.py` дают независимые score/split/publication; `research.py` соединяет их с одним rolling loop.
+Сначала корневые `aegml_contracts.py`, `aegml_tools.py`, `aegml_llm.py`: schemas, adapters и безопасная H06 fixture; без запуска кандидатов.
+Константы схем и prompts находятся в корневых `aegml_schemas.py` и `aegml_prompts.py`; внешние JSON/text assets не требуются.
+Затем `aegml_artifacts.py`, `aegml_budget.py`, `aegml_executor.py`: intent/commit, изоляция, bounded outputs и snapshot; безопасность H05 обязательна.
+`aegml_metrics.py`, `aegml_validation.py`, `aegml_submission.py` дают независимые score/split/publication; `aegml_research.py` соединяет их с rolling loop.
 Плановый ABI кандидата и data-only прогноз закрепляются до codegen; файлы создаются вместе с относящимися тестами, а не пустыми заглушками ради структуры.
 После реального baseline — H07 две связанные итерации; затем перенос, controlled C/D ablation и только после этого возможные branch/E эксперименты.
 Qwen-Agent/MCP/AIDE/MLE-bench не добавляются в requirements, ZIP или runtime. Совместимость и готовность нашего кода доказываются нашими артефактами.
+Корневой submission `requirements.txt` — неизменённый предоставленный список из 37 pins; локальное подмножество H02.1 его не заменяет.
+Платформа устанавливает зависимости из этого списка; `solution.py` не вызывает pip. Generated code и журналы можно создавать в task cwd/подкаталогах и `/tmp` во время запуска: запрет папок относится к загружаемому ZIP.
+Сначала проверяется чистый запуск при копировании только root `.py` + `requirements.txt`; наличие dev-пакета или assets в репозитории не считается зависимостью, доступной на платформе.
 
 - **Выход:** последовательные H-подпункты с работающим поведением, outcome и относящимися доказательствами.
 - **Приёмка:** архитектурный документ не выдан за реализованный harness; перед переходом соблюдаются ТЗ, worker boundary и команда владельца.
