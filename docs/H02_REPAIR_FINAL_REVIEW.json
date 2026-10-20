@@ -1,0 +1,410 @@
+{
+  "status": "PASS_H02_REPAIR_METADATA_AND_SCOPE_ONLY",
+  "base_commit": "187328f2f382ce2a994a507b715cb97416557102",
+  "checked_at_utc": "2026-10-20T20:43:55.881972+00:00",
+  "scope": "metadata/history/source binding only; does not independently repeat runtime runs",
+  "checks": [
+    {
+      "id": "contract_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "bootstrap_counts",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_counts_and_no_real_docker",
+      "status": "PASS"
+    },
+    {
+      "id": "typeintro_before_reproduction",
+      "status": "PASS"
+    },
+    {
+      "id": "contract_reported_pass",
+      "status": "PASS"
+    },
+    {
+      "id": "contract_no_unittest_failures_errors",
+      "status": "PASS"
+    },
+    {
+      "id": "contract_source_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "bootstrap_reported_pass",
+      "status": "PASS"
+    },
+    {
+      "id": "bootstrap_no_unittest_failures_errors",
+      "status": "PASS"
+    },
+    {
+      "id": "bootstrap_source_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_reported_pass",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_no_unittest_failures_errors",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_source_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_solution.py",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_aegml_contracts.py",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_aegml_input.py",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_aegml_schemas.py",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_requirements.txt",
+      "status": "PASS"
+    },
+    {
+      "id": "current_contract_receipt_source_scripts/check_h023_contract.py",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_current_checker_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "mock_runner_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_cli_two_tasks",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_root_frozen",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_verified_cleanup",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_cli_scope_honest",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_current_source_solution.py",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_current_source_aegml_contracts.py",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_current_source_aegml_input.py",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_current_source_aegml_schemas.py",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_current_source_requirements.txt",
+      "status": "PASS"
+    },
+    {
+      "id": "cli_criteria_not_assert",
+      "status": "PASS"
+    },
+    {
+      "id": "raw_export_H02_REPAIR_CONTRACT_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw_export_H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw_export_H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw_export_H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "raw_export_H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/DOC_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/ENVIRONMENT_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H022_BOOTSTRAP_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H022_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_ATTEMPT1_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_ATTEMPT2_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_CONTRACT_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_RECEIPT.md",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_REVIEW_BASELINE_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_REVIEW_FIXES_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H023_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_CONTAINER_FINAL_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_CONTAINER_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_DOCKER_CLI_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_FINAL_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_IMPORT_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_OOM_GUARD_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_RECEIPT.md",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H024_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/H02_REVIEW_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/LOCAL_PROVIDER_HELPER_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/LOCAL_PROVIDER_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/ROUTE_CORRECTION_RECEIPT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/TESTMINI_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_immutable_docs/TESTMINI_STRICT_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "id": "work50_id_dependencies_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "h031_not_run",
+      "status": "PASS"
+    },
+    {
+      "id": "h031_files_absent",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix_unchanged_docs/TECHNICAL_SPEC.md",
+      "status": "PASS",
+      "rows": 91
+    },
+    {
+      "id": "matrix_unchanged_docs/TEST_MATRIX.md",
+      "status": "PASS",
+      "rows": 91
+    },
+    {
+      "id": "matrix_unchanged_docs/QWEN_HARNESS_DESIGN.md",
+      "status": "PASS",
+      "rows": 17
+    },
+    {
+      "id": "original_download_sha_baseline.py",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_requirements.txt",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Многоклассовая классификация/data_dictionary.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Многоклассовая классификация/sample_submission.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Многоклассовая классификация/task.md",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Многоклассовая классификация/test.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Многоклассовая классификация/train.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Регрессия/data_dictionary.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Регрессия/sample_submission.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Регрессия/task.md",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Регрессия/test.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_download_sha_Регрессия/train.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "original_extended_sha_SRC-PDF",
+      "status": "PASS"
+    },
+    {
+      "id": "original_extended_sha_SRC-BASE",
+      "status": "PASS"
+    },
+    {
+      "id": "provided_requirements_exact",
+      "status": "PASS"
+    },
+    {
+      "id": "wsl_caps_not_changed",
+      "status": "PASS"
+    },
+    {
+      "id": "secret_scan_clean_permissions",
+      "status": "PASS"
+    },
+    {
+      "id": "web_packets_present_unsent",
+      "status": "PASS"
+    },
+    {
+      "id": "local_markdown_links",
+      "status": "PASS",
+      "checked": 427,
+      "missing": []
+    },
+    {
+      "id": "git_diff_whitespace",
+      "status": "PASS"
+    }
+  ],
+  "checks_passed": 90,
+  "historical_files_preserved": 28,
+  "download_originals_verified": 12,
+  "extended_originals_verified": 14,
+  "work_blocks": 50,
+  "main_scenarios_not_run": 74,
+  "harness_details_not_run": 17,
+  "local_links_checked": 427,
+  "h031_created_files": 0,
+  "h031_runtime_runs": 0,
+  "live_qwen_calls": 0,
+  "new_submissions": 0,
+  "web_packets_sent": false,
+  "web_requests_paused_by_owner": true,
+  "web_min_interval_seconds_after_resume": 60,
+  "web_429_cause": "UNKNOWN",
+  "secret_scan": {
+    "status": "PASS_NO_PRIVATE_KEY_IN_PUBLISHABLE_FILES",
+    "checked_files": 121,
+    "matches": 0,
+    "secret_value_printed": false,
+    "secret_digest_printed": false,
+    "private_key_file_mode": "0o600",
+    "private_key_parent_mode": "0o700",
+    "private_key_uid": 1000,
+    "live_api_calls": 0
+  },
+  "checker_identity_limitation": "actual Docker JSON lacks own checker_sha256; recorded frozen handoff + unchanged current checker + mock binding provide separate chain",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c",
+    "scripts/check_h024_platform_cli.py": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+    "scripts/check_h024_cli_regressions.py": "a6d8ba7530a178230d7d57e725a99c4e9fabef5d6800a519df741be8cbd7b0a6"
+  }
+}

@@ -203,7 +203,9 @@
 
 **Приёмка и остановка:** Target определяется независимо от позиции столбца. Числовые метки сохраняют смысл классификации, если так задано условием; неоднозначный контракт или несовпадение ID приводят к явному отказу.
 
-**Фактически выполнено:** 34 метода / 76 сценариев / 4 CLI; оба actual public inputs, nested/flat, provenance/embedded schemas, неоднозначности и raw-string ID mapping. Порядок задаёт task (оба public: test); sample задаёт колонки, mapping хранится отдельным sidecar. Повтор bootstrap 24/51/37 PASS. [Квитанция и ограничения P0](H023_RECEIPT.md). Exit 3 / contract_valid=true сохраняет честный incomplete; H03/CSV/ML/API/OS/full-agent не выполнены.
+**Историческая первая приёмка:** 34 метода / 76 сценариев / 4 CLI; оба actual public inputs, nested/flat, provenance/embedded schemas, неоднозначности и raw-string ID mapping. Порядок задаёт task (оба public: test); sample задаёт колонки, mapping хранится отдельным sidecar. Повтор bootstrap 24/51/37 PASS. [Квитанция и ограничения P0](H023_RECEIPT.md). Exit 3 / contract_valid=true сохраняет честный incomplete; H03/CSV/ML/API/OS/full-agent не выполнены.
+
+**Текущая проверка после полных review:** 43/108/6, bootstrap24/51/37; [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md). TYPEINTRO и прежние ROLE/DECL/ORDER прошли; старые результаты сохраняют свой SHA.
 
 ### H02.4 — Docker и фактический профиль
 
@@ -222,13 +224,15 @@
 **Приёмка и остановка:** Фактический профиль измерен, локальное приближение не названо официальной средой. AEGYX сохранён; записаны состояние до изменений и способ отката. Доступность Docker внутри контейнера платформы не предполагается.
 
 
-**Фактически выполнено:** Engine29.9.1/systemd/cgroupv2; digest-pinned Ubuntu24.04/Python3.12.3/dev13direct/45dist. Применён WSL24GiB/swap4GiB с before/rollback, CPU12 сохранены; контейнер20GiB/noSwap/quota8/PIDs256. Шесть ограниченных resource canary и literal CLI на двух actual tasks PASS; [квитанция](H024_RECEIPT.md). Rootful host daemon не даёт права указывать Docker/privileged в неизвестном контейнере платформы. H05/full37/officialimage/fit/API/10800s не проверены. Следующий H03.1 — по новой команде.
+**Фактически выполнено:** Engine29.9.1/systemd/cgroupv2; digest-pinned Ubuntu24.04/Python3.12.3/dev13direct/45dist. Применён WSL24GiB/swap4GiB с before/rollback, CPU12 сохранены; контейнер20GiB/noSwap/quota8/PIDs256. Шесть ограниченных resource canary и literal CLI на двух actual tasks PASS; [квитанция](H024_RECEIPT.md). Rootful host daemon не даёт права указывать Docker/privileged в неизвестном контейнере платформы. H05/full37/officialimage/fit/API/10800s не проверены. CLI-checker после review11/17mock и2actualDocker PASS, [карта](H02_REVIEW_REPAIRS.md). Последнее уточнение владельца: H03.1 пока не выполнять.
 
 ## H03
 
 ### H03.1 — Схема и ограниченный профиль
 
 **Текущий статус:** `NOT_RUN`. Приоритет `P0`.
+
+**Уточнение владельца:** выполнение пока остановлено перед этим блоком; завершить исправления H02. Подготовительное обсуждение API не является реализацией или приёмкой H03.1.
 
 **Команда:** «Выполни H03.1 по WORK_BLOCKS и ТЗ: Схема и ограниченный профиль».
 

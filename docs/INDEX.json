@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "stage": "H02.4 local Docker/resources and H02.3 teacher-review fixes",
-  "status": "PASS_H02_4_LOCAL_CONTAINER_ONLY; ML/Qwen/AutoResearch/fullH05 NOT_RUN",
-  "next_stage": "Receive missing complete H023 review; then fix confirmed H023/H024 review findings as authorized, before any H03.1",
+  "stage": "H02.3/H02.4 confirmed-review repairs; stop before H03.1",
+  "status": "PASS_H02_REVIEW_REPAIRS_ONLY_AND_METADATA; H03.1 NOT_RUN by owner",
+  "next_stage": "Wait for owner after saving; H03.1 and live Qwen require new explicit commands",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
   "previous_documentation_commit": "8e80944866b1a152184a43260f29ba23ec56c857",
   "runtime_changed_in_this_stage": true,
@@ -50,10 +50,10 @@
     "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
   },
   "verification": {
-    "status": "PASS_H02_4_FINAL_METADATA_AND_SCOPE_ONLY",
-    "receipt": "docs/H024_FINAL_REVIEW_RECEIPT.json",
-    "sha256": "c663b1288c193654144afc4b2aa7308921ae77984692f82327d6b3d3a9de9721",
-    "scope": "identities/history/documents/source binding only; no repeated runtime probes"
+    "status": "PASS_H02_REPAIR_PUBLICATION_BINDING_ONLY",
+    "receipt": "docs/H02_REPAIR_PUBLICATION_REVIEW.json",
+    "sha256": "811d24393133eae781cbc162dfaf5dc3ffb910b7131fa9a8728770782fd9a2b8",
+    "scope": "final staged source/documents/links/allowlist binding; prior runtime receipts not rerun"
   },
   "review": {
     "independent_document_review": "completed; final content cross-read and automatic metadata checks; no material blocker reported",
@@ -73,7 +73,9 @@
       "SPEC-QA-003 Git attribute preparation only",
       "SPEC-DOC-011 timer and future ID/resolver clarification only",
       "SPEC-QA-004 metadata helper only",
-      "RES-CHAT1-001 source correction only"
+      "RES-CHAT1-001 source correction only",
+      "SPEC-DOC-015 saved-packet relative links only",
+      "SPEC-DOC-016 saved-packet whitespace only"
     ],
     "previous_closed_runtime_findings": [
       "CORE-REV-001",
@@ -108,20 +110,20 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "AGENTS.md": "8ae7848a998e3491472d510636994bf9e23040dd9551b787a8c29db02c3e55dd",
-    "PROJECT_STATE.md": "44b66babd25896cf7416b6c3cd383dcf744de97e45f3eb97a86b74d728a039e0",
+    "AGENTS.md": "604cf88f5061ec6d4110426d99cb59a0f289932c427ff329432e885546b31ada",
+    "PROJECT_STATE.md": "a0f37dc3b90870ff7e164a49cf56a1414c4cfecc747fe6e43b43c13392eb8a59",
     "README.md": "3ef086ffd8e15d294cf56a8af64f7a964a077a1356e0c2066a1bafba10cd1e8a",
     "docs/API_INSTRUCTIONS_INTAKE.md": "ceb578c73731cef822d8e9eacf9c121d8576b0409ff36a66a9205c4fef26e8fe",
     "docs/API_LOCAL_SETUP.md": "ca62c8450af612e0906b571fc398f5b2eded671537a18761f6a1af5b1f600744",
     "docs/AUTOML_RESEARCH_BRIEF.md": "c82554b528278ac53273ddfcc87484dcb7875df69e1454454fe1f8c49a61d446",
-    "docs/BACKEND_CONTRACT.md": "58c260ddeb69bf96381c1a0834c00f9b77e921bba11db9b03ad85e8250db038f",
+    "docs/BACKEND_CONTRACT.md": "f8823d8240304a8e23717043476be273042f68549a73b909e57176e8e6fec2ff",
     "docs/CASE_INTAKE.md": "7bc2328e54b91716e772a14a44ed39946d07ba289d89c0ee740ef353dbe52328",
     "docs/CHAT1_AGENT_COMPARISON_INTAKE.md": "e1568bac4dcb0c8f2ba769c6c828086106e1e7718c15c62bef379739b88cfaf6",
     "docs/CHAT1_CPU_ML_INTAKE.md": "74c04cd2321d82cebbd716dcc9e74d672961b16e379133da28e46b0609c1dd3e",
     "docs/CHAT1_H024_H05_INTAKE.md": "ce001f3b69835a9e30b8d7c94b8df7ca8cc705c80d0c0b5a303521f3dfaac297",
     "docs/DOC_REVIEW_RECEIPT.json": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
     "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
-    "docs/EVIDENCE_REGISTER.md": "a83d993e6a5b650ce31f03a4251ba4dd3748afdf0fc9d8d2c20e9d93188e4c60",
+    "docs/EVIDENCE_REGISTER.md": "2e68ff034595b00b76fd0e9c94870f16de0890dda6e7916a86846b7894c55fb6",
     "docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json": "04556c7896a851dd3f9248c398d2727d7e66ca96f9a9eb553990ee6061cb3409",
     "docs/H022_BOOTSTRAP_RESULT.json": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
     "docs/H022_RECEIPT.md": "0658dd434c688ee124d928871fff3bb39ae4e6001dd741d7c02115a35526dc5b",
@@ -145,39 +147,51 @@
     "docs/H024_RECEIPT.md": "5d32ec2d81236385b8d906b6ae71c773c089f4ed7d51b96e0f6c63c039b94445",
     "docs/H024_REVIEW_RECEIPT.json": "4f5dead553c592e3f916d4b2179fa44efeedd9f2a9fcead280417e48bd099cde",
     "docs/H02_RECEIPT.md": "5b0d15b170139ee3e0b940c423e77c75c63ceef179b62aea35901124c5fb9372",
+    "docs/H02_REPAIR_BOOTSTRAP_RESULT.json": "75c998e96282a79dd16ecfdf0bc7b259886fa4256a649bb6745f6f0c8ddd0957",
+    "docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json": "148b02c76dfa15fa8bd339ed242dbb9d20f67545ae2d8ea31479b7bfd20bd905",
+    "docs/H02_REPAIR_CONTRACT_RESULT.json": "662158756adf074a67814411bc6114b92f03ab77b547249fc54dc985dc100234",
+    "docs/H02_REPAIR_DOCKER_CLI_RESULT.json": "815f236e0be2184abcd53e438b0e4fd1564adefb6c767f7733698579770f2fa9",
+    "docs/H02_REPAIR_FINAL_REVIEW.json": "ff5e059d5f82f169afee4e1fdba876dab061a490a281864f69d5ad66e0fa37c2",
+    "docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json": "3110a03f9d7b51a867ae55b3bd05258d731e8a3cfc0f65ce89977a35dd60d901",
     "docs/H02_REVIEW_RECEIPT.json": "46b1d62d47db5d7b90803db7403998cdef0e1897d85ab15f3213ec6565ffa84c",
-    "docs/LOCAL_ENVIRONMENT.md": "f93570e543ae25981f31a6e15393737a767e2aab3a0ccd080289d62ed009abcb",
+    "docs/H02_REVIEW_REPAIRS.md": "bcfa434e34f2fcb33afc50759b3314bcebed805ff8103a9b8cf754cb47937bad",
+    "docs/LOCAL_ENVIRONMENT.md": "3442368bf40928665f507aa88ede4b9f1c3156b5669f2d520e3be760b1c83a4f",
     "docs/LOCAL_PROVIDER_HELPER_RESULT.json": "da1e1bd8021620bddee628d023414362e7403679c26b3d6a94554db90cbd0ffa",
     "docs/LOCAL_PROVIDER_RECEIPT.json": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
     "docs/MATHEMATICS_AND_VALIDATION.md": "bad31ce27da714a831fc6e0e57dcdb746fbaf6fb4f53bfe26505984ef5a27233",
     "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
-    "docs/NEXT_SESSION.md": "dbab1372e7b5d4b0bc2330920e2c350a3007966df53653cab7110c9f98d812e1",
+    "docs/NEXT_SESSION.md": "45b3e8680048f9c0e53a0c64692f69bf64e426ceec1ac3064e8997368ab35773",
     "docs/OPEN_SOURCE_AGENT_REVIEW.md": "06ad578759b079cf81e360f782b9d48509b80d7ae571d99116a54027c349b21c",
     "docs/OPTIONAL_ARTIFACTS_RESEARCH.md": "4f84f8191d1c1062d7229df93b1d555b82b6627ed488915346c3e9477f88bc08",
     "docs/ORGANIZER_QUESTIONS.md": "5a26b6e63903f490840d681b30a8f5de6834ad168dfc3195bce1cbfe83a6aae5",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
     "docs/QWEN_HARNESS_DESIGN.md": "fc21efda43542adbc50fccff95a47c9583ac474cb5b1ac8580e487a84c23e34d",
-    "docs/READ_FIRST.md": "b5e0fae6f9e0beb381fed766733b6f31bb0d5c3ccba49ecab59f0abc3b62ea90",
+    "docs/READ_FIRST.md": "30ef8d0440824453fa011c99ebf6696a0e5b685c9415e86d05ddca9fed9d3ba5",
+    "docs/RESEARCH_BACKLOG.md": "7d55b2a491a1106f955d50584cb4d806f86283d4bce6b809af59c499536de045",
     "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
     "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
     "docs/ROADMAP.md": "1910d6153957df4e1ed861ca7a06f51e3ffe335bf20bb72b5efe72a5043bfc9f",
     "docs/ROUTE_CORRECTION_RECEIPT.json": "dac03cf795ab3ba5797e6dd50314b5545ad5ccd9075e942472298486aa1b58a6",
-    "docs/RUNTIME_AND_FAILURES.md": "5cbf49528cd926969f239779ae45aa90b0f5300b4a85acb0ab094b0511840d1a",
-    "docs/SOURCE_MANIFEST.json": "dbd7c6f3d93abe3b287e05850a936bff72e7e20a2342428bd34356917593fe17",
+    "docs/RUNTIME_AND_FAILURES.md": "55bd286ccf407ba0873d059460d5da654ba525ca5298156cc677eb97124ba827",
+    "docs/SOURCE_MANIFEST.json": "82c935865bbe616176f84beafc2369534a67fcd06705e6e902526afe5a13d90b",
     "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
-    "docs/TECHNICAL_SPEC.md": "09d1d50d5934a268443f7e07fd2c6fb93ce04df827fba6f3df2c5620f5cc0167",
+    "docs/TECHNICAL_SPEC.md": "c3a8cfae67c4d11e1146569b8273cf58c26c0c91d289ba9e9ef34b8b7de66777",
     "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
     "docs/TEST_MATRIX.md": "8aa661f79ad37e84157e585ea12f09bc47b6d4bcaef8ffb133428294471f811c",
     "docs/VOVAN_MENTOR_PROMPT.md": "19451433a7db13acbff7eb31388c5b326be293942ce8c6c491a063021c7ff7b4",
     "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
-    "docs/WEB_WORKFLOW.md": "f18a8e4b83404a5d76500e84060ad6695cd1a4309bef387632539640cc002e21",
-    "docs/WORK_BLOCKS.md": "915833fb9a5d7ede589d56ae9929df7e8878675df0a67fa3569d3f2bd7717216",
+    "docs/WEB_WORKFLOW.md": "a1c7c5515d47058f436c7ce1416d076bdccb938bcdb4373c67bddc9a72fb0fc7",
+    "docs/WORK_BLOCKS.md": "79b6b3e27224b8963ee8504c800970ee791a36681c95760f04b358f458ab41b6",
     "docs/WORK_PLAN.json": "f77b8b3fb6049167db53f0ac8aca86beba724f10a564c85b284ddefd4c4cf22a",
-    "docs/container-profile.json": "e761de45ba50761afb4d6abff6a89b316386e11d6edbe6f1c2e5a73d83d5f182",
-    "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c"
+    "docs/container-profile.json": "fe24d6635be517ee6df472deffd5511a75d5373b9ec4aa2ed0096d8c41d409fe",
+    "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c",
+    "research_packets/CHAT1_FUTURE_RESEARCH.md": "623aad274571ce050fc45af43d78312448357ec88dae00a4f72edf4d0d8aa69f",
+    "research_packets/CHAT2_H02_REPAIR_REVIEW.md": "22b0acd830069f37a2fa637f353ff107926264563800c23200b7cb81b9721efb",
+    "research_packets/README.md": "5d6ac366516ab93a8a1ba031ddedd7196f97c6609f4569d41aa20e20212e87b8",
+    "docs/H02_REPAIR_PUBLICATION_REVIEW.json": "811d24393133eae781cbc162dfaf5dc3ffb910b7131fa9a8728770782fd9a2b8"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -231,7 +245,7 @@
   "product_code_implemented_in_this_revision": true,
   "model_training_executed_in_this_revision": false,
   "ml_architecture_comparisons_executed": false,
-  "environment_settings_changed_in_this_revision": true,
+  "environment_settings_changed_in_this_revision": false,
   "new_platform_submission_in_this_revision": false,
   "constant_target_statistics_fitted_scope": "historical mini only; no trained feature model",
   "minimal_environment_scope": "historical initial setup receipt; later mini executions tracked in separate receipts",
@@ -247,9 +261,9 @@
     "sha256": "f77b8b3fb6049167db53f0ac8aca86beba724f10a564c85b284ddefd4c4cf22a",
     "blocks": 50
   },
-  "runtime_environment_changed_in_this_stage": true,
-  "runtime_change_scope": "TaskContract ROLE/DECL/ORDER fixes; local Docker engine/image and bounded resource probes",
-  "new_tests_scope": "38methods/93cases/4CLI parser, 24/51/37 bootstrap; six small resource canaries, two actual Docker CLIs, thirteen import smokes. Overlapping/nonquality checks, not full H05.",
+  "runtime_environment_changed_in_this_stage": false,
+  "runtime_change_scope": "TYPEINTRO structural parser and CLI checker owner/assert/receipt/source corrections only",
+  "new_tests_scope": "43methods/108cases/6CLI contract; bootstrap24/51/37; CLI checker11methods/17mockcases including five historical counterexamples and two actual Docker CLIs. Component scope only.",
   "environment_settings_change_scope": "global WSL memory24GiB/swap4GiB with stopped-dist enable+rollback; AegML Engine29.9.1/image; default Ubuntu files not edited but future VM envelope changed",
   "local_live_llm_calls_scope": "competition provider API; web research-chat messages are tracked separately",
   "historical_verification_previous_documentation": {
@@ -316,7 +330,7 @@
     "h023_review_reply_read": true,
     "chat1_cpu_ml_reply_read": true,
     "chat1_cpu_ml_intake": "docs/CHAT1_CPU_ML_INTAKE.md",
-    "external_h023_review_status": "new reply received and addressed; new code sent for static re-review; internal browser model verification pending",
+    "external_h023_review_status": "complete reply read; confirmed repairs checked locally; new static packet saved but not sent",
     "repeat_sends_policy": "allowed when needed; notify owner before sending; UI error is not a resend prohibition",
     "h023_review_reply_id": "a0eca288-61c9-5df8-ae48-c38354a2cc67",
     "h023_fixes_sent": true,
@@ -324,7 +338,21 @@
     "requested_model": "GPT-5.6 Pro",
     "model_selection_verified": false,
     "latest_docker_review_read": true,
-    "missing_h023_final_requested": true
+    "missing_h023_final_requested": false,
+    "latest_h023_final_reply": "0d95a297-2b29-4049-bd33-8964c31f9af1",
+    "latest_h023_final_chars": 14899,
+    "web_requests_paused_by_owner": true,
+    "new_chat1_packet_sent": false,
+    "new_chat2_packet_sent": false,
+    "chat1_packet": "research_packets/CHAT1_FUTURE_RESEARCH.md",
+    "chat2_packet": "research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+    "chat1_future_research_status": "prepared; send429; not accepted; owner paused web",
+    "error429_cause": "UNKNOWN; concurrent chat count not established",
+    "api_live_gate": "OWNER_EXPLICIT_COMMAND_ONLY",
+    "web_min_interval_seconds_after_resume": 60,
+    "web_pacing_scope": "shared across chat1/chat2 read/status/send/browser requests; no polling; stop on429",
+    "chat1_packet_sha256": "623aad274571ce050fc45af43d78312448357ec88dae00a4f72edf4d0d8aa69f",
+    "chat2_packet_sha256": "22b0acd830069f37a2fa637f353ff107926264563800c23200b7cb81b9721efb"
   },
   "development_tooling_sha256": {
     "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f",
@@ -332,11 +360,12 @@
     "scripts/local_provider_config.py": "d704dd1e4b9cc9df25e836354c410fc619f02dc861c5ef9377bd93e66ea5b923",
     "scripts/prepare_h02_environment.py": "60f027c1b17f7419343c2c9a193dd2d1b4048bfed9b1992d6fc61dd4f848e480",
     "scripts/review_h02_receipt.py": "c39be0ffc5298a8a2687a0a23ba5ff8ef2a8e809542a488b0e4beb9c475b5938",
-    "scripts/check_h023_contract.py": "a55cea2e3212277708a017e2877639222a22de5080f261d131e662169afd35fd",
+    "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c",
     "scripts/check_h024_container.py": "5a94fc420e2cc4743eadc0c08a341a6defbc1d1c85eb6e6c04540f1105a41223",
-    "scripts/check_h024_platform_cli.py": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+    "scripts/check_h024_platform_cli.py": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
     "scripts/prepare_h024_context.py": "6beb828e8efb98098be4bbd7af4beac5dc3d0ff72db6ecb9c9a633718e4ab9b6",
-    "Dockerfile.dev": "1b538059bb4bcebe9777be21060c0437a906a21e12eee1195213111e16e2bcc0"
+    "Dockerfile.dev": "1b538059bb4bcebe9777be21060c0437a906a21e12eee1195213111e16e2bcc0",
+    "scripts/check_h024_cli_regressions.py": "a6d8ba7530a178230d7d57e725a99c4e9fabef5d6800a519df741be8cbd7b0a6"
   },
   "requirements_sha256": {
     "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
@@ -355,8 +384,8 @@
     "local_links": 243,
     "raw_exported_proof_rechecked": true
   },
-  "previous_project_commit": "32f7c0c",
-  "product_code_scope": "four root .py trusted bootstrap/contract only; H03/ML not implemented",
+  "previous_project_commit": "187328f2f382ce2a994a507b715cb97416557102",
+  "product_code_scope": "four root .py trusted bootstrap/contract only; H03.1 NOT_RUN, ML not implemented",
   "h02_2_bootstrap": {
     "receipt": "docs/H022_BOOTSTRAP_RESULT.json",
     "sha256": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
@@ -422,17 +451,19 @@
   },
   "product_contract_sha256": {
     "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
-    "aegml_contracts.py": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
     "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
     "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d"
   },
   "product_bootstrap_sha256_scope": "historical H02.2 source; current four-file SHA in product_contract_sha256",
   "latest_document_change": {
-    "scope": "H02.4 runtime evidence and current route",
+    "scope": "full review H02.3/H02.4 repairs and saved web packets; owner stop before H03.1",
     "runtime_changed": true,
-    "docker_started": true,
-    "resource_caps_changed": true,
-    "live_qwen_api_calls": 0
+    "docker_cli_checked": true,
+    "docker_installed_or_caps_changed": false,
+    "live_qwen_api_calls": 0,
+    "h031_files_created": 0,
+    "h031_runtime_runs": 0
   },
   "historical_verification_h02_3": {
     "status": "PASS_H02_3_METADATA_AND_SCOPE_REVIEW_ONLY",
@@ -443,7 +474,7 @@
   "h02_4_container": {
     "status": "PASS_H02_4_LOCAL_CONTAINER_ONLY",
     "profile": "docs/container-profile.json",
-    "profile_sha256": "e761de45ba50761afb4d6abff6a89b316386e11d6edbe6f1c2e5a73d83d5f182",
+    "profile_sha256": "fe24d6635be517ee6df472deffd5511a75d5373b9ec4aa2ed0096d8c41d409fe",
     "receipt": "docs/H024_RECEIPT.md",
     "resource_receipt": "docs/H024_CONTAINER_FINAL_RESULT.json",
     "resource_sha256": "223e7cb7c0b5f99fdeadffd824e6f82864e23014aac1202c9f38a8b4cf0dc01e",
@@ -463,7 +494,9 @@
     "model_fit_calls": 0,
     "first_resource_receipt": "docs/H024_CONTAINER_RESULT.json",
     "oom_guard_receipt": "docs/H024_OOM_GUARD_RESULT.json",
-    "oom_guard_sha256": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f"
+    "oom_guard_sha256": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f",
+    "current_literal_cli_receipt": "docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+    "current_literal_cli_sha256": "815f236e0be2184abcd53e438b0e4fd1564adefb6c767f7733698579770f2fa9"
   },
   "h02_3_review_fixes": {
     "status": "PASS_H02_3_REVIEW_FIXES_ONLY",
@@ -506,7 +539,7 @@
     "source_chars": 15970,
     "h05_checks_status": "eight proposed checks NOT_RUN",
     "current_applied_finding": "H024-OOM-ATTR-001 only; six probes rechecked",
-    "chat2_new_reply_read": false
+    "chat2_new_reply_read": true
   },
   "historical_verification_before_h024_final": {
     "status": "PASS_H02_4_METADATA_AND_SCOPE_ONLY",
@@ -515,18 +548,66 @@
     "scope": "identities/history/documents/source binding only; no repeated runtime probes"
   },
   "current_work": {
-    "status": "AWAITING_COMPLETE_CHAT2_REVIEWS_BEFORE_FIXES",
+    "status": "H02_REPAIR_COMPLETE_SAVED; WAIT_OWNER; H03.1_NOT_RUN",
     "received_docker_reply": "0e7bed48-d75a-4f35-a861-0c0c4cba86bf",
-    "received_docker_chars": 13036,
-    "missing_h023_final_requested": true,
-    "open_findings": [
+    "received_h023_reply": "0d95a297-2b29-4049-bd33-8964c31f9af1",
+    "all_full_reviews_received_before_fixes": true,
+    "open_confirmed_h02_review_findings": [],
+    "code_changed_since_411e628": true,
+    "web_paused_by_owner": true,
+    "api_paused_until_explicit_owner_command": true,
+    "manual_progress_check_target_msk": "2026-10-21 21:00",
+    "scheduled_automation_created": false,
+    "metadata_review": "docs/H02_REPAIR_FINAL_REVIEW.json"
+  },
+  "historical_verification_before_h02_review_repairs": {
+    "status": "PASS_H02_4_FINAL_METADATA_AND_SCOPE_ONLY",
+    "receipt": "docs/H024_FINAL_REVIEW_RECEIPT.json",
+    "sha256": "c663b1288c193654144afc4b2aa7308921ae77984692f82327d6b3d3a9de9721",
+    "scope": "identities/history/documents/source binding only; no repeated runtime probes"
+  },
+  "h02_review_repairs": {
+    "status": "PASS_H02_REVIEW_REPAIRS_ONLY",
+    "report": "docs/H02_REVIEW_REPAIRS.md",
+    "closed_findings": [
+      "H023-TYPEINTRO-001",
       "H024-CLI-OWN-001",
       "H024-CLI-ASSERT-001",
       "H024-CLI-RECEIPT-001",
       "H024-CLI-SOURCE-001",
       "WEB-REVIEW-ORDER-001"
     ],
-    "code_changed_since_411e628": false,
-    "fixes_deferred_until_all_final_answers": true
+    "contract_receipt": "docs/H02_REPAIR_CONTRACT_RESULT.json",
+    "contract_test_methods": 43,
+    "contract_cases": 108,
+    "contract_cli": 6,
+    "bootstrap_receipt": "docs/H02_REPAIR_BOOTSTRAP_RESULT.json",
+    "bootstrap_counts": [
+      24,
+      51,
+      37
+    ],
+    "cli_mock_receipt": "docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+    "cli_mock_counts": [
+      11,
+      17
+    ],
+    "actual_docker_cli_receipt": "docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+    "actual_public_tasks": 2,
+    "before_typeintro_receipt": "docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+    "before_typeintro_cases": 15,
+    "before_typeintro_expected_failures": 11,
+    "model_fit_calls": 0,
+    "live_qwen_calls": 0,
+    "h03_started": false,
+    "historical_receipts_preserved": true,
+    "actual_docker_checker_identity_scope": "recorded frozen handoff and unchanged checker; actual JSON has no own checker_sha256 field",
+    "metadata_review": "docs/H02_REPAIR_FINAL_REVIEW.json"
+  },
+  "historical_verification_before_publication_binding": {
+    "status": "PASS_H02_REPAIR_METADATA_AND_SCOPE_ONLY",
+    "receipt": "docs/H02_REPAIR_FINAL_REVIEW.json",
+    "sha256": "ff5e059d5f82f169afee4e1fdba876dab061a490a281864f69d5ad66e0fa37c2",
+    "scope": "90 metadata/history/source/link checks; separate runtime receipts; not full-agent acceptance"
   }
 }

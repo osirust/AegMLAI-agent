@@ -2,7 +2,7 @@
 
 Редакция 20.10.2026. **Текущий результат — PASS_H02_4_LOCAL_CONTAINER_ONLY**: Engine/локальный образ, 6/6 ресурсных canary, пакетная проверка 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач. [Квитанция H02.4](H024_RECEIPT.md), [профиль](container-profile.json). Следующий H03.1 начинается только по новой команде владельца.
 
-H02.3 после трёх исправлений независимого review прошёл 38 методов / 93 сценария / 4 CLI, bootstrap — 24/51/37: [H023_REVIEW_FIXES](H023_REVIEW_FIXES.md). Прежние H023 34/76/4 и H022-квитанции сохранены историческими. Обучение, реальные LLM-запросы и новый CSV полного агента не выполнялись.
+H02.3 после полного review прошёл43метода/108сценариев/6CLI, bootstrap24/51/37; CLI-checker11/17mock и2actualDocker: [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md). Старые38/93/4 сохранены историческими. Прежние H023 34/76/4 и H022-квитанции сохранены историческими. Обучение, реальные LLM-запросы и новый CSV полного агента не выполнялись.
 
 ## 1. Что действительно существует
 
@@ -13,7 +13,7 @@ H02.3 после трёх исправлений независимого review
 | Старая stdlib-venv | Python 3.12.3, /home/aegml/venvs/aegml-py312; 0 сторонних distributions, сохранена | Историческая минимальная среда, не полный requirements |
 | ML-venv H02.1 | /home/aegml/venvs/aegml-ml-py312; 13 direct pins / 45 distributions, 9 smoke и pip check PASS | Fit и полный официальный образ не проверены |
 | Установочные артефакты | 44 dependency wheels и bootstrap pip; исходные версии/пути/SHA в [environment-lock.json](environment-lock.json) | Wheels/pip нельзя включать в submission ZIP |
-| TaskContract H02.3 | Resolver, target/type/metric/ID, finite schemas и направленные карты; текущие [38/93/4](H023_REVIEW_FIXES.md) | Профиль признаков, метрики, folds и ML отсутствуют |
+| TaskContract H02.3 | Resolver, target/type/metric/ID, finite schemas и направленные карты; текущие [43/108/6](H02_REVIEW_REPAIRS.md) | Профиль признаков, метрики, folds и ML отсутствуют |
 | Текущий CLI | Два свежих JSON task_contract/row_alignment, exit 3 / implementation_incomplete, contract_valid=true | API/tools/research/submission false, experiments 0; нового CSV нет |
 | WSL ресурсы H02.4 | Configured memory 24 GiB; замер 25 202 294 784 байт RAM ≈ 23,47 GiB; swap 4 GiB на E:, CPU 12 | Память гостя после накладных расходов и общий cap не равны свободной памяти модели |
 | Docker Engine | 29.9.1, rootful, Unix socket, cgroup v2/systemd; daemon запускается systemd | Пользователь aegml не добавлен в docker group; вложенный Docker платформы не предполагается |
@@ -91,7 +91,7 @@ H02.1–H02.4 выполнены без реального LLM API и без о�
 
 У организаторов остаются image/Dockerfile, actual env/версии, доступные OS-примитивы, трактовка exitcode и last/best selection. Подробные логи могут быть только у администраторов; не предполагать их наличие в пользовательском UI. [ORGANIZER_QUESTIONS](ORGANIZER_QUESTIONS.md) — неотправленный черновик.
 
-Для обоих пользовательских чатов Vovan выбран целевой GPT‑5.6 Pro; фактический выбор модели пока не подтверждён из-за UI-проблем. CPU ML ответ чата «1» и статический H02.3 review чата «2» уже разобраны, три замечания парсера закрыты в [H023_REVIEW_FIXES](H023_REVIEW_FIXES.md). Первая попытка H02.4 в чат «1» вернула TooManyRequests; позднее сообщения в1 (исследование H05) и2 (прошлые parser fixes и отдельный полный Docker packet) успешно приняты после уведомления владельца. Ответы на новые пакеты ещё не прочитаны; UI-подтверждение модели остаётся pending; читать по сигналу владельца, без polling, перед каждой отправкой уведомлять. Повтор при необходимости разрешён; причина UI-сбоев без доказательств не устанавливается.
+Историческая запись обмена H02.4: на момент первичной отправки ответы ещё не были прочитаны. Теперь оба полных review получены и учтены в H02_REVIEW_REPAIRS; новые сохранённые пакеты1/2 НЕ отправлены, веб остановлен владельцем.
 
 ## 8. Точный submission-контракт из платформенного TXT
 

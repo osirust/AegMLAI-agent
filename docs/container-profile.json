@@ -122,11 +122,14 @@
     "literal_platform_cli_actual_datasets": 2,
     "container_import_direct_pins": 13,
     "container_distributions": 45,
-    "parser_fix_methods": 38,
-    "parser_fix_cases": 93,
+    "parser_fix_methods": 43,
+    "parser_fix_cases": 108,
     "bootstrap_methods": 24,
     "bootstrap_cases": 51,
-    "bootstrap_cli": 37
+    "bootstrap_cli": 37,
+    "parser_fix_cli": 6,
+    "cli_mock_methods": 11,
+    "cli_mock_cases": 17
   },
   "receipts": {
     "H024_CONTAINER_RESULT.json": "77039490e41de383387d837afad043660f65ead5b6725759e3b6d057cc079046",
@@ -135,7 +138,11 @@
     "H023_REVIEW_FIXES_RESULT.json": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466",
     "H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json": "ca516e6c5f2890d4ad4be898fbe45a2d293c3ca757e03fae86295ea8df684af9",
     "H024_CONTAINER_FINAL_RESULT.json": "223e7cb7c0b5f99fdeadffd824e6f82864e23014aac1202c9f38a8b4cf0dc01e",
-    "H024_OOM_GUARD_RESULT.json": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f"
+    "H024_OOM_GUARD_RESULT.json": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f",
+    "H02_REPAIR_CONTRACT_RESULT.json": "662158756adf074a67814411bc6114b92f03ab77b547249fc54dc985dc100234",
+    "H02_REPAIR_BOOTSTRAP_RESULT.json": "75c998e96282a79dd16ecfdf0bc7b259886fa4256a649bb6745f6f0c8ddd0957",
+    "H02_REPAIR_DOCKER_CLI_RESULT.json": "815f236e0be2184abcd53e438b0e4fd1564adefb6c767f7733698579770f2fa9",
+    "H02_REPAIR_CLI_REGRESSIONS_RESULT.json": "148b02c76dfa15fa8bd339ed242dbb9d20f67545ae2d8ea31479b7bfd20bd905"
   },
   "rollback": {
     "wslconfig": "While WSL distros stopped, remove only the newly-created C:/Users/ggdro/.wslconfig after verifying its recorded SHA; previously no config existed. Current AegML startup needed to apply.",
@@ -166,5 +173,9 @@
     "synthetic_global_only_event_rejected": true,
     "runtime_recheck_cases": 6,
     "full_H05_accepted": false
-  }
+  },
+  "current_literal_cli_receipt": "docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+  "current_literal_cli_checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+  "current_repair_report": "docs/H02_REVIEW_REPAIRS.md",
+  "web_requests_paused_by_owner": true
 }

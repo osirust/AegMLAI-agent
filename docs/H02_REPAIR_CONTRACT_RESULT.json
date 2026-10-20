@@ -1,0 +1,1076 @@
+{
+  "phase": "H02.3",
+  "status": "PASS_H02_3_CONTRACT_ONLY",
+  "python": "3.12.3",
+  "executable": "/home/aegml/venvs/aegml-ml-py312/bin/python",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c"
+  },
+  "expected_requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "scope": "TaskContract/resolver/schema/identifier alignment/sidecars/selective-copy CLI only",
+  "model_training_executed": false,
+  "live_api_called": false,
+  "package_installation_executed": false,
+  "profiling_or_metric_evaluation_executed": false,
+  "docker_or_os_boundary_tested": false,
+  "official_platform_image_verified": false,
+  "h03_or_full_agent_accepted": false,
+  "child_environment_is_controlled_no_provider_configuration_read": true,
+  "notes": [
+    "Synthetic feature values are fixture data, not training results.",
+    "Actual data checks inspect contracts/IDs read-only and never publish in original folders.",
+    "Missing ignored public sources are explicit SKIP, never a simulated public PASS.",
+    "Production schema validation may use its installed jsonschema dependency; the runner uses stdlib unittest.",
+    "Cooperative expiry does not prove a hard timeout or a sandbox."
+  ],
+  "test_methods_run": 43,
+  "behavior_cases_checked": 108,
+  "behavior_cases_passed": 108,
+  "behavior_cases_skipped": 0,
+  "unittest_skips": [],
+  "cli_invocations": 6,
+  "cases": [
+    {
+      "test": "__main__.ContractChecks.test_actual_public_classification",
+      "case": "actual_public_classification_read_only_builder",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_actual_public_regression",
+      "case": "actual_public_regression_read_only_builder",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_alignment_is_defensive_copy_and_payload_is_compact",
+      "case": "alignment_copy_cannot_mutate_authoritative_contract",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_ambiguous_files_are_not_selected_by_walk_order",
+      "case": "no_declared_path_two_train_candidates",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_ambiguous_files_are_not_selected_by_walk_order",
+      "case": "two_existing_explicit_nested_train_references",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_reject_json_NaN",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_reject_json_Infinity",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_reject_positive_overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_reject_negative_overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_reject_positive_label_overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_class_order_json_nonfinite_vs_quoted_string",
+      "case": "H023-CONTRACT-004_quoted_NaN_is_a_string_label",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_contract_error_nonzero_no_new_csv",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_invalid_thread_argument_nonzero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_exhausted_cooperative_budget_exit124",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_train",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_train",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_sample_submission",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_sample_submission",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "duplicate_header",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "empty_header",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "missing_test_feature",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "missing_id_column",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "extra_test_feature",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "target_in_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "wrong_sample_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_exact_cli_selective_copy_preserves_old_csv",
+      "case": "literal_python3_solution_py_task_md_contract_valid_exit3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_explicit_positional_mapping_with_output_only_ids",
+      "case": "explicit_positional_mapping_preserves_output_only_sample_ids",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_explicit_sample_order",
+      "case": "explicit_task_sample_order_changes_output_mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_external_input_symlink_rejected",
+      "case": "external_input_symlink_not_read_as_task_input",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_generic_field_names_and_russian_directives",
+      "case": "renamed_id_target_features_are_not_public_name_constants",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_generic_field_names_and_russian_directives",
+      "case": "explicit_russian_directives",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_threads_zero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_threads_nine",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_too_long",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "expired_shared_budget_is_not_contract_error",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_low_cardinality_numeric_does_not_decide_task_type",
+      "case": "explicit_rmse_numeric_target_is_regression_despite_few_values",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_low_cardinality_numeric_does_not_decide_task_type",
+      "case": "no_primary_metric_is_not_guessed_from_unique_target_count",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "contradictory_type_metric",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "multiple_primary_metrics",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "unknown_primary_metric",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "multiple_dictionary_targets",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "task_dictionary_target_conflict",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_mismatch_and_leading_zero_id_are_not_coerced",
+      "case": "unique_sample_test_id_set_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_mismatch_and_leading_zero_id_are_not_coerced",
+      "case": "sample_test_row_count_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_dictionary",
+      "case": "missing_dictionary_not_replaced_by_dataset_name_guess",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_feature_values_are_not_dropped",
+      "case": "blank_feature_value_does_not_change_contract_row_count",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_nested_paths_have_recorded_flat_fallback",
+      "case": "declared_missing_nested_unique_flat_fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_nested_explicit_reference_beats_decoy",
+      "case": "explicit_nested_train_selects_declared_source",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_numeric_classification_and_placeholder_sample",
+      "case": "numeric_class_labels_are_classification_not_regression",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_positional_mapping_requires_explicit_permission",
+      "case": "explicit_positional_mapping_without_synthetic_id",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_positional_mapping_requires_explicit_permission",
+      "case": "no_id_without_position_policy_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_publish_fresh_sidecars_with_exact_hashes",
+      "case": "publish_contract_and_alignment_to_fresh_run_directory",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_publisher_rejects_unsafe_run_id_before_io",
+      "case": "H023-ART-001_unsafe_run_id_rejected_before_directory_creation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_raw_ids_and_directional_permutation",
+      "case": "001_NA_1_preserved_and_cyclic_sample_mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_explicit_sample_near_input_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_row_order_matters_is_ambiguous",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_explicit_test_identity",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_two_explicit_orders_conflict",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_english_same_statement",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_russian_same_statement",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_unknown_metric_suffix",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_unsupported_type_suffix",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_dictionary_metric_transform",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_target_ignore",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_id_feature",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_missing_target_declaration",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_missing_id_declaration",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_supported_en_ru_declarations_remain_valid",
+      "case": "H023-DECL-001_supported_english_full_rmse",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_supported_en_ru_declarations_remain_valid",
+      "case": "H023-DECL-001_supported_english_known_negation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_supported_en_ru_declarations_remain_valid",
+      "case": "H023-DECL-001_supported_russian_known_negation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_supported_en_ru_declarations_remain_valid",
+      "case": "H023-DECL-001_supported_native_russian_rmse_scale",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_cli_refuses_before_publication",
+      "case": "H023-TYPEINTRO-001_cli_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_cli_refuses_before_publication",
+      "case": "H023-TYPEINTRO-001_cli_unknown",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_conflicting_declarations_still_reject",
+      "case": "H023-TYPEINTRO-001_conflict_two_directives",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_conflicting_declarations_still_reject",
+      "case": "H023-TYPEINTRO-001_conflict_bare_and_directive",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_ignores_feature_engineering_discussion",
+      "case": "H023-TYPEINTRO-001_discussion_clustering",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_ignores_feature_engineering_discussion",
+      "case": "H023-TYPEINTRO-001_discussion_classification",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_explicit_heading",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_bare_english_heading",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_bare_russian_heading",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_heading_list",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_no_declaration_uses_metric_domain",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_heading_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_heading_unknown",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_russian_heading_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_plain_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_unknown_field",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_missing_finite_policy",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_target_feature_overlap",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_id_feature_overlap",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_first_output_columns_follow_explicit_sample_format",
+      "case": "H023-CONTRACT-002_target_first_output_regression",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_first_output_columns_follow_explicit_sample_format",
+      "case": "H023-CONTRACT-002_target_first_output_classification",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_position_and_feature_projection",
+      "case": "target_nonlast",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_position_and_feature_projection",
+      "case": "target_first",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_task_injection_is_not_executed",
+      "case": "task_code_block_is_data_not_execution",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_task_symlink_anchors_to_physical_task_parent",
+      "case": "task_symlink_uses_resolved_physical_parent",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_train_test_id_overlap_is_not_object_join",
+      "case": "train_test_ids_overlap_allowed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_train_test_id_overlap_is_not_object_join",
+      "case": "train_test_ids_disjoint_allowed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unknown_second_task_type_is_not_ignored",
+      "case": "H023-CONTRACT-003_unknown_second_explicit_task_type",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_traversal",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_uri",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_absolute",
+      "status": "PASS"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-ydrr82_v/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "unsupported_metric",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.032055008,
+          "remaining_seconds": 10799.967944992,
+          "work_remaining_seconds": 10199.967944992,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=9"
+      ],
+      "cwd": "/tmp/aegml-h023-ydrr82_v/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.02595292,
+          "remaining_seconds": 10799.97404708,
+          "work_remaining_seconds": 10199.97404708,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=0.000000001",
+        "--finalize-reserve-seconds=0"
+      ],
+      "cwd": "/tmp/aegml-h023-ydrr82_v/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-ydrr82_v/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 124,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "deadline_exhausted",
+        "exit_code": 124,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 1e-09,
+          "reserve_seconds": 0.0,
+          "elapsed_seconds": 0.026988491,
+          "remaining_seconds": 0.0,
+          "work_remaining_seconds": 0.0,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-zysgmh4a/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/task.md": "e405dcba06822689c4b43d43ccd4ccf4ab4b5ac888c964ccac3c4087cc7ce391",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-zysgmh4a/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 3,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "complete_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.089735603,
+          "remaining_seconds": 10799.910264397,
+          "work_remaining_seconds": 10199.910264397,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "8ce28852fe0d409ddc49795d44bea148cf156341a1f5a55bd8ecd6fd0252ce0a",
+          "row_alignment.json": "0196254554566227054df7860d52b16d64ed9367fbff6e959ffc136d7a8ec9c4"
+        }
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/task.md": "19c6ffb09775d4548b14a32094725f23480ee5cedb05217bf7f7534086d60c0c",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/train.csv": "45eb0f2b19637c6fa2ff2c08600d10c4d07f7c3566463a4026370087137b6e88",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/test.csv": "1944de552a920f04df0894b007aec7969b8fddab7c9ae6d34b03b5d13750ab4e",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/data_dictionary.csv": "9562311bba53fc14cc57faadf7a487ee65f5a79b06dff94153abfd1c8fb273ac",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/sample_submission.csv": "8fec87f2cfa98e59f87a2c7550debb4aa5946601ba937e8031d543d4c2cce82b",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-mixed/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "unsupported_task_type",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.03586273,
+          "remaining_seconds": 10799.96413727,
+          "work_remaining_seconds": 10199.96413727,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/task.md": "abc74a0de9bfb4c625c8e0ffff3fdeb5f115769971ca82f484c89db18fd7ebfb",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/train.csv": "45eb0f2b19637c6fa2ff2c08600d10c4d07f7c3566463a4026370087137b6e88",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/test.csv": "1944de552a920f04df0894b007aec7969b8fddab7c9ae6d34b03b5d13750ab4e",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/data_dictionary.csv": "9562311bba53fc14cc57faadf7a487ee65f5a79b06dff94153abfd1c8fb273ac",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/sample_submission.csv": "8fec87f2cfa98e59f87a2c7550debb4aa5946601ba937e8031d543d4c2cce82b",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "/tmp/aegml-h023-bcx9d7pl/typeintro-cli-unknown/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "unsupported_task_type",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.031449577,
+          "remaining_seconds": 10799.968550423,
+          "work_remaining_seconds": 10199.968550423,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    }
+  ],
+  "actual_input_checks": [
+    {
+      "dataset": "classification",
+      "status": "PASS_READ_ONLY_CONTRACT_ONLY",
+      "source_sha256_before": {
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      "source_sha256_stable": true,
+      "feature_count": 42,
+      "row_counts": {
+        "train": 87670,
+        "test": 41166,
+        "sample_submission": 41166
+      },
+      "resolved_metric": {
+        "name": "macro_f1",
+        "direction": "maximize",
+        "prediction_kind": "label",
+        "parameters": {
+          "average": "macro",
+          "labels": null
+        },
+        "label_policy": "sklearn_labels_none",
+        "target_scale": "original",
+        "finite_policy": "finite_only",
+        "adapter_version": "registry.v1_pending_H03"
+      },
+      "output_order": "test",
+      "output_order_evidence": [
+        {
+          "source": "sample_submission",
+          "rule": "equivalent_test_sample_order"
+        }
+      ],
+      "row_mapping_summary": {
+        "sample_to_test": {
+          "direction": "sample_row_index -> original_test_row_index",
+          "count": 41166,
+          "sha256": "63ed05cd2450bcd39c87f7fb9a9f343fd496d84840afb47380f1c95ebb1fe923",
+          "is_permutation": true,
+          "is_identity": true
+        },
+        "output_to_test": {
+          "direction": "output_row_index -> original_test_row_index",
+          "count": 41166,
+          "sha256": "63ed05cd2450bcd39c87f7fb9a9f343fd496d84840afb47380f1c95ebb1fe923",
+          "is_permutation": true,
+          "is_identity": true
+        }
+      },
+      "feature_projection_summary": {
+        "train_feature_count": 42,
+        "train_order_sha256": "4ce19d98f1407deba91f7d2548d08859efddffb44ea0d480887e07633546fdf3",
+        "test_indices_count": 42,
+        "test_indices_sha256": "9b669fa350a15f13d4ab456869612801860848d589df68cb61930c16e5ef4a98",
+        "test_index_space": "full_test_header_including_identifier_columns"
+      },
+      "index_hash_encoding": "UTF-8 JSON; ensure_ascii=False; sort_keys=True; compact separators; no newline",
+      "raw_identifiers_or_target_rows_included": false,
+      "prediction_writer_or_quality_verified": false
+    },
+    {
+      "dataset": "regression",
+      "status": "PASS_READ_ONLY_CONTRACT_ONLY",
+      "source_sha256_before": {
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Регрессия/task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Регрессия/train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Регрессия/test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+        "/mnt/e/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      "source_sha256_stable": true,
+      "feature_count": 62,
+      "row_counts": {
+        "train": 53308,
+        "test": 22449,
+        "sample_submission": 22449
+      },
+      "resolved_metric": {
+        "name": "rmse",
+        "direction": "minimize",
+        "prediction_kind": "numeric",
+        "parameters": {},
+        "label_policy": null,
+        "target_scale": "original",
+        "finite_policy": "finite_only",
+        "adapter_version": "registry.v1_pending_H03"
+      },
+      "output_order": "test",
+      "output_order_evidence": [
+        {
+          "source": "task",
+          "rule": "output_order_statement",
+          "line": 120
+        }
+      ],
+      "row_mapping_summary": {
+        "sample_to_test": {
+          "direction": "sample_row_index -> original_test_row_index",
+          "count": 22449,
+          "sha256": "dc294512d544d4dbd31382a67f229207f0621422b6bff01b2e8429353a52fe85",
+          "is_permutation": true,
+          "is_identity": true
+        },
+        "output_to_test": {
+          "direction": "output_row_index -> original_test_row_index",
+          "count": 22449,
+          "sha256": "dc294512d544d4dbd31382a67f229207f0621422b6bff01b2e8429353a52fe85",
+          "is_permutation": true,
+          "is_identity": true
+        }
+      },
+      "feature_projection_summary": {
+        "train_feature_count": 62,
+        "train_order_sha256": "6c0a3df82120ca5a887c6d32856d1bf9d56aa1505c9dcd9a4ebf3c1e3c2c2c23",
+        "test_indices_count": 62,
+        "test_indices_sha256": "d83491a6f49f2b9870dd8d4eb141d0a83e8fa097ff9295edffd84554b9f2d6ec",
+        "test_index_space": "full_test_header_including_identifier_columns"
+      },
+      "index_hash_encoding": "UTF-8 JSON; ensure_ascii=False; sort_keys=True; compact separators; no newline",
+      "raw_identifiers_or_target_rows_included": false,
+      "prediction_writer_or_quality_verified": false
+    }
+  ],
+  "all_requested_actual_inputs_verified": true,
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "source_unchanged_during_check": true,
+  "source_sha256_after": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c"
+  }
+}

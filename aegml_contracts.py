@@ -415,20 +415,24 @@ def _metric_declarations(text, dictionary_rows):
 
 
 def _type_declarations(text, expected):
-    explicit = _directive(text, r"task\s*type|problem\s*type|тип\s+задачи")
-    lines = explicit or [(re.split(r"\n\s*##\s*(?:Данные|Data)\b", text, maxsplit=1, flags=re.I)[0], None)]
+    """Read complete type declarations, never keywords from arbitrary prose.
+
+    H023-TYPEINTRO-001: Markdown decoration cannot hide a declaration, and a
+    found-but-invalid declaration cannot fall back to the metric's domain.
+    Free discussion of models or feature engineering is not a declaration.
+    """
     types, evidence = set(), []
+    aliases = {
+        "regression": (r"(?:(?:a|an|supervised|tabular)\s+)?regression(?:\s+(?:task|problem))?|"
+                       r"регрессия|регрессионная\s+задача|задача\s+регрессии"),
+        "classification": (r"(?:(?:a|an|supervised|tabular)\s+)?(?:binary\s+|multi[ -]?class\s+)?"
+                           r"classification(?:\s+(?:task|problem))?|binary|multiclass|"
+                           r"(?:бинарная\s+|многоклассовая\s+)?классификация|"
+                           r"задача\s+(?:бинарной\s+|многоклассовой\s+)?классификации"),
+    }
 
     def parse_explicit(value):
         clean = value.replace("**", "").replace("`", "").strip().strip(".:; ")
-        aliases = {
-            "regression": (r"(?:(?:a|an|supervised|tabular)\s+)?regression(?:\s+(?:task|problem))?|"
-                           r"регрессия|регрессионная\s+задача|задача\s+регрессии"),
-            "classification": (r"(?:(?:a|an|supervised|tabular)\s+)?(?:binary\s+|multi[ -]?class\s+)?"
-                               r"classification(?:\s+(?:task|problem))?|binary|multiclass|"
-                               r"(?:бинарная\s+|многоклассовая\s+)?классификация|"
-                               r"задача\s+(?:бинарной\s+|многоклассовой\s+)?классификации"),
-        }
 
         def alias(token):
             names = {name for name, expression in aliases.items()
@@ -449,23 +453,75 @@ def _type_declarations(text, expected):
             return selected
         return alias(clean)
 
-    for value, number in lines:
-        if explicit:
-            types.add(parse_explicit(value))
+    type_key = r"(?:task\s*type|problem\s*type|тип\s+задачи)"
+    declaration = re.compile(r"^" + type_key + r"\s*[:=]\s*(.*?)\s*$", re.I)
+    declaration_start = re.compile(r"^" + type_key + r"\b", re.I)
+    bare_heading = re.compile(
+        r"regression|регрессия|classification|классификация|"
+        r"(?:binary|multi[ -]?class)\s+classification|"
+        r"(?:бинарная|многоклассовая)\s+классификация", re.I)
+    statements = (
+        r"this\s+is\s+(.+?\s+(?:task|problem))[.!]?",
+        r"это\s+(задача\s+.+?)[.!]?",
+        r"это\s+(.+?\s+задача)[.!]?",
+    )
+    intro = True
+    fence = None
+    for number, raw in enumerate(text.splitlines(), 1):
+        plain = raw.strip()
+        marker = re.match(r"^(`{3,}|~{3,})", plain)
+        if marker:
+            token = marker.group(1)
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence):
+                fence = None
+            continue
+        if fence is not None or plain.startswith(">"):
+            continue
+
+        # At most one list marker and one ATX heading decorate the statement.
+        # Both list->heading and heading->list forms preserve its source line.
+        heading = False
+        for _ in range(2):
+            atx = re.match(r"^(#{1,6})(?!#)[ \t]*(.*)$", plain)
+            listed = re.match(r"^(?:[-*+]|[0-9]+[.)])[ \t]+(.*)$", plain)
+            if atx and not heading:
+                heading = True
+                plain = atx.group(2).strip()
+            elif listed:
+                plain = listed.group(1).strip()
+            else:
+                break
+        if heading:
+            plain = re.sub(r"[ \t]+#+[ \t]*$", "", plain)
+        plain = plain.replace("**", "").replace("`", "").strip()
+        if heading and re.match(r"^(?:Данные|Data)\b", plain, re.I):
+            intro = False
+
+        if declaration_start.match(plain):
+            match = declaration.fullmatch(plain)
+            if match is None:
+                raise ContractError("unsupported_task_type")
+            types.add(parse_explicit(match.group(1)))
             evidence.append(_evidence("task", "task_type", number))
             continue
-        local_types = set()
-        clean = re.sub(r"(?:not|не)\s+(?:a\s+)?(?:regression|classification|регресс\w*|классифика\w*)", "", value, flags=re.I)
-        if re.search(r"regress|регресс", clean, re.I):
-            local_types.add("regression")
-        if re.search(r"classif|классифика|\bmulticlass\b|\bbinary\b", clean, re.I):
-            local_types.add("classification")
-        types.update(local_types)
-        evidence.append(_evidence("task", "task_intro", number))
+        if not intro:
+            continue
+        if heading and bare_heading.fullmatch(plain.strip(".:; ")):
+            types.add(parse_explicit(plain))
+            evidence.append(_evidence("task", "task_type_heading", number))
+            continue
+        for statement in statements:
+            match = re.fullmatch(statement, plain, re.I)
+            if match:
+                types.add(parse_explicit(match.group(1)))
+                evidence.append(_evidence("task", "task_type_statement", number))
+                break
+
     if len(types) > 1 or (types and expected not in types):
         raise ContractError("task_type_conflict")
     return evidence if types else [_evidence("metric_registry", "metric_domain")]
-
 
 def _output_order(text):
     found = []

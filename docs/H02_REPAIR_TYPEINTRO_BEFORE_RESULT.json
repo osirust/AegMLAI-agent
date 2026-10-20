@@ -1,0 +1,96 @@
+{
+  "status": "EXPECTED_FAILURES_REPRODUCED_PRE_TYPEINTRO_SOURCE_ONLY",
+  "finding": "H023-TYPEINTRO-001",
+  "old_contracts_sha256": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+  "checker_sha256": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c",
+  "methods": 5,
+  "subcases": 15,
+  "failed_subcases": 11,
+  "passed_controls": 4,
+  "cases": [
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_heading_mixed",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_heading_unknown",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_russian_heading_mixed",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_rejects_complete_unknown_declarations",
+      "case": "H023-TYPEINTRO-001_plain_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_explicit_heading",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_bare_english_heading",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_bare_russian_heading",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_heading_list",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_provenance_and_absent_declaration",
+      "case": "H023-TYPEINTRO-001_no_declaration_uses_metric_domain",
+      "status": "PASS"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_ignores_feature_engineering_discussion",
+      "case": "H023-TYPEINTRO-001_discussion_clustering",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_ignores_feature_engineering_discussion",
+      "case": "H023-TYPEINTRO-001_discussion_classification",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_conflicting_declarations_still_reject",
+      "case": "H023-TYPEINTRO-001_conflict_two_directives",
+      "status": "PASS"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_conflicting_declarations_still_reject",
+      "case": "H023-TYPEINTRO-001_conflict_bare_and_directive",
+      "status": "PASS"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_cli_refuses_before_publication",
+      "case": "H023-TYPEINTRO-001_cli_mixed",
+      "status": "FAIL"
+    },
+    {
+      "test": "repair_h023_checker.ContractChecks.test_review_typeintro_cli_refuses_before_publication",
+      "case": "H023-TYPEINTRO-001_cli_unknown",
+      "status": "FAIL"
+    }
+  ],
+  "cli_invocations": 2,
+  "unittest_failures": 10,
+  "unittest_errors": 1,
+  "private_provider_config_read": false,
+  "live_api_called": false,
+  "model_training_executed": false,
+  "project_sources_mutated": false,
+  "log_bytes": 11888,
+  "log_truncated": false
+}

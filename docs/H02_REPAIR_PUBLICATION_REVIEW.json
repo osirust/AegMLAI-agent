@@ -1,0 +1,35 @@
+{
+  "status": "PASS_H02_REPAIR_PUBLICATION_BINDING_ONLY",
+  "checked_at_utc": "2026-10-20T20:46:40.174464+00:00",
+  "scope": "final staged source/documents/links/allowlist binding; prior runtime receipts not rerun",
+  "indexed_document_sha_verified": 81,
+  "current_local_links": 429,
+  "staged_sources_match_executed_receipts": true,
+  "staged_whitespace_clean": true,
+  "forbidden_original_data_or_weights": 0,
+  "prior_metadata_receipt": "docs/H02_REPAIR_FINAL_REVIEW.json",
+  "prior_metadata_receipt_sha256": "ff5e059d5f82f169afee4e1fdba876dab061a490a281864f69d5ad66e0fa37c2",
+  "secret_scan_checkpoint_files": 121,
+  "secret_matches": 0,
+  "h031_files_created": 0,
+  "h031_runtime_runs": 0,
+  "live_api_calls": 0,
+  "web_packets_sent": false,
+  "web_stopped_by_owner": true,
+  "web_resume_min_interval_seconds": 60,
+  "web_packet_sha256": {
+    "research_packets/CHAT1_FUTURE_RESEARCH.md": "623aad274571ce050fc45af43d78312448357ec88dae00a4f72edf4d0d8aa69f",
+    "research_packets/CHAT2_H02_REPAIR_REVIEW.md": "22b0acd830069f37a2fa637f353ff107926264563800c23200b7cb81b9721efb"
+  },
+  "earlier_metadata_failure_handling": {
+    "SPEC-DOC-015": "five packet links corrected, direct resolve passed",
+    "SPEC-DOC-016": "14 blank diff-context spaces and two EOF blanks normalized in saved markdown; exact patch retained outside Git; staged check passed"
+  },
+  "historical_receipts_preserved": true,
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d"
+  }
+}

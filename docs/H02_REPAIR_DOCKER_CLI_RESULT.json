@@ -1,0 +1,211 @@
+{
+  "status": "PASS_H02_4_DOCKER_CLI_ONLY",
+  "image": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "cases": [
+    {
+      "dataset": "Регрессия",
+      "status": "PASS",
+      "name": "aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-1",
+      "literal_container_argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "exit_code": 3,
+      "run_timed_out": false,
+      "source_sha256_preserved": true,
+      "input_sha256_preserved": true,
+      "existing_csv_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.694284728,
+          "remaining_seconds": 10799.305715272,
+          "work_remaining_seconds": 10199.305715272,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "ac46dd3714b01db3c3960bace7a51f380c25d1ff161c15652a73ee8b0bea63de",
+          "row_alignment.json": "d6c76f488a2dfb6e043744c979d60ca7eca8d14a9f9008feb0947ec7dd57b156"
+        }
+      },
+      "resolved_metric": {
+        "adapter_version": "registry.v1_pending_H03",
+        "class_order": null,
+        "direction": "minimize",
+        "evidence": [
+          {
+            "line": 105,
+            "rule": "primary_metric",
+            "source": "task"
+          }
+        ],
+        "finite_policy": "finite_only",
+        "label_policy": null,
+        "name": "rmse",
+        "parameters": {},
+        "positive_label": null,
+        "prediction_kind": "numeric",
+        "target_scale": "original"
+      },
+      "output_order": "test",
+      "artifact_count": 2
+    },
+    {
+      "dataset": "Многоклассовая классификация",
+      "status": "PASS",
+      "name": "aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-2",
+      "literal_container_argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "exit_code": 3,
+      "run_timed_out": false,
+      "source_sha256_preserved": true,
+      "input_sha256_preserved": true,
+      "existing_csv_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.461281043,
+          "remaining_seconds": 10799.538718957,
+          "work_remaining_seconds": 10199.538718957,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "1a6b7367c10cc5d51bfcb34f3fe4564f0359978762b4ab0d6354ad7ca9598b48",
+          "row_alignment.json": "567d8f1d3e9c1abdbc83101d1297fc3ce8fca5780d2469856c4ed364e858e6d9"
+        }
+      },
+      "resolved_metric": {
+        "adapter_version": "registry.v1_pending_H03",
+        "class_order": null,
+        "direction": "maximize",
+        "evidence": [
+          {
+            "line": 56,
+            "rule": "primary_metric",
+            "source": "task"
+          }
+        ],
+        "finite_policy": "finite_only",
+        "label_policy": "sklearn_labels_none",
+        "name": "macro_f1",
+        "parameters": {
+          "average": "macro",
+          "labels": null
+        },
+        "positive_label": null,
+        "prediction_kind": "label",
+        "target_scale": "original"
+      },
+      "output_order": "test",
+      "artifact_count": 2
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-1",
+      "container_id": "08378f83c1c47a025dd7c09f0bc7552d88f42d3f46d56ede76ff8ed674aaef92",
+      "status": "verified_absent",
+      "verified": true,
+      "inspect_returncode": 1,
+      "inspect_timed_out": false,
+      "absence_checks": [
+        {
+          "filter": "name=^/aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-1$",
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "filter": "id=08378f83c1c47a025dd7c09f0bc7552d88f42d3f46d56ede76ff8ed674aaef92",
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "name": "aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-2",
+      "container_id": "3f89ea674cd09bddf1196d68bd473f1097030fd2638f88f6b19da368cb1ea122",
+      "status": "verified_absent",
+      "verified": true,
+      "inspect_returncode": 1,
+      "inspect_timed_out": false,
+      "absence_checks": [
+        {
+          "filter": "name=^/aegml-h024-cli-fb3642f01a914a01b52fc0a6c2eec4b3-2$",
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "filter": "id=3f89ea674cd09bddf1196d68bd473f1097030fd2638f88f6b19da368cb1ea122",
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    }
+  ],
+  "unresolved_resources": [],
+  "source_policy": "frozen_root_and_identical_staging",
+  "root_source_changed": false,
+  "python_optimize": 0,
+  "python_version": "3.12.3",
+  "model_fit_calls": 0,
+  "live_api_calls": 0,
+  "official_image_verified": false,
+  "full_H05_acceptance_claimed": false,
+  "capture_scope": "postcapture limit for trusted short CLI, not adversarial streaming",
+  "receipt_creation": "held_exclusive_fd_before_docker",
+  "stage": "/home/aegml/checks/h02-review-repair-20261020T195535Z/platform-cli-56921481238a4dcfa2c6c30f3318592a",
+  "source_sha256_after": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "b33bb466b3ab11911e514dfea20530bbeec179bb9777a45ef3a67c9eeb5314d3",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  }
+}

@@ -1,0 +1,1841 @@
+{
+  "phase": "H02.4",
+  "status": "PASS_H024_CLI_MOCK_REGRESSIONS_ONLY",
+  "python": "3.12.3",
+  "scope": "mock-only trusted Docker CLI-checker regression; synthetic temporary ROOTs only",
+  "source_sha256": {
+    "scripts/check_h024_platform_cli.py": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+    "scripts/check_h024_cli_regressions.py": "a6d8ba7530a178230d7d57e725a99c4e9fabef5d6800a519df741be8cbd7b0a6"
+  },
+  "before_checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+  "before_coverage": "OBSERVED",
+  "real_docker_commands": 0,
+  "live_api_calls": 0,
+  "fit_calls": 0,
+  "package_installation_executed": false,
+  "real_project_mutation": false,
+  "official_platform_image_verified": false,
+  "full_H05_accepted": false,
+  "child_environment_controlled": true,
+  "notes": [
+    "subprocess.run is replaced inside each isolated fixture Python process; it never delegates Docker.",
+    "Python -O is exercised in a separate process, not simulated by changing __debug__.",
+    "Mock filesystem artifacts are hand-authored and do not execute production solution.py.",
+    "Historic expected-defect observations are separate from fixed-checker acceptance."
+  ],
+  "test_methods_run": 11,
+  "behavior_cases_checked": 17,
+  "behavior_cases_passed": 17,
+  "checker_invocations": 17,
+  "cases": [
+    {
+      "test": "__main__.CliCheckerChecks.test_cleanup_inspect_daemon_error_is_not_absence",
+      "case": "cleanup_inspect_error_is_unknown_and_fails",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_confirmed_absence_after_run_is_allowed",
+      "case": "confirmed_auto_removed_container_not_false_failure",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_existing_receipt_preserved_before_docker",
+      "case": "existing_receipt_bytes_mtime_and_zero_actions",
+      "finding": "H024-CLI-RECEIPT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_foreign_name_collision_never_removed",
+      "case": "foreign_collision_no_delete",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_historical_before_counterexamples",
+      "case": "historical_counterexample_collision",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": true,
+      "status": "PASS_EXPECTED_OLD_BEHAVIOR"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_historical_before_counterexamples",
+      "case": "historical_counterexample_bad_exit",
+      "finding": "H024-CLI-ASSERT-001",
+      "historical_before": true,
+      "status": "PASS_EXPECTED_OLD_BEHAVIOR"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_historical_before_counterexamples",
+      "case": "historical_counterexample_existing_receipt",
+      "finding": "H024-CLI-RECEIPT-001",
+      "historical_before": true,
+      "status": "PASS_EXPECTED_OLD_BEHAVIOR"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_historical_before_counterexamples",
+      "case": "historical_counterexample_root_changed",
+      "finding": "H024-CLI-SOURCE-001",
+      "historical_before": true,
+      "status": "PASS_EXPECTED_OLD_BEHAVIOR"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_historical_before_counterexamples",
+      "case": "historical_counterexample_rm_failure",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": true,
+      "status": "PASS_EXPECTED_OLD_BEHAVIOR"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_invalid_exit_normal_and_optimized",
+      "case": "invalid_exit_rejected_optimize_False",
+      "finding": "H024-CLI-ASSERT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_invalid_exit_normal_and_optimized",
+      "case": "invalid_exit_rejected_optimize_True",
+      "finding": "H024-CLI-ASSERT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_invalid_flags_normal_and_optimized",
+      "case": "invalid_flags_rejected_optimize_False",
+      "finding": "H024-CLI-ASSERT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_invalid_flags_normal_and_optimized",
+      "case": "invalid_flags_rejected_optimize_True",
+      "finding": "H024-CLI-ASSERT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_receipt_race_never_overwrites_new_owner",
+      "case": "raced_receipt_creation_preserves_bytes_and_mtime",
+      "finding": "H024-CLI-RECEIPT-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_rm_failure_retains_unresolved_cleanup",
+      "case": "owned_rm_failure_recorded_and_fails",
+      "finding": "H024-CLI-OWN-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_root_mutated_after_second_staging_is_not_pass",
+      "case": "root_drift_after_last_staging_nonpass",
+      "finding": "H024-CLI-SOURCE-001",
+      "historical_before": false,
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.CliCheckerChecks.test_unchanged_control_passes",
+      "case": "unchanged_two_task_snapshot_control",
+      "finding": "H024-CLI-SOURCE-001",
+      "historical_before": false,
+      "status": "PASS"
+    }
+  ],
+  "invocations": [
+    {
+      "scenario": "inspect_error",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-0e9cac9fe4384618b7da81f7cf192731-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=0e9cac9fe4384618b7da81f7cf192731",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-amkr5pu3/proof/platform-cli-6709e6e2c1504716b30483c4fa13992e/aegml-h024-cli-0e9cac9fe4384618b7da81f7cf192731-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-amkr5pu3/proof/platform-cli-6709e6e2c1504716b30483c4fa13992e/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-0e9cac9fe4384618b7da81f7cf192731-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "absent_after_run",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=3e2af57dcbfc447faa50af18717ade7e",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-9_cqyi7d/proof/platform-cli-be1bfc3ea9a74d2c8255a7f00e5aff6a/aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-9_cqyi7d/proof/platform-cli-be1bfc3ea9a74d2c8255a7f00e5aff6a/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-2",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=3e2af57dcbfc447faa50af18717ade7e",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-9_cqyi7d/proof/platform-cli-be1bfc3ea9a74d2c8255a7f00e5aff6a/aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-2.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-9_cqyi7d/proof/platform-cli-be1bfc3ea9a74d2c8255a7f00e5aff6a/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000002"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-3e2af57dcbfc447faa50af18717ade7e-2$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000002",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "normal",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 2,
+      "checker_status": null,
+      "mock_actions": [],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "collision",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-19403f3e4a8345b0959612315c7230f0-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=19403f3e4a8345b0959612315c7230f0",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-vvzczur5/proof/platform-cli-acfdaba9ea424c4985a3b009b8be025e/aegml-h024-cli-19403f3e4a8345b0959612315c7230f0-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-vvzczur5/proof/platform-cli-acfdaba9ea424c4985a3b009b8be025e/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "aegml-h024-cli-19403f3e4a8345b0959612315c7230f0-1"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "collision",
+      "historical_before": true,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-37da20c923464eb48b4b26075f116d17",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-zms3uz90/proof/platform-cli-7c498a93abd24ba383595e234e00acbe/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-37da20c923464eb48b4b26075f116d17"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "bad_exit",
+      "historical_before": true,
+      "optimize": true,
+      "observed_optimize": 1,
+      "checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-ea3d36541c8f49c0a942efe0a7d7841d",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-l1_m1kmm/proof/platform-cli-b7728babd91842598b97f1affc029e8e/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-ea3d36541c8f49c0a942efe0a7d7841d"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-f93f902906f34268a5a8994139c5a348",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-l1_m1kmm/proof/platform-cli-b7728babd91842598b97f1affc029e8e/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-f93f902906f34268a5a8994139c5a348"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "existing_receipt",
+      "historical_before": true,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-4ef38158f7874144b0b1b7cb59fc069b",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-lqem1337/proof/platform-cli-f0092727596442a59e0c7eb221e8057a/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-4ef38158f7874144b0b1b7cb59fc069b"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-97c3adf436384d0ca81f6e5cdacdc5ce",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-lqem1337/proof/platform-cli-f0092727596442a59e0c7eb221e8057a/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-97c3adf436384d0ca81f6e5cdacdc5ce"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "root_changed",
+      "historical_before": true,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-3f1bde0ff4394c8cb04af431edb1436e",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-huw3z6q9/proof/platform-cli-c889c2520ae04bed839c00587884f751/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-3f1bde0ff4394c8cb04af431edb1436e"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-93d67992c9e241649653309265ff17c8",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-huw3z6q9/proof/platform-cli-c889c2520ae04bed839c00587884f751/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-93d67992c9e241649653309265ff17c8"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": true
+    },
+    {
+      "scenario": "rm_failure",
+      "historical_before": true,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "01cfba293a37f15ab4dc060ffafbee16ef57848fa083b171fe676fda5d875e1a",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-1bc84bc91e5c45cdab24ece56b943c5a",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-9am7qcy8/proof/platform-cli-d15580af32f2431797a5b3f1e40b8ea6/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-1bc84bc91e5c45cdab24ece56b943c5a"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-e6b2cfa4f5894ed589c7efad9ca3ee9e",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-9am7qcy8/proof/platform-cli-d15580af32f2431797a5b3f1e40b8ea6/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "aegml-h024-cli-e6b2cfa4f5894ed589c7efad9ca3ee9e"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "bad_exit",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-5516d0a9df0f49008cf43acce1cfaa1d-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=5516d0a9df0f49008cf43acce1cfaa1d",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-vafih_sc/proof/platform-cli-3cfd6935002749128ff289bf13cc9c25/aegml-h024-cli-5516d0a9df0f49008cf43acce1cfaa1d-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-vafih_sc/proof/platform-cli-3cfd6935002749128ff289bf13cc9c25/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-5516d0a9df0f49008cf43acce1cfaa1d-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "bad_exit",
+      "historical_before": false,
+      "optimize": true,
+      "observed_optimize": 1,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-9936fa567e974c0da7448dbc1a5cc79d-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=9936fa567e974c0da7448dbc1a5cc79d",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-hf7ftabs/proof/platform-cli-47fb65a14c6d471dadef1c7613f61e98/aegml-h024-cli-9936fa567e974c0da7448dbc1a5cc79d-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-hf7ftabs/proof/platform-cli-47fb65a14c6d471dadef1c7613f61e98/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-9936fa567e974c0da7448dbc1a5cc79d-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "bad_flags",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-a53a23361c5c496b9f1bbc5ea1a3f799-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=a53a23361c5c496b9f1bbc5ea1a3f799",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-i9oupib2/proof/platform-cli-9707464ec9234997925e42263bb3b263/aegml-h024-cli-a53a23361c5c496b9f1bbc5ea1a3f799-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-i9oupib2/proof/platform-cli-9707464ec9234997925e42263bb3b263/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-a53a23361c5c496b9f1bbc5ea1a3f799-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "bad_flags",
+      "historical_before": false,
+      "optimize": true,
+      "observed_optimize": 1,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-359fa1d039b34b91a6c72c6cbad34661-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=359fa1d039b34b91a6c72c6cbad34661",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-02ps2afv/proof/platform-cli-a58a28d23840426cbcf72aee5654c8ba/aegml-h024-cli-359fa1d039b34b91a6c72c6cbad34661-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-02ps2afv/proof/platform-cli-a58a28d23840426cbcf72aee5654c8ba/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-359fa1d039b34b91a6c72c6cbad34661-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "receipt_race",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 2,
+      "checker_status": null,
+      "mock_actions": [],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "rm_failure",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-7b8e88cd6209408282cc57633d65078c-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=7b8e88cd6209408282cc57633d65078c",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-df9yctjv/proof/platform-cli-2019064db27740499f6a6dbb24a7a9f4/aegml-h024-cli-7b8e88cd6209408282cc57633d65078c-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-df9yctjv/proof/platform-cli-2019064db27740499f6a6dbb24a7a9f4/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-7b8e88cd6209408282cc57633d65078c-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    },
+    {
+      "scenario": "root_changed",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 1,
+      "checker_status": "FAIL_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=a6347045dfe343a9a9165cbd3891ab6c",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-rscoa7aa/proof/platform-cli-0d2d9eb88b9f441d9ff7e6483962d74b/aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-rscoa7aa/proof/platform-cli-0d2d9eb88b9f441d9ff7e6483962d74b/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-2",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=a6347045dfe343a9a9165cbd3891ab6c",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-rscoa7aa/proof/platform-cli-0d2d9eb88b9f441d9ff7e6483962d74b/aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-2.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-rscoa7aa/proof/platform-cli-0d2d9eb88b9f441d9ff7e6483962d74b/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000002"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000002"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-a6347045dfe343a9a9165cbd3891ab6c-2$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000002",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": true
+    },
+    {
+      "scenario": "normal",
+      "historical_before": false,
+      "optimize": false,
+      "observed_optimize": 0,
+      "checker_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+      "driver_python_exit": 0,
+      "checker_exit": 0,
+      "checker_status": "PASS_H02_4_DOCKER_CLI_ONLY",
+      "mock_actions": [
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-1",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=51c7d8ca32564a708be44c12c3d4ea53",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-5omynhl0/proof/platform-cli-89898390a8ed470c80a4c7e2dc38266e/aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-1.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-5omynhl0/proof/platform-cli-89898390a8ed470c80a4c7e2dc38266e/Регрессия,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-1$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000001",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "run",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "run",
+            "--name",
+            "aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-2",
+            "--rm",
+            "--init",
+            "--pull=never",
+            "--label",
+            "org.aegml.h024.cli.owner=51c7d8ca32564a708be44c12c3d4ea53",
+            "--cidfile",
+            "/tmp/aegml-h024-mock-5omynhl0/proof/platform-cli-89898390a8ed470c80a4c7e2dc38266e/aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-2.cid",
+            "--network=none",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--user=1000:1000",
+            "--memory=20g",
+            "--memory-swap=20g",
+            "--cpus=8",
+            "--pids-limit=256",
+            "--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777",
+            "--mount",
+            "type=bind,source=/tmp/aegml-h024-mock-5omynhl0/proof/platform-cli-89898390a8ed470c80a4c7e2dc38266e/Многоклассовая классификация,target=/work",
+            "--workdir=/work",
+            "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+            "python3",
+            "solution.py",
+            "task.md"
+          ]
+        },
+        {
+          "action": "inspect",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "inspect",
+            "--type",
+            "container",
+            "--format",
+            "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"Owner\":{{json (index .Config.Labels \"org.aegml.h024.cli.owner\")}}}",
+            "0000000000000000000000000000000000000000000000000000000000000002"
+          ]
+        },
+        {
+          "action": "rm",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "rm",
+            "-f",
+            "0000000000000000000000000000000000000000000000000000000000000002"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "name=^/aegml-h024-cli-51c7d8ca32564a708be44c12c3d4ea53-2$",
+            "--format",
+            "{{.ID}}"
+          ]
+        },
+        {
+          "action": "ps",
+          "argv": [
+            "docker",
+            "--host",
+            "unix:///var/run/docker.sock",
+            "ps",
+            "-a",
+            "--no-trunc",
+            "--filter",
+            "id=0000000000000000000000000000000000000000000000000000000000000002",
+            "--format",
+            "{{.ID}}"
+          ]
+        }
+      ],
+      "real_docker_actions": 0,
+      "root_changed_inside_synthetic_fixture": false
+    }
+  ],
+  "source_sha256_after": {
+    "scripts/check_h024_platform_cli.py": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+    "scripts/check_h024_cli_regressions.py": "a6d8ba7530a178230d7d57e725a99c4e9fabef5d6800a519df741be8cbd7b0a6"
+  },
+  "source_unchanged_during_check": true,
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "unittest_skips": []
+}

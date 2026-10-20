@@ -298,6 +298,75 @@ class ContractChecks(unittest.TestCase):
                     self.assertEqual(payload["prediction_schema"]["output_order"], expected)
                     self.assertEqual(contract.alignment["output_to_test"], [1, 0] if expected == "sample" else [0, 1])
 
+    def typeintro_fixture(self, label, intro):
+        fixture = self.review_fixture("typeintro-" + label)
+        fixture.rows = {"train": [["train_a", "1", "10"]],
+                        "test": [["test_a", "2"], ["test_b", "3"]],
+                        "sample_submission": [["test_b", "0"], ["test_a", "0"]]}
+        fixture.save()
+        text = (intro + "\n\nTarget: y\nID: id\nMetric: RMSE\nOutput order: test\n\n## Data\n"
+                "- `train.csv`\n- `test.csv`\n- `data_dictionary.csv`\n- `sample_submission.csv`\n")
+        fixture.task.write_text(text, encoding="utf-8")
+        return fixture
+
+    def test_review_typeintro_rejects_complete_unknown_declarations(self):
+        variants = (("heading_mixed", "# Task type: regression + clustering"),
+                    ("heading_unknown", "# Task type: clustering"),
+                    ("russian_heading_mixed", "## Тип задачи: регрессия + кластеризация"),
+                    ("plain_mixed", "Task type: regression + clustering"))
+        for label, intro in variants:
+            with self.subTest(case=label), self.case("H023-TYPEINTRO-001_" + label):
+                fixture = self.typeintro_fixture(label, intro)
+                self.rejected(fixture, codes={"unsupported_task_type"})
+                self.assertFalse((fixture.root / ".aegml_runs").exists())
+
+    def test_review_typeintro_provenance_and_absent_declaration(self):
+        variants = (("explicit_heading", "# Task type: regression", "task_type"),
+                    ("bare_english_heading", "# Regression", "task_type_heading"),
+                    ("bare_russian_heading", "# Регрессия", "task_type_heading"),
+                    ("heading_list", "### - **Problem type:** regression", "task_type"))
+        for label, intro, rule in variants:
+            with self.subTest(case=label), self.case("H023-TYPEINTRO-001_" + label):
+                fixture = self.typeintro_fixture(label, intro)
+                contract, payload = self.build(fixture)
+                self.assertEqual(payload["task_type"], "regression")
+                evidence = payload["provenance"]["fields"]["task_type"]
+                self.assertIn({"source": "task", "rule": rule, "line": 1}, evidence)
+                self.assertEqual(contract.alignment["output_to_test"], [0, 1])
+        with self.case("H023-TYPEINTRO-001_no_declaration_uses_metric_domain"):
+            fixture = self.typeintro_fixture("no-declaration", "# Energy modelling notes")
+            _, payload = self.build(fixture)
+            self.assertEqual(payload["task_type"], "regression")
+            self.assertEqual(payload["provenance"]["fields"]["task_type"],
+                             [{"source": "metric_registry", "rule": "metric_domain"}])
+
+    def test_review_typeintro_ignores_feature_engineering_discussion(self):
+        descriptions = (("clustering", "clustering may be used to construct additional features."),
+                        ("classification", "predictions from a classification model may be used as additional features."))
+        for label, description in descriptions:
+            with self.subTest(case=label), self.case("H023-TYPEINTRO-001_discussion_" + label):
+                fixture = self.typeintro_fixture(label, "# Task type: regression\n\nFeature engineering: " + description)
+                _, payload = self.build(fixture)
+                self.assertEqual(payload["task_type"], "regression")
+                self.assertEqual(payload["provenance"]["fields"]["task_type"],
+                                 [{"source": "task", "rule": "task_type", "line": 1}])
+
+    def test_review_typeintro_conflicting_declarations_still_reject(self):
+        intros = (("two_directives", "# Task type: regression\nProblem type: classification"),
+                  ("bare_and_directive", "# Regression\nProblem type: classification"))
+        for label, intro in intros:
+            with self.subTest(case=label), self.case("H023-TYPEINTRO-001_conflict_" + label):
+                fixture = self.typeintro_fixture(label, intro + "\nFeature engineering: clustering is optional.")
+                self.rejected(fixture, codes={"task_type_conflict"})
+
+    def test_review_typeintro_cli_refuses_before_publication(self):
+        for label, intro in (("mixed", "# Task type: regression + clustering"),
+                             ("unknown", "# Task type: clustering")):
+            with self.subTest(case=label), self.case("H023-TYPEINTRO-001_cli_" + label):
+                self.fixture = self.typeintro_fixture("cli-" + label, intro)
+                self.cli(["task.md"], expected_code=2, valid=False)
+                self.assertFalse((self.fixture.root / ".aegml_runs").exists())
+
     def test_target_position_and_feature_projection(self):
         for label, order in (("nonlast", ["left", "y", "id", "right"]), ("first", ["y", "left", "id", "right"])):
             with self.subTest(case=label), self.case("target_" + label):
