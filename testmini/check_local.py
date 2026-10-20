@@ -24,7 +24,7 @@ def digest(path):
 
 original_identity = {str(path.relative_to(sources)): digest(path) for path in sources.rglob("*") if path.is_file()}
 subprocess.run([sys.executable, str(repo / "testmini/build_zip.py")], check=True, cwd=repo)
-archive_path = repo / "dist/testmini.zip"
+archive_path = repo / "dist/testmini_strict_api.zip"
 with zipfile.ZipFile(archive_path) as archive:
     assert archive.namelist() == ["solution.py"]
     assert archive.testzip() is None
@@ -36,6 +36,7 @@ def execute(directory, explicit_argument):
     environment = os.environ.copy()
     for name in ("OPENAI_API_KEY", "OPENAI_BASE_URL", "OPENAI_MODEL"):
         environment.pop(name, None)
+    environment["TESTMINI_API_MODE"] = "off"
     result = subprocess.run(command, cwd=directory, env=environment, capture_output=True, timeout=180)
     (directory / "stdout.jsonl").write_bytes(result.stdout)
     raw_err = result.stderr
@@ -72,7 +73,7 @@ for source_name, local_name, target, expected_train, expected_test in (
     assert exit_code == 0, {"case": local_name, "events": events, "exit": exit_code}
     report = json.loads((directory / "mini_diagnostics.json").read_text(encoding="utf-8"))
     assert report["status"] == "completed_format_only" and not report["api_used"] and not report["quality_assessed"]
-    assert report["api_probe"]["status"] == "skipped_not_configured"
+    assert report["api_probe"]["status"] == "disabled_for_local_check" and not report["api_required"]
     assert report["train_rows"] == expected_train and report["test_rows"] == expected_test
     assert not report["features_used"] and not report["autoresearch_performed"]
     output_rows = table(directory / "submission.csv")
@@ -116,10 +117,23 @@ assert digest(fixture / "submission.csv") == before_output
 assert not list(fixture.glob(".testmini-*.tmp"))
 results.append({"check_id": "MC-BAD-ID", "status": "PASS", "scope": "mismatched sample order rejected; last valid CSV preserved"})
 print(json.dumps(results[-1]), flush=True)
+empty_fixture = proof_root / "empty-test"
+empty_fixture.mkdir()
+for name in ("task.md", "train.csv", "data_dictionary.csv"):
+    shutil.copy2(fixture / name, empty_fixture / name)
+write_csv(empty_fixture / "test.csv", ["feature", "row_key"], [])
+write_csv(empty_fixture / "sample_submission.csv", ["row_key", "renamed_target"], [])
+extract_solution(empty_fixture)
+exit_code, events = execute(empty_fixture, True)
+assert exit_code == 1 and events[-1]["event"] == "failed"
+assert not (empty_fixture / "submission.csv").exists()
+assert not list(empty_fixture.glob(".testmini-*.tmp"))
+results.append({"check_id": "MC-EMPTY-TEST", "status": "PASS", "scope": "empty test/sample rejected; no header-only submission or temporary file published"})
+print(json.dumps(results[-1]), flush=True)
 assert original_identity == {str(path.relative_to(sources)): digest(path) for path in sources.rglob("*") if path.is_file()}
 results.append({"check_id": "MC-ZIP", "status": "PASS", "scope": "single root solution.py extracted and executed; original input identities unchanged", "zip_bytes": archive_path.stat().st_size,
                 "zip_sha256": digest(archive_path), "original_files_unchanged": len(original_identity)})
-summary = {"status": "PASS_TESTMINI_LOCAL_ONLY", "mode": "technical_probe_optional_api", "proof_root": str(proof_root),
+summary = {"status": "PASS_TESTMINI_LOCAL_ONLY", "mode": "technical_probe_strict_api", "local_api_override": "off", "proof_root": str(proof_root),
            "environment": {"python": sys.version.split()[0], "executable": sys.executable, "official_image": False},
            "checks": results, "project_49_tests_executed": False, "quality_assessed": False,
            "api_used": False, "platform_submitted": False, "official_acceptance_confirmed": False}

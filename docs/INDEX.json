@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "stage": "M00 local lightweight diagnostic probe",
-  "status": "mini code/ZIP locally verified; full competition agent not implemented",
-  "next_stage": "deliver mini ZIP; platform only on owner instruction; then continue specification discussion",
+  "stage": "M00 strict API diagnostic correction",
+  "status": "6 file checks and17 loopback API checks passed; full agent not implemented",
+  "next_stage": "deliver strict ZIP; no automatic resubmission; platform logs/API key pending; then specification discussion",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
-  "previous_documentation_commit": "d941c722993cb9ad06798380d4f2097bdb8da517",
+  "previous_documentation_commit": "a565821f8069355bc4e5010ce09d0c822d87bf07",
   "runtime_changed_in_this_stage": true,
   "training_executed": false,
   "live_llm_calls_executed": false,
   "submission_zip_built": true,
-  "platform_submitted": false,
+  "platform_submitted": true,
   "third_party_python_packages_downloaded_or_installed": false,
   "ubuntu_os_image_downloaded_and_installed": true,
   "original_data_uploaded_to_git": false,
@@ -51,14 +51,12 @@
   },
   "verification": {
     "status": "PASS",
-    "scope": "mini local receipts, ZIP identity, source/document identity only; not official runtime",
-    "verified_original_source_files": 14,
-    "markdown_files_checked": 17,
-    "mini_public_fixture_checks_passed": 5,
-    "mini_http_stub_checks_passed": 13,
-    "main_49_scenarios": "NOT_RUN",
-    "api_live": "API_WAIT",
-    "official_image": "NOT_RUN"
+    "scope": "strict local gate and file contracts only; no live Qwen or platform runtime acceptance",
+    "mini_file_checks_passed": 6,
+    "mini_loopback_api_checks_passed": 17,
+    "sources_unchanged": 14,
+    "main49tests": "NOT_RUN",
+    "live_api": "API_WAIT"
   },
   "review": {
     "independent_document_review": "completed; corrections read back",
@@ -84,7 +82,8 @@
       "SPEC-DOC-003"
     ],
     "closed_mini_findings": [
-      "M00-API-001 optional-probe HTTP/JSON failure only"
+      "M00-API-001 HTTP/JSON errors mini-only",
+      "M00-API-002 strict mandatory API gate local-only"
     ]
   },
   "historical_runtime_check": {
@@ -94,27 +93,29 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "README.md": "494dff2cd550ba343ef8ada6e23d691a173e2eec7b4dab092e42267336c89cb1",
-    "AGENTS.md": "b0137b4fe49d629da5a748060a929244bb174da847e7acdc2e8c12ce88eeead1",
-    "PROJECT_STATE.md": "edb8bb6ca62c6c6c5b1e0206a54e9354e50fae5620d9b84e99f875c2a4ece821",
+    "README.md": "b31cf201da1f46bbfcf877323bfe2fd419acd58209fc785d6dff058babfb81bc",
+    "AGENTS.md": "6a609d073f3e12181a26eacff4ce4e31312ec5233afa0a7114899030ca120f05",
+    "PROJECT_STATE.md": "a355092b12910a82b717e4d10ceb59443c308a9c5bb78471c7a665c5748da728",
+    "testmini/README.md": "aee5d34d5bb160125a6cb0461a3dbec72d459a692eeded38eca99156b0fd334f",
     "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
-    "docs/BACKEND_CONTRACT.md": "60fef359c6d5471f4056e16cca54647378113e569c8d8123c4034504b9a35baa",
+    "docs/BACKEND_CONTRACT.md": "5ad9151ee107897988174d5e2f962dd697d675b198f4b0ed090001a455872c0e",
     "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
     "docs/LOCAL_ENVIRONMENT.md": "d54478b8ead4d757364ea668cb1a5bf01643626e3f6528d23d6a485964995994",
-    "docs/NEXT_SESSION.md": "9794712f734e447d0d94721e8f7d10a3bd35a1e0064630e350ce395b8f8fb870",
+    "docs/NEXT_SESSION.md": "fbe2d379b046c09c18a35b571b6ac17edb92882599bc3cc2632ba84dae30744c",
     "docs/ORGANIZER_QUESTIONS.md": "a4b8ebf54d144df705648c2be1386a25637e4ab5aa3fbb5c504247c8a21830a0",
-    "docs/READ_FIRST.md": "c5f22a22615798451172905e8f87c4eeb64326dd15aa5c4d8aba5a86f6ea3d5f",
-    "docs/ROADMAP.md": "266b7dab104885ed8b5d0e7762fe2bae894865c84e835184ce96a57e36c3c947",
+    "docs/READ_FIRST.md": "f3c8c66f5f205108d92062409d4b0d989f22ae163caf4bb3a5b3ea3f97f1b0ed",
+    "docs/ROADMAP.md": "46d4efdc469242b121864a44c0e95f5437b8319bd3c6f3986f8a87df8c0e2ab2",
     "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
-    "docs/TECHNICAL_SPEC.md": "246b875aff9c3f17a45168a89ec80a437bc6cd66b2a3f9488d03b8ac2e7da124",
+    "docs/TECHNICAL_SPEC.md": "669161d707dbf95b706e822aefbc6014db5733573f7b0d59835cfb8be6940a8f",
     "docs/TEST_MATRIX.md": "5b007296244452bd06f45ad816c5cc2963a824c5429a1eea22d8c4b57f46c344",
-    "docs/TESTMINI_PLAN.md": "8d7c67f135435d591d74a09c9759ac3541ed90e373f199bca267843455992649",
-    "docs/WORK_BLOCKS.md": "6004d62ebbb1509df474e24e9e24a0a411a5d7e32ff8744b0de1d8821ab3c8ca",
-    "testmini/README.md": "56014f3a1bfade487e5133e41c402950bde7adf7e4b8b8240a5bea55de751d2c",
+    "docs/TESTMINI_PLAN.md": "d9b1c5f935bd49547647bad5bb9e76d02cf94eb1bc0aa354aa2195d688208bd4",
+    "docs/WORK_BLOCKS.md": "d3590f8c34580efa6ab2e14e041c8b3d735ca0b2e71230a04965662da0a2cd2d",
     ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
     "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
-    "docs/SOURCE_MANIFEST.json": "1b07c26c7ff19c5993476ea3e1bb5ee3363c8fa2c1dcde927bb935d5ea75a0fb",
-    "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4"
+    "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
+    "docs/SOURCE_MANIFEST.json": "a22225ab71770dfcdb180904f0f6904974e0143195b382d01e82a9983c49326d",
+    "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
+    "docs/TESTMINI_STRICT_RESULT.json": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -141,9 +142,20 @@
     "sha256": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4"
   },
   "testmini_source_sha256": {
-    "testmini/build_zip.py": "cd1115413e1f4134a1ebc37456be9ca0a9da2134f09be6abb5226e8c1e392c0c",
-    "testmini/check_api.py": "fa99eadc3c0700462c51e38d288d669491c40dcea1fc6e4272f5890605e84d92",
-    "testmini/check_local.py": "f28ee264cbd773e19209d728fffc55e5d8e45b77eb50b2aa860dc521780af522",
-    "testmini/solution.py": "c79390b43c03220f09915e815443426c5863c14817bf9806a3f10aa7551e316a"
+    "testmini/build_zip.py": "b6c5153a2fe81dbbbd4abb95384680f2a1c09a525a190c4ff44ca6eff4461de2",
+    "testmini/check_api.py": "2c4579744fd287193d260f4d33b0e95f9523ad201e8fca95117a740de1ff8008",
+    "testmini/check_local.py": "a6631892345f3822dd0116bd24b00829b64088c0b42889da7c560cf8c16e65f9",
+    "testmini/solution.py": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9"
+  },
+  "platform_submission_evidence": "owner screenshot of historical v2 testmini.zip; score0; API/exitcode UNKNOWN",
+  "current_strict_zip_submitted": false,
+  "platform_execution_verified": false,
+  "testmini_strict_receipt": {
+    "path": "docs/TESTMINI_STRICT_RESULT.json",
+    "sha256": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd"
+  },
+  "platform_observation": {
+    "path": "docs/PLATFORM_OBSERVATION_20261020.json",
+    "sha256": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1"
   }
 }

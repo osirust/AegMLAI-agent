@@ -1,0 +1,53 @@
+{
+  "id": "M00-OBS-001",
+  "source": "screenshots and ZIP supplied by owner; not a direct platform log",
+  "recorded_at_utc": "2026-10-20T14:24:55.591510+00:00",
+  "platform_upload_observed": true,
+  "filename": "testmini.zip",
+  "displayed_score": 0,
+  "displayed_upload_time": "17:14",
+  "displayed_duration": {
+    "value": 10.3,
+    "unit": "seconds",
+    "column": "Длительность загрузки",
+    "agent_runtime_proven": false
+  },
+  "displayed_status": "Лучшее решение",
+  "status_filter_options": [
+    "Успешно",
+    "Лучшее решение",
+    "Ошибка"
+  ],
+  "attached_zip_sha256": "3681b720a2b2ef2f642814cd6b7aec17ff3f3821e9d9f3a7927ab3e660112667",
+  "attached_zip_matches_prepared_v2": true,
+  "server_zip_identity_independently_verified": false,
+  "attached_zip_members": [
+    "solution.py"
+  ],
+  "attached_zip_contains_runtime_logs": false,
+  "exit_code": null,
+  "api_status": "UNKNOWN",
+  "task_metrics": null,
+  "runtime_acceptance": "UNKNOWN",
+  "conclusion": "Score0 and absence of an error label do not prove API success; v2 catches API errors and may exit0 with a valid constant CSV.",
+  "unconfirmed_baseline_examples": {
+    "B_RMSE": 50,
+    "B_F1": 0.6,
+    "official_values": false,
+    "source": "screenshot explicitly labels the table a hypothetical example"
+  },
+  "source_images": [
+    {
+      "path": "C:\\Users\\ggdro\\AppData\\Local\\Temp\\codex-clipboard-1e7eef4d-fd03-46ef-923c-a5e7138ca5df.png",
+      "sha256": "3853dae7164ec5c58e8e127cd69a34da44233784bd1b444f845b42b792cf566c"
+    },
+    {
+      "path": "C:\\Users\\ggdro\\AppData\\Local\\Temp\\codex-clipboard-0b67ce3c-e086-4df5-8cff-f44420a13e38.png",
+      "sha256": "f976f7c8f38859b7c342de6a5b5098e3cc588609ad53f1ea8ac2dc11f0db6e34"
+    },
+    {
+      "path": "C:\\Users\\ggdro\\AppData\\Local\\Temp\\codex-clipboard-9e46f783-c5ec-4bdf-9449-3a827b950a80.png",
+      "sha256": "ccd3aa3bf51f964d7d6e33d5b6d70ff4326a4a26ad5b4d3fd1693c4a333f6b05"
+    }
+  ]
+}

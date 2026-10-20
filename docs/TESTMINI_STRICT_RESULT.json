@@ -1,0 +1,122 @@
+{
+  "stage": "M00 strict diagnostic correction",
+  "finding": "M00-API-002",
+  "status": "PASS_LOCAL_STRICT_GATE_ONLY",
+  "build": {
+    "zip": "/mnt/e/work/AegMLAI-agent/dist/testmini_strict_api.zip",
+    "bytes": 5305,
+    "zip_sha256": "c9ffb571136205495cbef5b2da44b3712f85f1d289ac2c343f44108e1f3b908f",
+    "solution_sha256": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9",
+    "entries": [
+      "solution.py"
+    ],
+    "mode": "technical_probe_strict_api",
+    "api_required_by_default": true,
+    "platform_submitted": false
+  },
+  "public_file_checks_with_explicit_off": {
+    "status": "PASS_TESTMINI_LOCAL_ONLY",
+    "mode": "technical_probe_strict_api",
+    "local_api_override": "off",
+    "proof_root": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T142711Z-fbdadbe0",
+    "environment": {
+      "python": "3.12.3",
+      "executable": "/home/aegml/venvs/aegml-py312/bin/python",
+      "official_image": false
+    },
+    "checks": [
+      {
+        "check_id": "MC-PUBLIC-REG",
+        "status": "PASS",
+        "scope": "input/constant baseline/format only",
+        "train_rows": 53308,
+        "output_rows": 22449,
+        "elapsed_seconds": 3.1458,
+        "submission_sha256": "1e33ba1dc6c7ecb6a32b364f5bdc77299d99d5f0eaf9906c18a17bc5679b740c",
+        "cwd": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T142711Z-fbdadbe0/regression"
+      },
+      {
+        "check_id": "MC-PUBLIC-CLS",
+        "status": "PASS",
+        "scope": "input/constant baseline/format only",
+        "train_rows": 87670,
+        "output_rows": 41166,
+        "elapsed_seconds": 1.7153,
+        "submission_sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "cwd": "/mnt/e/work/AegMLAI-agent/runs/testmini/20261020T142711Z-fbdadbe0/classification"
+      },
+      {
+        "check_id": "MC-RENAMED",
+        "status": "PASS",
+        "scope": "renamed target/id, target first, leading-zero IDs, sample placeholders ignored"
+      },
+      {
+        "check_id": "MC-BAD-ID",
+        "status": "PASS",
+        "scope": "mismatched sample order rejected; last valid CSV preserved"
+      },
+      {
+        "check_id": "MC-EMPTY-TEST",
+        "status": "PASS",
+        "scope": "empty test/sample rejected; no header-only submission or temporary file published"
+      },
+      {
+        "check_id": "MC-ZIP",
+        "status": "PASS",
+        "scope": "single root solution.py extracted and executed; original input identities unchanged",
+        "zip_bytes": 5305,
+        "zip_sha256": "c9ffb571136205495cbef5b2da44b3712f85f1d289ac2c343f44108e1f3b908f",
+        "original_files_unchanged": 12
+      }
+    ],
+    "project_49_tests_executed": false,
+    "quality_assessed": false,
+    "api_used": false,
+    "platform_submitted": false,
+    "official_acceptance_confirmed": false
+  },
+  "required_api_stub_checks": {
+    "status": "PASS",
+    "evidence_origin": "actual execution reported by delegated llm_provider in this session",
+    "command": [
+      "wsl",
+      "-d",
+      "AegML-Hackathon",
+      "--exec",
+      "/home/aegml/venvs/aegml-py312/bin/python",
+      "-I",
+      "/mnt/e/work/AegMLAI-agent/testmini/check_api.py"
+    ],
+    "exit_code": 0,
+    "observed_stdout": {
+      "check": "testmini_api_loopback",
+      "status": "passed",
+      "python": "3.12.3",
+      "tests": 17,
+      "failed": [],
+      "live_api_used": false,
+      "user_data_used": false
+    },
+    "check_source_sha256": "2c4579744fd287193d260f4d33b0e95f9523ad201e8fca95117a740de1ff8008",
+    "solution_sha256": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9",
+    "main_level_checks": [
+      "missing and partial config => exit1/no newCSV",
+      "invalid mode => exit1",
+      "401 => exit1/failed_api_gate/noCSV",
+      "401 preserves oldCSV bytes+mtime/csv_created=false",
+      "valid response => API success/CSV/exit0"
+    ],
+    "remaining_12_low_level_checks": "retained loopback protocol/error/response/redirect checks",
+    "live_api_used": false,
+    "user_data_used": false,
+    "platform_exit_code_semantics_checked": false
+  },
+  "default_api_mode": "required",
+  "failure_behavior": "exit1 before new CSV; sanitized failed_api_gate diagnostic",
+  "strict_zip_platform_submitted": false,
+  "live_qwen_checked": false,
+  "quality_assessed": false,
+  "main_49_tests_executed": false,
+  "historical_v2_local_result": "docs/TESTMINI_RESULT.json",
+  "historical_platform_observation": "docs/PLATFORM_OBSERVATION_20261020.json"
+}

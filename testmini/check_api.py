@@ -1,4 +1,4 @@
-"""Stdlib self-check: synthetic loopback API and tiny CSVs, never live credentials."""
+"""Stdlib self-check of the required API gate, using synthetic loopback fixtures."""
 
 import contextlib
 import csv
@@ -265,45 +265,147 @@ class ApiProbeChecks(unittest.TestCase):
             self.assertEqual(result["status"], "request_failed")
             self.assertEqual(result["error_type"], "RecursionError")
 
-    def test_tiny_run_keeps_csv_and_reports_api_error(self):
+    def make_tiny_inputs(self, directory):
+        contents = {
+            "task.md": "Synthetic regression. Metric: RMSE. Use `train.csv` and `test.csv`.\n",
+            "train.csv": "feature,target,id\n1,2,train-1\n2,4,train-2\n",
+            "test.csv": "feature,id\n3,test-1\n4,test-2\n",
+            "data_dictionary.csv": "feature,role\nfeature,feature\ntarget,target\nid,id\n",
+            "sample_submission.csv": "id,target\ntest-1,0\ntest-2,0\n",
+        }
+        for name, content in contents.items():
+            (directory / name).write_text(content, encoding="utf-8")
+        return {name: (directory / name).read_bytes() for name in contents}
+
+    def invoke_main(self, directory):
+        captured = io.StringIO()
+        with patch.object(sys, "argv", ["solution.py", str(directory / "task.md")]):
+            with contextlib.redirect_stdout(captured):
+                exit_code = _SUBJECT.main()
+        events = [json.loads(line) for line in captured.getvalue().splitlines()]
+        report = json.loads((directory / "mini_diagnostics.json").read_text(encoding="utf-8"))
+        self.assert_sanitized(events)
+        self.assert_sanitized(report)
+        return exit_code, events, report
+
+    def assert_failed_gate(self, events, report, status):
+        self.assertEqual(report["status"], "failed_api_gate")
+        self.assertTrue(report["api_required"])
+        self.assertFalse(report["csv_created_in_this_run"])
+        self.assertEqual(report["api_probe"]["status"], status)
+        self.assertFalse(report["autoresearch_performed"])
+        self.assertFalse(report["quality_assessed"])
+        self.assertNotIn("submission_sha256", report)
+        gate_events = [event for event in events if event["event"] == "failed_api_gate"]
+        self.assertEqual(len(gate_events), 1)
+        self.assertEqual(gate_events[0]["api_status"], status)
+        self.assertFalse(gate_events[0]["csv_created_in_this_run"])
+        self.assertEqual(events[-1]["event"], "failed")
+        self.assertTrue({"inputs_loaded", "constant_baseline_fitted", "submission_validated",
+                         "completed_format_only"}.isdisjoint(event["event"] for event in events))
+
+    def test_main_401_exits_one_without_creating_csv(self):
         with tempfile.TemporaryDirectory(prefix="aegml-api-selfcheck-") as temporary:
             directory = Path(temporary)
-            contents = {
-                "task.md": "Synthetic regression. Metric: RMSE. Use `train.csv` and `test.csv`.\n",
-                "train.csv": "feature,target,id\n1,2,train-1\n2,4,train-2\n",
-                "test.csv": "feature,id\n3,test-1\n4,test-2\n",
-                "data_dictionary.csv": "feature,role\nfeature,feature\ntarget,target\nid,id\n",
-                "sample_submission.csv": "id,target\ntest-1,0\ntest-2,0\n",
-            }
-            for name, content in contents.items():
-                (directory / name).write_text(content, encoding="utf-8")
-            original = {name: (directory / name).read_bytes() for name in contents}
+            original = self.make_tiny_inputs(directory)
             before_api = []
             with LocalServer(body=_PRIVATE_BODY.encode(), status=401) as server:
                 self.configure(server)
-                server.on_request = lambda: before_api.append((directory / "submission.csv").read_bytes())
-                captured = io.StringIO()
-                with contextlib.redirect_stdout(captured):
-                    _SUBJECT.run(directory / "task.md")
+                server.on_request = lambda: before_api.append((directory / "submission.csv").exists())
+                exit_code, events, report = self.invoke_main(directory)
                 self.assertEqual(len(server.requests), 1)
-            output = (directory / "submission.csv").read_bytes()
-            self.assertEqual(before_api, [output])
+            self.assertEqual(exit_code, 1)
+            self.assertEqual(before_api, [False])
+            self.assertFalse((directory / "submission.csv").exists())
+            self.assert_failed_gate(events, report, "http_error")
+            self.assertEqual(report["api_probe"]["http_status"], 401)
+            self.assertTrue(report["api_used"])
+            self.assertFalse(report["existing_submission_preserved"])
+            self.assertEqual(original, {name: (directory / name).read_bytes() for name in original})
+
+    def test_main_missing_or_partial_config_exits_one_before_reading_csv(self):
+        cases = (("missing", {}, "skipped_not_configured"),
+                 ("partial", {"OPENAI_API_KEY": _DUMMY_KEY}, "configuration_error"))
+        for kind, settings, status in cases:
+            with self.subTest(config_kind=kind):
+                with tempfile.TemporaryDirectory(prefix="aegml-api-selfcheck-") as temporary:
+                    directory = Path(temporary)
+                    # No CSVs exist: the API gate must run before input loading.
+                    (directory / "task.md").write_text("Synthetic task. Metric: RMSE.\n", encoding="utf-8")
+                    with patch.dict(os.environ, settings):
+                        exit_code, events, report = self.invoke_main(directory)
+                    self.assertEqual(exit_code, 1)
+                    self.assertFalse((directory / "submission.csv").exists())
+                    self.assert_failed_gate(events, report, status)
+                    self.assertFalse(report["api_used"])
+                    self.assertFalse(report["existing_submission_preserved"])
+
+    def test_main_invalid_mode_exits_one_before_api_or_csv(self):
+        with tempfile.TemporaryDirectory(prefix="aegml-api-selfcheck-") as temporary:
+            directory = Path(temporary)
+            (directory / "task.md").write_text("Synthetic task. Metric: RMSE.\n", encoding="utf-8")
+            captured = io.StringIO()
+            with patch.dict(os.environ, {"TESTMINI_API_MODE": "invalid-mode"}):
+                with patch.object(sys, "argv", ["solution.py", str(directory / "task.md")]):
+                    with contextlib.redirect_stdout(captured):
+                        exit_code = _SUBJECT.main()
+            events = [json.loads(line) for line in captured.getvalue().splitlines()]
+            self.assertEqual(exit_code, 1)
+            self.assertEqual(events[-1]["event"], "failed")
+            self.assertEqual(events[-1]["error_type"], "ProbeError")
+            self.assertNotIn("api_probe", [event["event"] for event in events])
+            self.assertFalse((directory / "submission.csv").exists())
+            self.assertFalse((directory / "mini_diagnostics.json").exists())
+            self.assert_sanitized(events)
+
+    def test_main_401_preserves_existing_csv_bytes_and_mtime(self):
+        with tempfile.TemporaryDirectory(prefix="aegml-api-selfcheck-") as temporary:
+            directory = Path(temporary)
+            original = self.make_tiny_inputs(directory)
+            output = directory / "submission.csv"
+            previous = b"id,target\r\ntest-1,9\r\ntest-2,9\r\n"
+            output.write_bytes(previous)
+            previous_mtime = output.stat().st_mtime_ns
+            with LocalServer(body=_PRIVATE_BODY.encode(), status=401) as server:
+                self.configure(server)
+                exit_code, events, report = self.invoke_main(directory)
+                self.assertEqual(len(server.requests), 1)
+            self.assertEqual(exit_code, 1)
+            self.assertEqual(output.read_bytes(), previous)
+            self.assertEqual(output.stat().st_mtime_ns, previous_mtime)
+            self.assert_failed_gate(events, report, "http_error")
+            self.assertTrue(report["existing_submission_preserved"])
+            self.assertEqual(original, {name: (directory / name).read_bytes() for name in original})
+
+    def test_main_success_creates_csv_and_exits_zero(self):
+        with tempfile.TemporaryDirectory(prefix="aegml-api-selfcheck-") as temporary:
+            directory = Path(temporary)
+            original = self.make_tiny_inputs(directory)
+            before_api = []
+            with LocalServer() as server:
+                self.configure(server)
+                server.on_request = lambda: before_api.append((directory / "submission.csv").exists())
+                exit_code, events, report = self.invoke_main(directory)
+                self.assertEqual(len(server.requests), 1)
+            self.assertEqual(exit_code, 0)
+            self.assertEqual(before_api, [False])
             with (directory / "submission.csv").open(encoding="utf-8", newline="") as stream:
                 records = list(csv.DictReader(stream))
             self.assertEqual(records, [{"id": "test-1", "target": "3"}, {"id": "test-2", "target": "3"}])
-            report = json.loads((directory / "mini_diagnostics.json").read_text(encoding="utf-8"))
             self.assertEqual(report["status"], "completed_format_only")
-            self.assertEqual(report["api_probe"]["status"], "http_error")
-            self.assertEqual(report["api_probe"]["http_status"], 401)
+            self.assertTrue(report["api_required"])
+            self.assertTrue(report["csv_created_in_this_run"])
+            self.assertEqual(report["api_probe"]["status"], "success")
             self.assertTrue(report["api_used"])
             self.assertFalse(report["autoresearch_performed"])
             self.assertFalse(report["quality_assessed"])
             self.assertEqual(report["submission_sha256"], _SUBJECT.digest(directory / "submission.csv"))
-            events = [json.loads(line) for line in captured.getvalue().splitlines()]
-            self.assertEqual(events[-1]["api_status"], "http_error")
-            self.assert_sanitized(report)
-            self.assert_sanitized(events)
-            self.assertEqual(original, {name: (directory / name).read_bytes() for name in contents})
+            self.assertEqual(events[-1]["event"], "completed_format_only")
+            self.assertEqual(events[-1]["api_status"], "success")
+            names = [event["event"] for event in events]
+            self.assertLess(names.index("api_probe"), names.index("inputs_loaded"))
+            self.assertLess(names.index("inputs_loaded"), names.index("submission_validated"))
+            self.assertEqual(original, {name: (directory / name).read_bytes() for name in original})
 
 
 def main():

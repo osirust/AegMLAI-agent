@@ -483,5 +483,16 @@
     "path": "docs/TESTMINI_RESULT.json",
     "sha256": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "scope": "local constant-baseline/CSV and HTTP stub only; no live Qwen or platform"
+  },
+  "testmini_strict_receipt": {
+    "path": "docs/TESTMINI_STRICT_RESULT.json",
+    "sha256": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd",
+    "scope": "strict gate verified on loopback; public CSV tested with explicit off; not live Qwen or platform"
+  },
+  "platform_observation": {
+    "path": "docs/PLATFORM_OBSERVATION_20261020.json",
+    "sha256": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
+    "score": 0,
+    "api_success_proven": false
   }
 }

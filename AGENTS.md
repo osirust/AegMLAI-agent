@@ -13,3 +13,5 @@
 - AEGYX — отдельный проект, его пауза сохраняется. Среду, процессы и документы AEGYX не менять.
 
 - Текущий приоритет владельца: закончить отдельную testmini перед продолжением ТЗ. M00 local-only receipts в docs/TESTMINI_RESULT.json; это не полный агент. Платформу и live Qwen не объявлять проверенными по mock. Не отправлять ZIP без команды владельца. Сохранять M00-API-001 CLOSED mini-only и SPEC-DOC-003 OPEN до согласования правил.
+
+- Исправление mini M00-API-002: актуальный strict v3 требует API-success до CSV, error/missing=>exit1, off только явно local/API_NOT_CHECKED. Старую v2 владелец показал соscore0; это не API PASS. Наблюдение PLATFORM_OBSERVATION_20261020 и новая TESTMINI_STRICT_RESULT сохраняют scope. Новый ZIP автоматически не отправлять.

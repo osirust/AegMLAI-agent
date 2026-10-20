@@ -1,4 +1,4 @@
-"""Technical probe with optional API check, not the AutoResearch agent.
+"""Technical probe: required API gate by default, not the AutoResearch agent.
 
 Run: python solution.py [task.md]
 Only the Python standard library is used. Output is next to task.md.
@@ -29,7 +29,7 @@ class ProbeError(ValueError):
 
 
 def event(name, **values):
-    print(json.dumps({"probe": "testmini-v2", "event": name, **values}, ensure_ascii=False), flush=True)
+    print(json.dumps({"probe": "testmini-v3", "event": name, **values}, ensure_ascii=False), flush=True)
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -142,6 +142,27 @@ def run(task_path):
         raise ProbeError("Техническому пробнику нужен Python 3.11+; конкурс требует 3.12")
     task_path = task_path.resolve(strict=True)
     directory = task_path.parent
+    api_mode = os.environ.get("TESTMINI_API_MODE", "required").strip().casefold()
+    if api_mode not in {"required", "off"}:
+        raise ProbeError("TESTMINI_API_MODE должен быть required или off")
+    api_required = api_mode == "required"
+    api_probe = probe_api() if api_required else {
+        "status": "disabled_for_local_check", "attempted": False, "api_not_checked": True,
+    }
+    event("api_probe", required=api_required, **api_probe)
+    if api_required and api_probe["status"] != "success":
+        report = {
+            "probe_version": "testmini-v3", "mode": "technical_probe_strict_api",
+            "status": "failed_api_gate", "python": platform.python_version(),
+            "api_required": True, "api_used": api_probe["attempted"], "api_probe": api_probe,
+            "csv_created_in_this_run": False, "existing_submission_preserved": (directory / "submission.csv").exists(),
+            "quality_assessed": False, "autoresearch_performed": False,
+            "elapsed_seconds": round(time.monotonic() - started, 4),
+            "finished_at_utc": datetime.now(timezone.utc).isoformat(),
+        }
+        (directory / "mini_diagnostics.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        event("failed_api_gate", api_status=api_probe["status"], csv_created_in_this_run=False)
+        raise ProbeError("Обязательная проверка API не пройдена: " + api_probe["status"])
     if task_path.stat().st_size > 512 * 1024:
         raise ProbeError("task.md превышает предел технического пробника 512 KiB")
     task = task_path.read_text(encoding="utf-8-sig")
@@ -243,14 +264,13 @@ def run(task_path):
         if temporary_path is not None and temporary_path.exists():
             temporary_path.unlink()
     event("submission_validated", rows=test_count, output="submission.csv", sha256=digest(output))
-    api_probe = probe_api()
-    event("api_probe", **api_probe)
     report = {
-        "mode": "technical_probe_optional_api", "status": "completed_format_only",
+        "probe_version": "testmini-v3", "mode": "technical_probe_strict_api", "status": "completed_format_only",
         "python": platform.python_version(), "task_type": "regression" if regression else "classification",
         "id_column": identifier, "target": target, "train_rows": count, "test_rows": test_count,
         "model": "constant_mean" if regression else "constant_majority", "features_used": False,
-        "api_used": api_probe["attempted"], "api_probe": api_probe,
+        "api_required": api_required, "api_used": api_probe["attempted"], "api_probe": api_probe,
+        "csv_created_in_this_run": True,
         "autoresearch_performed": False, "quality_assessed": False,
         "third_party_imports_checked": False, "input_sha256": original_sha,
         "submission_sha256": digest(output), "output_columns": [identifier, target],
