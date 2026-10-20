@@ -181,10 +181,11 @@
         "solution.py",
         "aegml_contracts.py"
       ],
-      "action": "Создать плоскую точку входа solution.py и прямые импорты корневых aegml_*.py. Поддержать точный запуск python3 solution.py task.md из каталога задачи; общий таймер начинается до чтения входов. Настройки читаются из разрешённых env и argv, статические схемы/prompts будут встроены в root .py. Обязательной зависимости от MCP и установки нашего пакета быть не должно.",
-      "acceptance": "Точный платформенный интерфейс и локальные проверки путей работают без src-layout, вложенного пакета и runtime pip. Таймер не сбрасывается, секреты не выводятся; единственная точка входа остаётся solution.py. H02.2 закрывается только относящимся запуском, карта будущих модулей не считается реализацией.",
-      "status": "NOT_RUN",
-      "priority": "P0"
+      "action": "Реализовать bootstrap только в solution.py и aegml_contracts.py: точный CLI python3 solution.py task.md, первая отметка monotonic_ns до собственных и ML-импортов, один frozen RunBudget без сброса для повторов и ролей. Приоритет настроек: CLI, затем соответствующая AEGML_* env, затем default T=10800, reserve=T/18, threads=8. Требуются конечные 0<T<=10800 и 0<=reserve<T, целые threads от 1 до 8. Work deadline равен hard deadline минус reserve; финализация использует hard deadline, недостаток остатка запрещает действие. Разрешить default/absolute/relative task один раз без chdir; output anchor — task.parent/submission.csv. Для трёх OPENAI_* учитывать только присутствие, без SDK, сети и вывода значений. Не читать CSV и не реализовывать H02.3, ML, dispatcher или принудительную остановку дерева процессов.",
+      "acceptance": "Критерии: точный CLI, приоритет и границы T/reserve/threads, default/absolute/relative path без chdir, единый deadline и отсутствие вывода argv/env/секретов. Коды выхода: 0 только для help, 2 при invalid config/path/args, 124 при deadline, 3 при incomplete, 1 при внутренней ошибке. Incomplete оставляет все full-agent флаги false и experiments_completed=0, не пишет и не валидирует старый CSV. Startup Python до первой отметки NOT_MEASURED; hard interrupt и kill-tree вне H02.2. Фактически прошли 24 метода / 51 сценарий / 37 CLI-запусков в WSL Python 3.12.3; квитанции docs/H022_BOOTSTRAP_RESULT.json и docs/H022_RECEIPT.md. H02-BOOT-001 CLOSED_BOOTSTRAP_DIAGNOSTICS_ONLY после трёх проверок expiry/path/threads на зафиксированном SHA с сохранением исходного бюджета. Итог H02.2 — PASS_H02_2_BOOTSTRAP_ONLY; H02.3 ещё NOT_RUN.",
+      "status": "PASS_H02_2_BOOTSTRAP_ONLY",
+      "priority": "P0",
+      "evidence": "docs/H022_BOOTSTRAP_RESULT.json:24methods,51/51behaviorcases,37CLI; cooperative timer only, noML/liveAPI/officialimage. H02-BOOT-001 closed bootstrap diagnostics."
     },
     {
       "id": "H02.3",
@@ -508,8 +509,8 @@
       "planned_files": [
         "docs/qwen-capability-receipt.json"
       ],
-      "action": "После получения разрешённых локальных настроек проверить безопасную цепочку: действие модели → инструмент → результат инструмента → использование результата моделью. Сгенерированный код не запускать.",
-      "acceptance": "Сохранены сведения о модели, endpoint и его возможностях, а также обезличенный transcript. Связность API отделена от поддержки tools; API_WAIT не закрывается заглушкой или нулевым score в интерфейсе.",
+      "action": "После отдельной команды владельца на live API использовать разрешённую конфигурацию из API_INSTRUCTIONS_INTAKE и проверить безопасную цепочку: действие модели → инструмент → результат инструмента → использование результата моделью. Получение ключа не является такой командой. Сгенерированный код не запускать; endpoint/model/ключ в конкурсном коде читать из env платформы, без hardcode.",
+      "acceptance": "Сохранены сведения о модели, endpoint и его возможностях, а также обезличенный transcript. Связность API отделена от поддержки tools. Полученный ключ, опубликованные настройки, присутствие env, заглушка и нулевой UI-score не закрывают авторизацию, capability или полный обмен инструментом; до относящегося live-запуска приёмка NOT_RUN.",
       "status": "NOT_RUN",
       "priority": "P0"
     },

@@ -1,0 +1,21 @@
+{
+  "status": "CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS",
+  "path": "/home/aegml/.config/aegml/provider.json",
+  "uid": 1000,
+  "parent_mode": "0700",
+  "file_mode": "0600",
+  "fields_present": [
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL",
+    "OPENAI_MODEL"
+  ],
+  "base_url": "https://changellenge.up.railway.app/v1",
+  "model": "qwen/qwen3.8-27b",
+  "real_provider_api_requests": 0,
+  "api_auth_or_tools_verified": false,
+  "live_gate": "OWNER_COMMAND_REQUIRED",
+  "publishable_files_scanned": 81,
+  "secret_found_in_publishable_files": false,
+  "secret_value_or_fingerprint_in_receipt": false,
+  "helper_sha256": "d704dd1e4b9cc9df25e836354c410fc619f02dc861c5ef9377bd93e66ea5b923"
+}

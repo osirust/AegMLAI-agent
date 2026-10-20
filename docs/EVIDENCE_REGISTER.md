@@ -36,7 +36,7 @@
 Показанный результат — положительное косвенное свидетельство этой цепочки. Фактические exit code, env, логи и серверный SHA не получены.
 Поэтому статус вывода — условный `API_SUCCESS_INFERRED`, не прямой live-tool PASS и не готовность полного агента.
 
-Локальные ключ, адрес и model ID ещё ожидаются: `API_WAIT_LOCAL`. Сообщение владельца «в течение часа» — ETA, а не подтверждение получения.
+В момент mini локальные настройки ожидались. Теперь ключ получен, адрес/model ID прочитаны в официальной инструкции, private config записан и проверен без HTTP: [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json). Текущий статус CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS; live только по команде владельца.
 Автоматическая проверка почты, расписание или платный запрос этим сообщением не разрешены и не создавались.
 
 ## 4. Что подготовлено в текущей редакции
@@ -76,7 +76,7 @@
 AEGYX — отдельный проект на паузе; его файлы, окружение и процессы не менялись. Прежняя Ubuntu/default и общий `.wslconfig` сохранены.
 Минимальная AegML-Hackathon уже создана на E:; ориентир WSL 24 GiB / Docker 20 GiB / 8 CPU остаётся неприменённым планом.
 Репозиторий AegML ранее переведён в private. Raw data, ключи, venv, веса, runs и dist не публикуются в Git.
-H02.1 локально выполнен: отдельная ML-venv,13direct/45dist,9smoke иpipcheckPASS. [Квитанция](environment-lock.json). Пакеты загружались черезHTTPS; model fit,liveLLM и новые сабмиты не выполнялись. Следующий кодовый подпунктH02.2ещёNOT_RUN; generated execution запрещёндоH05.1.
+H02.1 локально выполнен: отдельная ML-venv,13direct/45dist,9smoke иpipcheckPASS. [Квитанция](environment-lock.json). Пакеты загружались черезHTTPS; model fit,liveLLM и новые сабмиты не выполнялись. H02.2 bootstrap выполнен отдельно; следующий H02.3 ещё NOT_RUN; generated execution запрещёндоH05.1.
 
 ## 8. Новое уточнение и H02.1
 
@@ -89,3 +89,11 @@ H02.1 — PASS_H02_1_LOCAL_SUBSET_ONLY: Python 3.12.3, 13 direct pins, 45 distri
 [Веб-рецензент](WEB_WORKFLOW.md) поставил три вопроса; ответы переданы. Его согласие не является локальным runtime PASS. Качество и перенос требуют будущих экспериментов; число ролей само по себе не доказывает улучшения.
 
 SPEC-DOC-009/010 и SPEC-QA-002 закрыты только документально: новые правила упаковки, актуальный маршрут и исправление regex проверочного helper. Они не снимают OPEN полного агента.
+
+## 9. Фактический H02.2 и локальная настройка
+
+[H022_RECEIPT](H022_RECEIPT.md):24 метода,51/51 сценарий,37CLI в WSL Python3.12.3. [Raw-result](H022_BOOTSTRAP_RESULT.json) фиксирует source SHA, точные коды, отсутствие ML/live API и границы instrumented import fixture. H02-BOOT-001 CLOSED только bootstrap-диагностика; SPEC-BASE-003 и другие полные OPEN сохраняются. H02.3 не начинался. Все74+17futureсценария NOT_RUN.
+
+[LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json) подтверждает локальную запись/права без раскрытия ключа. [17 helper-canary](LOCAL_PROVIDER_HELPER_RESULT.json) — отдельный синтетический тест, не17 дополнительных проверок качества ML. Реальных Qwen-запросов0, live только после команды владельца.
+
+Новый ответ организаторов допускает собственные артефакты с нуля; [P2-направление](OPTIONAL_ARTIFACTS_RESEARCH.md) пока NOT_RUN, доставка весов при selectivecopyUNKNOWN. В AEGYX/обучение не переходили.

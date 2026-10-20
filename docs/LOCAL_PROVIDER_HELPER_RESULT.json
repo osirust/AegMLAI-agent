@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "receipt_id": "provider-helper-canary-20261020",
+  "status": "PASS_LOCAL_HELPER_CANARY_ONLY",
+  "scope": "Isolated synthetic-canary checks of scripts/local_provider_config.py; no production provider config or API requests",
+  "evidence_basis": "Direct retained exec tool result and the exact inline unittest driver executed in that call; not peerreported",
+  "receipt_created_utc": "2026-10-20 17:00:47 UTC",
+  "execution_timestamp_utc": null,
+  "timestamp_note": "The execution's exact UTC start was not captured. A later clock reading was 2026-10-20 16:56:54 UTC; receipt creation is not the test execution time.",
+  "reexecution_for_this_receipt": false,
+  "helper": {
+    "path": "scripts/local_provider_config.py",
+    "sha256": "d704dd1e4b9cc9df25e836354c410fc619f02dc861c5ef9377bd93e66ea5b923",
+    "sha_basis": "Get-FileHash SHA256 observed after the successful canary execution; no new hash command run for this receipt"
+  },
+  "environment": {
+    "host_surface": "WSL2",
+    "distribution": "AegML-Hackathon",
+    "user": "aegml",
+    "python": "3.12.3",
+    "interpreter": "/home/aegml/venvs/aegml-py312/bin/python",
+    "official_platform_image_tested": false
+  },
+  "command_template": "wsl -d AegML-Hackathon -u aegml --exec /home/aegml/venvs/aegml-py312/bin/python -I -c <executed inline synthetic-canary unittest driver>",
+  "command_template_note": "Template only; the retained driver was passed inline. It monkeypatched CONFIG_PATH before all configure/check calls.",
+  "tests": {
+    "framework": "Python stdlib unittest",
+    "tests_run": 17,
+    "failed": [],
+    "case_ids": [
+      "test_01_stdin_then_check",
+      "test_02_existing_refused_before_read",
+      "test_03_default_getpass",
+      "test_04_getpass_no_echo_fallback",
+      "test_05_no_key_argv_or_raw_error",
+      "test_06_target_symlink",
+      "test_07_parent_symlink",
+      "test_08_bad_parent_mode",
+      "test_09_bad_file_mode",
+      "test_10_exact_fields_nonempty_and_duplicate",
+      "test_11_restrict_public_values",
+      "test_12_concurrent_target_not_overwritten",
+      "test_13_temp_collision_preserved",
+      "test_14_hardlink_rejected",
+      "test_15_fifo_rejected_without_block",
+      "test_16_missing_invalid_empty",
+      "test_17_wrong_identity"
+    ],
+    "per_case_result_note": "The driver declared these 17 test methods; unittest ran 17 and reported no failures/errors. Separate per-case logs and timings were not captured."
+  },
+  "fixture": {
+    "type": "synthetic canary",
+    "path_scope": "tempfile.TemporaryDirectory with CONFIG_PATH monkeypatched to its private/provider.json",
+    "cleanup_scope": "TemporaryDirectory cleanup only; no access to the real /home/aegml/.config/aegml/provider.json",
+    "real_key_used": false,
+    "real_provider_file_read": false
+  },
+  "network": {
+    "real_api_requests": 0,
+    "live_api_used": false,
+    "http_requests": 0,
+    "note": "Helper and canary driver contained no HTTP/SDK/model-request execution."
+  },
+  "direct_tool_capture": {
+    "chunk_id": "e318da",
+    "exit_code": 0,
+    "wall_time_seconds": 2.8644193,
+    "stdout": "{\"check\": \"local_provider_config_canary\", \"status\": \"passed\", \"python\": \"3.12.3\", \"tests\": 17, \"failed\": [], \"live_api_used\": false, \"real_provider_file_read\": false}\n"
+  },
+  "limitations": [
+    "Does not attest the owner's later real configuration or its readback.",
+    "Does not verify endpoint connectivity, API-key validity, model identity from an API response, tools, H06, ML, AutoResearch or the platform Docker image.",
+    "Not a complete security audit or proof of an OS worker boundary.",
+    "No repeated helper/test execution, real-config check or bytecode cleanup was performed to create this receipt."
+  ]
+}
+

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "spec_revision_date": "2026-10-20",
-  "status": "source_intake_preserved; H02.1 local subset checked, no model fitting or live LLM",
+  "status": "H02.2 bootstrap verified; original sources preserved; no ML or live provider calls",
   "repository_source_head_before_spec": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
   "local_source_root_hint": "drive-download-20261019T181414Z-1-001",
   "sources": {
@@ -109,6 +109,32 @@
         "runtime subdirs and /tmp allowed",
         "queue is not completed evaluation; technical logs may be admin-only"
       ]
+    },
+    "SRC-API-DOC-20261020": {
+      "url": "https://docs.google.com/document/d/17yxOkrdFHeQFX29iCz3f6noMs3l9cW2v",
+      "title": "AutoML_Инструкция по ключам.md",
+      "read_at_utc": "2026-10-20T16:46:43Z",
+      "method": "Google Drive get_document_text tab t.0",
+      "revision_id": null,
+      "provenance": "owner-supplied official instruction link; document text read, no API request",
+      "intake_file": "docs/API_INSTRUCTIONS_INTAKE.md",
+      "intake_sha256": "ceb578c73731cef822d8e9eacf9c121d8576b0409ff36a66a9205c4fef26e8fe",
+      "contains_real_key": false,
+      "runtime_capabilities_verified": false
+    },
+    "SRC-CHAT-ARTIFACTS-20261020-1955": {
+      "provenance": "owner-forwarded organizer reply, not independently authenticated",
+      "timestamp_moscow": "2026-10-20 19:55",
+      "fact": "Own artifacts including weights trained from scratch by team are allowed without third-party pretrained models, with container operation without internet. Other case constraints not explicitly waived.",
+      "delivery_under_selective_copy": "Initially unknown;20:09clarified no separate files, all components in supported root.py/requirements",
+      "applied_scope": "late P2 research only; no weights/AEGYX transferred",
+      "note_file": "docs/OPTIONAL_ARTIFACTS_RESEARCH.md"
+    },
+    "SRC-CHAT-ARTIFACTS-20261020-2009": {
+      "provenance": "owner-forwarded organizer clarification, not independently authenticated",
+      "timestamp_moscow": "2026-10-20 20:09",
+      "fact": "Only root .py and provided requirements copied; no separate weights/artifacts. Own from-scratch model allowed if all necessary components arrive in supported formats and follow rules.",
+      "applied_scope": "late P2/H09/H10 only; concrete implementation NOT_RUN"
     }
   },
   "official_links_supplied_by_owner": {
@@ -559,6 +585,42 @@
     "chat1_role": "research sources",
     "chat2_role": "independent teacher",
     "user_created_chats": true,
-    "read_by_user_signal": true
+    "read_by_user_signal": true,
+    "current_revision_sends_notified": true,
+    "notification_policy": "notify owner before each new send; read replies on owner signal"
+  },
+  "h02_2_bootstrap": {
+    "receipt": "docs/H022_BOOTSTRAP_RESULT.json",
+    "sha256": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
+    "status": "PASS_H02_2_BOOTSTRAP_ONLY",
+    "test_methods": 24,
+    "behavior_cases": 51,
+    "cli_invocations": 37,
+    "real_provider_requests": 0,
+    "model_fit_calls": 0,
+    "official_image_verified": false,
+    "hard_timeout_verified": false
+  },
+  "local_provider_configuration": {
+    "receipt": "docs/LOCAL_PROVIDER_RECEIPT.json",
+    "sha256": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
+    "status": "CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS",
+    "live_gate": "OWNER_COMMAND_REQUIRED",
+    "secret_or_fingerprint_published": false
+  },
+  "research_chat1_current_intake": {
+    "file": "docs/CHAT1_AGENT_COMPARISON_INTAKE.md",
+    "message_id": "e5958a4e-fa8d-5e06-b015-bbb5005fc2fb",
+    "full_rendered_chars": 27491,
+    "full_rendered_sha256": "0a3220c8c6008f2eedec39dfc19e9759bee2fbde293d86a83f5cf7f5eb719557",
+    "source_correction": "RES-CHAT1-001",
+    "ml_experiments_executed": false
+  },
+  "manual_submission_checkpoint": {
+    "local_time_moscow": "2026-10-21 21:00",
+    "utc": "2026-10-21T18:00:00Z",
+    "kind": "owner-directed control upload, not verified official competition deadline",
+    "api_gate": "owner command first",
+    "automatic_schedule_created": false
   }
 }

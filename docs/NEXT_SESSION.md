@@ -1,17 +1,17 @@
-# Продолжение AegML
+# Продолжение после H02.2
 
-Прочитать последнюю команду владельца, [PROJECT_STATE](../PROJECT_STATE.md), [READ_FIRST](READ_FIRST.md), выбранный подпункт [WORK_BLOCKS](WORK_BLOCKS.md) и относящийся контракт. AEGYX остаётся на паузе.
+Прочитать последнюю команду владельца, [PROJECT_STATE](../PROJECT_STATE.md), [READ_FIRST](READ_FIRST.md), выбранный подпункт [WORK_BLOCKS](WORK_BLOCKS.md) и относящийся контракт. AEGYX на паузе, его не менять.
 
-H02.1 завершён только для локального подмножества: `/home/aegml/venvs/aegml-ml-py312`, Python 3.12.3, 13 direct pins, 45 distributions, 44 wheels + pip 25.2, 9 smoke и pip check PASS. [Квитанция](environment-lock.json). Старый stdlib-venv с 0 distributions сохранён. Не повторять установку без новой причины. Пакеты скачивались через HTTPS; LLM-запросов и обучения не было.
+H02.1 LOCAL_SUBSET и H02.2 BOOTSTRAP_ONLY завершены. H02.2: 24 метода, 51/51 сценарий, 37 CLI в WSL Python 3.12.3; [квитанция](H022_RECEIPT.md). Повторять проверки без новой причины не нужно. H02-BOOT-001 закрыт только для трёх bootstrap-ошибок; OPEN полного агента сохраняются.
 
-Следующий кодовый подпункт — **H02.2, только по новой команде владельца**: root solution.py, точный `python3 solution.py task.md`, ранний общий timer, безопасные argv/env и пути. Затем H02.3 TaskContract, H03 данные/метрики/CSV, H04 модели. Всю цепочку автоматически не выполнять. Generated execution допускается только после H05.1 и подтверждённой OS-границы; Docker/profile H02.4 ещё не пройден.
+Следующий подпункт — **H02.3 по новой команде владельца**: TaskContract и однозначный resolver. Читать BACKEND §3.1 (неоднозначности и test/sample ID), оба task.md, TECHNICAL_SPEC и WORK. Уникальные переставленные test/sample ID можно однозначно выровнять; готовый CSV обязан следовать контракту. Train/test ID не обязаны совпадать. Числовой target сам по себе не означает регрессию. Код H02.3 ещё не написан.
 
-SRC-PLATFORM-TXT-20261020: ZIP ≤100000000 байт, только root .py и полный неизменённый requirements с 37 pins. Платформа копирует только их; static schemas/prompts встроены в Python. Runtime-подкаталоги и /tmp разрешены. Исторические mini без requirements не образец нового формата; архивы и квитанции не переписывать.
+Далее отдельно H03 данные/метрики/CSV, H04 модели, H05 OS-worker/жёсткие лимиты, H06 tools, H07 AutoResearch. Generated ML не запускать до H05.1. Текущий таймер кооперативный: startup до отметки NOT_MEASURED, зависший worker не прерывается. Все 74 + 17 будущих сценариев остаются NOT_RUN.
 
-API_WAIT_LOCAL: endpoint, model ID, protocol и capabilities UNKNOWN. Offline H06.1 можно готовить отдельно; H06.2 после настроек — безопасный tool без generated ML. Собственные providers, веса, почту и автоматизации не подключать.
+API настроен локально: [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json), private JSON вне Git, UID1000/0700/0600. **LIVE_API_ON_OWNER_COMMAND_ONLY**: запросы только после отдельной команды «протестить по API». Проверка файла не равна auth/tools PASS. Endpoint/model есть в API_INSTRUCTIONS_INTAKE, capabilities UNKNOWN. Не читать почту и не создавать автоматизации.
 
-Два Vovan-чата созданы владельцем: «1» — источники, «2» — учитель; связанные read/send разрешены. Читать по его уведомлению. На три вопроса «2» переданы H02.2/.3/H05/H06, pins, схема доступа/freeze и API UNKNOWN. Ответ чата не является локальным PASS или разрешением нового блока.
+Упаковка: root .py + исходный requirements с 37 pins, ZIP ≤100000000 байт, selective copy, `python3 solution.py task.md`. Собственные артефакты с нуля разрешены новым ответом организаторов; отдельные веса не копируются; поддерживаются root .py-компоненты. [P2-backlog](OPTIONAL_ARTIFACTS_RESEARCH.md) пока NOT_RUN. Веса, данные, секреты, venv, wheels и runs не добавлять в текущий Git/ZIP.
 
-Primary: freeze рецепта/итераций → refit полного development → закрытый outer. y_inner разрешён только frozen-refit без HPO/LLM-feedback; OS-доказательства ещё NOT_RUN. Labels=None — основной public F1, fixed-10 — диагностика. Все 74 + 17 будущих сценариев NOT_RUN, 9 smoke H02.1 учитываются отдельно. OPEN IDs сохраняются.
+Чаты Vovan создал владелец: «1» — источники, «2» — преподаватель. Читать по его сигналу, перед каждой отправкой сообщать в основном чате. В «1» ожидается сравнение ML-агентов; ответ «2» про timer/resolver учтён. Чаты не видят локальные файлы по имени; секрет им не передавать.
 
-WSL 24 GiB / Docker 20 GiB / 8 CPU — план. Общую .wslconfig, default Ubuntu и AEGYX не менять. Новые сабмиты и сообщения организаторам — только по команде. Git private не отменяет запрет на raw data, секреты, venv, runs и wheels. Участники делают независимые версии; 600 ₽ не рассчитывать.
+WSL 24 GiB / Docker 20 GiB / 8 CPU — план. Default Ubuntu, общую .wslconfig и AEGYX не менять. Новые сабмиты и сообщения организаторам — только по команде. Бюджет 600 ₽ не рассчитывать; четыре независимые версии команды.
