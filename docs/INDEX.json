@@ -109,7 +109,7 @@
   },
   "document_sha256": {
     "AGENTS.md": "4456999f17c0dbf91ee53e970b9817d72d34bfa962d599d741e5e28e8d18263c",
-    "PROJECT_STATE.md": "3e61425c7847ad172272d1aa4874407b81dab18f90b4a59672936e616cd5ecc6",
+    "PROJECT_STATE.md": "c49a19e608d5cbddf039bbeaef94e191f5968f6b2d027249c7ee0f05244cb1fd",
     "README.md": "fa948dad7d9e5c360539534912954d3dde788c65212aa8fe69f7c928017a5bb6",
     "docs/API_INSTRUCTIONS_INTAKE.md": "ceb578c73731cef822d8e9eacf9c121d8576b0409ff36a66a9205c4fef26e8fe",
     "docs/API_LOCAL_SETUP.md": "ca62c8450af612e0906b571fc398f5b2eded671537a18761f6a1af5b1f600744",
@@ -153,14 +153,14 @@
     "docs/RUNTIME_AND_FAILURES.md": "1344584f23cdff4f90ca3cb25c08504c182e789487d87305fca538c7c271da1a",
     "docs/SOURCE_MANIFEST.json": "af12f588c00ba10044fed613cfca4c2e6683764d3834fd1958cb75046348d49d",
     "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
-    "docs/TECHNICAL_SPEC.md": "aa471005e4d4a0de6879e3f104e08ff8f93208f770977f360249f454e5a3edf1",
+    "docs/TECHNICAL_SPEC.md": "3d9bc9ee0a5f17d41e7d731bdb1f6412da5212b1cee82aa9f873bef2c21e17c5",
     "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
     "docs/TEST_MATRIX.md": "0281613072d9662b10b23e816bafba792195827686926e9822ea751dd86d3d04",
     "docs/VOVAN_MENTOR_PROMPT.md": "19451433a7db13acbff7eb31388c5b326be293942ce8c6c491a063021c7ff7b4",
     "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
-    "docs/WEB_WORKFLOW.md": "c2456b528bad99eafd31cae28e264eb07155210899e4c1c8cfa947d882db4083",
+    "docs/WEB_WORKFLOW.md": "c21fe655e646511e287368020adde1bcfb4ff2df03e642cc2414eedf3003714c",
     "docs/WORK_BLOCKS.md": "490950f38348380b95d7c9732a7d26eccfeb6d563d9ea673dc92646a27923981",
     "docs/WORK_PLAN.json": "4c1cf547348b631e6d87ab03852003d135ec3826e97447fd6e9860b5358d0dfd",
     "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c"
@@ -302,7 +302,8 @@
     "h023_review_reply_read": false,
     "chat1_cpu_ml_reply_read": true,
     "chat1_cpu_ml_intake": "docs/CHAT1_CPU_ML_INTAKE.md",
-    "external_h023_review_status": "H023-REVIEW-001 OPEN_EXTERNAL_CHAT_UI; prompt preserved, no new assistant reply"
+    "external_h023_review_status": "H023-REVIEW-001 OPEN_EXTERNAL_CHAT_UI; prompt preserved, no new assistant reply",
+    "repeat_sends_policy": "allowed when needed; notify owner before sending; UI error is not a resend prohibition"
   },
   "development_tooling_sha256": {
     "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f",
@@ -402,8 +403,7 @@
   },
   "product_bootstrap_sha256_scope": "historical H02.2 source; current four-file SHA in product_contract_sha256",
   "latest_document_change": {
-    "finding": "SPEC-DOC-014",
-    "scope": "continuation route only; H02.4 before H03",
+    "scope": "owner clarification: repeat web-chat sends allowed when needed with prior notification; no causal attribution for UI error",
     "runtime_changed": false,
     "docker_started": false,
     "resource_caps_changed": false,
