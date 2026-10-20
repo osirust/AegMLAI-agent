@@ -1,0 +1,170 @@
+{
+  "schema_version": "h024.local.v1",
+  "status": "PASS_H02_4_LOCAL_CONTAINER_ONLY",
+  "scope": "local dev subset and short trusted probes; not official platform or full H05",
+  "wsl": {
+    "distro": "AegML-Hackathon",
+    "storage": "E:/WSL/AegML-Hackathon",
+    "version": "3.0.3.0",
+    "kernel": "6.18.54.1-microsoft-standard-WSL2",
+    "memory_configured_bytes": 25769803776,
+    "memory_observed_docker_bytes": 25202294784,
+    "swap_configured_bytes": 4294967296,
+    "swap_file": "E:/WSL/AegML-Hackathon/wsl-swap.vhdx",
+    "logical_cpus": 12,
+    "processors_setting": "not set; default host12 preserved",
+    "wslconfig_before_existed": false,
+    "wslconfig_after_sha256": "826662a1560f653b9df93173cfeba2a1675600a8c6df1b76f890e4d2c31c3794",
+    "all_distros_stopped_before_change": true,
+    "wsl_shutdown_executed": false,
+    "default_ubuntu_started_by_stage": false,
+    "default_ubuntu_files_modified": false,
+    "global_future_distro_impact": "WSL2 VM memory and swap apply also to future default Ubuntu launches; default distro files not edited"
+  },
+  "host_after": {
+    "wsl_after": "  NAME               STATE           VERSION\r\n* Ubuntu-24.04       Stopped         2\r\n  AegML-Hackathon    Stopped         2\r\n",
+    "windows_memory_kib": {
+      "TotalVisibleMemorySize": 32627040,
+      "FreePhysicalMemory": 14709624,
+      "TotalVirtualMemorySize": 36165984,
+      "FreeVirtualMemory": 10436440
+    },
+    "disk_bytes": {
+      "C:/": {
+        "total": 2047231389696,
+        "used": 1356729364480,
+        "free": 690502025216
+      },
+      "E:/": {
+        "total": 1024191361024,
+        "used": 217646104576,
+        "free": 806545256448
+      }
+    },
+    "wslconfig_sha256": "826662a1560f653b9df93173cfeba2a1675600a8c6df1b76f890e4d2c31c3794"
+  },
+  "docker": {
+    "server_version": "29.9.1",
+    "cgroup_driver": "systemd",
+    "cgroup_version": "2",
+    "storage_driver": "overlayfs",
+    "data_root": "/var/lib/docker",
+    "daemon_mode": "rootful systemd; unix socket only",
+    "user_added_to_docker_group": false,
+    "default_log_driver": "local",
+    "installed_versions": {
+      "docker-ce": "5:29.9.1-1~ubuntu.24.04~noble",
+      "docker-ce-cli": "5:29.9.1-1~ubuntu.24.04~noble",
+      "containerd.io": "2.4.2-2~ubuntu.24.04~noble",
+      "docker-buildx-plugin": "0.38.0-1~ubuntu.24.04~noble"
+    }
+  },
+  "image": {
+    "tag": "aegml-dev:h024-20261020",
+    "id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+    "repo_digests": [
+      "aegml-dev@sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b"
+    ],
+    "size_bytes": 1350672156,
+    "base_repo_digests": [
+      "ubuntu@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac"
+    ],
+    "dockerfile_sha256": "1b538059bb4bcebe9777be21060c0437a906a21e12eee1195213111e16e2bcc0",
+    "python": "3.12.3",
+    "libc": [
+      "glibc",
+      "2.39"
+    ],
+    "direct_pins": {
+      "numpy": "1.26.4",
+      "scipy": "1.12.0",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "joblib": "1.4.2",
+      "threadpoolctl": "3.6.0",
+      "psutil": "6.1.1",
+      "openai": "1.68.2",
+      "httpx": "0.28.1",
+      "pydantic": "2.10.6",
+      "jsonschema": "4.23.0",
+      "setuptools": "80.9.0"
+    },
+    "installed_distribution_count": 45,
+    "provided_requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "apt_rebuild_bit_identical_guaranteed": false,
+    "reproducibility_note": "Base digest and completed image ID frozen. apt versions are recorded in import receipt, not pinned for future rebuilds; dev lock/wheels are exact."
+  },
+  "runtime_profile": {
+    "memory_max_bytes": 21474836480,
+    "memory_swap_total_bytes": 21474836480,
+    "cgroup_memory_swap_max_bytes": 0,
+    "cpu_quota": 800000,
+    "cpu_period": 100000,
+    "cpus_quota": 8,
+    "visible_cpus": 12,
+    "pids_max": 256,
+    "tmpfs_baseline_bytes": 536870912,
+    "uid": 1000,
+    "gid": 1000,
+    "rootfs_readonly": true,
+    "cap_eff": "0000000000000000",
+    "no_new_privileges": true,
+    "seccomp_mode": "2",
+    "network": "none; loopback only",
+    "private_host_mounts": false,
+    "docker_socket_in_container": false,
+    "before_stress_guard": "Docker inspect checks; actual cgroups observed after bounded canary"
+  },
+  "checks": {
+    "resource_probe_cases": 6,
+    "resource_probe_passed": 6,
+    "literal_platform_cli_actual_datasets": 2,
+    "container_import_direct_pins": 13,
+    "container_distributions": 45,
+    "parser_fix_methods": 38,
+    "parser_fix_cases": 93,
+    "bootstrap_methods": 24,
+    "bootstrap_cases": 51,
+    "bootstrap_cli": 37
+  },
+  "receipts": {
+    "H024_CONTAINER_RESULT.json": "77039490e41de383387d837afad043660f65ead5b6725759e3b6d057cc079046",
+    "H024_DOCKER_CLI_RESULT.json": "c018108160db945d68f17136db187d71ded7460f3120aa61b97d6a29b3515508",
+    "H024_IMPORT_RESULT.json": "e2720c68ddec084ce46c26b2a4ae0af1df7f66e5bf1a0939abe96ed13cd331e8",
+    "H023_REVIEW_FIXES_RESULT.json": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466",
+    "H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json": "ca516e6c5f2890d4ad4be898fbe45a2d293c3ca757e03fae86295ea8df684af9",
+    "H024_CONTAINER_FINAL_RESULT.json": "223e7cb7c0b5f99fdeadffd824e6f82864e23014aac1202c9f38a8b4cf0dc01e",
+    "H024_OOM_GUARD_RESULT.json": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f"
+  },
+  "rollback": {
+    "wslconfig": "While WSL distros stopped, remove only the newly-created C:/Users/ggdro/.wslconfig after verifying its recorded SHA; previously no config existed. Current AegML startup needed to apply.",
+    "docker": "Within AegML only: stop/disable new docker/docker.socket, remove the four explicitly installed packages if desired; preserve /var/lib/docker and cached images unless separately requested. No default-Ubuntu/AEGYX removal or global WSL shutdown."
+  },
+  "model_training_executed": false,
+  "live_api_calls": 0,
+  "official_full_37_dependencies_verified": false,
+  "official_platform_image_verified": false,
+  "full_H05_acceptance": false,
+  "full_10800_second_test_executed": false,
+  "h03_started": false,
+  "web_chat_model": {
+    "requested": "GPT-5.6 Pro",
+    "selection_verified": false,
+    "status": "target chosen by owner; UI selection unverified. First H024 send returned Too many requests; later research/review sends accepted for both chats. Owner browser works; IAB errors are not generalized."
+  },
+  "current_resource_receipt": "docs/H024_CONTAINER_FINAL_RESULT.json",
+  "current_resource_checker_sha256": "5a94fc420e2cc4743eadc0c08a341a6defbc1d1c85eb6e6c04540f1105a41223",
+  "oom_attribution_guard": {
+    "finding": "H024-OOM-ATTR-001",
+    "status": "CLOSED_RELATED_COUNTER_GUARD_ONLY",
+    "requires_positive_deltas": [
+      "oom_kill",
+      "oom",
+      "max"
+    ],
+    "synthetic_global_only_event_rejected": true,
+    "runtime_recheck_cases": 6,
+    "full_H05_accepted": false
+  }
+}

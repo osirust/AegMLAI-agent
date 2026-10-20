@@ -1,0 +1,26 @@
+{
+  "status": "PASS_H02_4_METADATA_AND_SCOPE_ONLY",
+  "scope": "identities/history/documents/source binding only; no repeated runtime probes",
+  "base_commit": "32f7c0c",
+  "checks": {
+    "h024_six_probes_two_actual_cli_thirteen_imports_and_image_binding": true,
+    "parser_38_93_4_bootstrap_24_51_37_current_source_binding": true,
+    "old_source_targeted_failures_and_fixed_source_pass_kept_separate": true,
+    "actual_wsl_config_sha_profile_scope_and_guarded_rollback_recorded": true,
+    "historical_json_byte_equal_except_current_manifests": 21,
+    "legacy_demo_tests_and_mini_unchanged": 16,
+    "original_download12_extended14_and_provided_requirements_preserved": true,
+    "fifty_block_identity_dependencies_acceptance_and_md_json_match": true,
+    "seventyfour_plus_seventeen_full_agent_scenarios_unchanged_not_run": true,
+    "main_related_findings_current_stage_and_next_route_reconciled": true,
+    "publishable_files_and_local_markdown_links_json_valid": true,
+    "private_key_absent_from_all_publishable_files": true,
+    "no_fit_no_live_qwen_no_h03_no_full_h05_claim": true
+  },
+  "helper_sha256": "ea3f372812ed523d71030812cc4cd968407784cf6cce96c4eed0c6b405d3909e",
+  "profile_sha256": "0f4a2be153aa258086577b5774026b43a7cc3a1c8eaa33872c85eae4b2911b0f",
+  "next_stage": "H03.1 by new owner command",
+  "h03_started": false,
+  "live_qwen_api_calls": 0,
+  "web_model_selection_verified": false
+}

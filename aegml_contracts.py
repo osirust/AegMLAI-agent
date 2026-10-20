@@ -358,15 +358,40 @@ _METRIC_INFO = {
 
 
 def _metric_name(text):
-    text = re.split(r",?\s+(?:а\s+не|rather\s+than|not)\s+", text, maxsplit=1, flags=re.I)[0]
-    if re.search(r"balanced[ _-]*accuracy|\brmsle\b|\br2\b|r[ -]?squared", text, re.I):
-        raise ContractError("unsupported_metric")
-    found = {name for name, expression in _METRIC_ALIASES.items() if re.search(expression, text, re.I)}
-    if not found:
-        raise ContractError("unsupported_metric")
-    if len(found) != 1:
-        raise ContractError("ambiguous_primary_metric")
-    return found.pop()
+    """Parse the whole P0 value, never just a familiar substring.
+
+    Grammar: one alias, optionally an original-target-scale suffix and one
+    explicit exclusion of another known alias. Dictionary and task use the
+    same parser; unknown residual text is not an implicit annotation.
+    """
+    clean = text.replace("**", "").replace("`", "").strip().strip(".:; ")
+    if re.search(r"\blog1p\b|\blog\s*\(\s*y\b", clean, re.I):
+        raise ContractError("unsupported_metric_transform")
+
+    def parse_alias(value):
+        value = value.strip().strip(".:; ")
+        original_scale = re.fullmatch(
+            r"(.+?)\s+(?:на\s+исходной\s+шкале\s+(?:таргета|целевой\s+переменной)|"
+            r"on\s+(?:the\s+)?(?:original|raw)\s+(?:target\s+)?scale)", value, re.I)
+        token = original_scale.group(1).strip() if original_scale else value
+        names = [name for name, expression in _METRIC_ALIASES.items()
+                 if re.fullmatch(expression, token, re.I)]
+        if len(names) != 1:
+            # Substring matches only select a diagnostic, never a metric.
+            known = {name for name, expression in _METRIC_ALIASES.items()
+                     if re.search(expression, token, re.I)}
+            raise ContractError("ambiguous_primary_metric" if len(known) > 1 else "unsupported_metric")
+        if original_scale and names[0] not in {"rmse", "mae"}:
+            raise ContractError("unsupported_metric_transform")
+        return names[0]
+
+    exclusion = re.fullmatch(r"(.+?)(?:,\s*|\s+)(?:а\s+не|rather\s+than|not)\s+(.+)", clean, re.I)
+    if exclusion:
+        primary, excluded = (parse_alias(value) for value in exclusion.groups())
+        if primary == excluded:
+            raise ContractError("unsupported_metric")
+        return primary
+    return parse_alias(clean)
 
 
 def _metric_declarations(text, dictionary_rows):
@@ -375,8 +400,6 @@ def _metric_declarations(text, dictionary_rows):
     for number, raw in enumerate(text.splitlines(), 1):
         match = pattern.match(raw.replace("**", "").replace("`", ""))
         if match:
-            if re.search(r"log1p|log\s*\(\s*y", match.group(1), re.I):
-                raise ContractError("unsupported_metric_transform")
             declarations.append((_metric_name(match.group(1)), _evidence("task", "primary_metric", number)))
     if len({name for name, _ in declarations}) > 1:
         raise ContractError("ambiguous_primary_metric")
@@ -395,17 +418,50 @@ def _type_declarations(text, expected):
     explicit = _directive(text, r"task\s*type|problem\s*type|тип\s+задачи")
     lines = explicit or [(re.split(r"\n\s*##\s*(?:Данные|Data)\b", text, maxsplit=1, flags=re.I)[0], None)]
     types, evidence = set(), []
+
+    def parse_explicit(value):
+        clean = value.replace("**", "").replace("`", "").strip().strip(".:; ")
+        aliases = {
+            "regression": (r"(?:(?:a|an|supervised|tabular)\s+)?regression(?:\s+(?:task|problem))?|"
+                           r"регрессия|регрессионная\s+задача|задача\s+регрессии"),
+            "classification": (r"(?:(?:a|an|supervised|tabular)\s+)?(?:binary\s+|multi[ -]?class\s+)?"
+                               r"classification(?:\s+(?:task|problem))?|binary|multiclass|"
+                               r"(?:бинарная\s+|многоклассовая\s+)?классификация|"
+                               r"задача\s+(?:бинарной\s+|многоклассовой\s+)?классификации"),
+        }
+
+        def alias(token):
+            names = {name for name, expression in aliases.items()
+                     if re.fullmatch(expression, token.strip().strip(".:; "), re.I)}
+            if len(names) != 1:
+                known = {name for name, expression in
+                         (("regression", r"\bregression\b|регресс"),
+                          ("classification", r"\bclassification\b|классифика|\bmulticlass\b|\bbinary\b"))
+                         if re.search(expression, token, re.I)}
+                raise ContractError("task_type_conflict" if len(known) > 1 else "unsupported_task_type")
+            return names.pop()
+
+        exclusion = re.fullmatch(r"(.+?)(?:,\s*|\s+)(?:а\s+не|rather\s+than|not)\s+(.+)", clean, re.I)
+        if exclusion:
+            selected, excluded = (alias(token) for token in exclusion.groups())
+            if selected == excluded:
+                raise ContractError("task_type_conflict")
+            return selected
+        return alias(clean)
+
     for value, number in lines:
+        if explicit:
+            types.add(parse_explicit(value))
+            evidence.append(_evidence("task", "task_type", number))
+            continue
         local_types = set()
         clean = re.sub(r"(?:not|не)\s+(?:a\s+)?(?:regression|classification|регресс\w*|классифика\w*)", "", value, flags=re.I)
         if re.search(r"regress|регресс", clean, re.I):
             local_types.add("regression")
         if re.search(r"classif|классифика|\bmulticlass\b|\bbinary\b", clean, re.I):
             local_types.add("classification")
-        if explicit and not local_types:
-            raise ContractError("unsupported_task_type")
         types.update(local_types)
-        evidence.append(_evidence("task", "task_type" if explicit else "task_intro", number))
+        evidence.append(_evidence("task", "task_intro", number))
     if len(types) > 1 or (types and expected not in types):
         raise ContractError("task_type_conflict")
     return evidence if types else [_evidence("metric_registry", "metric_domain")]
@@ -413,28 +469,36 @@ def _type_declarations(text, expected):
 
 def _output_order(text):
     found = []
-    for value, number in _directive(text, r"output\s*order|row\s*order|порядок\s+(?:выходных\s+)?строк|порядок\s+вывода"):
+    explicit = _directive(text, r"output\s*order|row\s*order|порядок\s+(?:выходных\s+)?строк|порядок\s+вывода")
+    for value, number in explicit:
         folded = value.casefold().strip(". ")
         order = "sample" if folded in {"sample", "sample_submission", "sample_submission.csv"} else "test" if folded in {"test", "test.csv"} else None
         if order is None:
             raise ContractError("unsupported_output_order")
         found.append((order, _evidence("task", "explicit_output_order", number)))
-    lines = text.splitlines()
-    for index, raw in enumerate(lines):
-        if not re.search(r"поряд\w*\s+строк|row\s+order|same\s+order", raw, re.I):
+    explicit_lines = {number for _, number in explicit}
+    source = r"['\"]?(test\.csv|sample_submission\.csv)['\"]?"
+    # P0 prose must bind output row order to its source in this statement.
+    # A nearby filename, or an assertion that order matters, is not a binding.
+    templates = (
+        r"(?:output\s+)?rows\s+(?:must|should)\s+be\s+in\s+the\s+same\s+order\s+as\s+" + source,
+        r"(?:output\s+)?row\s+order\s+(?:must|should)\s+(?:match|follow)\s+(?:that\s+(?:in|of)\s+)?" + source,
+        r"(?:use|keep|preserve)\s+(?:the\s+)?same\s+order\s+as\s+" + source,
+        r"(?:keep|preserve)\s+(?:the\s+)?(?:same\s+)?row\s+order\s+(?:as|of|from)\s+" + source,
+        r"порядок\s+(?:выходных\s+)?строк(?:\s+(?:ответа|результата))?\s+(?:должен\s+)?совпадать\s+с\s+" + source,
+        r"порядок\s+(?:выходных\s+)?строк\s+(?:должен\s+)?соответствовать\s+порядку\s+(?:строк\s+)?в\s+" + source,
+    )
+    for number, raw in enumerate(text.splitlines(), 1):
+        if number in explicit_lines:
             continue
-        direct = re.findall(r"(?:с|with|as|of)\s+`?(test\.csv|sample_submission\.csv)`?", raw, re.I)
-        if direct:
-            choices = {"test" if item.casefold() == "test.csv" else "sample" for item in direct}
-        else:
-            window = "\n".join(lines[max(0, index - 4):index + 2])
-            choices = set()
-            if re.search(r"\btest\.csv\b", window, re.I):
-                choices.add("test")
-            if re.search(r"\bsample_submission\.csv\b", window, re.I):
-                choices.add("sample")
-        if len(choices) == 1:
-            found.append((choices.pop(), _evidence("task", "output_order_context", index + 1)))
+        plain = re.sub(r"^\s*[-*]\s+", "", raw.replace("**", "").replace("`", "")).strip()
+        choices = set()
+        for template in templates:
+            match = re.fullmatch(template + r"[.!]?", plain, re.I)
+            if match:
+                choices.add("test" if match.group(1).casefold() == "test.csv" else "sample")
+        for order in choices:
+            found.append((order, _evidence("task", "output_order_statement", number)))
     orders = {item[0] for item in found}
     if len(orders) > 1:
         raise ContractError("output_order_conflict")
@@ -468,6 +532,17 @@ def _json_bytes(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
 
 
+def _compatible_role(column, intended, role_map, evidence):
+    """Missing dictionary declarations may be completed; explicit roles may not."""
+    declared = role_map.get(column)
+    if declared is not None and declared != intended:
+        raise ContractError(intended + "_role_conflict", [{
+            "field": intended, "column": column,
+            "sources": [*evidence, _evidence("data_dictionary", "declared_role",
+                                             column=column, role=declared)],
+        }])
+
+
 def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds=10800.0):
     """Read declared metadata and row keys; no folds, transformations or fitting."""
     from aegml_input import discover_inputs, inspect_rows, InputError
@@ -482,6 +557,9 @@ def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds
         targets = {name for name, role in role_map.items() if role == "target"}
         explicit_targets = _declared_fields(text)
         task_targets = {name for name, _ in explicit_targets}
+        for column in task_targets:
+            _compatible_role(column, "target", role_map,
+                             [item[1] for item in explicit_targets if item[0] == column])
         if len(targets) > 1 or len(task_targets) > 1:
             raise ContractError("ambiguous_target")
         if targets and task_targets and targets != task_targets:
@@ -492,6 +570,9 @@ def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds
         if len(candidates) != 1:
             raise ContractError("ambiguous_target" if candidates else "missing_target")
         target = next(iter(candidates))
+        _compatible_role(target, "target", role_map,
+                         [item[1] for item in explicit_targets] or
+                         [_evidence("csv_headers", "train_only_target", column=target)])
         if target not in headers["train"]:
             raise ContractError("target_missing_from_train")
         if target in headers["test"]:
@@ -521,10 +602,12 @@ def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds
             sample_other = [column for column in headers["sample_submission"] if column != target]
             if kind != "probability" and all(column in headers["test"] for column in sample_other):
                 ids = sample_other
-                if any(role_map.get(column) == "feature" for column in ids):
-                    raise ContractError("id_role_conflict")
         if target in ids:
             raise ContractError("target_id_overlap")
+        for column in ids:
+            _compatible_role(column, "id", role_map,
+                             [item[1] for item in raw_ids if item[0] == column] or
+                             [_evidence("sample_submission", "identifier_inference", column=column)])
         positional = any(value.casefold() in {"position", "positional", "по порядку", "по позиции"}
                          for value, _ in _directive(text, r"row\s*mapping|сопоставление\s+строк"))
         if not ids and not positional:

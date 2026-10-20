@@ -1,0 +1,13 @@
+{
+  "status": "PASS_H024_OOM_ATTRIBUTION_GUARD_ONLY",
+  "finding": "H024-OOM-ATTR-001",
+  "old_accepts_without_local_oom_events": true,
+  "new_rejects_without_local_oom_events": true,
+  "single_missing_oom_or_max_rejected": true,
+  "positive_local_oom_events_accepted": true,
+  "before_sha256": "bceeeceb2431a3b0f99fe79d4c04c4475b8a5f9d4ec14fb8bbfdd262ed9c60b2",
+  "after_sha256": "5a94fc420e2cc4743eadc0c08a341a6defbc1d1c85eb6e6c04540f1105a41223",
+  "docker_tests_executed_in_this_guard": false,
+  "live_api_calls": 0,
+  "fit_calls": 0
+}

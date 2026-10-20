@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "spec_revision_date": "2026-10-20",
-  "status": "H02.3 TaskContract/resolver verified locally; source SHA preserved; ML/live API NOT_RUN",
+  "status": "H02.4 local Docker/profile checked, H02.3 review fixes checked; original sources preserved; no ML/live Qwen",
   "repository_source_head_before_spec": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
   "local_source_root_hint": "drive-download-20261019T181414Z-1-001",
   "sources": {
@@ -589,7 +589,13 @@
     "current_revision_sends_notified": true,
     "notification_policy": "notify owner before each new send; read replies on owner signal",
     "h023_review_sent_to_chat2": true,
-    "h023_review_reply_read": false
+    "h023_review_reply_read": false,
+    "chat2_h023_reply_id": "a0eca288-61c9-5df8-ae48-c38354a2cc67",
+    "chat2_h023_reply_read": true,
+    "current_h024_research_send_accepted": true,
+    "current_h023_fixes_send_accepted": true,
+    "requested_web_model": "GPT-5.6 Pro",
+    "web_model_selection_verified": false
   },
   "h02_2_bootstrap": {
     "receipt": "docs/H022_BOOTSTRAP_RESULT.json",
@@ -661,5 +667,67 @@
     "full_reply_chars": 15853,
     "snapshot_sha256": "45807c67741aa82a0fca6df5e68b5eb44745e53103686755112726a6f535d556",
     "scope": "primary-source checks and future H03/H04 hypotheses only; no measured quality gain"
+  },
+  "h02_4_container": {
+    "status": "PASS_H02_4_LOCAL_CONTAINER_ONLY",
+    "profile": "docs/container-profile.json",
+    "profile_sha256": "e761de45ba50761afb4d6abff6a89b316386e11d6edbe6f1c2e5a73d83d5f182",
+    "receipt": "docs/H024_RECEIPT.md",
+    "resource_receipt": "docs/H024_CONTAINER_FINAL_RESULT.json",
+    "resource_sha256": "223e7cb7c0b5f99fdeadffd824e6f82864e23014aac1202c9f38a8b4cf0dc01e",
+    "resource_cases_passed": 6,
+    "literal_cli_receipt": "docs/H024_DOCKER_CLI_RESULT.json",
+    "literal_cli_sha256": "c018108160db945d68f17136db187d71ded7460f3120aa61b97d6a29b3515508",
+    "literal_cli_datasets": 2,
+    "imports_receipt": "docs/H024_IMPORT_RESULT.json",
+    "imports_sha256": "e2720c68ddec084ce46c26b2a4ae0af1df7f66e5bf1a0939abe96ed13cd331e8",
+    "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+    "rootful_local_only": true,
+    "wsl_memory_changed": true,
+    "wsl_shutdown_executed": false,
+    "official_image_verified": false,
+    "full_H05_verified": false,
+    "live_qwen_api_calls": 0,
+    "model_fit_calls": 0,
+    "first_resource_receipt": "docs/H024_CONTAINER_RESULT.json",
+    "oom_guard_receipt": "docs/H024_OOM_GUARD_RESULT.json",
+    "oom_guard_sha256": "f7031b951276a4b7ebcc1279d47cae6c08d2694e67a0dc6132f59bab8292038f"
+  },
+  "h02_3_review_fixes": {
+    "status": "PASS_H02_3_REVIEW_FIXES_ONLY",
+    "receipt": "docs/H023_REVIEW_FIXES_RESULT.json",
+    "sha256": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466",
+    "test_methods": 38,
+    "cases": 93,
+    "cli_invocations": 4,
+    "runtime_source_sha256": {
+      "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+      "aegml_contracts.py": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+      "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+      "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+      "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+      "scripts/check_h023_contract.py": "a55cea2e3212277708a017e2877639222a22de5080f261d131e662169afd35fd"
+    },
+    "closed_findings": [
+      "H023-ROLE-001",
+      "H023-DECL-001",
+      "H023-ORDER-001"
+    ],
+    "bootstrap_receipt": "docs/H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+    "bootstrap_sha256": "ca516e6c5f2890d4ad4be898fbe45a2d293c3ca757e03fae86295ea8df684af9",
+    "before_source_receipt": "docs/H023_REVIEW_BASELINE_RESULT.json",
+    "before_source_receipt_sha256": "a979d6949fa500c4ee20f7d22ecfbcc5a5dd201fa3a45b55d578ff433cc6acfe",
+    "before_source_targeted_methods": 3,
+    "before_source_subcases": 13,
+    "before_source_expected_failures": 7
+  },
+  "h02_4_research_intake": {
+    "file": "docs/CHAT1_H024_H05_INTAKE.md",
+    "sha256": "ce001f3b69835a9e30b8d7c94b8df7ca8cc705c80d0c0b5a303521f3dfaac297",
+    "source_attachment_sha256": "ecd2a930827a0cf10820e0d4d8904697df68c07e9b5734e98c6fdb5c35212b4f",
+    "source_chars": 15970,
+    "h05_checks_status": "eight proposed checks NOT_RUN",
+    "current_applied_finding": "H024-OOM-ATTR-001 only; six probes rechecked",
+    "chat2_new_reply_read": false
   }
 }

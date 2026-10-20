@@ -1,63 +1,70 @@
 # Локальная среда и развёртывание на платформе
 
-Редакция 20.10.2026. **Текущий результат — PASS_H02_3_CONTRACT_ONLY**: TaskContract, resolver и встроенные схемы, 34 метода / 76 сценариев / 4 CLI; [квитанция H02.3](H023_RECEIPT.md). H02.1 остаётся PASS_H02_1_LOCAL_SUBSET_ONLY, [environment-lock.json](environment-lock.json); исторический H02.2 — bootstrap only, 24 метода / 51 сценарий / 37 CLI, [квитанция](H022_RECEIPT.md). Это не весь H02: Docker/profile, обучение, live API, изменение caps и сабмиты не выполнялись. Следующий H02.4 (Docker и фактический профиль), затем H03.1 — только по отдельной команде.
+Редакция 20.10.2026. **Текущий результат — PASS_H02_4_LOCAL_CONTAINER_ONLY**: Engine/локальный образ, 6/6 ресурсных canary, пакетная проверка 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач. [Квитанция H02.4](H024_RECEIPT.md), [профиль](container-profile.json). Следующий H03.1 начинается только по новой команде владельца.
+
+H02.3 после трёх исправлений независимого review прошёл 38 методов / 93 сценария / 4 CLI, bootstrap — 24/51/37: [H023_REVIEW_FIXES](H023_REVIEW_FIXES.md). Прежние H023 34/76/4 и H022-квитанции сохранены историческими. Обучение, реальные LLM-запросы и новый CSV полного агента не выполнялись.
 
 ## 1. Что действительно существует
 
-| Объект | Факт и доказательство | Что это не подтверждает |
+| Объект | Факт и доказательство | Граница результата |
 | --- | --- | --- |
-| Windows-ПК | Ryzen 5 9600X, 6 ядер / 12 потоков; 32 GiB DDR5 (2 × 16); RTX 5070 Ti 16 GB; Windows 11 Pro; SOURCE_MANIFEST | Скорость будущей модели и 32 GB свободной памяти процесса |
-| Новая WSL2 | AegML-Hackathon, Ubuntu 24.04.5, пользователь aegml, VHD `E:/WSL/AegML-Hackathon/ext4.vhdx` | OS-sandbox для произвольного Python |
-| Старая stdlib-venv | Python 3.12.3, `/home/aegml/venvs/aegml-py312`; после H02.1 по-прежнему 0 установленных distributions, среда не менялась | Импорты полного официального requirements |
-| Новая ML-venv H02.1 | `/home/aegml/venvs/aegml-ml-py312`, Python 3.12.3; 13 direct pins, всего 45 distributions, 9 package smoke и pip check PASS | Fit, H03 metric adapter, полный platform requirements или образ |
-| Установочные артефакты | 44 dependency wheels и отдельный bootstrap pip 25.2; версии/пути/SHA в [environment-lock.json](environment-lock.json) | Разрешение включать wheels/pip в submission ZIP или устанавливать пакеты runtime |
-| TaskContract H02.3 | Реализованы `aegml_input.py`, resolver/контракт в `aegml_contracts.py`, embedded schemas в `aegml_schemas.py`; [квитанция](H023_RECEIPT.md) | Профиль H03, модель, метрики, настоящий CSV, API/tools/AutoResearch или OS-изоляция |
-| Артефакты успешного H02.3 CLI | Два свежих JSON в `.aegml_runs/<uuid>/`: `task_contract.json`, `row_alignment.json`; exit 3 / implementation_incomplete, `contract_valid=true`, остальные full-agent флаги false | Готовый агент или результат обучения; новый CSV не создаётся |
-| Минимальная квитанция | [ENVIRONMENT_RECEIPT.json](ENVIRONMENT_RECEIPT.json): версия/prefix/CSV/JSON | Это историческая квитанция первоначальной настройки, не текущий полный runtime |
-| Mini | 6 файловых и 17 API-stub сценариев в новой WSL; [TESTMINI_STRICT_RESULT.json](TESTMINI_STRICT_RESULT.json) | Настоящее ML, native tools, AutoResearch и полный образ |
-| Сеть | Loopback HTTP в новой WSL проверен заглушкой; выданный внешний endpoint локально не проверен | Отсутствие сети вообще или успешный внешний запрос |
-| Platform mini | Владелец показал strict ZIP, score 0 и «Лучшее решение»; условие кода — API/CSV при штатном exit 0 в required | Сам UI не доказывает завершение Boosters; 3,2 с — загрузка, actual exit/env неизвестны |
-| Текущие ресурсы | Видны 12 CPU и 16 301 989 888 байт RAM ≈ 15,18 GiB; `.wslconfig` не меняли | Применённые WSL 24 / Docker 20 или точные 8 CPU / 32 GB платформы |
-| Docker | Готового проектного Docker-образа и проверки Engine нет; установка не выполнена | Наличие вложенного Docker на платформе |
+| Windows-ПК | Ryzen 5 9600X, 12 логических CPU, заявленные 32 GiB DDR5 и RTX 5070 Ti 16 GB; в inventory 33 410 088 960 байт физической памяти; Windows 11 Pro | Это не объём свободной RAM процесса и не измерение скорости модели |
+| WSL2 | AegML-Hackathon, Ubuntu 24.04.5, пользователь aegml; VHD на E:/WSL/AegML-Hackathon | Отдельная WSL сама по себе не подтверждает H05 worker boundary |
+| Старая stdlib-venv | Python 3.12.3, /home/aegml/venvs/aegml-py312; 0 сторонних distributions, сохранена | Историческая минимальная среда, не полный requirements |
+| ML-venv H02.1 | /home/aegml/venvs/aegml-ml-py312; 13 direct pins / 45 distributions, 9 smoke и pip check PASS | Fit и полный официальный образ не проверены |
+| Установочные артефакты | 44 dependency wheels и bootstrap pip; исходные версии/пути/SHA в [environment-lock.json](environment-lock.json) | Wheels/pip нельзя включать в submission ZIP |
+| TaskContract H02.3 | Resolver, target/type/metric/ID, finite schemas и направленные карты; текущие [38/93/4](H023_REVIEW_FIXES.md) | Профиль признаков, метрики, folds и ML отсутствуют |
+| Текущий CLI | Два свежих JSON task_contract/row_alignment, exit 3 / implementation_incomplete, contract_valid=true | API/tools/research/submission false, experiments 0; нового CSV нет |
+| WSL ресурсы H02.4 | Configured memory 24 GiB; замер 25 202 294 784 байт RAM ≈ 23,47 GiB; swap 4 GiB на E:, CPU 12 | Память гостя после накладных расходов и общий cap не равны свободной памяти модели |
+| Docker Engine | 29.9.1, rootful, Unix socket, cgroup v2/systemd; daemon запускается systemd | Пользователь aegml не добавлен в docker group; вложенный Docker платформы не предполагается |
+| Docker storage | /var/lib/docker внутри Linux VHD AegML-Hackathon на E: | Docker Desktop и второй backend не готовились |
+| Локальный контейнер | Memory 20 GiB / no-swap / CPU quota 8 / pids 256; UID/GID 1000:1000 | Это не официальный образ и не платформенные 32 GB |
+| Mini | Исторические 6 файловых и 17 API-stub сценариев; [квитанция](TESTMINI_STRICT_RESULT.json) | Не настоящий Qwen, ML по признакам или полный агент |
 
-Python 3.12 — ветка, 3.12.3 — её patch-релиз. Устанавливать 3.12.0 ради записи «3.12» не требуется. Точный Python patch и нативные версии платформы фиксируются по образу, когда его дадут; web-документация не меняет нашу установленную версию.
-
-Прежняя Ubuntu-24.04 остаётся default и относится к AEGYX. Её source, env, процессы и настройки не меняем. `wsl --shutdown` завершает все WSL; H02.1 не менял общий config/caps. Упоминание i5 в prompt Vovan — чужое/устаревшее сведение, не характеристика этого Ryzen 5 9600X. Пользовательские чаты Vovan разделены: первый — research, второй — teacher; read/send разрешены по назначению, читать по сигналу владельца без polling.
+Python 3.12.3 — patch-релиз ветки 3.12; замена на 3.12.0 не требуется. Параметры официального образа по-прежнему UNKNOWN. Упоминание i5 в старом prompt Vovan не является характеристикой этого ПК.
 
 ## 2. Где редактируем и где исполняем
 
-| Слой | Работа | Путь/профиль |
+| Слой | Работа | Путь / состояние |
 | --- | --- | --- |
-| Windows/Codex | Основной Git, редактор, документация и сборка | `E:/work/AegMLAI-agent` |
-| Исходные материалы | Неизменяемая копия кейса | `E:/work/AegMLAI-agent/drive-download-20261019T181414Z-1-001` |
-| WSL/Python | H02.1 LOCAL_SUBSET проверен; CPU-эксперименты только позже по H04 | AegML-Hackathon; ML `/home/aegml/venvs/aegml-ml-py312`, stdlib-venv отдельно |
-| Будущий Linux staging | Экспорт конкретного commit для запусков, а не второй расходящийся master | `/home/aegml/aegml_workspace/<commit>/` — PLANNED |
-| Будущие input snapshots | Копии данных с манифестом source SHA | `/home/aegml/aegml_data/<data_sha>/` — PLANNED |
-| Будущий cache/runs | Пакеты/временные ML-файлы внутри VHD на E: | `/home/aegml/cache/`, `/home/aegml/runs/` — PLANNED |
-| Текущие mini runs | Уже выполненные рабочие копии | `/mnt/e/work/AegMLAI-agent/runs/testmini/` |
+| Windows/Codex | Основной Git, редактор, документация | E:/work/AegMLAI-agent |
+| Исходные материалы | Неизменяемые файлы кейса | drive-download-20261019T181414Z-1-001 внутри проекта |
+| WSL/Python | Две сохранённые venv; проверки без fit | AegML-Hackathon, Linux VHD на E: |
+| Docker | Один локальный Engine, образ и временные canary-контейнеры | /var/lib/docker; факты в [H024_RECEIPT](H024_RECEIPT.md) |
+| Будущий ML staging | Экспорт конкретного commit, а не отдельный расходящийся master | `/home/aegml/aegml_workspace/<commit>/` — PLANNED |
+| Будущие input snapshots/cache | Копии с source SHA и временные ML-артефакты | /home/aegml/aegml_data/, /home/aegml/cache/ — PLANNED |
+| Исторические mini runs | Уже выполненные рабочие копии | /mnt/e/work/AegMLAI-agent/runs/testmini/ |
 
-Mini действительно запускалась из `/mnt/e`, поэтому нельзя писать «проект в Linux ещё не запускался». Будущие тяжёлые ML-runs желательно вынести в Linux filesystem, сохраняя Git/source/data SHA и экспортируя отчёты в основной проект. Их скорость ещё не измерена. Копия commit не редактируется как независимая версия без явного согласования.
+Mini и H02.3 действительно запускались в Linux. В H02.4 точный CLI выполнен в контейнере на рабочих копиях двух задач; не монтировались весь репозиторий, Windows home, private config или Docker socket. Будущие тяжёлые ML-runs желательно хранить в Linux filesystem с source/data SHA; их скорость ещё не измерена.
 
-## 3. Память и CPU: план и факт отдельно
+## 3. Применённые ресурсы и откат
 
-Проектный ориентир — **WSL 24 GiB**, контейнер в ней **20 GiB / 8 CPU**, остальное остаётся Windows и процессам хоста. Память контейнера входит в память WSL, а не добавляется. Настройки сейчас не применяются; это не точная копия платформенных 32 GB. Свободную RAM, swap, объём E: и peak RSS измеряем перед будущим пилотом.
+WSL настроена на **24 GiB memory и 4 GiB swap на E:**. Зафиксированный guest memory — 25 202 294 784 байт (около 23,47 GiB). Глобальный processors=8 не задавался: остаются 12 логических CPU хоста. Контейнерный лимит 20 GiB входит в память WSL; он не добавляет ещё 20 GiB.
 
-В [документации Microsoft](https://learn.microsoft.com/en-us/windows/wsl/wsl-config) `.wslconfig` описан как общий для WSL2; стандартная память —50% хоста. Нужное изменение оформляется отдельным H02.4 с сохранением before/after и учётом AEGYX. Текущее отсутствие файла не требует создать его сейчас.
+До H02.4 .wslconfig отсутствовал. На момент изменения оба дистрибутива были Stopped; wsl --shutdown не выполнялся. Default Ubuntu-24.04 не запускали, её файлы, исходники и venv AEGYX не меняли. Однако .wslconfig общий для WSL2, поэтому memory/swap envelope будущего запуска default Ubuntu тоже изменился. Это явно разрешённое общее изменение, а не обещание отсутствия любого влияния на AEGYX. [Документация Microsoft](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 
-Один кандидат обучается одновременно. Внутри AutoML/CV/BLAS не допускается умножение 8 потоков на каждый процесс. Лимит задаётся для дерева процессов и проверяется измерением. Локальная карта GPU не требуется для сдаваемого кода; ускоренный отдельный эксперимент P1 не заменяет CPU-приёмку.
+Before/after, SHA созданной конфигурации и rollback относятся к [квитанции H02.4](H024_RECEIPT.md) / [container-profile](container-profile.json). Исходное состояние — отсутствие файла, поэтому восстановление нельзя подменять произвольным числовым cap. Перед откатом нужно сверить текущий SHA с внесённой версией и сохранить возможные последующие изменения владельца; автоматический откат здесь не выполнялся.
 
-## 4. Когда нужен Docker
+В baseline-контейнере зафиксированы memory.max=21474836480, memory.swap.max=0, cpu.max="800000 100000", pids.max=256. Видимые cpu_count/affinity=12 не являются ошибкой: quota ограничивает CPU-время, а не обязана менять число видимых логических CPU. Локальные 20 GiB теснее заявленных платформой 32 GB и не подтверждают пригодность любого будущего fit. [Docker resources](https://docs.docker.com/engine/containers/resource_constraints/)
 
-1. **H02.1 завершён:** отдельная ML-venv, пакетные smoke/версии и pip check; существующая WSL и stdlib-venv сохранены. Это не установка Docker.
-2. **H02.2 bootstrap и H02.3 контракт завершены в своих областях:** [историческая bootstrap-квитанция](H022_RECEIPT.md), [текущая H02.3](H023_RECEIPT.md). Следующий H02.4 (Docker и фактический профиль), затем H03.1, далее до H03.5 → H04 — только по отдельным командам.
-3. **Следующий H02.4, перед H03:** подготовить один вариант Docker. Предпочтение проекта — Engine внутри AegML-Hackathon, чтобы данные Engine находились в VHD на E:. Docker Desktop с WSL2 — альтернатива, не второй одновременный backend. Его перенос хранилища требует отдельной проверки.
-4. **H05.1:** проверить реальную worker boundary до любого недоверенного generated code. Локальный Engine можно использовать для disposable-job; не монтировать Windows home, Docker socket или секреты в worker.
-5. **H10.2:** проверка полного ZIP в точном официальном образе. Если образ недоступен — записать digest локального приближения и незакрытое отличие; mini не заменяет эту приёмку.
-6. **H10.3:** отдельный длительный прогон по полному wall-clock и ресурсам.
+Один кандидат обучается одновременно. Будущие AutoML/CV/BLAS не получают по восемь потоков на каждый процесс. ML-потребление RAM, время и достаточность общего резерва ещё предстоит измерить. Локальная видеокарта не заменяет обязательную CPU-приёмку.
 
-Engine устанавливается по [официальной инструкции Ubuntu](https://docs.docker.com/engine/install/ubuntu/); конкретная версия и digest фиксируются при выполнении, не подставляются как «latest». [Rootless](https://docs.docker.com/engine/security/rootless/) имеет свои условия; ограничения ресурсов нельзя объявить действующими лишь по выбранному флагу. Точная конфигурация проверяется capability report.
+## 4. Образ и компонентная приёмка H02.4
 
-VirtualBox для этой схемы не требуется. Ранее найденная выключенная VM с малым выделением RAM не является нашей подготовленной средой и не должна автоматически перенастраиваться. Docker-в-Docker, privileged и доступ к host daemon на платформе не предполагаем; отсутствие этих возможностей влияет на выбор H05, а не решается скрытым запуском с большими правами.
+Engine **29.9.1** установлен внутри AegML-Hackathon; daemon rootful и запускается systemd. Управление идёт через Unix socket. Пользователь aegml не добавлен в docker group; контейнер не получает socket, privileged или host namespaces. Источник установки — [Docker Ubuntu](https://docs.docker.com/engine/install/ubuntu/); rootful и non-root runtime процесса — разные уровни прав.
+
+Локальный image ID: `sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b`.
+База — Ubuntu 24.04, digest `sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac`. Внутри Python 3.12.3 и glibc 2.39. Это наш dev-образ, а не образ организаторов. Версии OS-пакетов зафиксированы: apt-install не имеет отдельных version pins, поэтому одна только ссылка на base digest не обещает побайтно одинаковый будущий rebuild.
+
+| Квитанция | Что действительно проверено | Чего она не закрывает |
+| --- | --- | --- |
+| [H024_CONTAINER_RESULT](H024_CONTAINER_RESULT.json) | 6/6: baseline-профиль, малый CPU throttle, OOM при 64 и 128 MiB, pids 16 и tmpfs 4 MiB | Полную adversarial H05, ML peak RAM и три часа |
+| [H024_IMPORT_RESULT](H024_IMPORT_RESULT.json) | Python 3.12.3, 13 direct pins / 45 distributions, provided requirements SHA, OS package manifest | Все 37 direct pins и официальный platform image |
+| [H024_DOCKER_CLI_RESULT](H024_DOCKER_CLI_RESULT.json) | Два actual public-набора через literal python3 solution.py task.md; SHA исходников/входов и старый CSV сохранены | Новое предсказание CSV, вычисленные RMSE/F1, fit или API |
+
+В baseline-профиле корневая FS read-only, writable /work — ограниченный tmpfs 512 MiB, UID/GID 1000:1000, CapEff=0, NoNewPrivs=1, Seccomp=2, network=none и только loopback. Это фактические параметры локального canary, а не общий сертификат безопасности. OOM выполнялся только в малых контейнерах 64/128 MiB: выделение всех 20 GiB не проводилось. Real API и generated code не запускались. Наблюдения и inspect сохранены в JSON; флаг без наблюдаемого результата не считается приёмкой.
+
+H05.1 отдельно проверит полный worker boundary до недоверенного generated code. H10.2 отдельно требует точный официальный образ; при его отсутствии остаётся локальное приближение. H10.3 — самостоятельный длительный wall-clock прогон. VirtualBox, Docker-in-Docker и скрытое расширение прав не вводились. Временные canary не превращают rootful host daemon в непривилегированный сервис.
 
 ## 5. Пакеты: последовательность, а не установка всего сразу
 
@@ -66,29 +73,25 @@ VirtualBox для этой схемы не требуется. Ранее най
 Фактический порядок H02.1: новая ML-venv → bootstrap pip 25.2 → 44 dependency wheels → локальная установка → pip check PASS → версии/импорты и 9 smoke. Всего 45 distributions, включая pip. Pip — development installer, не новая submission-зависимость. Версии, import paths и SHA колёс сохранены в lock; run ID — `h02-20261020T160924Z`, локальные артефакты — `runs/h02/h02-20261020T160924Z/`.
 
 `installation.json` фиксирует промежуточное состояние до smoke; конечный статус берётся из `smoke.json` и environment-lock. Девять проверок охватывают NumPy, SciPy ABI/sparse, pandas CSV, пакетные sklearn-метрики, CatBoost import/Pool без fit, pydantic/jsonschema, конструкцию/закрытие OpenAI/httpx без запроса, psutil и отсутствие MCP. Это не H03-адаптер и не обучение модели.
-После H02.1 выполнена остановка: `model_fit_calls=0`, `real_api_requests=0`, старый stdlib остаётся 0 distributions. Полный resolver/импорты всех 37 pins и официальный образ не проверены. Малый fit/predict относится к последующему H04.
+После H02.1 были зафиксированы model_fit_calls=0 и real_api_requests=0; старая stdlib-venv сохранила 0 distributions. Теперь H02.3 отдельно подтвердил resolver, а H02.4 — локальный образ с 13 прямыми pins / 45 distributions, Python 3.12.3 и glibc 2.39: [H024_IMPORT_RESULT](H024_IMPORT_RESULT.json). Для build повторно проверены SHA 45 cached wheels, включая bootstrap pip; установка выполнялась при сборке, не из solution.py. Полные 37 pins, AutoGluon/LightAutoML и официальный образ этим не проверены. Малый fit/predict относится к будущему H04.
 
 После рабочего baseline добавляются LightGBM4.6.0/XGBoost2.1.4 и предварительно FLAML2.3.6 для сравнения. AutoGluon1.3.1 и LightAutoML0.4.2 — альтернативы из исследования; все три движка сразу не обязательны. auto-sklearn и Qwen-Agent не входят в выданный список. Torch/CUDA не нужен P0; собственные скачиваемые embeddings и pretrained tabular-модели не используются.
 
-Если пакет/версия не работают на платформе, это разрыв совместимости, а не повод вызывать pip из `solution.py`. По новому TXT зависимости устанавливает платформа из неизменённого предоставленного root `requirements.txt`; собственный runtime pip недоступен. Наши установки и пакетная сеть относятся к локальному H02.1. Локальный subset/его манифест не подменяют полный предоставленный submission-файл; сторонние библиотеки, venv и wheels в ZIP запрещены.
+Если пакет/версия не работают на платформе, это разрыв совместимости, а не повод вызывать pip из `solution.py`. По новому TXT зависимости устанавливает платформа из неизменённого предоставленного root `requirements.txt`; собственный runtime pip недоступен. Пакетная/registry-сеть использовалась для подготовки локальных H02.1/H02.4, а не для runtime solution.py. Локальный subset/его манифест не подменяют полный предоставленный submission-файл; сторонние библиотеки, venv и wheels в ZIP запрещены.
 
 ## 6. Qwen и текущая локальная конфигурация
 
-Ключ получен от владельца. Настройки взяты из официальной инструкции, private config записан вне Git с UID1000/0700/0600: [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json). Статус CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS, реальных API-запросов 0. **LIVE_API_ON_OWNER_COMMAND_ONLY**: настоящие запросы только по отдельной команде владельца. Mini не заменяет проверку сервиса.
+Ключ получен от владельца. Private config вне Git, UID1000/0700/0600: [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json). Статус CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS, реальных API-запросов 0. **LIVE_API_ON_OWNER_COMMAND_ONLY**: только после отдельной команды «протестить по API». Импорт SDK или проверка локального файла не равны проверке аутентификации.
 
-H02.1, bootstrap H02.2 и контракт H02.3 завершены без LLM API; наличие ключа и локального файла не является API_PASS. H06.1 offline-протокол — отдельный подпункт. H06.2 только после команды владельца проверит аутентификацию и действие → результат → продолжение на безопасном инструменте, без generated ML-кода; локальные пакеты не заменяют выданный runtime.
+H02.1–H02.4 выполнены без реального LLM API и без обучения. H06.1 offline-протокол остаётся отдельным подпунктом, H06.2 после команды проверит безопасную цепочку action → result → продолжение без generated ML. Используется выданный API; другие модели через собственные ключи запрещены. Допустимость локальной той же Qwen UNKNOWN, веса сейчас не скачиваются.
 
-Chosen policy: использовать provided API. Материал прямо запрещает другие модели через собственные API-ключи. Допустимость локальной **той же** Qwen для dev не установлена; это UNKNOWN, а не полученное разрешение или прямой отдельный запрет. Поэтому веса сейчас не скачиваются. Документация Qwen-Agent может быть источником идей, не обязательной зависимостью приложения.
+## 7. Что осталось непроверенным
 
-## 7. Приёмка среды и ещё открытые вопросы
+Следующий этап — **H03.1 по новой команде владельца**. Профили признаков, preprocessing, metric adapters, folds и CSV writer ещё не выполнены. Fit, live API/tools, AutoResearch, полный process-tree/hard-timeout boundary и официальный образ также не проверены. Все 74 основных и 17 пересекающихся HARN-T остаются NOT_RUN; текущие H02 component PASS не закрывают их целиком.
 
-Нужно сохранить OS/Python/package versions, commit/source/data SHA, пути обеих venv/cache/workspace, digest образа, effective CPU/RAM/swap/disk и capabilities worker. Команда уже известна из TXT: `python3 solution.py task.md`; её фактическое воспроизведение в точном образе — отдельная приёмка. Остальные неподтверждённые поля остаются UNKNOWN.
+У организаторов остаются image/Dockerfile, actual env/версии, доступные OS-примитивы, трактовка exitcode и last/best selection. Подробные логи могут быть только у администраторов; не предполагать их наличие в пользовательском UI. [ORGANIZER_QUESTIONS](ORGANIZER_QUESTIONS.md) — неотправленный черновик.
 
-У организаторов при доступности нужны image/Dockerfile, actual env/версии, сеть, OS-isolation, трактовка exitcode и selection last/best. Подробные логи по TXT доступны только администраторам; можно просить обезличенный per-task итог, не предполагать его наличие в пользовательском UI. [ORGANIZER_QUESTIONS.md](ORGANIZER_QUESTIONS.md) содержит неотправленный черновик.
-
-Весь H02 не закрывается созданной venv или историческими mini PASS. Новое изменение окружения выполняется в своём подпункте с доказательствами и rollback-планом; рабочие оригиналы и AEGYX сохраняются.
-
-H02.3 проверяет только слой контракта. Все74основных и17HARN-T остаются NOT_RUN; CSV полного агента, fit/API/tools/AutoResearch, Docker/caps, OS-граница и точный образ ещё впереди. Новый CPU ML ответ чата «1» прочитан по сигналу владельца: [intake](CHAT1_CPU_ML_INTAKE.md). Чату «2» после уведомления передан actual H023 snapshot; новый ответ в доступной истории пока отсутствует. Предыдущие ответы относятся к H02.2, не к текущей реализации.
+Для обоих пользовательских чатов Vovan выбран целевой GPT‑5.6 Pro; фактический выбор модели пока не подтверждён из-за UI-проблем. CPU ML ответ чата «1» и статический H02.3 review чата «2» уже разобраны, три замечания парсера закрыты в [H023_REVIEW_FIXES](H023_REVIEW_FIXES.md). Первая попытка H02.4 в чат «1» вернула TooManyRequests; позднее сообщения в1 (исследование H05) и2 (прошлые parser fixes и отдельный полный Docker packet) успешно приняты после уведомления владельца. Ответы на новые пакеты ещё не прочитаны; UI-подтверждение модели остаётся pending; читать по сигналу владельца, без polling, перед каждой отправкой уведомлять. Повтор при необходимости разрешён; причина UI-сбоев без доказательств не устанавливается.
 
 ## 8. Точный submission-контракт из платформенного TXT
 

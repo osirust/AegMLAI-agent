@@ -1,0 +1,1076 @@
+{
+  "phase": "H02.4",
+  "status": "PASS_H02_4_LOCAL_CONTAINER_PROBES",
+  "scope": "local image and small handwritten resource canaries only",
+  "checker_sha256": "bceeeceb2431a3b0f99fe79d4c04c4475b8a5f9d4ec14fb8bbfdd262ed9c60b2",
+  "runner_python": "3.12.3",
+  "requested_image": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+  "model_training_executed": false,
+  "live_api_called": false,
+  "official_platform_image_verified": false,
+  "full_H05_acceptance_claimed": false,
+  "generated_candidate_executed": false,
+  "host_configuration_changed": false,
+  "private_host_paths_mounted": false,
+  "cases": [
+    {
+      "id": "H024-BASELINE",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-baseline",
+      "status": "PASS",
+      "profile": {
+        "memory": 21474836480,
+        "cpus": 8,
+        "pids": 256,
+        "tmpfs": 536870912
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "14f1d2901b4d43febae7ddd78d5ccac4d28f88ce8045252739a132d3d40d5ceb",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-baseline",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 21474836480,
+        "memory_swap": 21474836480,
+        "nano_cpus": 8000000000,
+        "pids_limit": 256,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=536870912,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "21474836480",
+          "memory.swap.max": "0",
+          "cpu.max": "800000 100000",
+          "pids.max": "256",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "python": "3.12.3",
+          "os_release": {
+            "VERSION_ID": "24.04",
+            "ID": "ubuntu"
+          },
+          "kernel": "6.18.54.1-microsoft-standard-WSL2",
+          "libc": [
+            "glibc",
+            "2.39"
+          ],
+          "uid": 1000,
+          "gid": 1000,
+          "status": {
+            "CapEff": "0000000000000000",
+            "NoNewPrivs": "1",
+            "Seccomp": "2"
+          },
+          "mounts": [
+            {
+              "destination": "/",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "overlay"
+            },
+            {
+              "destination": "/proc",
+              "options": [
+                "rw",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/dev",
+              "options": [
+                "rw",
+                "nosuid"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/dev/pts",
+              "options": [
+                "rw",
+                "nosuid",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "devpts"
+            },
+            {
+              "destination": "/sys",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "sysfs"
+            },
+            {
+              "destination": "/sys/fs/cgroup",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "cgroup2"
+            },
+            {
+              "destination": "/dev/mqueue",
+              "options": [
+                "rw",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "mqueue"
+            },
+            {
+              "destination": "/dev/shm",
+              "options": [
+                "rw",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/work",
+              "options": [
+                "rw",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/etc/hostname",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "ext4"
+            },
+            {
+              "destination": "/etc/hosts",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "ext4"
+            },
+            {
+              "destination": "/etc/resolv.conf",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "ext4"
+            },
+            {
+              "destination": "/proc/bus",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/proc/fs",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/proc/irq",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/proc/sys",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/proc/sysrq-trigger",
+              "options": [
+                "ro",
+                "nosuid",
+                "nodev",
+                "noexec",
+                "relatime"
+              ],
+              "filesystem": "proc"
+            },
+            {
+              "destination": "/proc/acpi",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/proc/interrupts",
+              "options": [
+                "rw",
+                "nosuid"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/proc/kcore",
+              "options": [
+                "rw",
+                "nosuid"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/proc/keys",
+              "options": [
+                "rw",
+                "nosuid"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/proc/scsi",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/proc/timer_list",
+              "options": [
+                "rw",
+                "nosuid"
+              ],
+              "filesystem": "tmpfs"
+            },
+            {
+              "destination": "/sys/firmware",
+              "options": [
+                "ro",
+                "relatime"
+              ],
+              "filesystem": "tmpfs"
+            }
+          ],
+          "interfaces": [
+            "lo"
+          ],
+          "visible_cpu_count": 12,
+          "visible_affinity_count": 12,
+          "visible_host_memory_bytes": 25202311168,
+          "root_write_errno": 30,
+          "work_writable": true,
+          "work_uid": 1000,
+          "work_gid": 1000,
+          "work_mode": 448,
+          "work_capacity_bytes": 536870912,
+          "forbidden_environment_names": [],
+          "private_paths_present": []
+        }
+      }
+    },
+    {
+      "id": "H024-CPU-THROTTLE",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-cpu",
+      "status": "PASS",
+      "profile": {
+        "memory": 134217728,
+        "cpus": 0.5,
+        "pids": 16,
+        "tmpfs": 4194304
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "0f9ce8228911d0590812861e6f35f95f1a88bd1277833f2a96a2f4845f9a7944",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-cpu",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 134217728,
+        "memory_swap": 134217728,
+        "nano_cpus": 500000000,
+        "pids_limit": 16,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=4194304,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "134217728",
+          "memory.swap.max": "0",
+          "cpu.max": "50000 100000",
+          "pids.max": "16",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "elapsed_seconds": 1.6685496139999998,
+          "child_exit_codes": [
+            0,
+            0
+          ],
+          "children_cpu_seconds": 0.82,
+          "cpu_stat_delta": {
+            "usage_usec": 839830,
+            "nr_throttled": 17,
+            "throttled_usec": 2497576
+          }
+        }
+      }
+    },
+    {
+      "id": "H024-MEMORY-64M",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory64",
+      "status": "PASS",
+      "profile": {
+        "memory": 67108864,
+        "cpus": 1,
+        "pids": 16,
+        "tmpfs": 4194304
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "e6f87f6ebe657bf9c79ae3eb9e5be754b3511ad1dbbc1e71bfb5dd4242ff7861",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory64",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 67108864,
+        "memory_swap": 67108864,
+        "nano_cpus": 1000000000,
+        "pids_limit": 16,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=4194304,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": true
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "67108864",
+          "memory.swap.max": "0",
+          "cpu.max": "100000 100000",
+          "pids.max": "16",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "unsupported_group_oom": false,
+          "parent_survived": true,
+          "child_returncode": -9,
+          "maximum_touch_bytes": 201326592,
+          "memory_event_delta": {
+            "oom": 1,
+            "oom_kill": 1,
+            "max": 36
+          }
+        }
+      }
+    },
+    {
+      "id": "H024-MEMORY-128M",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory128",
+      "status": "PASS",
+      "profile": {
+        "memory": 134217728,
+        "cpus": 1,
+        "pids": 16,
+        "tmpfs": 4194304
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "b351b304a9cec57709281ad694060b044e871cf4517bc78fadddcffc6b3a16c1",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory128",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 134217728,
+        "memory_swap": 134217728,
+        "nano_cpus": 1000000000,
+        "pids_limit": 16,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=4194304,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": true
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "134217728",
+          "memory.swap.max": "0",
+          "cpu.max": "100000 100000",
+          "pids.max": "16",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "unsupported_group_oom": false,
+          "parent_survived": true,
+          "child_returncode": -9,
+          "maximum_touch_bytes": 201326592,
+          "memory_event_delta": {
+            "oom": 1,
+            "oom_kill": 1,
+            "max": 36
+          }
+        }
+      }
+    },
+    {
+      "id": "H024-PIDS-16",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-pids",
+      "status": "PASS",
+      "profile": {
+        "memory": 268435456,
+        "cpus": 1,
+        "pids": 16,
+        "tmpfs": 4194304
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "838d2c3b812b00bba4348ac9879f64cc7ba9fc4c46bab82e4a9006229ed0da63",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-pids",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 268435456,
+        "memory_swap": 268435456,
+        "nano_cpus": 1000000000,
+        "pids_limit": 16,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=4194304,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "268435456",
+          "memory.swap.max": "0",
+          "cpu.max": "100000 100000",
+          "pids.max": "16",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "spawned_children": 15,
+          "maximum_attempts": 40,
+          "failure_errno": 11,
+          "pids_current_at_failure": 16,
+          "pids_current_after_cleanup": 1,
+          "pids_max_event_delta": 2
+        }
+      }
+    },
+    {
+      "id": "H024-TMPFS-4M",
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-tmpfs",
+      "status": "PASS",
+      "profile": {
+        "memory": 134217728,
+        "cpus": 1,
+        "pids": 16,
+        "tmpfs": 4194304
+      },
+      "handwritten_canary": true,
+      "docker_inspect": {
+        "id": "cd34147fcf3f399aa39d9d54512b6ebbbe1a84a2d6865345f3d264bc92d3b692",
+        "name": "/aegml-h024-d9fcc7462ed1458287944a2018d918e6-tmpfs",
+        "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+        "user": "1000:1000",
+        "memory": 134217728,
+        "memory_swap": 134217728,
+        "nano_cpus": 1000000000,
+        "pids_limit": 16,
+        "network": "none",
+        "read_only": true,
+        "privileged": false,
+        "cap_drop": [
+          "ALL"
+        ],
+        "cap_add": null,
+        "security_opt": [
+          "no-new-privileges=true"
+        ],
+        "binds": null,
+        "tmpfs": {
+          "/work": "rw,noexec,nosuid,nodev,size=4194304,uid=1000,gid=1000,mode=0700"
+        },
+        "pid_mode": "",
+        "ipc_mode": "private",
+        "cgroup_namespace": "private",
+        "devices": [],
+        "log_driver": "none",
+        "state": "created",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "docker_mounts": [],
+      "container_state": {
+        "state": "exited",
+        "exit_code": 0,
+        "oom_killed": false
+      },
+      "observation": {
+        "limits": {
+          "memory.max": "134217728",
+          "memory.swap.max": "0",
+          "cpu.max": "100000 100000",
+          "pids.max": "16",
+          "memory.oom.group": "0"
+        },
+        "result": {
+          "failure_errno": 28,
+          "bytes_written": 4194304,
+          "maximum_attempted_bytes": 8388608
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Configured 20 GiB is not a measurement of available physical RAM.",
+    "Visible CPU count/affinity is not the cgroup quota.",
+    "No full adversarial worker/secret/process-tree/three-hour acceptance.",
+    "Rootful local Docker differs from the still unknown official image."
+  ],
+  "engine": {
+    "server_version": "29.9.1",
+    "cgroup_version": "2",
+    "cgroup_driver": "systemd",
+    "os_type": "linux",
+    "security_options": [
+      "name=seccomp,profile=builtin",
+      "name=cgroupns"
+    ]
+  },
+  "image_id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+  "commands": [
+    {
+      "operation": "engine_info",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 161,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "local_image_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 74,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 828,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 3097,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 827,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 827,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 815,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 332,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 814,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 814,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 819,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 321,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 817,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 817,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 822,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 322,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 820,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 820,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 817,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 307,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 816,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 816,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_create",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 818,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_start_attach",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 230,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 817,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "container_inspect",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 817,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    },
+    {
+      "operation": "remove_owned_container",
+      "returncode": 0,
+      "timed_out": false,
+      "stdout_bytes": 65,
+      "stderr_bytes": 0,
+      "truncated": false,
+      "capture_incomplete": false
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-baseline",
+      "status": "removed",
+      "container_id": "14f1d2901b4d43febae7ddd78d5ccac4d28f88ce8045252739a132d3d40d5ceb"
+    },
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-cpu",
+      "status": "removed",
+      "container_id": "0f9ce8228911d0590812861e6f35f95f1a88bd1277833f2a96a2f4845f9a7944"
+    },
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory64",
+      "status": "removed",
+      "container_id": "e6f87f6ebe657bf9c79ae3eb9e5be754b3511ad1dbbc1e71bfb5dd4242ff7861"
+    },
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-memory128",
+      "status": "removed",
+      "container_id": "b351b304a9cec57709281ad694060b044e871cf4517bc78fadddcffc6b3a16c1"
+    },
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-pids",
+      "status": "removed",
+      "container_id": "838d2c3b812b00bba4348ac9879f64cc7ba9fc4c46bab82e4a9006229ed0da63"
+    },
+    {
+      "name": "aegml-h024-d9fcc7462ed1458287944a2018d918e6-tmpfs",
+      "status": "removed",
+      "container_id": "cd34147fcf3f399aa39d9d54512b6ebbbe1a84a2d6865345f3d264bc92d3b692"
+    }
+  ],
+  "remaining_owned_names": [],
+  "cases_passed": 6
+}

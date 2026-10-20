@@ -1,0 +1,225 @@
+{
+  "phase": "H02.3 parser review before-after evidence",
+  "status": "EXPECTED_FAILURES_REPRODUCED_OLD_SOURCE_ONLY",
+  "scope": "Only three review methods on a saved old production source; no current test rerun",
+  "python": "3.12.3",
+  "executable": "/home/aegml/venvs/aegml-ml-py312/bin/python",
+  "user": "aegml",
+  "uid": 1000,
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "old_source_path": "runs/h02/h023-review-fixes-20261020T184808Z/aegml_contracts.before.py",
+  "old_source_sha256": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+  "dependency_sha256": {
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "scripts/check_h023_contract.py": "a55cea2e3212277708a017e2877639222a22de5080f261d131e662169afd35fd",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "current_source_sha256_not_executed": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+  "new_pass_reference": {
+    "path": "docs/H023_REVIEW_FIXES_RESULT.json",
+    "sha256": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466",
+    "status": "PASS_H02_3_CONTRACT_ONLY",
+    "test_methods_run": 38,
+    "behavior_cases_passed": 93,
+    "rerun_in_this_baseline": false
+  },
+  "module_loading": {
+    "old_module_registered": "_aegml_contracts_h023_review_old",
+    "checker_imported_without_main": true,
+    "CONTRACTS_is_old_module": true,
+    "SCHEMAS_is_current_unchanged": true,
+    "root_import_path_added": true
+  },
+  "test_methods_run": 3,
+  "behavior_cases_checked": 13,
+  "behavior_cases_failed": 7,
+  "behavior_cases_passed": 6,
+  "unittest_failure_count": 6,
+  "unittest_error_count": 1,
+  "distinct_finding_ids_reproduced": [
+    "H023-ROLE-001",
+    "H023-DECL-001",
+    "H023-ORDER-001"
+  ],
+  "method_results": [
+    {
+      "method": "test_review_role_conflicts_and_absent_role_completion",
+      "finding_id": "H023-ROLE-001",
+      "observed_unittest_problem_count": 2,
+      "status": "FAIL_ON_OLD_SOURCE"
+    },
+    {
+      "method": "test_review_rejects_unparsed_declaration_remainders",
+      "finding_id": "H023-DECL-001",
+      "observed_unittest_problem_count": 3,
+      "status": "FAIL_ON_OLD_SOURCE"
+    },
+    {
+      "method": "test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "finding_id": "H023-ORDER-001",
+      "observed_unittest_problem_count": 2,
+      "status": "FAIL_ON_OLD_SOURCE"
+    }
+  ],
+  "cases": [
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_target_ignore",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_id_feature",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_missing_target_declaration",
+      "status": "PASS"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion",
+      "case": "H023-ROLE-001_missing_id_declaration",
+      "status": "PASS"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_unknown_metric_suffix",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_unsupported_type_suffix",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders",
+      "case": "H023-DECL-001_dictionary_metric_transform",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_explicit_sample_near_input_test",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_row_order_matters_is_ambiguous",
+      "status": "FAIL"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_explicit_test_identity",
+      "status": "PASS"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_two_explicit_orders_conflict",
+      "status": "PASS"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_english_same_statement",
+      "status": "PASS"
+    },
+    {
+      "test": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "case": "H023-ORDER-001_russian_same_statement",
+      "status": "PASS"
+    }
+  ],
+  "subtest_errors": [
+    {
+      "method": "test_review_role_conflicts_and_absent_role_completion",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion (case='target_ignore')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    },
+    {
+      "method": "test_review_role_conflicts_and_absent_role_completion",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_role_conflicts_and_absent_role_completion (case='id_feature')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    },
+    {
+      "method": "test_review_rejects_unparsed_declaration_remainders",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders (case='unknown_metric_suffix')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    },
+    {
+      "method": "test_review_rejects_unparsed_declaration_remainders",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders (case='unsupported_type_suffix')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    },
+    {
+      "method": "test_review_rejects_unparsed_declaration_remainders",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_rejects_unparsed_declaration_remainders (case='dictionary_metric_transform')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    },
+    {
+      "method": "test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename (case='explicit_sample_near_input_test')",
+      "exception_type": "ContractError",
+      "reason_code": "output_order_conflict",
+      "message": "output_order_conflict"
+    },
+    {
+      "method": "test_review_output_order_is_not_inferred_from_neighboring_filename",
+      "test_id": "_h023_review_baseline_checker.ContractChecks.test_review_output_order_is_not_inferred_from_neighboring_filename (case='row_order_matters_is_ambiguous')",
+      "exception_type": "AssertionError",
+      "reason_code": null,
+      "message": "ContractError not raised"
+    }
+  ],
+  "source_sha256_before": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "a55cea2e3212277708a017e2877639222a22de5080f261d131e662169afd35fd",
+    "old_snapshot": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+    "new_pass_reference": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466"
+  },
+  "source_sha256_after": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "151d5283a144ed7d8d5fd7618042d53ea129b00ce29a2ae8f5853d16deae6599",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "a55cea2e3212277708a017e2877639222a22de5080f261d131e662169afd35fd",
+    "old_snapshot": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+    "new_pass_reference": "8dcd2ce7d7a07074447a69068b1c41138e0b7454e039c15975f3b8d30f47c466"
+  },
+  "watched_source_files_unchanged": true,
+  "model_fit_calls": 0,
+  "real_api_requests": 0,
+  "cli_invocations": 0,
+  "actual_public_input_checks": 0,
+  "docker_commands": 0,
+  "package_installations": 0,
+  "wsl_configuration_changed": false,
+  "unittest_output": {
+    "path": "runs/h02/h024-20261020T184606Z/parser-review-baseline/unittest-output.txt",
+    "retained_bytes": 7969,
+    "total_bytes": 7969,
+    "limit_bytes": 65536,
+    "truncated": false,
+    "sha256": "cf3ea4602961a4a613a98ddae89a5b99eff16bec17c523df267e5f0a98752905"
+  },
+  "helper_sha256": "da015e25799616b6173d45f04886f82c35534f844cc97b1ea94ad4fdc7ee1ddc",
+  "elapsed_seconds": 0.46031882099999955,
+  "local_baseline": {
+    "path": "runs/h02/h024-20261020T184606Z/parser-review-baseline/baseline.json",
+    "sha256": "125773ad23b9f8d41d63ead430a14064faa895567175e7330f94ef1ee03d24d2"
+  }
+}

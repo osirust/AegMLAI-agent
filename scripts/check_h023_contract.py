@@ -57,6 +57,11 @@ def hashes(paths):
     return {str(path): sha(path) for path in paths if path.is_file()}
 
 
+def json_value_sha(value):
+    data = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+    return hashlib.sha256(data).hexdigest()
+
+
 def write_csv(path, header, rows):
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as stream:
@@ -182,6 +187,116 @@ class ContractChecks(unittest.TestCase):
         self.assertEqual(hashes(fixture.source_paths()), before, "rejection changed an input")
         self.assertFalse((fixture.task.resolve().parent / "submission.csv").exists())
         return error
+
+    def review_fixture(self, name):
+        """Exact two-row keyed-alignment basis from the independent review."""
+        fixture = Fixture(self.base / name)
+        fixture.include_references = False
+        fixture.headers = {"train": ["id", "x", "y"], "test": ["id", "x"], "sample_submission": ["id", "y"]}
+        fixture.rows = {"train": [["a", "1", "10"]], "test": [["b", "2"], ["c", "3"]],
+                        "sample_submission": [["c", "0"], ["b", "0"]]}
+        fixture.dictionary = [["id", "id", "string"], ["x", "feature", "float"], ["y", "target", "float"]]
+        fixture.save()
+        return fixture
+
+    def test_review_role_conflicts_and_absent_role_completion(self):
+        variants = (("target_ignore", "y", "ignore", "target_role_conflict"),
+                    ("id_feature", "id", "feature", "id_role_conflict"),
+                    ("missing_target_declaration", "y", None, None),
+                    ("missing_id_declaration", "id", None, None))
+        for label, column, role, code in variants:
+            with self.subTest(case=label), self.case("H023-ROLE-001_" + label):
+                fixture = self.review_fixture("role-" + label)
+                if role is None:
+                    fixture.dictionary = [row for row in fixture.dictionary if row[0] != column]
+                else:
+                    for row in fixture.dictionary:
+                        if row[0] == column:
+                            row[1] = role
+                fixture.save()
+                if code is None:
+                    contract, payload = self.build(fixture)
+                    self.assertEqual(payload["target_columns"], ["y"])
+                    self.assertEqual(payload["id_columns"], ["id"])
+                    self.assertEqual(contract.alignment["sample_to_test"], [1, 0])
+                else:
+                    error = self.rejected(fixture, codes={code})
+                    details = json.dumps(error.conflicts, ensure_ascii=False)
+                    self.assertIn(column, details)
+                    self.assertIn(role, details)
+                    self.assertIn("dictionary", details)
+                    self.assertIn("task", details)
+                    self.assertFalse((fixture.root / ".aegml_runs").exists())
+
+    def test_review_rejects_unparsed_declaration_remainders(self):
+        variants = (("unknown_metric_suffix", "unsupported_metric"),
+                    ("unsupported_type_suffix", "unsupported_task_type"),
+                    ("dictionary_metric_transform", "unsupported_metric_transform"))
+        for label, code in variants:
+            with self.subTest(case=label), self.case("H023-DECL-001_" + label):
+                fixture = self.review_fixture("declaration-" + label)
+                if label == "unknown_metric_suffix":
+                    fixture.metric = "RMSE, MAPE"
+                elif label == "unsupported_type_suffix":
+                    fixture.kind = "regression + clustering"
+                fixture.save()
+                if label == "dictionary_metric_transform":
+                    rows = [row + ["RMSE(log1p(y))" if row[1] == "target" else ""] for row in fixture.dictionary]
+                    write_csv(fixture.files["data_dictionary"], ["feature", "role", "dtype", "metric"], rows)
+                self.rejected(fixture, codes={code})
+                self.assertFalse((fixture.root / ".aegml_runs").exists())
+
+    def test_review_supported_en_ru_declarations_remain_valid(self):
+        variants = ("english_full_rmse", "english_known_negation", "russian_known_negation", "native_russian_rmse_scale")
+        for label in variants:
+            with self.subTest(case=label), self.case("H023-DECL-001_supported_" + label):
+                fixture = self.review_fixture("supported-" + label)
+                expected = "rmse"
+                if label == "english_full_rmse":
+                    fixture.metric = "Root Mean Squared Error"
+                elif label in {"english_known_negation", "russian_known_negation"}:
+                    fixture.kind = "multiclass classification"
+                    fixture.metric = "Macro F1, not Accuracy" if label.startswith("english") else "Macro F1, а не Accuracy"
+                    expected = "macro_f1"
+                fixture.save()
+                if label == "russian_known_negation":
+                    text = fixture.task.read_text(encoding="utf-8").replace(
+                        "Task type: multiclass classification", "Тип задачи: многоклассовая классификация").replace(
+                        "Metric: Macro F1, а не Accuracy", "Основная метрика — Macro F1, а не Accuracy")
+                    fixture.task.write_text(text, encoding="utf-8")
+                elif label == "native_russian_rmse_scale":
+                    text = fixture.task.read_text(encoding="utf-8").replace(
+                        "Task type: regression", "Тип задачи: регрессия").replace(
+                        "Metric: RMSE", "Метрика оценки — **RMSE** на исходной шкале таргета:")
+                    fixture.task.write_text(text, encoding="utf-8")
+                contract, payload = self.build(fixture)
+                self.assertEqual(payload["metric"]["name"], expected)
+                self.assertEqual(contract.alignment["output_to_test"], [0, 1])
+
+    def test_review_output_order_is_not_inferred_from_neighboring_filename(self):
+        variants = (
+            ("explicit_sample_near_input_test", "Input: `test.csv`\nRow order: sample", None, "sample"),
+            ("row_order_matters_is_ambiguous", "Input: `test.csv`\nRow order matters.", "ambiguous_output_order", None),
+            ("explicit_test_identity", "Output order: test", None, "test"),
+            ("two_explicit_orders_conflict", "Output order: test\nRow order: sample", "output_order_conflict", None),
+            ("english_same_statement", "Output rows must be in the same order as test.csv.", None, "test"),
+            ("russian_same_statement", "Порядок строк должен совпадать с `test.csv`.", None, "test"),
+        )
+        for label, declaration, code, expected in variants:
+            with self.subTest(case=label), self.case("H023-ORDER-001_" + label):
+                fixture = self.review_fixture("order-" + label)
+                fixture.output_order = None
+                fixture.extra = declaration
+                fixture.save_task()
+                if code is not None:
+                    self.rejected(fixture, codes={code})
+                    self.assertFalse((fixture.root / ".aegml_runs").exists())
+                else:
+                    contract, payload = self.build(fixture)
+                    self.assertEqual(contract.alignment["sample_to_test"], [1, 0])
+                    self.assertEqual(contract.alignment["output_order"], expected)
+                    self.assertEqual(payload["prediction_schema"]["output_order"], expected)
+                    self.assertEqual(contract.alignment["output_to_test"], [1, 0] if expected == "sample" else [0, 1])
 
     def test_target_position_and_feature_projection(self):
         for label, order in (("nonlast", ["left", "y", "id", "right"]), ("first", ["y", "left", "id", "right"])):
@@ -705,8 +820,33 @@ class ContractChecks(unittest.TestCase):
             self.assertEqual(payload["task_type"], expected["kind"])
             self.assertEqual(payload["metric"]["name"], expected["metric"])
             self.assertEqual(len(payload["feature_columns"]), expected["features"])
-            self.assertEqual(contract.alignment["row_counts"], expected["rows"])
-            self.assertEqual(contract.alignment["output_order"], "test")
+            alignment = contract.alignment
+            self.assertEqual(alignment["row_counts"], expected["rows"])
+            self.assertEqual(alignment["output_order"], "test")
+            self.assertEqual(payload["prediction_schema"]["output_order"], alignment["output_order"])
+            map_summary = {}
+            for name, direction in (("sample_to_test", "sample_row_index -> original_test_row_index"),
+                                    ("output_to_test", "output_row_index -> original_test_row_index")):
+                values = alignment[name]
+                count = len(values)
+                self.assertEqual(count, expected["rows"]["test"])
+                permutation = len(set(values)) == count and all(type(value) is int and 0 <= value < count for value in values)
+                self.assertTrue(permutation, "resolved row map is not a full index permutation")
+                digest = json_value_sha(values)
+                declared = payload["provenance"]["row_mapping"][name]
+                self.assertEqual(declared["sha256"], digest)
+                self.assertEqual(declared["count"], count)
+                map_summary[name] = {"direction": direction, "count": count, "sha256": digest,
+                                     "is_permutation": permutation,
+                                     "is_identity": all(index == value for index, value in enumerate(values))}
+            projection = alignment["feature_projection"]
+            projection_summary = {"train_feature_count": len(projection["train_order"]),
+                                  "train_order_sha256": json_value_sha(projection["train_order"]),
+                                  "test_indices_count": len(projection["test_indices"]),
+                                  "test_indices_sha256": json_value_sha(projection["test_indices"]),
+                                  "test_index_space": "full_test_header_including_identifier_columns"}
+            metric_summary = {name: copy.deepcopy(payload["metric"][name]) for name in
+                              ("name", "direction", "prediction_kind", "parameters", "label_policy", "target_scale", "finite_policy", "adapter_version")}
             self.assertLess(len(json.dumps(payload["provenance"]["row_mapping"])), 10_000, "payload must summarize row maps")
             self.assertEqual(hashes(paths), before)
             if csv_before is None:
@@ -715,7 +855,13 @@ class ContractChecks(unittest.TestCase):
                 self.assertEqual((sha(old_csv), old_csv.stat().st_mtime_ns), csv_before)
             ACTUAL_INPUTS.append({"dataset": label, "status": "PASS_READ_ONLY_CONTRACT_ONLY",
                                   "source_sha256_before": before, "source_sha256_stable": True,
-                                  "feature_count": expected["features"], "row_counts": expected["rows"]})
+                                  "feature_count": expected["features"], "row_counts": expected["rows"],
+                                  "resolved_metric": metric_summary, "output_order": alignment["output_order"],
+                                  "output_order_evidence": copy.deepcopy(payload["provenance"]["row_mapping"].get("order_evidence", [])),
+                                  "row_mapping_summary": map_summary, "feature_projection_summary": projection_summary,
+                                  "index_hash_encoding": "UTF-8 JSON; ensure_ascii=False; sort_keys=True; compact separators; no newline",
+                                  "raw_identifiers_or_target_rows_included": False,
+                                  "prediction_writer_or_quality_verified": False})
 
     def test_actual_public_regression(self):
         self.actual_dataset("regression", "Регрессия", {"target": "site_eui", "kind": "regression", "metric": "rmse", "features": 62,

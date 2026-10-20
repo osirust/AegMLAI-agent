@@ -6,6 +6,8 @@
 
 Компонентная приёмка H02.3 записана отдельно в [H023_RECEIPT.md](H023_RECEIPT.md): attempt3 — 34 метода / 76 сценариев / 4 CLI-запуска. Проверены resolver, TaskContract, ID/row mappings, feature projection и публикация JSON-метаданных. Это не результат всей строки матрицы, H03/ML/API/OS или готовность CSV-предсказаний: все 74 основных и 17 HARN-T ниже сохраняют NOT_RUN.
 
+Компонентная приёмка H02.4 — **PASS_H02_4_LOCAL_CONTAINER_ONLY**, [H024_RECEIPT.md](H024_RECEIPT.md): локальный Engine/image, 6/6 коротких resource probes, 2 public CLI-запуска с exit 3/incomplete и contract_valid=true, dev-подмножество 13 pins / 45 distributions / Python 3.12.3. Docker inspect проверен до stress, фактические cgroup значения — после bounded canary; это разные свидетельства. Новые parser fixes 38/93/4 и bootstrap 24/51/37 записаны в [H023_REVIEW_FIXES.md](H023_REVIEW_FIXES.md), прежние квитанции сохранены. Официальный образ со всеми 37 pins, H05/hard timeout/полные 3 часа, ML/метрики/API/AutoResearch не подтверждены; все 74+17 строк ниже остаются NOT_RUN.
+
 ## 12. Матрица функциональных проверок полного агента
 
 Все 64 функциональных сценария ниже — будущие NOT_RUN. Ещё 10 сценариев безопасности находятся в 13.4: всего 74. Это план приёмки полной реализации, не результаты mini. Исторические 6 файловых и 17 HTTP-stub PASS записаны отдельно; они не закрывают эти строки.
