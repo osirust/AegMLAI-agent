@@ -1,7 +1,7 @@
 # Что читать и как поручать работу
 
 Мы создаём полноценный ML-агент для новых задач. Обзор источников и ТЗ подготовлены; модели полного агента ещё не обучались. Mini остаётся историей технической проверки.
-По отдельным командам завершены H02.1 LOCAL_SUBSET, H02.2 BOOTSTRAP_ONLY и **H02.3 — PASS_H02_3_CONTRACT_ONLY**: TaskContract, resolver и встроенные схемы, 34 метода / 76 сценариев / 4 CLI; [квитанция H02.3](H023_RECEIPT.md). Историческая приёмка H02.2 — 24 метода / 51 сценарий / 37 CLI, [квитанция](H022_RECEIPT.md). Следующий H03.1 автоматически не начинается.
+По отдельным командам завершены H02.1 LOCAL_SUBSET, H02.2 BOOTSTRAP_ONLY и **H02.3 — PASS_H02_3_CONTRACT_ONLY**: TaskContract, resolver и встроенные схемы, 34 метода / 76 сценариев / 4 CLI; [квитанция H02.3](H023_RECEIPT.md). Историческая приёмка H02.2 — 24 метода / 51 сценарий / 37 CLI, [квитанция](H022_RECEIPT.md). Следующий подпункт — H02.4 (Docker и фактический профиль), затем H03.1–H03.5. Этапы автоматически не начинаются.
 
 ## Начать с трёх файлов
 
@@ -39,7 +39,7 @@ Boosters queue — не результат. Успешное завершени�
 H02.1 завершён: `/home/aegml/venvs/aegml-ml-py312`, Python 3.12.3, 13 direct pins / 45 distributions, 44 dependency wheels плюс bootstrap pip 25.2, 9 package smoke и pip check PASS.
 Доказательства: [environment-lock.json](environment-lock.json), run `h02-20261020T160924Z` в `runs/h02/`. Старая stdlib-venv сохранена с 0 distributions. Это `PASS_H02_1_LOCAL_SUBSET_ONLY`, не полный образ или модель.
 H02.3 реализовал контракт и однозначный resolver, проверку ID/порядка и встроенные схемы. Успешная подготовка создаёт два новых JSON в `.aegml_runs/<uuid>/`: `task_contract.json` и `row_alignment.json`. CLI возвращает exit 3 / implementation_incomplete с `contract_valid=true`; ML/API/tools/AutoResearch/submission ещё не подтверждены, нового CSV нет.
-Следующий маршрут по отдельным командам: H03.1 → остальные подпункты до H03.5 → H04 → worker/Qwen → AutoResearch → перенос/сравнение/ZIP. Все 74 основных и 17 пересекающихся HARN-T сценариев остаются NOT_RUN; компонентная приёмка H02.3 их целиком не закрывает.
+Следующий маршрут по отдельным командам: H02.4 → H03.1 → остальные подпункты до H03.5 → H04 → worker/Qwen → AutoResearch → перенос/сравнение/ZIP. Все 74 основных и 17 пересекающихся HARN-T сценариев остаются NOT_RUN; компонентная приёмка H02.3 их целиком не закрывает.
 Fit и live API не выполнялись, Docker/caps не менялись; полный официальный образ и OS-граница не проверены. H02.4 нужен до H07, подтверждённая OS-граница H05.1 — до generated execution. WSL/Docker caps 24/20 GiB остаются планом.
 API-запросов 0. Настройки сохранены локально, статус CONFIGURED_UNVERIFIED; **LIVE_API_ON_OWNER_COMMAND_ONLY**. H06.2 проверит безопасное действие только по отдельной команде владельца, без generated ML-кода.
 

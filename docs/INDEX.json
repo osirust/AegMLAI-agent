@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "stage": "H02.3 TaskContract/resolver/schema/row alignment",
   "status": "PASS_H02_3_CONTRACT_ONLY; ML/API/AutoResearch NOT_RUN",
-  "next_stage": "H03.1 limited profile by new owner command; live provider API only by explicit owner command",
+  "next_stage": "H02.4 Docker and measured resource profile by owner command, then H03.1-H03.5 and H04; live API only by explicit owner command",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
   "previous_documentation_commit": "8e80944866b1a152184a43260f29ba23ec56c857",
   "runtime_changed_in_this_stage": true,
@@ -50,10 +50,10 @@
     "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
   },
   "verification": {
-    "status": "PASS_H02_3_METADATA_AND_SCOPE_REVIEW_ONLY",
-    "receipt": "docs/H023_REVIEW_RECEIPT.json",
-    "sha256": "95f9b7db1fd6900740657cac41dc14efa0adc7dd19f9bad97e2616bd79781bc5",
-    "scope": "identity, history, input SHA, source receipt binding, status and links; no new runtime tests"
+    "status": "PASS_DOCUMENT_CONTINUATION_ROUTE_ONLY",
+    "receipt": "docs/ROUTE_CORRECTION_RECEIPT.json",
+    "sha256": "dac03cf795ab3ba5797e6dd50314b5545ad5ccd9075e942472298486aa1b58a6",
+    "scope": "continuation route correction only; historical H023 runtime receipt unchanged"
   },
   "review": {
     "independent_document_review": "completed; final content cross-read and automatic metadata checks; no material blocker reported",
@@ -108,9 +108,9 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "AGENTS.md": "901af3dffb36fd9ed0744fd5a4861f43a08f6380eea887f2b8f064062ba68bea",
-    "PROJECT_STATE.md": "11af6464f2f3840d5452d8d152636e0d5b3a80ab52ddd1d133fcf1f9ca66fded",
-    "README.md": "0a243d1d59ac25ed4801c67b806ae2706724d2d96a9158ba101d7078ead69055",
+    "AGENTS.md": "4456999f17c0dbf91ee53e970b9817d72d34bfa962d599d741e5e28e8d18263c",
+    "PROJECT_STATE.md": "3e61425c7847ad172272d1aa4874407b81dab18f90b4a59672936e616cd5ecc6",
+    "README.md": "fa948dad7d9e5c360539534912954d3dde788c65212aa8fe69f7c928017a5bb6",
     "docs/API_INSTRUCTIONS_INTAKE.md": "ceb578c73731cef822d8e9eacf9c121d8576b0409ff36a66a9205c4fef26e8fe",
     "docs/API_LOCAL_SETUP.md": "ca62c8450af612e0906b571fc398f5b2eded671537a18761f6a1af5b1f600744",
     "docs/AUTOML_RESEARCH_BRIEF.md": "c82554b528278ac53273ddfcc87484dcb7875df69e1454454fe1f8c49a61d446",
@@ -129,38 +129,39 @@
     "docs/H023_ATTEMPT2_RESULT.json": "fab157f42f3a76fa4369795b0324c7e14039b92a65654412dfb929b260a85bc9",
     "docs/H023_BOOTSTRAP_REGRESSION_RESULT.json": "388aa295a22c843ceb1675df6a7c199935130aa0ace9c2040309eadce08ed0c6",
     "docs/H023_CONTRACT_RESULT.json": "92335095065789143b2494983c23691aa78f927d88e438d689777b0046ce15c9",
-    "docs/H023_RECEIPT.md": "3e418113f37801a464bff49e3822e617b194e89c72e7b4c442533cdff4c866e6",
+    "docs/H023_RECEIPT.md": "e384e7d763e0fb5e9c2f21589376d9fc07ed931924b51a9b35efee688ef03ce4",
     "docs/H023_REVIEW_RECEIPT.json": "95f9b7db1fd6900740657cac41dc14efa0adc7dd19f9bad97e2616bd79781bc5",
     "docs/H02_RECEIPT.md": "5b0d15b170139ee3e0b940c423e77c75c63ceef179b62aea35901124c5fb9372",
     "docs/H02_REVIEW_RECEIPT.json": "46b1d62d47db5d7b90803db7403998cdef0e1897d85ab15f3213ec6565ffa84c",
-    "docs/LOCAL_ENVIRONMENT.md": "cf981faad7c18552678e89afa63e36d9320be929c1ed407ff7d195ec6b2d5c00",
+    "docs/LOCAL_ENVIRONMENT.md": "204b5bf4b95696f459b13765a6a5fcdd036ac41a785959a2ef4987381fafb8e6",
     "docs/LOCAL_PROVIDER_HELPER_RESULT.json": "da1e1bd8021620bddee628d023414362e7403679c26b3d6a94554db90cbd0ffa",
     "docs/LOCAL_PROVIDER_RECEIPT.json": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
     "docs/MATHEMATICS_AND_VALIDATION.md": "bad31ce27da714a831fc6e0e57dcdb746fbaf6fb4f53bfe26505984ef5a27233",
     "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
-    "docs/NEXT_SESSION.md": "9d2beb19c436d6cc0b7e193ca1c5bfce9b95b6569dd473dcd18951c663b2d90c",
+    "docs/NEXT_SESSION.md": "d48a90bbe0f09b7a5b8080df760a3b60fbf859345a343b3bf264d322d666f8a7",
     "docs/OPEN_SOURCE_AGENT_REVIEW.md": "06ad578759b079cf81e360f782b9d48509b80d7ae571d99116a54027c349b21c",
     "docs/OPTIONAL_ARTIFACTS_RESEARCH.md": "4f84f8191d1c1062d7229df93b1d555b82b6627ed488915346c3e9477f88bc08",
     "docs/ORGANIZER_QUESTIONS.md": "5a26b6e63903f490840d681b30a8f5de6834ad168dfc3195bce1cbfe83a6aae5",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
     "docs/QWEN_HARNESS_DESIGN.md": "fc21efda43542adbc50fccff95a47c9583ac474cb5b1ac8580e487a84c23e34d",
-    "docs/READ_FIRST.md": "528cf3d7e1542a7d7ec99d81dd3064a8e1f2e3bee0c995a4cebe3435cbc7fe14",
+    "docs/READ_FIRST.md": "5cf9b552e16526ee6ba3a63fd5d1657991447c3ca80ea8a842a4d5983d74a033",
     "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
     "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
-    "docs/ROADMAP.md": "b7fc31ac01232dc68d7fa84b82a3d79e4bf71277b0eb40064083d465465130b9",
+    "docs/ROADMAP.md": "2c82b75b17d03e3d3a846c317efe6686e3c0ad12b430f6dc71e3b2c9cb206a60",
+    "docs/ROUTE_CORRECTION_RECEIPT.json": "dac03cf795ab3ba5797e6dd50314b5545ad5ccd9075e942472298486aa1b58a6",
     "docs/RUNTIME_AND_FAILURES.md": "1344584f23cdff4f90ca3cb25c08504c182e789487d87305fca538c7c271da1a",
     "docs/SOURCE_MANIFEST.json": "af12f588c00ba10044fed613cfca4c2e6683764d3834fd1958cb75046348d49d",
     "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
-    "docs/TECHNICAL_SPEC.md": "d3c2a48ad2f020ab5113ec9975cdaffd695d9edccbf9568b97fb24cf25c4f675",
+    "docs/TECHNICAL_SPEC.md": "aa471005e4d4a0de6879e3f104e08ff8f93208f770977f360249f454e5a3edf1",
     "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
     "docs/TEST_MATRIX.md": "0281613072d9662b10b23e816bafba792195827686926e9822ea751dd86d3d04",
     "docs/VOVAN_MENTOR_PROMPT.md": "19451433a7db13acbff7eb31388c5b326be293942ce8c6c491a063021c7ff7b4",
     "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
-    "docs/WEB_WORKFLOW.md": "9ee6222f79b6ab52737ebef08a67a174eb9a0bafcb68b73f56b076bf9143451f",
-    "docs/WORK_BLOCKS.md": "f56d49eca176e9f9e2031771790128428618a8ad1e6b552f969380a4ac77f17f",
+    "docs/WEB_WORKFLOW.md": "c2456b528bad99eafd31cae28e264eb07155210899e4c1c8cfa947d882db4083",
+    "docs/WORK_BLOCKS.md": "490950f38348380b95d7c9732a7d26eccfeb6d563d9ea673dc92646a27923981",
     "docs/WORK_PLAN.json": "4c1cf547348b631e6d87ab03852003d135ec3826e97447fd6e9860b5358d0dfd",
     "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c"
   },
@@ -300,7 +301,8 @@
     "h023_review_sent_to_chat2": true,
     "h023_review_reply_read": false,
     "chat1_cpu_ml_reply_read": true,
-    "chat1_cpu_ml_intake": "docs/CHAT1_CPU_ML_INTAKE.md"
+    "chat1_cpu_ml_intake": "docs/CHAT1_CPU_ML_INTAKE.md",
+    "external_h023_review_status": "H023-REVIEW-001 OPEN_EXTERNAL_CHAT_UI; prompt preserved, no new assistant reply"
   },
   "development_tooling_sha256": {
     "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f",
@@ -398,5 +400,19 @@
     "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
     "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d"
   },
-  "product_bootstrap_sha256_scope": "historical H02.2 source; current four-file SHA in product_contract_sha256"
+  "product_bootstrap_sha256_scope": "historical H02.2 source; current four-file SHA in product_contract_sha256",
+  "latest_document_change": {
+    "finding": "SPEC-DOC-014",
+    "scope": "continuation route only; H02.4 before H03",
+    "runtime_changed": false,
+    "docker_started": false,
+    "resource_caps_changed": false,
+    "live_api_calls": 0
+  },
+  "historical_verification_h02_3": {
+    "status": "PASS_H02_3_METADATA_AND_SCOPE_REVIEW_ONLY",
+    "receipt": "docs/H023_REVIEW_RECEIPT.json",
+    "sha256": "95f9b7db1fd6900740657cac41dc14efa0adc7dd19f9bad97e2616bd79781bc5",
+    "scope": "identity, history, input SHA, source receipt binding, status and links; no new runtime tests"
+  }
 }
