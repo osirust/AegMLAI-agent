@@ -1,0 +1,29 @@
+{
+  "status": "PASS_H02_3_METADATA_AND_SCOPE_REVIEW_ONLY",
+  "scope": "identity, history, input SHA, source receipt binding, status and links; no new runtime tests",
+  "base_commit": "dda5a0d",
+  "checks": {
+    "current_receipts_source_sha_counts_no_ml_api": true,
+    "both_actual_public_inputs_verified_not_skipped": true,
+    "source_download12_extended14_sha_unchanged": true,
+    "provided_requirements_and_git_attributes_preserved": true,
+    "historical_json_receipts_byte_equal_to_base": 15,
+    "old_demo_tests_and_mini_unchanged": 15,
+    "fifty_block_identity_dependencies_files_status_md_json": true,
+    "full_scenarios_74_plus_17_unchanged_not_run": true,
+    "main_findings_actions_closure_and_current_route": true,
+    "publishable_allowlist_json_and_local_markdown_links": true,
+    "private_key_not_in_publishable_files": true,
+    "live_provider_calls_in_this_stage": 0
+  },
+  "runtime_receipt": "docs/H023_CONTRACT_RESULT.json",
+  "runtime_receipt_sha256": "92335095065789143b2494983c23691aa78f927d88e438d689777b0046ce15c9",
+  "bootstrap_regression_receipt_sha256": "388aa295a22c843ceb1675df6a7c199935130aa0ace9c2040309eadce08ed0c6",
+  "metadata_helper": "E:\\work\\output\\aegml-case-intake\\review_h023_metadata.py",
+  "metadata_helper_sha256": "2d34bbabaff35ec864b489f11599a19e50788e6581b13a071dbf9ce02ca9da1e",
+  "full_agent_accepted": false,
+  "model_training_executed": false,
+  "live_api_called": false,
+  "next_stage_started": false,
+  "teacher_h023_reply_read": false
+}

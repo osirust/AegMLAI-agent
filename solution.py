@@ -15,6 +15,7 @@ def main(argv=None):
         sys.argv[1:] if argv is None else argv,
         started_ns=_STARTED_NS,
         clock=_monotonic_ns,
+        inspect_task=True,
     )
     if outcome is None:  # --help is CLI assistance, not agent success.
         return 0

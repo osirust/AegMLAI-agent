@@ -12,7 +12,7 @@
 
 **Параллельные направления:** offline-протокол и обработку данных можно готовить без обращения к API. Ключ получен по сообщению владельца, опубликованная конфигурация принята в API_INSTRUCTIONS_INTAKE; это не API PASS. Только после отдельной команды владельца H06.2 проверяет безопасный инструмент без запуска сгенерированного ML-кода. Сгенерированный код требует проверенной границы H05.1; AutoResearch — готовых H04, H05 и H06. Длительные серии и сабмиты выполняются отдельно. WSL не переустанавливать.
 
-**H02.1 и bootstrap H02.2 завершены в своих областях. Дальнейший маршрут по новой команде владельца:** H02.3 → H03.1–H03.5 → H04.1–H04.4. Docker и границу H02.4/H05.1 подготовить до H07. Пределы 8 CPU, 32 GB и три часа относятся к платформе; локальный профиль WSL 24 GiB / Docker 20 GiB пока является планом.
+**H02.1, bootstrap H02.2 и TaskContract H02.3 завершены в своих областях. Дальнейший маршрут по новой команде владельца:** H03.1–H03.5 → H04.1–H04.4. Docker и границу H02.4/H05.1 подготовить до H07. Пределы 8 CPU, 32 GB и три часа относятся к платформе; локальный профиль WSL 24 GiB / Docker 20 GiB пока является планом.
 
 
 **Упаковка и запуск по новому уточнению:** P0 сразу использует плоские корневые `aegml_*.py`. ZIP до 100 МБ (100 000 000 байт) содержит только root `.py` и полный неизменённый provided `requirements.txt`; папки и другие файлы платформа не копирует. Статические схемы/prompts встроены в `aegml_schemas.py` / `aegml_prompts.py`. Зависимости заранее устанавливает платформа, runtime pip недоступен; dev-подмножество H02.1 не заменяет provided requirements. Точная команда — `python3 solution.py task.md`; рабочие подкаталоги и `/tmp` разрешены уже во время исполнения. Источник и исправление — SRC-PLATFORM-TXT-20261020 / SPEC-DOC-009 в главном ТЗ.
@@ -167,7 +167,7 @@
 
 **Приёмка и остановка:** Глобальный Python, прежняя stdlib-venv и AEGYX не изменены; неразрешённые версии не добавлены. SHA корневого requirements совпадает с SRC-REQ, все 37 pins сохранены. Пока точного официального образа нет, совместимость с ним остаётся UNKNOWN; зависимости устанавливает платформа до запуска, runtime pip не требуется.
 
-**Фактически выполнено:** отдельная ML-venv Python 3.12.3, 13 direct pins / 45 distributions, 44 dependency wheels + pip 25.2; pip check и 9 smoke PASS. Старый stdlib-venv с 0 distributions сохранён. Обучение, LLM-запросы, изменение caps и Docker не выполнялись. Пакетные загрузки по HTTPS выполнены. [Квитанция](environment-lock.json). H02.2 впоследствии завершён отдельно как PASS_H02_2_BOOTSTRAP_ONLY, [квитанция](H022_RECEIPT.md); H02.3 ещё NOT_RUN.
+**Фактически выполнено:** отдельная ML-venv Python 3.12.3, 13 direct pins / 45 distributions, 44 dependency wheels + pip 25.2; pip check и 9 smoke PASS. Старый stdlib-venv с 0 distributions сохранён. Обучение, LLM-запросы, изменение caps и Docker не выполнялись. Пакетные загрузки по HTTPS выполнены. [Квитанция](environment-lock.json). H02.2 впоследствии завершён отдельно как PASS_H02_2_BOOTSTRAP_ONLY, [квитанция](H022_RECEIPT.md); H02.3 завершён отдельно как PASS_H02_3_CONTRACT_ONLY, [квитанция](H023_RECEIPT.md).
 
 ### H02.2 — Единая точка входа и timer
 
@@ -183,13 +183,13 @@
 
 **Выходные файлы/артефакты:** `solution.py`, `aegml_contracts.py`.
 
-**Приёмка и остановка:** Критерии: точный CLI, приоритет и границы T/reserve/threads, default/absolute/relative path без chdir, единый deadline и отсутствие вывода argv/env/секретов. Коды выхода: 0 только для help, 2 при invalid config/path/args, 124 при deadline, 3 при incomplete, 1 при внутренней ошибке. Incomplete оставляет все full-agent флаги false и experiments_completed=0, не пишет и не валидирует старый CSV. Startup Python до первой отметки NOT_MEASURED; hard interrupt и kill-tree вне H02.2. Фактически прошли 24 метода / 51 сценарий / 37 CLI-запусков в WSL Python 3.12.3; квитанции docs/H022_BOOTSTRAP_RESULT.json и docs/H022_RECEIPT.md. H02-BOOT-001 CLOSED_BOOTSTRAP_DIAGNOSTICS_ONLY после трёх проверок expiry/path/threads на зафиксированном SHA с сохранением исходного бюджета. Итог H02.2 — PASS_H02_2_BOOTSTRAP_ONLY; H02.3 ещё NOT_RUN.
+**Приёмка и остановка:** Критерии: точный CLI, приоритет и границы T/reserve/threads, default/absolute/relative path без chdir, единый deadline и отсутствие вывода argv/env/секретов. Коды выхода: 0 только для help, 2 при invalid config/path/args, 124 при deadline, 3 при incomplete, 1 при внутренней ошибке. Incomplete оставляет все full-agent флаги false и experiments_completed=0, не пишет и не валидирует старый CSV. Startup Python до первой отметки NOT_MEASURED; hard interrupt и kill-tree вне H02.2. Фактически прошли 24 метода / 51 сценарий / 37 CLI-запусков в WSL Python 3.12.3; квитанции docs/H022_BOOTSTRAP_RESULT.json и docs/H022_RECEIPT.md. H02-BOOT-001 CLOSED_BOOTSTRAP_DIAGNOSTICS_ONLY после трёх проверок expiry/path/threads на зафиксированном SHA с сохранением исходного бюджета. Итог H02.2 — PASS_H02_2_BOOTSTRAP_ONLY; H02.3 завершён отдельно как PASS_H02_3_CONTRACT_ONLY, [квитанция](H023_RECEIPT.md).
 
-**Фактическая приёмка:** 24 метода,51/51 сценарий,37CLI в WSL Python3.12.3; [квитанция](H022_RECEIPT.md). H02-BOOT-001 закрыт только для bootstrap-диагностики. Hard timeout/официальный образ/ML/API не проверены. H02.3 не начинался.
+**Фактическая приёмка:** 24 метода,51/51 сценарий,37CLI в WSL Python3.12.3; [квитанция](H022_RECEIPT.md). H02-BOOT-001 закрыт только для bootstrap-диагностики. Hard timeout/официальный образ/ML/API не проверены. На момент H022-квитанции H02.3 не начинался; его более поздняя отдельная приёмка — ниже.
 
 ### H02.3 — TaskContract и разрешение файлов
 
-**Текущий статус:** `NOT_RUN`. Приоритет `P0`.
+**Текущий статус:** `PASS_H02_3_CONTRACT_ONLY`. Приоритет `P0`.
 
 **Команда:** «Выполни H02.3 по WORK_BLOCKS и ТЗ: TaskContract и разрешение файлов».
 
@@ -202,6 +202,8 @@
 **Выходные файлы/артефакты:** `aegml_input.py`, `aegml_contracts.py`, `aegml_schemas.py`.
 
 **Приёмка и остановка:** Target определяется независимо от позиции столбца. Числовые метки сохраняют смысл классификации, если так задано условием; неоднозначный контракт или несовпадение ID приводят к явному отказу.
+
+**Фактически выполнено:** 34 метода / 76 сценариев / 4 CLI; оба actual public inputs, nested/flat, provenance/embedded schemas, неоднозначности и raw-string ID mapping. Порядок задаёт task (оба public: test); sample задаёт колонки, mapping хранится отдельным sidecar. Повтор bootstrap 24/51/37 PASS. [Квитанция и ограничения P0](H023_RECEIPT.md). Exit 3 / contract_valid=true сохраняет честный incomplete; H03/CSV/ML/API/OS/full-agent не выполнены.
 
 ### H02.4 — Docker и фактический профиль
 

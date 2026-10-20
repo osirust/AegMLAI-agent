@@ -1,0 +1,2458 @@
+{
+  "phase": "H02.2",
+  "status": "PASS_H02_2_BOOTSTRAP_REGRESSION",
+  "python": "3.12.3",
+  "executable": "/home/aegml/venvs/aegml-ml-py312/bin/python",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f"
+  },
+  "provided_requirements_sha256_expected": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "original_requirements_present": true,
+  "original_requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "scope": "H02.2 regressions after H02.3 integration: CLI/selective root copy/config/secret-canaries/cooperative timer; complete synthetic TaskContract fixtures only",
+  "regression_context": "CLI inspect_task=True; pure bootstrap units inspect_task=False",
+  "model_training_executed": false,
+  "live_api_called": false,
+  "package_installation_executed": false,
+  "docker_or_os_boundary_tested": false,
+  "official_platform_image_verified": false,
+  "synthetic_task_contract_cli_fixture": true,
+  "full_H02_3_task_contract_acceptance_claimed": false,
+  "metric_adapter_accepted": false,
+  "instrumented_import_fixture_is_not_a_production_execution": true,
+  "child_test_environment_disables_bytecode_writes": true,
+  "notes": [
+    "CLI parses only complete synthetic task/CSV fixtures; pure bootstrap units do not inspect tasks.",
+    "No real datasets, private provider configuration, or real credentials are read.",
+    "Child environment is explicitly built and does not inherit provider configuration.",
+    "No hard timeout, process-tree, ML, live tools, sandbox or three-hour acceptance is claimed.",
+    "A valid CLI fixture reports H02.3/contract_valid=true but returns exit 3 until the agent is implemented.",
+    "This is a new regression receipt, not a rewrite of the historical H02.2 receipt."
+  ],
+  "test_methods_run": 24,
+  "behavior_cases_checked": 51,
+  "behavior_cases_passed": 51,
+  "cli_invocations": 37,
+  "cases": [
+    {
+      "test": "__main__.BootstrapChecks.test_action_budget_insufficient_is_not_expiry",
+      "case": "H02-BOOT-003_admission_reject_preserves_available_time",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_api_setting_states_no_verification_claim",
+      "case": "api_settings_0_missing",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_api_setting_states_no_verification_claim",
+      "case": "api_settings_1_partial_unverified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_api_setting_states_no_verification_claim",
+      "case": "api_settings_2_partial_unverified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_api_setting_states_no_verification_claim",
+      "case": "api_settings_3_complete_unverified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_api_setting_states_no_verification_claim",
+      "case": "api_settings_4_missing",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_argv_overrides_allowlisted_env",
+      "case": "argv_precedence_over_invalid_env_values",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_broken_clock_returns_safe_diagnostic",
+      "case": "H02-BOOT-002_broken_clock_safe_outcome",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_default_task",
+      "case": "default_task_md_from_cwd",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_entrypoint_from_different_cwd",
+      "case": "absolute_entrypoint_from_other_cwd_no_pythonpath",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_env_config_and_thread_variables",
+      "case": "env_budget_threads_and_nonsecret_repr",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_exact_platform_command_selective_copy",
+      "case": "literal_python3_solution_py_task_md",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_existing_csv_and_sources_are_preserved",
+      "case": "incomplete_preserves_existing_csv_bytes_and_mtime",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_expiry_path_threads_snapshot_regression",
+      "case": "H02-BOOT-001_expiry",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_expiry_path_threads_snapshot_regression",
+      "case": "H02-BOOT-001_path",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_expiry_path_threads_snapshot_regression",
+      "case": "H02-BOOT-001_threads",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_extra_argument_and_no_abbreviation",
+      "case": "invalid_argv_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_extra_argument_and_no_abbreviation",
+      "case": "invalid_argv_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_help_is_not_agent_success",
+      "case": "help_zero_without_task_or_output",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_import_time_is_included_in_budget",
+      "case": "instrumented_contracts_import_sleep_consumes_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_internal_error_keeps_timer",
+      "case": "H02-BOOT-002_configure_threads_internal_error_timer",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_required_cost",
+      "case": "invalid_required_cost_-1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_required_cost",
+      "case": "invalid_required_cost_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_required_cost",
+      "case": "invalid_required_cost_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_required_cost",
+      "case": "invalid_required_cost_text",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_-1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_10",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_11",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_reserves",
+      "case": "invalid_reserve_text",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_threads_keep_budget_snapshot",
+      "case": "invalid_threads_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_threads_keep_budget_snapshot",
+      "case": "invalid_threads_9",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_threads_keep_budget_snapshot",
+      "case": "invalid_threads_text",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_threads_keep_budget_snapshot",
+      "case": "invalid_threads_1.5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_-inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_-1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_10801",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_text",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_invalid_time_limits",
+      "case": "invalid_time_1e-20",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_missing_and_directory_task",
+      "case": "missing_task",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_missing_and_directory_task",
+      "case": "directory_task",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_python_version_guard",
+      "case": "controlled_non312_version_guard",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_shared_monotonic_deadlines_and_required_cost",
+      "case": "shared_clock_deadline_work_reserve_and_no_reset",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_snapshot_fault_uses_elapsed_fallback",
+      "case": "H02-BOOT-002_snapshot_fault_elapsed_fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_task_paths_and_config_paths",
+      "case": "absolute_unicode_spaces",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_task_paths_and_config_paths",
+      "case": "relative_unicode_spaces",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BootstrapChecks.test_unknown_argument_does_not_echo_secret",
+      "case": "unknown_api_key_argument_is_redacted",
+      "status": "PASS"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kj6nys/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 834,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.13297282,
+          "remaining_seconds": 10799.86702718,
+          "work_remaining_seconds": 10199.86702718,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "457e85c38fb71a3f0b182fe9041780c91bc79a17a3fa591429f46c84808cc8c4",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kj6nys/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 848,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "partial_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.088784399,
+          "remaining_seconds": 10799.911215601,
+          "work_remaining_seconds": 10199.911215601,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "7eb5e4851ca8b87914f22d341cc98d18d3e5ba281ab4dc7b4ce632b660e34746",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kj6nys/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 848,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "partial_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.077610506,
+          "remaining_seconds": 10799.922389494,
+          "work_remaining_seconds": 10199.922389494,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "63e9a60312dea88a0e0d1ea27a1834a8cccdd7d853b401ebbc4a161f0b37c3a4",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kj6nys/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 846,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "complete_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.07653913,
+          "remaining_seconds": 10799.92346087,
+          "work_remaining_seconds": 10199.92346087,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "70dba63956ff5cd2a9fbea81b8b9c57ae0d0d2b2c3c26b62e87e30ebe505ddce",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kj6nys/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.078617661,
+          "remaining_seconds": 10799.921382339,
+          "work_remaining_seconds": 10199.921382339,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "a28ca80835faf9a830948d5f82422f897e7dba3e8f0efd6f1b9aa670545905b3",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds",
+        "120",
+        "--finalize-reserve-seconds",
+        "7",
+        "--threads",
+        "2"
+      ],
+      "cwd": "/tmp/aegml-h022-k4stj0c1/плоский код с пробелами",
+      "environment_names_set": [
+        "AEGML_FINALIZE_RESERVE_SECONDS",
+        "AEGML_THREADS",
+        "AEGML_TIME_LIMIT_SECONDS",
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 841,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "complete_unverified",
+        "timer": {
+          "total_seconds": 120.0,
+          "reserve_seconds": 7.0,
+          "elapsed_seconds": 0.093138438,
+          "remaining_seconds": 119.906861562,
+          "work_remaining_seconds": 112.906861562,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "7328ef264c92e49370878fb08a906bdb03a16992623514d4375e300c6b34faa2",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py"
+      ],
+      "cwd": "/tmp/aegml-h022-vwnef1a2/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.081624472,
+          "remaining_seconds": 10799.918375528,
+          "work_remaining_seconds": 10199.918375528,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "d609019d0961d9a01c1a61cca6a772688106bf9c1e20c908b40d3d2dd868c4c3",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "/tmp/aegml-h022-85dn7q4t/плоский код с пробелами/solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-85dn7q4t/другая рабочая папка",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.093816311,
+          "remaining_seconds": 10799.906183689,
+          "work_remaining_seconds": 10199.906183689,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "487f5773714daaea445bcf2bb8a9b46e5562fb259f9a55ed3ff40f41ffc7cfc7",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-48_6cx32/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.094384842,
+          "remaining_seconds": 10799.905615158,
+          "work_remaining_seconds": 10199.905615158,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "56c68ed9a37fbbfa5ce55948ce487e7a1908cc4419d061f64a17c16dc54b6bb4",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h022-yyl74ody/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 849,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "complete_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.089784684,
+          "remaining_seconds": 10799.910215316,
+          "work_remaining_seconds": 10199.910215316,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "5194920a0059fe9df52b5d0d2bfb1c5cad79f11420303a6776e86288ff619215",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "extra.md"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kr5rrn/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 526,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_arguments",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.024665774,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit",
+        "120"
+      ],
+      "cwd": "/tmp/aegml-h022-o3kr5rrn/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 526,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_arguments",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.029235985,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "--help"
+      ],
+      "cwd": "/tmp/aegml-h022-28bb8fkq/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "stdout_bytes_utf8": 472,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=0.05",
+        "--finalize-reserve-seconds=0"
+      ],
+      "cwd": "/tmp/aegml-h022-g8q4_smc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": true,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "aeb7916446d707cf5ad73c4e39492500775fcf6d225839ba70364c6ef03f7143",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 124,
+      "stdout_bytes_utf8": 633,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "deadline_exhausted",
+        "exit_code": 124,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 0.05,
+          "reserve_seconds": 0.0,
+          "elapsed_seconds": 0.174165642,
+          "remaining_seconds": 0.0,
+          "work_remaining_seconds": 0.0,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=-1"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.026339741,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=10"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022917021,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=11"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.025176021,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=nan"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.027129388,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=inf"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.023139631,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10",
+        "--finalize-reserve-seconds=text"
+      ],
+      "cwd": "/tmp/aegml-h022-icfmyocc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 533,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_finalize_reserve",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022287742,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=0"
+      ],
+      "cwd": "/tmp/aegml-h022-t4kthrls/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 657,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.022467702,
+          "remaining_seconds": 10799.977532298,
+          "work_remaining_seconds": 10199.977532298,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=9"
+      ],
+      "cwd": "/tmp/aegml-h022-t4kthrls/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 654,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.02266021,
+          "remaining_seconds": 10799.97733979,
+          "work_remaining_seconds": 10199.97733979,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=text"
+      ],
+      "cwd": "/tmp/aegml-h022-t4kthrls/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 657,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.022611649,
+          "remaining_seconds": 10799.977388351,
+          "work_remaining_seconds": 10199.977388351,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=1.5"
+      ],
+      "cwd": "/tmp/aegml-h022-t4kthrls/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 654,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.02386497,
+          "remaining_seconds": 10799.97613503,
+          "work_remaining_seconds": 10199.97613503,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=nan"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 526,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.02387278,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=inf"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.023683795,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=-inf"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.023369396,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=0"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022551733,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=-1"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.027688322,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=10801"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022603296,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=text"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022550639,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=1e-20"
+      ],
+      "cwd": "/tmp/aegml-h022-9hkld29g/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 527,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_time_limit",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.026889935,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "/tmp/aegml-h022-qatluxnz/плоский код с пробелами/absent.md"
+      ],
+      "cwd": "/tmp/aegml-h022-qatluxnz/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 659,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_task_path",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.026790713,
+          "remaining_seconds": 10799.973209287,
+          "work_remaining_seconds": 10199.973209287,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "/tmp/aegml-h022-qatluxnz/плоский код с пробелами"
+      ],
+      "cwd": "/tmp/aegml-h022-qatluxnz/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 659,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_task_path",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.023234615,
+          "remaining_seconds": 10799.976765385,
+          "work_remaining_seconds": 10199.976765385,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "/tmp/aegml-h022-cnm2csnc/данные с пробелами/условие задачи.md"
+      ],
+      "cwd": "/tmp/aegml-h022-cnm2csnc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.098756276,
+          "remaining_seconds": 10799.901243724,
+          "work_remaining_seconds": 10199.901243724,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "718a67d73a1d8ed371ee420f4f9e05cb88a9745c0e5fb8f56a95857ebbed8805",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "../данные с пробелами/условие задачи.md"
+      ],
+      "cwd": "/tmp/aegml-h022-cnm2csnc/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 3,
+      "stdout_bytes_utf8": 837,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 2,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "missing",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.087075718,
+          "remaining_seconds": 10799.912924282,
+          "work_remaining_seconds": 10199.912924282,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "5f05d91954bea82fb72ed85e5bc83109075c751272890907900a4812bc8ec61c",
+          "row_alignment.json": "f64b4e0d1902812611075a5143d9018e6a73f29fa37e8ffa298fb300f4d9abf3"
+        }
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--api-key",
+        "<synthetic-canary-redacted>"
+      ],
+      "cwd": "/tmp/aegml-h022-9gvgf1uu/плоский код с пробелами",
+      "environment_names_set": [
+        "LANG",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONNOUSERSITE",
+        "PYTHONUTF8"
+      ],
+      "instrumented_contracts_copy": false,
+      "staged_source_sha256": {
+        "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+        "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+        "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+        "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 15,
+      "exit_code": 2,
+      "stdout_bytes_utf8": 526,
+      "stderr_bytes_utf8": 0,
+      "staged_sources_and_existing_csv_preserved": true,
+      "new_json_artifact_count": 0,
+      "existing_artifacts_preserved": true,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_arguments",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "elapsed_seconds": 0.022385959,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      }
+    }
+  ],
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "source_unchanged_during_check": true,
+  "source_sha256_after": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f"
+  }
+}

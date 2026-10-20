@@ -1,11 +1,13 @@
-"""Stdlib H02.2 checks only; no fit, provider request, installation, or task parsing.
+"""H02.2 regressions with complete synthetic H02.3 CLI input fixtures.
 
 Run under the authorized Linux Python 3.12 environment:
     python scripts/check_h02_bootstrap.py --receipt PATH
 
-Production CLI fixtures receive only the three allowlisted root files. One test
-explicitly instruments a COPY of contracts with a short import sleep. These tests
-do not establish an OS sandbox, hard timeout, official-image or full-agent PASS.
+Production CLI fixtures receive four root Python modules and the unchanged
+requirements, plus tiny task-local CSV inputs. Pure bootstrap units explicitly
+disable task inspection. One test instruments a COPY of contracts with a short
+import sleep. No fit, provider request, installation, real dataset/credential
+read, OS sandbox, hard timeout, official-image or full H02.3 acceptance is claimed.
 """
 
 import argparse
@@ -26,7 +28,10 @@ from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parent.parent
-PRODUCTION_FILES = ("solution.py", "aegml_contracts.py", "requirements.txt")
+PRODUCTION_FILES = ("solution.py", "aegml_contracts.py", "aegml_input.py",
+                    "aegml_schemas.py", "requirements.txt")
+FIXTURE_CSV_FILES = ("train.csv", "test.csv", "data_dictionary.csv", "sample_submission.csv")
+ARTIFACT_NAMES = {"task_contract.json", "row_alignment.json"}
 ORIGINAL_REQUIREMENTS = ROOT / "drive-download-20261019T181414Z-1-001" / "requirements.txt"
 EXPECTED_REQUIREMENTS_SHA256 = "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
 NS = 1_000_000_000
@@ -47,6 +52,28 @@ THREAD_NAMES = (
 CASES = []
 COMMANDS = []
 CONTRACTS = None
+
+
+def write_task_fixture(task):
+    """Write only synthetic, complete inputs inside this test's temporary root."""
+    task.write_text(
+        "# Synthetic bootstrap regression fixture\n\n"
+        "Target: outcome\nTask type: regression\nMetric: rmse\n"
+        "ID: row_key\nOutput order: test\n\n"
+        + "".join("- `" + name + "`\n" for name in FIXTURE_CSV_FILES),
+        encoding="utf-8",
+    )
+    contents = {
+        "train.csv": "row_key,outcome,feature_value\n001,3.0,1.0\nNA,4.0,2.0\n",
+        "test.csv": "row_key,feature_value\n101,5.0\n102,6.0\n",
+        "sample_submission.csv": "row_key,outcome\n101,0.0\n102,0.0\n",
+        "data_dictionary.csv": (
+            "feature,role,dtype\nrow_key,id,string\noutcome,target,numeric\n"
+            "feature_value,feature,numeric\n"
+        ),
+    }
+    for name, text in contents.items():
+        (task.parent / name).write_text(text, encoding="utf-8")
 
 
 def sha(path):
@@ -101,8 +128,9 @@ class BootstrapChecks(unittest.TestCase):
         for name in PRODUCTION_FILES:
             shutil.copyfile(ROOT / name, self.stage / name)
         self.task = self.stage / "task.md"
-        self.task.write_text("Synthetic H02.2 fixture. No interpretation or dataset is required.\n", encoding="utf-8")
-        self.input_hashes = {name: sha(self.stage / name) for name in (*PRODUCTION_FILES, "task.md")}
+        write_task_fixture(self.task)
+        self.input_hashes = {name: sha(self.stage / name)
+                             for name in (*PRODUCTION_FILES, "task.md", *FIXTURE_CSV_FILES)}
 
     @contextmanager
     def case(self, name):
@@ -132,6 +160,21 @@ class BootstrapChecks(unittest.TestCase):
         env.update(overrides or {})
         return env
 
+    def artifact_state(self, task_root):
+        root = task_root / ".aegml_runs"
+        if not root.exists():
+            return set(), {}
+        self.assertTrue(root.is_dir() and not root.is_symlink(), "invalid artifact root")
+        run_dirs, files = set(), {}
+        for run_dir in root.iterdir():
+            self.assertTrue(run_dir.is_dir() and not run_dir.is_symlink(), "invalid artifact run directory")
+            run_dirs.add(run_dir.name)
+            for path in run_dir.iterdir():
+                self.assertTrue(path.is_file() and not path.is_symlink() and path.suffix == ".json",
+                                "unexpected artifact type")
+                files[str(path.relative_to(root))] = (sha(path), path.stat().st_mtime_ns)
+        return run_dirs, files
+
     def cli(self, args=None, *, cwd=None, env=None, reason=None, code=3, instrumented=False, entrypoint="solution.py"):
         args = ["task.md"] if args is None else args
         command = ["python3", entrypoint, *args]
@@ -143,11 +186,25 @@ class BootstrapChecks(unittest.TestCase):
             "timeout_seconds": 15,
         }
         COMMANDS.append(record)
-        watched = [self.stage / name for name in PRODUCTION_FILES]
+        watched = {self.stage / name for name in PRODUCTION_FILES}
+        watched.update(self.stage / name for name in FIXTURE_CSV_FILES)
         if self.task.exists():
-            watched.append(self.task)
+            watched.add(self.task)
+        # Relative task arguments remain relative to the CLI's actual cwd.
+        # These additional paths are all generated fixtures, never user data.
+        active_task = Path(args[0]) if args and not args[0].startswith("-") else Path("task.md")
+        if not active_task.is_absolute():
+            active_task = Path(cwd or self.stage) / active_task
+        if active_task.is_file():
+            watched.add(active_task)
+            watched.update(active_task.parent / name for name in FIXTURE_CSV_FILES
+                           if (active_task.parent / name).is_file())
+        task_root = active_task.resolve().parent if active_task.is_file() else Path(cwd or self.stage)
+        entries_before = {path.name for path in task_root.iterdir()}
+        run_dirs_before, artifacts_before = self.artifact_state(task_root)
+        watched = sorted(watched, key=str)
         source_before = {str(path): sha(path) for path in watched}
-        csv = self.stage / "submission.csv"
+        csv = task_root / "submission.csv"
         csv_before = (sha(csv), csv.stat().st_mtime_ns) if csv.exists() else None
         result = subprocess.run(command, cwd=cwd or self.stage, env=self.child_env(env),
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -164,7 +221,27 @@ class BootstrapChecks(unittest.TestCase):
         else:
             self.assertEqual((sha(csv), csv.stat().st_mtime_ns), csv_before,
                              "bootstrap changed an existing CSV")
+        entries_after = {path.name for path in task_root.iterdir()}
+        self.assertEqual(entries_after - entries_before,
+                         {".aegml_runs"} if code == 3 and ".aegml_runs" not in entries_before else set(),
+                         "CLI created an unexpected task-root entry")
+        self.assertTrue(entries_before <= entries_after, "CLI removed an existing task-root entry")
+        run_dirs_after, artifacts_after = self.artifact_state(task_root)
+        self.assertTrue(artifacts_before.keys() <= artifacts_after.keys(), "CLI removed an existing artifact")
+        for name, state in artifacts_before.items():
+            self.assertEqual(artifacts_after[name], state, "CLI changed an existing artifact")
+        added_artifacts = artifacts_after.keys() - artifacts_before.keys()
+        added_runs = run_dirs_after - run_dirs_before
+        self.assertEqual(len(added_runs), 1 if code == 3 else 0, "unexpected number of new artifact runs")
+        self.assertEqual(len(added_artifacts), 2 if code == 3 else 0, "unexpected number of new JSON artifacts")
+        if code == 3:
+            self.assertEqual({Path(name).parts[0] for name in added_artifacts}, added_runs,
+                             "new artifacts must belong to the new run only")
+            self.assertEqual({Path(name).name for name in added_artifacts}, ARTIFACT_NAMES)
+        self.assertTrue(run_dirs_before <= run_dirs_after, "CLI removed an existing artifact run")
         record["staged_sources_and_existing_csv_preserved"] = True
+        record["new_json_artifact_count"] = len(added_artifacts)
+        record["existing_artifacts_preserved"] = True
         if code == 0:
             return result, None
         try:
@@ -174,16 +251,32 @@ class BootstrapChecks(unittest.TestCase):
         self.assertIsInstance(outcome, dict)
         self.assertEqual(outcome.get("exit_code"), code)
         self.assertEqual(outcome.get("schema_version"), "bootstrap.v1")
-        self.assertEqual(outcome.get("phase"), "H02.2")
+        self.assertEqual(outcome.get("phase"), "H02.3" if code == 3 else "H02.2")
         self.assertEqual(outcome.get("status"), "failed")
         if reason is not None:
             self.assertEqual(outcome.get("termination_reason"), reason)
-        self.assert_unfinished(outcome)
+        self.assert_unfinished(outcome, contract_valid=code == 3)
+        artifact_sha = outcome.get("artifact_sha")
+        self.assertIsInstance(artifact_sha, dict)
+        if code == 3:
+            self.assertEqual(set(artifact_sha), ARTIFACT_NAMES)
+            for name, digest in artifact_sha.items():
+                self.assertTrue(isinstance(name, str) and "/" not in name and "\\" not in name,
+                                "public artifact key must not disclose a path")
+                self.assertTrue(isinstance(digest, str) and len(digest) == 64
+                                and all(char in "0123456789abcdef" for char in digest), "invalid artifact SHA")
+            self.assertEqual(sorted(artifact_sha.values()),
+                             sorted(artifacts_after[name][0] for name in added_artifacts),
+                             "public artifact SHA must match the two written JSON files")
+        else:
+            self.assertEqual(artifact_sha, {})
         record["outcome"] = redact(outcome)
         return result, outcome
 
-    def assert_unfinished(self, outcome):
-        for name in ("contract_valid", "api_verified", "tools_verified", "research_completed", "submission_valid"):
+    def assert_unfinished(self, outcome, *, contract_valid=False):
+        self.assertIs(outcome.get("contract_valid"), contract_valid,
+                      "contract state must match the completed inspection phase")
+        for name in ("api_verified", "tools_verified", "research_completed", "submission_valid"):
             self.assertIs(outcome.get(name), False, name + " must not claim full-agent acceptance")
         self.assertEqual(outcome.get("experiments_completed"), 0)
 
@@ -197,11 +290,12 @@ class BootstrapChecks(unittest.TestCase):
         with preserve_thread_environment():
             return CONTRACTS.bootstrap([str(self.task)] if args is None else args,
                                        started_ns=started_ns, clock=clock,
-                                       env={} if env is None else env)
+                                       env={} if env is None else env, inspect_task=False)
 
     def test_exact_platform_command_selective_copy(self):
         with self.case("literal_python3_solution_py_task_md"):
-            self.assertEqual({p.name for p in self.stage.iterdir()}, {*PRODUCTION_FILES, "task.md"})
+            self.assertEqual({p.name for p in self.stage.iterdir()},
+                             {*PRODUCTION_FILES, "task.md", *FIXTURE_CSV_FILES})
             self.assertEqual(sha(self.stage / "requirements.txt"), EXPECTED_REQUIREMENTS_SHA256)
             if ORIGINAL_REQUIREMENTS.is_file():
                 self.assertEqual(sha(ORIGINAL_REQUIREMENTS), EXPECTED_REQUIREMENTS_SHA256)
@@ -221,7 +315,7 @@ class BootstrapChecks(unittest.TestCase):
         outside = self.base / "данные с пробелами"
         outside.mkdir()
         task = outside / "условие задачи.md"
-        task.write_text("Synthetic path-only task fixture.\n", encoding="utf-8")
+        write_task_fixture(task)
         task_sha = sha(task)
         variants = [("absolute_unicode_spaces", str(task)),
                     ("relative_unicode_spaces", os.path.relpath(task, self.stage))]
@@ -240,7 +334,7 @@ class BootstrapChecks(unittest.TestCase):
             outside = self.base / "другая рабочая папка"
             outside.mkdir()
             task = outside / "task.md"
-            task.write_text("Synthetic H02.2 alternate cwd fixture.\n", encoding="utf-8")
+            write_task_fixture(task)
             initial = sha(task)
             self.cli(["task.md"], cwd=outside, entrypoint=str(self.stage / "solution.py"),
                      reason="implementation_incomplete")
@@ -267,7 +361,8 @@ class BootstrapChecks(unittest.TestCase):
             with preserve_thread_environment():
                 for name in THREAD_NAMES:
                     os.environ[name] = "99"
-                outcome = CONTRACTS.bootstrap([str(self.task)], started_ns=0, clock=Clock(1), env=env)
+                outcome = CONTRACTS.bootstrap([str(self.task)], started_ns=0, clock=Clock(1),
+                                              env=env, inspect_task=False)
                 self.assertEqual({os.environ[name] for name in THREAD_NAMES}, {"3"})
                 self.assertEqual(outcome.exit_code, 3)
                 self.assert_no_canary(repr(outcome) + json.dumps(outcome.public_dict()))
@@ -329,14 +424,15 @@ class BootstrapChecks(unittest.TestCase):
             self.cli(env=COMPLETE_API, reason="implementation_incomplete")
             self.assertEqual((sha(output), output.stat().st_mtime_ns), before)
             self.assert_inputs_unchanged()
-            self.assertEqual({p.name for p in self.stage.iterdir()}, {*PRODUCTION_FILES, "task.md", "submission.csv"})
+            self.assertEqual({p.name for p in self.stage.iterdir()},
+                             {*PRODUCTION_FILES, "task.md", *FIXTURE_CSV_FILES, "submission.csv", ".aegml_runs"})
 
     def test_help_is_not_agent_success(self):
         with self.case("help_zero_without_task_or_output"):
             self.task.unlink()
             result, outcome = self.cli(["--help"], env=COMPLETE_API, code=0)
             self.assertIsNone(outcome)
-            self.assertIn("bootstrap", result.stdout)
+            self.assertIn("usage: solution.py", result.stdout)
             self.assertFalse((self.stage / "submission.csv").exists())
 
     def test_shared_monotonic_deadlines_and_required_cost(self):
@@ -486,16 +582,21 @@ def main():
         "provided_requirements_sha256_expected": EXPECTED_REQUIREMENTS_SHA256,
         "original_requirements_present": ORIGINAL_REQUIREMENTS.is_file(),
         "original_requirements_sha256": sha(ORIGINAL_REQUIREMENTS) if ORIGINAL_REQUIREMENTS.is_file() else None,
-        "scope": "CLI/selective root copy/config/secret-canaries/cooperative timer/bootstrap outcomes only",
+        "scope": "H02.2 regressions after H02.3 integration: CLI/selective root copy/config/secret-canaries/cooperative timer; complete synthetic TaskContract fixtures only",
+        "regression_context": "CLI inspect_task=True; pure bootstrap units inspect_task=False",
         "model_training_executed": False, "live_api_called": False, "package_installation_executed": False,
         "docker_or_os_boundary_tested": False, "official_platform_image_verified": False,
-        "task_contract_or_metric_adapter_accepted": False,
+        "synthetic_task_contract_cli_fixture": True,
+        "full_H02_3_task_contract_acceptance_claimed": False,
+        "metric_adapter_accepted": False,
         "instrumented_import_fixture_is_not_a_production_execution": True,
         "child_test_environment_disables_bytecode_writes": True,
-        "notes": ["Synthetic task text is not interpreted; no real datasets or credentials are read.",
+        "notes": ["CLI parses only complete synthetic task/CSV fixtures; pure bootstrap units do not inspect tasks.",
+                  "No real datasets, private provider configuration, or real credentials are read.",
                   "Child environment is explicitly built and does not inherit provider configuration.",
                   "No hard timeout, process-tree, ML, live tools, sandbox or three-hour acceptance is claimed.",
-                  "A production CLI fixture returns exit 3 honestly until the agent is implemented."],
+                  "A valid CLI fixture reports H02.3/contract_valid=true but returns exit 3 until the agent is implemented.",
+                  "This is a new regression receipt, not a rewrite of the historical H02.2 receipt."],
     }
     if sys.platform != "linux" or sys.version_info[:2] != (3, 12):
         receipt.update(status="BLOCKED_WRONG_CHECK_ENVIRONMENT", test_methods_run=0,
@@ -513,7 +614,7 @@ def main():
             stable = before == after
             passed = result.wasSuccessful() and stable
             receipt.update(
-                status="PASS_H02_2_BOOTSTRAP_ONLY" if passed else "FAIL_H02_2_BOOTSTRAP_CHECK",
+                status="PASS_H02_2_BOOTSTRAP_REGRESSION" if passed else "FAIL_H02_2_BOOTSTRAP_REGRESSION",
                 test_methods_run=result.testsRun, behavior_cases_checked=len(CASES),
                 behavior_cases_passed=sum(case["status"] == "PASS" for case in CASES),
                 cli_invocations=len(COMMANDS), cases=CASES, commands=COMMANDS,

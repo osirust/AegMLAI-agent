@@ -76,7 +76,7 @@
 AEGYX — отдельный проект на паузе; его файлы, окружение и процессы не менялись. Прежняя Ubuntu/default и общий `.wslconfig` сохранены.
 Минимальная AegML-Hackathon уже создана на E:; ориентир WSL 24 GiB / Docker 20 GiB / 8 CPU остаётся неприменённым планом.
 Репозиторий AegML ранее переведён в private. Raw data, ключи, venv, веса, runs и dist не публикуются в Git.
-H02.1 локально выполнен: отдельная ML-venv,13direct/45dist,9smoke иpipcheckPASS. [Квитанция](environment-lock.json). Пакеты загружались черезHTTPS; model fit,liveLLM и новые сабмиты не выполнялись. H02.2 bootstrap выполнен отдельно; следующий H02.3 ещё NOT_RUN; generated execution запрещёндоH05.1.
+H02.1 локально выполнен: отдельная ML-venv,13direct/45dist,9smoke иpipcheckPASS. [Квитанция](environment-lock.json). Пакеты загружались черезHTTPS; model fit,liveLLM и новые сабмиты не выполнялись. H02.2 bootstrap и H02.3 TaskContract выполнены в своих scope, см. §9–10; generated execution запрещёндоH05.1.
 
 ## 8. Новое уточнение и H02.1
 
@@ -92,8 +92,14 @@ SPEC-DOC-009/010 и SPEC-QA-002 закрыты только документал
 
 ## 9. Фактический H02.2 и локальная настройка
 
-[H022_RECEIPT](H022_RECEIPT.md):24 метода,51/51 сценарий,37CLI в WSL Python3.12.3. [Raw-result](H022_BOOTSTRAP_RESULT.json) фиксирует source SHA, точные коды, отсутствие ML/live API и границы instrumented import fixture. H02-BOOT-001 CLOSED только bootstrap-диагностика; SPEC-BASE-003 и другие полные OPEN сохраняются. H02.3 не начинался. Все74+17futureсценария NOT_RUN.
+[H022_RECEIPT](H022_RECEIPT.md):24 метода,51/51 сценарий,37CLI в WSL Python3.12.3. [Raw-result](H022_BOOTSTRAP_RESULT.json) фиксирует source SHA, точные коды, отсутствие ML/live API и границы instrumented import fixture. H02-BOOT-001 CLOSED только bootstrap-диагностика; SPEC-BASE-003 и другие полные OPEN сохраняются. На момент H022-квитанции H02.3 не начинался; его текущая отдельная приёмка ниже. Все74+17futureсценария NOT_RUN.
 
 [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json) подтверждает локальную запись/права без раскрытия ключа. [17 helper-canary](LOCAL_PROVIDER_HELPER_RESULT.json) — отдельный синтетический тест, не17 дополнительных проверок качества ML. Реальных Qwen-запросов0, live только после команды владельца.
 
 Новый ответ организаторов допускает собственные артефакты с нуля; [P2-направление](OPTIONAL_ARTIFACTS_RESEARCH.md) пока NOT_RUN, доставка весов при selectivecopyUNKNOWN. В AEGYX/обучение не переходили.
+
+## 10. Фактический H02.3
+
+[H023_RECEIPT](H023_RECEIPT.md):34 метода,76/76 сценариев,4CLI в WSL Python3.12.3. Два actual public input набора прочитаны одним TaskContract builder; SHA сохранены, nested/flat и конфликтные/переставленные ID проверены. [Current raw](H023_CONTRACT_RESULT.json), [FAIL attempt1](H023_ATTEMPT1_RESULT.json), [PASS attempt2](H023_ATTEMPT2_RESULT.json) сохранены отдельно. [Регрессия timer/CLI](H023_BOOTSTRAP_REGRESSION_RESULT.json):24/51/37 на текущем SHA. Это не суммарное число независимых проверок.
+
+Contract_valid=true и два fresh JSON не означают CSV/ML/API/tools/research PASS: штатно exit3/incomplete, флаги последующих стадий false. H03/профиль/метрики/folds/CSV, fit, OS/hard timeout и платформа ещё NOT_RUN. Все74+17futureсценария сохранены. Новых live API/install/caps/submission нет. Чату2 передан snapshot для статического review, не runtime; [новый ответ чата1](CHAT1_CPU_ML_INTAKE.md) — первичные источники/гипотезы будущих H03/H04, без измеренного выигрыша.

@@ -1,0 +1,640 @@
+{
+  "phase": "H02.3",
+  "status": "FAIL_H02_3_CONTRACT_CHECK",
+  "python": "3.12.3",
+  "executable": "/home/aegml/venvs/aegml-ml-py312/bin/python",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+    "aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+    "aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "83cc56c279c02e6ba672a406cf86c52cfc327c330abd69e5c48c6e0140303662"
+  },
+  "expected_requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "scope": "TaskContract/resolver/schema/identifier alignment/sidecars/selective-copy CLI only",
+  "model_training_executed": false,
+  "live_api_called": false,
+  "package_installation_executed": false,
+  "profiling_or_metric_evaluation_executed": false,
+  "docker_or_os_boundary_tested": false,
+  "official_platform_image_verified": false,
+  "h03_or_full_agent_accepted": false,
+  "child_environment_is_controlled_no_provider_configuration_read": true,
+  "notes": [
+    "Synthetic feature values are fixture data, not training results.",
+    "Actual data checks inspect contracts/IDs read-only and never publish in original folders.",
+    "Missing ignored public sources are explicit SKIP, never a simulated public PASS.",
+    "Production schema validation may use its installed jsonschema dependency; the runner uses stdlib unittest.",
+    "Cooperative expiry does not prove a hard timeout or a sandbox."
+  ],
+  "test_methods_run": 29,
+  "behavior_cases_checked": 65,
+  "behavior_cases_passed": 60,
+  "behavior_cases_skipped": 0,
+  "unittest_skips": [],
+  "cli_invocations": 4,
+  "cases": [
+    {
+      "test": "__main__.ContractChecks.test_actual_public_classification",
+      "case": "actual_public_classification_read_only_builder",
+      "status": "FAIL"
+    },
+    {
+      "test": "__main__.ContractChecks.test_actual_public_regression",
+      "case": "actual_public_regression_read_only_builder",
+      "status": "FAIL"
+    },
+    {
+      "test": "__main__.ContractChecks.test_alignment_is_defensive_copy_and_payload_is_compact",
+      "case": "alignment_copy_cannot_mutate_authoritative_contract",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_ambiguous_files_are_not_selected_by_walk_order",
+      "case": "no_declared_path_two_train_candidates",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_ambiguous_files_are_not_selected_by_walk_order",
+      "case": "two_existing_explicit_nested_train_references",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_contract_error_nonzero_no_new_csv",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_invalid_thread_argument_nonzero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_cli_rejects_bad_contract_and_invalid_args",
+      "case": "cli_exhausted_cooperative_budget_exit124",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_train",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_train",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "duplicate_id_sample_submission",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_and_missing_ids",
+      "case": "blank_id_sample_submission",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "duplicate_header",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "empty_header",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "missing_test_feature",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "missing_id_column",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "extra_test_feature",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "target_in_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_duplicate_empty_headers_and_feature_mismatch",
+      "case": "wrong_sample_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_exact_cli_selective_copy_preserves_old_csv",
+      "case": "literal_python3_solution_py_task_md_contract_valid_exit3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_explicit_sample_order",
+      "case": "explicit_task_sample_order_changes_output_mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_external_input_symlink_rejected",
+      "case": "external_input_symlink_not_read_as_task_input",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_generic_field_names_and_russian_directives",
+      "case": "renamed_id_target_features_are_not_public_name_constants",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_generic_field_names_and_russian_directives",
+      "case": "explicit_russian_directives",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_threads_zero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_threads_nine",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "invalid_builder_time_too_long",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_invalid_builder_constraints_and_expired_budget",
+      "case": "expired_shared_budget_is_not_contract_error",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_low_cardinality_numeric_does_not_decide_task_type",
+      "case": "explicit_rmse_numeric_target_is_regression_despite_few_values",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_low_cardinality_numeric_does_not_decide_task_type",
+      "case": "no_primary_metric_is_not_guessed_from_unique_target_count",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "contradictory_type_metric",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "multiple_primary_metrics",
+      "status": "FAIL"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "unknown_primary_metric",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "multiple_dictionary_targets",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts",
+      "case": "task_dictionary_target_conflict",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_mismatch_and_leading_zero_id_are_not_coerced",
+      "case": "unique_sample_test_id_set_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_mismatch_and_leading_zero_id_are_not_coerced",
+      "case": "sample_test_row_count_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_dictionary",
+      "case": "missing_dictionary_not_replaced_by_dataset_name_guess",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_feature_values_are_not_dropped",
+      "case": "blank_feature_value_does_not_change_contract_row_count",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_nested_paths_have_recorded_flat_fallback",
+      "case": "declared_missing_nested_unique_flat_fallback",
+      "status": "FAIL"
+    },
+    {
+      "test": "__main__.ContractChecks.test_nested_explicit_reference_beats_decoy",
+      "case": "explicit_nested_train_selects_declared_source",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_numeric_classification_and_placeholder_sample",
+      "case": "numeric_class_labels_are_classification_not_regression",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_positional_mapping_requires_explicit_permission",
+      "case": "explicit_positional_mapping_without_synthetic_id",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_positional_mapping_requires_explicit_permission",
+      "case": "no_id_without_position_policy_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_publish_fresh_sidecars_with_exact_hashes",
+      "case": "publish_contract_and_alignment_to_fresh_run_directory",
+      "status": "FAIL"
+    },
+    {
+      "test": "__main__.ContractChecks.test_raw_ids_and_directional_permutation",
+      "case": "001_NA_1_preserved_and_cyclic_sample_mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_unknown_field",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_missing_finite_policy",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_target_feature_overlap",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_strict_schema_negative_payloads",
+      "case": "schema_reject_id_feature_overlap",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_position_and_feature_projection",
+      "case": "target_nonlast",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_target_position_and_feature_projection",
+      "case": "target_first",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_task_injection_is_not_executed",
+      "case": "task_code_block_is_data_not_execution",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_task_symlink_anchors_to_physical_task_parent",
+      "case": "task_symlink_uses_resolved_physical_parent",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_train_test_id_overlap_is_not_object_join",
+      "case": "train_test_ids_overlap_allowed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_train_test_id_overlap_is_not_object_join",
+      "case": "train_test_ids_disjoint_allowed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_traversal",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_uri",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ContractChecks.test_unsafe_references_are_not_followed",
+      "case": "unsafe_reference_absolute",
+      "status": "PASS"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-szwjpq0l/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "unsupported_metric",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.035186493,
+          "remaining_seconds": 10799.964813507,
+          "work_remaining_seconds": 10199.964813507,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--threads=9"
+      ],
+      "cwd": "/tmp/aegml-h023-szwjpq0l/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 2,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "invalid_threads",
+        "exit_code": 2,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.021829704,
+          "remaining_seconds": 10799.978170296,
+          "work_remaining_seconds": 10199.978170296,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md",
+        "--time-limit-seconds=0.000000001",
+        "--finalize-reserve-seconds=0"
+      ],
+      "cwd": "/tmp/aegml-h023-szwjpq0l/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/task.md": "5f5b1a1e3e1004b3383a1ff0a1ff053eb1db7acdad0e70d2cbb26244d28fdcf4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+        "/tmp/aegml-h023-szwjpq0l/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 124,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.2",
+        "status": "failed",
+        "termination_reason": "deadline_exhausted",
+        "exit_code": 124,
+        "entrypoint_ready": false,
+        "api_settings_state": "not_inspected",
+        "timer": {
+          "total_seconds": 1e-09,
+          "reserve_seconds": 0.0,
+          "elapsed_seconds": 0.022517977,
+          "remaining_seconds": 0.0,
+          "work_remaining_seconds": 0.0,
+          "cooperative_only": true
+        },
+        "contract_valid": false,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {}
+      },
+      "source_and_input_sha256_stable": true
+    },
+    {
+      "argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "cwd": "/tmp/aegml-h023-_iw4mk7t/задача с пробелами",
+      "selective_copy_root_files": [
+        "solution.py",
+        "aegml_contracts.py",
+        "aegml_input.py",
+        "aegml_schemas.py",
+        "requirements.txt"
+      ],
+      "source_and_input_sha256_before": {
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/task.md": "e405dcba06822689c4b43d43ccd4ccf4ab4b5ac888c964ccac3c4087cc7ce391",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/train.csv": "0c033ec601bf78a9a99c7fb9c7e40d30f76ae55e3b69872e76a19e5206ec40e0",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/test.csv": "82ab916ec40d38dd24399812d79ec68b5a975a2150ceffb57be750716e81fa36",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/data_dictionary.csv": "eb6ea1099771d6b767d74cb244b126f3b582ace687f8e7cd4a1af9e1510b2ea4",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/sample_submission.csv": "ee8e2dfa9b7d37f1fe69478cc5ab277aa00f4098823f0864bdca6bc53a22eeed",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+        "/tmp/aegml-h023-_iw4mk7t/задача с пробелами/requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      "timeout_seconds": 30,
+      "exit_code": 3,
+      "outcome": {
+        "schema_version": "bootstrap.v1",
+        "phase": "H02.3",
+        "status": "failed",
+        "termination_reason": "implementation_incomplete",
+        "exit_code": 3,
+        "entrypoint_ready": true,
+        "api_settings_state": "complete_unverified",
+        "timer": {
+          "total_seconds": 10800.0,
+          "reserve_seconds": 600.0,
+          "elapsed_seconds": 0.078574113,
+          "remaining_seconds": 10799.921425887,
+          "work_remaining_seconds": 10199.921425887,
+          "cooperative_only": true
+        },
+        "contract_valid": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "experiments_completed": 0,
+        "research_completed": false,
+        "submission_valid": false,
+        "warnings": [
+          "full_agent_not_implemented",
+          "official_platform_image_unverified"
+        ],
+        "artifact_sha": {
+          "task_contract.json": "630e04a77be50f29e88f7c9a042ac1f04f08b3d0317fb16a800cdbd5256d66e8",
+          "row_alignment.json": "0196254554566227054df7860d52b16d64ed9367fbff6e959ffc136d7a8ec9c4"
+        }
+      },
+      "source_and_input_sha256_stable": true
+    }
+  ],
+  "actual_input_checks": [],
+  "all_requested_actual_inputs_verified": false,
+  "unittest_failures": [
+    {
+      "test": "__main__.ContractChecks.test_metric_and_target_conflicts (case='multiple_primary_metrics')",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 382, in test_metric_and_target_conflicts\n    self.rejected(fixture, codes=codes)\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 180, in rejected\n    self.assertIn(error.code, codes)\nAssertionError: 'metric_conflict' not found in {'ambiguous_primary_metric'}\n"
+    },
+    {
+      "test": "__main__.ContractChecks.test_publish_fresh_sidecars_with_exact_hashes",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 505, in test_publish_fresh_sidecars_with_exact_hashes\n    self.assertEqual(json.loads(contract_path.read_text(encoding=\"utf-8\")), payload)\nAssertionError: {'conflicts': [], 'constraints': {'no_netwo[3915 chars]ion'} != {'schema_version': 'task.v1', 'run_id': '18[3709 chars]: []}\nDiff is 7842 characters long. Set self.maxDiff to None to see it.\n"
+    }
+  ],
+  "unittest_errors": [
+    {
+      "test": "__main__.ContractChecks.test_actual_public_classification",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 618, in test_actual_public_classification\n    self.actual_dataset(\"classification\", \"Многоклассовая классификация\", {\"target\": \"attack_cat\", \"kind\": \"classification\", \"metric\": \"macro_f1\", \"features\": 42,\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 594, in actual_dataset\n    contract = CONTRACTS.build_task_contract(root / \"task.md\")\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/e/work/AegMLAI-agent/aegml_contracts.py\", line 604, in build_task_contract\n    raise ContractError(\"invalid_task_contract\", budget=budget) from None\naegml_contracts.ContractError: invalid_task_contract\n"
+    },
+    {
+      "test": "__main__.ContractChecks.test_actual_public_regression",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 614, in test_actual_public_regression\n    self.actual_dataset(\"regression\", \"Регрессия\", {\"target\": \"site_eui\", \"kind\": \"regression\", \"metric\": \"rmse\", \"features\": 62,\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 594, in actual_dataset\n    contract = CONTRACTS.build_task_contract(root / \"task.md\")\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/e/work/AegMLAI-agent/aegml_contracts.py\", line 604, in build_task_contract\n    raise ContractError(\"invalid_task_contract\", budget=budget) from None\naegml_contracts.ContractError: invalid_task_contract\n"
+    },
+    {
+      "test": "__main__.ContractChecks.test_missing_nested_paths_have_recorded_flat_fallback",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 334, in test_missing_nested_paths_have_recorded_flat_fallback\n    _, payload = self.build()\n                 ^^^^^^^^^^^^\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h023_contract.py\", line 159, in build\n    contract = CONTRACTS.build_task_contract(fixture.task, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/e/work/AegMLAI-agent/aegml_contracts.py\", line 604, in build_task_contract\n    raise ContractError(\"invalid_task_contract\", budget=budget) from None\naegml_contracts.ContractError: invalid_task_contract\n"
+    }
+  ],
+  "source_unchanged_during_check": true,
+  "source_sha256_after": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "40366bd1101970430fd473762b0e9a7c7b67b0c4f2108e979c8a5dbc1ea2684f",
+    "aegml_input.py": "6538716567d2625bb7544b481437ef4d3a47aa4d45365e97142ed8b5ca0100c0",
+    "aegml_schemas.py": "ee3abb6cf2e0fb2fdad7cbbef2d956a643f4ccd467e11c78ed4b909ecbddedd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "83cc56c279c02e6ba672a406cf86c52cfc327c330abd69e5c48c6e0140303662"
+  }
+}

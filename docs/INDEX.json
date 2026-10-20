@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "stage": "H02.2 bootstrap entrypoint/timer with offline local-provider configuration",
-  "status": "PASS_H02_2_BOOTSTRAP_ONLY; full ML agent and AutoResearch NOT_RUN",
-  "next_stage": "H02.3 TaskContract/resolver by a new owner command; real provider API only by explicit owner command",
+  "stage": "H02.3 TaskContract/resolver/schema/row alignment",
+  "status": "PASS_H02_3_CONTRACT_ONLY; ML/API/AutoResearch NOT_RUN",
+  "next_stage": "H03.1 limited profile by new owner command; live provider API only by explicit owner command",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
   "previous_documentation_commit": "8e80944866b1a152184a43260f29ba23ec56c857",
   "runtime_changed_in_this_stage": true,
@@ -50,10 +50,10 @@
     "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
   },
   "verification": {
-    "status": "PASS_H02_2_METADATA_AND_SCOPE_REVIEW_ONLY",
-    "receipt": "docs/H022_REVIEW_RECEIPT.json",
-    "sha256": "4e4e8b166323c40c692dc331c9a0bd37ee7dd96b260df01d35c19215dfa01086",
-    "scope": "identity, historical preservation, stage status, documents and links; does not rerun runtime tests"
+    "status": "PASS_H02_3_METADATA_AND_SCOPE_REVIEW_ONLY",
+    "receipt": "docs/H023_REVIEW_RECEIPT.json",
+    "sha256": "95f9b7db1fd6900740657cac41dc14efa0adc7dd19f9bad97e2616bd79781bc5",
+    "scope": "identity, history, input SHA, source receipt binding, status and links; no new runtime tests"
   },
   "review": {
     "independent_document_review": "completed; final content cross-read and automatic metadata checks; no material blocker reported",
@@ -108,55 +108,61 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "README.md": "aa929ea79cd432c02ba5663c340fa5eaac631de47b338b4939815c195faf6ffd",
-    "AGENTS.md": "899d35871fb87a49e58e87a7c93ce7011f527af8ddbbaae9a7c708b5de13f4fa",
-    "PROJECT_STATE.md": "a5543c85ac11b091a367f1681106f079545b749b2e3d8b3045946c6169eaa33b",
-    "testmini/README.md": "829ae1d77666b4ac511fa08326a25e09c2ebbd33bb6d469396bd775069c7d604",
+    "AGENTS.md": "901af3dffb36fd9ed0744fd5a4861f43a08f6380eea887f2b8f064062ba68bea",
+    "PROJECT_STATE.md": "11af6464f2f3840d5452d8d152636e0d5b3a80ab52ddd1d133fcf1f9ca66fded",
+    "README.md": "0a243d1d59ac25ed4801c67b806ae2706724d2d96a9158ba101d7078ead69055",
     "docs/API_INSTRUCTIONS_INTAKE.md": "ceb578c73731cef822d8e9eacf9c121d8576b0409ff36a66a9205c4fef26e8fe",
     "docs/API_LOCAL_SETUP.md": "ca62c8450af612e0906b571fc398f5b2eded671537a18761f6a1af5b1f600744",
     "docs/AUTOML_RESEARCH_BRIEF.md": "c82554b528278ac53273ddfcc87484dcb7875df69e1454454fe1f8c49a61d446",
-    "docs/BACKEND_CONTRACT.md": "2c9364e482b86a33010780ebf08b8f1bc3b42eb824fd776543b44e6d60a57d18",
+    "docs/BACKEND_CONTRACT.md": "2f8f35ee3c8b48b914f6d167ab6aacc7595d1bf95da2e18debe51ab0cc8bc284",
     "docs/CASE_INTAKE.md": "7bc2328e54b91716e772a14a44ed39946d07ba289d89c0ee740ef353dbe52328",
     "docs/CHAT1_AGENT_COMPARISON_INTAKE.md": "e1568bac4dcb0c8f2ba769c6c828086106e1e7718c15c62bef379739b88cfaf6",
-    "docs/EVIDENCE_REGISTER.md": "b32abdd0e7cb089b538162c4ef551c65c70e3e8d25cbfac7a173f0a5545265bd",
+    "docs/CHAT1_CPU_ML_INTAKE.md": "74c04cd2321d82cebbd716dcc9e74d672961b16e379133da28e46b0609c1dd3e",
+    "docs/DOC_REVIEW_RECEIPT.json": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
+    "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
+    "docs/EVIDENCE_REGISTER.md": "dc49d5567d1f65038e7ccc12eff7fb18cb405425eb16b74c60187d2404bd8d12",
+    "docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json": "04556c7896a851dd3f9248c398d2727d7e66ca96f9a9eb553990ee6061cb3409",
+    "docs/H022_BOOTSTRAP_RESULT.json": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
     "docs/H022_RECEIPT.md": "0658dd434c688ee124d928871fff3bb39ae4e6001dd741d7c02115a35526dc5b",
+    "docs/H022_REVIEW_RECEIPT.json": "4e4e8b166323c40c692dc331c9a0bd37ee7dd96b260df01d35c19215dfa01086",
+    "docs/H023_ATTEMPT1_RESULT.json": "b681a5a98212c308d5016deee47b5adef6d2c0b0e4bb57e428d3663b7f003617",
+    "docs/H023_ATTEMPT2_RESULT.json": "fab157f42f3a76fa4369795b0324c7e14039b92a65654412dfb929b260a85bc9",
+    "docs/H023_BOOTSTRAP_REGRESSION_RESULT.json": "388aa295a22c843ceb1675df6a7c199935130aa0ace9c2040309eadce08ed0c6",
+    "docs/H023_CONTRACT_RESULT.json": "92335095065789143b2494983c23691aa78f927d88e438d689777b0046ce15c9",
+    "docs/H023_RECEIPT.md": "3e418113f37801a464bff49e3822e617b194e89c72e7b4c442533cdff4c866e6",
+    "docs/H023_REVIEW_RECEIPT.json": "95f9b7db1fd6900740657cac41dc14efa0adc7dd19f9bad97e2616bd79781bc5",
     "docs/H02_RECEIPT.md": "5b0d15b170139ee3e0b940c423e77c75c63ceef179b62aea35901124c5fb9372",
-    "docs/LOCAL_ENVIRONMENT.md": "16fe8561e243c7288e5c9740417dd5d4910cc3984d98f8177f926da862a8d519",
+    "docs/H02_REVIEW_RECEIPT.json": "46b1d62d47db5d7b90803db7403998cdef0e1897d85ab15f3213ec6565ffa84c",
+    "docs/LOCAL_ENVIRONMENT.md": "cf981faad7c18552678e89afa63e36d9320be929c1ed407ff7d195ec6b2d5c00",
+    "docs/LOCAL_PROVIDER_HELPER_RESULT.json": "da1e1bd8021620bddee628d023414362e7403679c26b3d6a94554db90cbd0ffa",
+    "docs/LOCAL_PROVIDER_RECEIPT.json": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
     "docs/MATHEMATICS_AND_VALIDATION.md": "bad31ce27da714a831fc6e0e57dcdb746fbaf6fb4f53bfe26505984ef5a27233",
-    "docs/NEXT_SESSION.md": "2cf5e3bdab84250b5ed7d4d1b0b20bd27942b98d69b1097308320e66cacd4975",
+    "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
+    "docs/NEXT_SESSION.md": "9d2beb19c436d6cc0b7e193ca1c5bfce9b95b6569dd473dcd18951c663b2d90c",
     "docs/OPEN_SOURCE_AGENT_REVIEW.md": "06ad578759b079cf81e360f782b9d48509b80d7ae571d99116a54027c349b21c",
     "docs/OPTIONAL_ARTIFACTS_RESEARCH.md": "4f84f8191d1c1062d7229df93b1d555b82b6627ed488915346c3e9477f88bc08",
     "docs/ORGANIZER_QUESTIONS.md": "5a26b6e63903f490840d681b30a8f5de6834ad168dfc3195bce1cbfe83a6aae5",
-    "docs/QWEN_HARNESS_DESIGN.md": "fc21efda43542adbc50fccff95a47c9583ac474cb5b1ac8580e487a84c23e34d",
-    "docs/READ_FIRST.md": "cf9a3f3a5d35e7b4eabfbdd2fec5bfc4722a7995217d5b9d8dc54a8f73214663",
-    "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
-    "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
-    "docs/ROADMAP.md": "4215af39e0327eec9ef31f215907012f3799ab051ec7e9cd224e901692544a78",
-    "docs/RUNTIME_AND_FAILURES.md": "1344584f23cdff4f90ca3cb25c08504c182e789487d87305fca538c7c271da1a",
-    "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
-    "docs/TECHNICAL_SPEC.md": "10e94617995696d1a5f2d979470c6ad8be8271a27b00d99dcb3feb258deb3f49",
-    "docs/TEST_MATRIX.md": "6a245beba2000797d187be1dfb8e478cf34604df103a71413cad320a3144f36c",
-    "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
-    "docs/VOVAN_MENTOR_PROMPT.md": "19451433a7db13acbff7eb31388c5b326be293942ce8c6c491a063021c7ff7b4",
-    "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
-    "docs/WEB_WORKFLOW.md": "1d56bc294051d32ab4c3f684acb8a9e6f992ddb7bbd4a402b89c48f4981a3efd",
-    "docs/WORK_BLOCKS.md": "ae83cb21de5c331230b9bb72078dba62149d7f251240c7acfe15fb2302b4d219",
-    "docs/DOC_REVIEW_RECEIPT.json": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
-    "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c",
-    "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
-    "docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json": "04556c7896a851dd3f9248c398d2727d7e66ca96f9a9eb553990ee6061cb3409",
-    "docs/H022_BOOTSTRAP_RESULT.json": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
-    "docs/H02_REVIEW_RECEIPT.json": "46b1d62d47db5d7b90803db7403998cdef0e1897d85ab15f3213ec6565ffa84c",
-    "docs/LOCAL_PROVIDER_HELPER_RESULT.json": "da1e1bd8021620bddee628d023414362e7403679c26b3d6a94554db90cbd0ffa",
-    "docs/LOCAL_PROVIDER_RECEIPT.json": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
-    "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
-    "docs/SOURCE_MANIFEST.json": "9f6245ff307ab88f2583656866e4fd2826d08e3b5a4bf67e432fc3afe00c0038",
+    "docs/QWEN_HARNESS_DESIGN.md": "fc21efda43542adbc50fccff95a47c9583ac474cb5b1ac8580e487a84c23e34d",
+    "docs/READ_FIRST.md": "528cf3d7e1542a7d7ec99d81dd3064a8e1f2e3bee0c995a4cebe3435cbc7fe14",
+    "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
+    "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
+    "docs/ROADMAP.md": "b7fc31ac01232dc68d7fa84b82a3d79e4bf71277b0eb40064083d465465130b9",
+    "docs/RUNTIME_AND_FAILURES.md": "1344584f23cdff4f90ca3cb25c08504c182e789487d87305fca538c7c271da1a",
+    "docs/SOURCE_MANIFEST.json": "af12f588c00ba10044fed613cfca4c2e6683764d3834fd1958cb75046348d49d",
+    "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
+    "docs/TECHNICAL_SPEC.md": "d3c2a48ad2f020ab5113ec9975cdaffd695d9edccbf9568b97fb24cf25c4f675",
+    "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
-    "docs/WORK_PLAN.json": "138f39184fe74eb75dab39451f675081ebb2170f71cc85c4157729a90d9954ab",
-    "docs/H022_REVIEW_RECEIPT.json": "4e4e8b166323c40c692dc331c9a0bd37ee7dd96b260df01d35c19215dfa01086"
+    "docs/TEST_MATRIX.md": "0281613072d9662b10b23e816bafba792195827686926e9822ea751dd86d3d04",
+    "docs/VOVAN_MENTOR_PROMPT.md": "19451433a7db13acbff7eb31388c5b326be293942ce8c6c491a063021c7ff7b4",
+    "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
+    "docs/WEB_WORKFLOW.md": "9ee6222f79b6ab52737ebef08a67a174eb9a0bafcb68b73f56b076bf9143451f",
+    "docs/WORK_BLOCKS.md": "f56d49eca176e9f9e2031771790128428618a8ad1e6b552f969380a4ac77f17f",
+    "docs/WORK_PLAN.json": "4c1cf547348b631e6d87ab03852003d135ec3826e97447fd6e9860b5358d0dfd",
+    "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -200,7 +206,7 @@
     "sha256": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1"
   },
   "new_tests_in_this_update": true,
-  "local_live_llm_calls_executed": false,
+  "local_live_llm_calls_executed": 0,
   "platform_live_llm_success_inferred_conditionally": true,
   "platform_live_llm_success_directly_verified": false,
   "platform_strict_observation": {
@@ -223,12 +229,12 @@
   },
   "work_plan": {
     "path": "docs/WORK_PLAN.json",
-    "sha256": "138f39184fe74eb75dab39451f675081ebb2170f71cc85c4157729a90d9954ab",
+    "sha256": "4c1cf547348b631e6d87ab03852003d135ec3826e97447fd6e9860b5358d0dfd",
     "blocks": 50
   },
   "runtime_environment_changed_in_this_stage": false,
-  "runtime_change_scope": "trusted stdlib bootstrap and dev checks; no new packages/caps/image",
-  "new_tests_scope": "24 bootstrap methods/51 cases/37 CLI; 17 separate helper canary cases; all74+17 future full-agent scenarios NOT_RUN",
+  "runtime_change_scope": "four flat root .py implement trusted bootstrap and H02.3 only",
+  "new_tests_scope": "H02.3 34 methods/76 cases/4 CLI; bootstrap regression 24/51/37; overlapping counts, no quality/OS/platform acceptance",
   "environment_settings_change_scope": "private local provider JSON outside repository, owner1000/0700/0600; no real provider requests",
   "local_live_llm_calls_scope": "competition provider API; web research-chat messages are tracked separately",
   "historical_verification_previous_documentation": {
@@ -290,14 +296,19 @@
     "read_on_owner_signal": true,
     "mentor_first_reply_read_and_requested_materials_sent": true,
     "owner_notified_before_current_revision_sends": true,
-    "mentor_h022_report_sent": true
+    "mentor_h022_report_sent": true,
+    "h023_review_sent_to_chat2": true,
+    "h023_review_reply_read": false,
+    "chat1_cpu_ml_reply_read": true,
+    "chat1_cpu_ml_intake": "docs/CHAT1_CPU_ML_INTAKE.md"
   },
   "development_tooling_sha256": {
-    "scripts/check_h02_bootstrap.py": "1a59b88eca4b9de11a54043af2a11ea4259ce7e2cfc44cf8350a04faab5f2047",
+    "scripts/check_h02_bootstrap.py": "a6bcfeba45c01c2e3e483161fe498e96ce8a8410ed8e38f37504945285079a3f",
     "scripts/check_h02_environment.py": "dd99972a951628569d06c70eade8b8a1fe7019762da27a9fbafbdddbe05e1b21",
     "scripts/local_provider_config.py": "d704dd1e4b9cc9df25e836354c410fc619f02dc861c5ef9377bd93e66ea5b923",
     "scripts/prepare_h02_environment.py": "60f027c1b17f7419343c2c9a193dd2d1b4048bfed9b1992d6fc61dd4f848e480",
-    "scripts/review_h02_receipt.py": "c39be0ffc5298a8a2687a0a23ba5ff8ef2a8e809542a488b0e4beb9c475b5938"
+    "scripts/review_h02_receipt.py": "c39be0ffc5298a8a2687a0a23ba5ff8ef2a8e809542a488b0e4beb9c475b5938",
+    "scripts/check_h023_contract.py": "47c10ef5d9171035876d882d07213be0e95414f20bf64cfaff9c2952afee7399"
   },
   "requirements_sha256": {
     "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
@@ -316,8 +327,8 @@
     "local_links": 243,
     "raw_exported_proof_rechecked": true
   },
-  "previous_project_commit": "fb5f5c14701cbd3805c564c4fc02f58211ae5117",
-  "product_code_scope": "solution.py and aegml_contracts.py bootstrap only; honest incomplete exit3, no TaskContract/CSV/ML/API",
+  "previous_project_commit": "dda5a0d",
+  "product_code_scope": "four flat root .py implement trusted bootstrap and H02.3 only",
   "h02_2_bootstrap": {
     "receipt": "docs/H022_BOOTSTRAP_RESULT.json",
     "sha256": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
@@ -344,5 +355,48 @@
   "product_bootstrap_sha256": {
     "solution.py": "1454b0ee9260a5445c214623472ab5f344919f853bbec23f49c5b395bae7d310",
     "aegml_contracts.py": "e897240e4f88f00b4c153ec6dfee2a019f45de8f3441e2134a026ea0b744db97"
-  }
+  },
+  "historical_verification_h02_2": {
+    "status": "PASS_H02_2_METADATA_AND_SCOPE_REVIEW_ONLY",
+    "receipt": "docs/H022_REVIEW_RECEIPT.json",
+    "sha256": "4e4e8b166323c40c692dc331c9a0bd37ee7dd96b260df01d35c19215dfa01086",
+    "scope": "identity, historical preservation, stage status, documents and links; does not rerun runtime tests"
+  },
+  "h02_3_contract": {
+    "status": "PASS_H02_3_CONTRACT_ONLY",
+    "receipt": "docs/H023_CONTRACT_RESULT.json",
+    "sha256": "92335095065789143b2494983c23691aa78f927d88e438d689777b0046ce15c9",
+    "test_methods": 34,
+    "behavior_cases": 76,
+    "cli_invocations": 4,
+    "runtime_source_sha256": {
+      "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+      "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+      "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+      "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d",
+      "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+      "scripts/check_h023_contract.py": "47c10ef5d9171035876d882d07213be0e95414f20bf64cfaff9c2952afee7399"
+    },
+    "bootstrap_regression_receipt": "docs/H023_BOOTSTRAP_REGRESSION_RESULT.json",
+    "bootstrap_regression_sha256": "388aa295a22c843ceb1675df6a7c199935130aa0ace9c2040309eadce08ed0c6",
+    "bootstrap_regression_counts": {
+      "test_methods": 24,
+      "behavior_cases": 51,
+      "cli_invocations": 37
+    },
+    "live_api_requests": 0,
+    "model_fit_calls": 0,
+    "csv_written": false,
+    "official_image_verified": false,
+    "hard_timeout_verified": false,
+    "h03_implemented": false,
+    "grammar_scope": "canonical four CSV basenames, one supervised target, explicit RU/EN grammar, eight metric contract schemas; unsupported or conflicting input refuses"
+  },
+  "product_contract_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "7dcae3cd7e4d7cb3caddee126663a321f99fa5977f9587dc6009289515e8da72",
+    "aegml_input.py": "0b08f1285a2ea9851db45f8b5a39bba826d3800b73e6e5e6ffd67b99c66eef74",
+    "aegml_schemas.py": "b2cfb4b51df3b51a48d53c45b182b6789c4bf099af2c025f402ec28d8a74352d"
+  },
+  "product_bootstrap_sha256_scope": "historical H02.2 source; current four-file SHA in product_contract_sha256"
 }
