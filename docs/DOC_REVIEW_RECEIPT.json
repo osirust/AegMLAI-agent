@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS_DOCUMENTATION_AND_REFERENCE_SCOPE_ONLY",
+  "recorded_at_utc": "2026-10-20T15:46:33.831712+00:00",
+  "scope": "specification consistency, source identity, document links/dependencies and analytical reference arithmetic; not product implementation, model experiment or runtime acceptance",
+  "before_snapshot": "runs/spec-revision/20261020T150413Z/before",
+  "named_source_sets": {
+    "download12": [
+      {
+        "path": "drive-download-20261019T181414Z-1-001/baseline.py",
+        "sha256": "ecf66e8d7c054624eeca710c13e2b82c1ac22a03314db8a45ff1778fa16e372d"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/requirements.txt",
+        "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv",
+        "sha256": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv",
+        "sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md",
+        "sha256": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv",
+        "sha256": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv",
+        "sha256": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv",
+        "sha256": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv",
+        "sha256": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/task.md",
+        "sha256": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/test.csv",
+        "sha256": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/train.csv",
+        "sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775"
+      }
+    ],
+    "extended14": [
+      {
+        "path": "drive-download-20261019T181414Z-1-001/baseline.py",
+        "sha256": "ecf66e8d7c054624eeca710c13e2b82c1ac22a03314db8a45ff1778fa16e372d"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/requirements.txt",
+        "sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv",
+        "sha256": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv",
+        "sha256": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md",
+        "sha256": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv",
+        "sha256": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv",
+        "sha256": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv",
+        "sha256": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv",
+        "sha256": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/task.md",
+        "sha256": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/test.csv",
+        "sha256": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095"
+      },
+      {
+        "path": "drive-download-20261019T181414Z-1-001/Регрессия/train.csv",
+        "sha256": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775"
+      },
+      {
+        "path": "Альфа Хак_AutoML .pdf",
+        "sha256": "ed782a34f5bd8893f7175b997ca040cf89bbde63b1e56795ae73defa39c646b3"
+      },
+      {
+        "path": "baseline.py",
+        "sha256": "ecf66e8d7c054624eeca710c13e2b82c1ac22a03314db8a45ff1778fa16e372d"
+      }
+    ]
+  },
+  "unchanged_application_source_sha256": {
+    "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
+    "src/aegml/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/aegml/cli.py": "c852a3407fc3e9756e6b876ea45abf4b0622715b518f691648a3dea92a5b0535",
+    "src/aegml/config.py": "1b43d0f25dcccdd1a8a2f3d5712aec9ecc693a4631bb2bae96705bcf6ef2610a",
+    "src/aegml/contracts.py": "a54a7c427dcae8c852e9d9e993949167ec5ab5d62265ccc151e02253d2ba1d17",
+    "src/aegml/profiling.py": "d01f526c3c316e227a54738efd4994b1d56e3f58dabe50b58f23adbb2985fc1f",
+    "src/aegml/providers.py": "8d8e09ad5e8520320a585c97632b3cbb078228aa21799fb426edd418d1f1e6cf",
+    "src/aegml/runner.py": "7d785d947c1425fca8174000a44506a026193c08f0c8749d8c57fa63f8eb6c76",
+    "tests/test_core.py": "bf5c43f474cdb25d7e1ae6fa650a1c8cae800b2736a92995d18533d5126acee9",
+    "tests/test_providers.py": "7b81797990f60e23d0008fbf1960775a5bdb881462bc7615d3b7a352f565201c",
+    "pyproject.toml": "01a1bd97f829875d23942eb65605f74f1b18c62f95e7d2a1a9102f0186f61d9b",
+    ".github/workflows/ci.yml": "4fb89937080a5db5974e22181cf7072df4c53ed87ce4f43192384672b423ea2e",
+    ".env.example": "6a3fd7ea7b7225987671bd1fdcbe11fd5c972d0a156f90b6d57d8a991b1804ad",
+    "testmini/build_zip.py": "b6c5153a2fe81dbbbd4abb95384680f2a1c09a525a190c4ff44ca6eff4461de2",
+    "testmini/check_api.py": "2c4579744fd287193d260f4d33b0e95f9523ad201e8fca95117a740de1ff8008",
+    "testmini/check_local.py": "a6631892345f3822dd0116bd24b00829b64088c0b42889da7c560cf8c16e65f9",
+    "testmini/solution.py": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9"
+  },
+  "markdown_files_checked": 23,
+  "local_links_checked": 210,
+  "work_blocks": 50,
+  "work_dependency_graph": "acyclic",
+  "math_subpoints": 15,
+  "harness_subpoints": 15,
+  "research_subpoints": 14,
+  "primary_source_registry_entries": 15,
+  "main_functional_scenarios": 64,
+  "main_security_scenarios": 10,
+  "harness_detail_scenarios": 17,
+  "detail_scenarios_overlap_main": true,
+  "future_full_project_scenario_status": "NOT_RUN",
+  "analytic_reference_check": "docs/MATH_REFERENCE_CHECK.json",
+  "analytic_cases_checked": 16,
+  "closed_document_findings_current_revision": [
+    "SPEC-DOC-003",
+    "SPEC-DOC-004",
+    "SPEC-DOC-005",
+    "SPEC-DOC-006",
+    "SPEC-DOC-007",
+    "SPEC-DOC-008"
+  ],
+  "documentation_checker_note": {
+    "id": "SPEC-QA-001",
+    "scope": "false positive in first checker, not product defect",
+    "fact": "obsolete transport name found only inside historical finding evidence",
+    "action": "validate operative contract separately from historical evidence",
+    "closure": "revised complete checker passes; initial helper v1 preserved outside repository"
+  },
+  "remaining_open_runtime_findings": [
+    "SPEC-BASE-001",
+    "SPEC-BASE-002",
+    "SPEC-BASE-003",
+    "SPEC-BASE-004",
+    "SPEC-BASE-005",
+    "SPEC-BASE-006",
+    "SPEC-ADAPT-001",
+    "SPEC-ADAPT-002",
+    "SPEC-ADAPT-003",
+    "SPEC-DATA-001"
+  ],
+  "api_local": "API_WAIT_LOCAL",
+  "platform_mini_api": "conditionally inferred, not directly verified",
+  "product_code_implemented_in_this_revision": false,
+  "model_training_executed": false,
+  "ml_architecture_experiments_executed": false,
+  "new_live_api_calls": false,
+  "environment_settings_changed": false,
+  "new_platform_submission": false,
+  "reviewed_markdown_sha256": {
+    "README.md": "26a0864fe3d3af9c561a4d8fd6df0ed5a98da39ba3ea8d77a0ee0b51577a3cba",
+    "AGENTS.md": "3fcf3e5442b07049a35de76ee7c2a427fa1f988aab2ae843bd2ba431687b3177",
+    "PROJECT_STATE.md": "152fc427b1da637785b835175d5cb358db3a8aa4f3eee0094f526ff45384e577",
+    "testmini/README.md": "1f333fd4ad7534dc3b0c43341d2f8a866548de4376211c09c714708e82a8d397",
+    "docs/AUTOML_RESEARCH_BRIEF.md": "9616208b66617024bcdcff38f0e017b19d88aa716f366465ab52734b724799c0",
+    "docs/BACKEND_CONTRACT.md": "65c295c7239285f230802b5a3cd5b1db8dba887434d1e40ed99e1b596ae2232d",
+    "docs/CASE_INTAKE.md": "ef229bd4c7c106ae3a8c82a474e1e8cfe7226379f45660ed6d339c4c143da355",
+    "docs/EVIDENCE_REGISTER.md": "1156c627c70d00ea6728ae47e11b9eb67931642d7f91bdc7f96b7d82cb85c427",
+    "docs/LOCAL_ENVIRONMENT.md": "fc249e158f59ab91e9a6724e61d014b19e416b5d932837de0b977b7e9a4ca0e0",
+    "docs/MATHEMATICS_AND_VALIDATION.md": "2db22f744ec63032e4673f3bb0eb1149200a35416fc3d23e7fda999667dac4f2",
+    "docs/NEXT_SESSION.md": "e178ab6caf14192e78ab55d3b636aac6ada3720fe2ed755516a7126a7ca63e10",
+    "docs/ORGANIZER_QUESTIONS.md": "15d6d4f6d263fa89407d7574ab1641452f3f761dd9ed3c904ac5005720d119a7",
+    "docs/QWEN_HARNESS_DESIGN.md": "3e2de1418048a7480e56ec2a6fdc835562c84e3c27ec7141b7b12d41830c0aad",
+    "docs/READ_FIRST.md": "1e52560587c5218de31db50d5f0fd745255b31d502360a864f8532bd0d1c9ed8",
+    "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
+    "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
+    "docs/ROADMAP.md": "6bf4ab62992e374aaf3f422240c26097c8dd2e4ac61e1179562b8eb1771edd74",
+    "docs/RUNTIME_AND_FAILURES.md": "2ff538680eae45d88d7fb39e9146023d948face2bc54e6d8a42a42286981f59f",
+    "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
+    "docs/TECHNICAL_SPEC.md": "94ffb887e08c7ee5d064417f533d56a25f808e2ab18cfc580ea4b45e57b92b93",
+    "docs/TEST_MATRIX.md": "1b43ca5d57c42e8116484f545e829b1ae1899afb9eb738d8a6e485405a9aa1f6",
+    "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
+    "docs/WORK_BLOCKS.md": "8cdd4f336336ee6a7960797a422c9240d2333d759b663d5ff4a18c6e53820823"
+  },
+  "future_solution_exists": false,
+  "future_runtime_package_exists": false,
+  "independent_readonly_review": {
+    "status": "completed; no remaining material documentary blockers reported",
+    "scope": "current mathematical, worker-phase, transport/dedupe, workflow and evidence claims only; no product execution",
+    "checked_findings": [
+      "SPEC-DOC-003",
+      "SPEC-DOC-004",
+      "SPEC-DOC-005",
+      "SPEC-DOC-006",
+      "SPEC-DOC-007",
+      "SPEC-DOC-008"
+    ],
+    "checks": "search/freeze/refit/outer; canonical transports/dedupe;50 work blocks;74 future scenarios/17 details;16 arithmetic references"
+  }
+}

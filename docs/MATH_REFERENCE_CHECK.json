@@ -1,0 +1,110 @@
+{
+  "status": "PASS_ANALYTICAL_REFERENCE_ARITHMETIC_ONLY",
+  "recorded_at_utc": "2026-10-20T15:41:26.954395+00:00",
+  "python": "3.12.14",
+  "library": "Python standard library only",
+  "checks": [
+    {
+      "id": "hypothetical_reg_baseline",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "hypothetical_cls_baseline",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "hypothetical_worse",
+      "observed": 0.0,
+      "expected": 0,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "hypothetical_ideal",
+      "observed": 100.0,
+      "expected": 100,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "hypothetical_example",
+      "observed": 10.000000000000004,
+      "expected": 10,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "rmse_sqrt2",
+      "observed": 1.4142135623730951,
+      "expected": 1.4142135623730951,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "mae_one",
+      "observed": 1.0,
+      "expected": 1,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "macro_one_third",
+      "observed": 0.3333333333333333,
+      "expected": 0.3333333333333333,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "macro_task_absent_classes",
+      "observed": 1.0,
+      "expected": 1,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "macro_fixed10_absent",
+      "observed": 0.1,
+      "expected": 0.1,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "log1p_inverse",
+      "observed": 8.881784197001252e-16,
+      "expected": 0,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "pooled_rmse",
+      "observed": 2.6457513110645907,
+      "expected": 2.6457513110645907,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "binary_logloss",
+      "observed": 0.2876820724517809,
+      "expected": 0.2876820724517809,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "ordered_binary_auc",
+      "observed": 1,
+      "expected": 1,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "reversed_binary_auc",
+      "observed": 0,
+      "expected": 0,
+      "status": "PASS_ARITHMETIC_ONLY"
+    },
+    {
+      "id": "constant_mean_sse",
+      "observed": 26.0,
+      "expected": 26,
+      "status": "PASS_ARITHMETIC_ONLY"
+    }
+  ],
+  "hypothetical_B_values_are_not_official": true,
+  "dataset_or_model_used": false,
+  "training_executed": false,
+  "future_metric_adapters_executed": false,
+  "sklearn_or_catboost_called": false,
+  "scope": "independent arithmetic consistency of selected specification examples; not experimental research or product-runtime acceptance"
+}

@@ -500,5 +500,29 @@
     "sha256": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
     "score": 0,
     "api_inference": "conditional; not directly verified"
+  },
+  "full_specification_review": {
+    "path": "docs/DOC_REVIEW_RECEIPT.json",
+    "sha256": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
+    "scope": "documentation/analytical reference consistency only; no model training or implementation acceptance",
+    "source_set_names": {
+      "download12": 12,
+      "extended14": 14
+    }
+  },
+  "research_source_review": {
+    "registry": "docs/RESEARCH_SOURCES.md",
+    "registry_sha256": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
+    "primary_registry_entries": 15,
+    "review_date": "2026-10-20",
+    "kind": "primary-source literature/documentation review for specification and future experiment design",
+    "experiments_executed": false,
+    "external_training_datasets_downloaded": false
+  },
+  "mathematical_reference_review": {
+    "path": "docs/MATH_REFERENCE_CHECK.json",
+    "sha256": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
+    "cases": 16,
+    "scope": "stdlib arithmetic only; not future metric adapters or trained models"
   }
 }

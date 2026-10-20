@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "stage": "M00 strict platform submission observed",
-  "status": "strict ZIP/result shown by owner; API and CSV success conditionally inferred, not directly verified",
-  "next_stage": "explain observation; continue specification on owner instruction; no automatic probe submissions",
+  "stage": "H00/H01 full-project specification and source review",
+  "status": "documentation_and_mathematical_plan_ready; full agent implementation and experimental study NOT_RUN",
+  "next_stage": "H02.1 by owner instruction; H06.1 offline protocol and H06.2 safe live probe after actual API settings; no automatic whole-plan execution",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
-  "previous_documentation_commit": "583237aa86d17a255911294b2be695734facf7bc",
+  "previous_documentation_commit": "d5e8f295581403771e0cfcbe27af45ced6a47169",
   "runtime_changed_in_this_stage": false,
   "training_executed": false,
   "live_llm_calls_executed": null,
@@ -50,20 +50,34 @@
     "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
   },
   "verification": {
-    "status": "PASS",
-    "scope": "strict local gate and file contracts only; no live Qwen or platform runtime acceptance",
-    "mini_file_checks_passed": 6,
-    "mini_loopback_api_checks_passed": 17,
-    "sources_unchanged": 14,
-    "main49tests": "NOT_RUN",
-    "live_api": "API_WAIT",
-    "current_update_scope": "source/ZIP/document identity and supplied UI observation only; no new runtime tests"
+    "status": "PASS_DOCUMENTATION_AND_REFERENCE_SCOPE_ONLY",
+    "receipt": "docs/DOC_REVIEW_RECEIPT.json",
+    "sha256": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
+    "markdown_files": 23,
+    "local_links": 210,
+    "work_blocks": 50,
+    "dependency_graph": "acyclic",
+    "full_agent_main_scenarios": 74,
+    "functional": 64,
+    "security": 10,
+    "harness_detail_scenarios": 17,
+    "detail_overlaps_main": true,
+    "runtime_status_all_future_scenarios": "NOT_RUN",
+    "analytic_reference_cases": 16,
+    "analytic_reference_scope": "arithmetic only, no sklearn/CatBoost/model/adapter execution"
   },
   "review": {
-    "independent_document_review": "completed; corrections read back",
+    "independent_document_review": "completed; final content cross-read and automatic metadata checks; no material blocker reported",
     "closed_document_findings": [
-      "SPEC-DOC-001 methodology only",
-      "SPEC-DOC-002 minimal-environment scope synchronization only"
+      "SPEC-DOC-001 documentation scope only",
+      "SPEC-DOC-002 documentation scope only",
+      "SPEC-DOC-003 documentation scope only",
+      "SPEC-DOC-004 documentation scope only",
+      "SPEC-DOC-005 documentation scope only",
+      "SPEC-DOC-006 documentation scope only",
+      "SPEC-DOC-007 documentation scope only",
+      "SPEC-DOC-008 documentation scope only",
+      "SPEC-QA-001 documentation checker only"
     ],
     "previous_closed_runtime_findings": [
       "CORE-REV-001",
@@ -79,8 +93,7 @@
       "SPEC-ADAPT-001",
       "SPEC-ADAPT-002",
       "SPEC-ADAPT-003",
-      "SPEC-DATA-001",
-      "SPEC-DOC-003"
+      "SPEC-DATA-001"
     ],
     "closed_mini_findings": [
       "M00-API-001 HTTP/JSON errors mini-only",
@@ -94,30 +107,39 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "README.md": "1098ecb604aed48c57447098c2f2d54a57290fb493a5e8168e1c23ea5ae8578e",
-    "AGENTS.md": "6a609d073f3e12181a26eacff4ce4e31312ec5233afa0a7114899030ca120f05",
-    "PROJECT_STATE.md": "0e50cac1b9b65ae4c43fa3adbf085200884dea416a52fd4bcd56eb878df69356",
-    "testmini/README.md": "733c068801cb943994cee0a8af5814259a391472371f47820a6a313712cd6067",
+    "README.md": "26a0864fe3d3af9c561a4d8fd6df0ed5a98da39ba3ea8d77a0ee0b51577a3cba",
+    "AGENTS.md": "3fcf3e5442b07049a35de76ee7c2a427fa1f988aab2ae843bd2ba431687b3177",
+    "PROJECT_STATE.md": "152fc427b1da637785b835175d5cb358db3a8aa4f3eee0094f526ff45384e577",
+    "testmini/README.md": "1f333fd4ad7534dc3b0c43341d2f8a866548de4376211c09c714708e82a8d397",
     ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
-    "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
-    "docs/BACKEND_CONTRACT.md": "9fd60a5c23738beac69ffcc16098966e481dbe9f0dd77823bb001f731700811a",
-    "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
-    "docs/LOCAL_ENVIRONMENT.md": "d54478b8ead4d757364ea668cb1a5bf01643626e3f6528d23d6a485964995994",
-    "docs/NEXT_SESSION.md": "707b694281a0261826b928e95981a8ecf231d15f8eb5b54cd21c75e64e496385",
-    "docs/ORGANIZER_QUESTIONS.md": "a4b8ebf54d144df705648c2be1386a25637e4ab5aa3fbb5c504247c8a21830a0",
-    "docs/READ_FIRST.md": "1d4e658a60c6d6ca7b19db1b365774e492f5dec5bd012557014658ddf72475df",
-    "docs/ROADMAP.md": "3ec773060f9736fd57cd131e6ee9f5895262d0cea286bc2e6d940e8cbd4d64e0",
-    "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
-    "docs/TECHNICAL_SPEC.md": "525bb22c93355b486230e4401ddcc470466128a4c738e1511ce60c9287bc37a8",
-    "docs/TEST_MATRIX.md": "5b007296244452bd06f45ad816c5cc2963a824c5429a1eea22d8c4b57f46c344",
-    "docs/TESTMINI_PLAN.md": "006652630dd58f1a01442cdd3c88298a36bb10c21b6e0d6587ed2291e54d9bdd",
-    "docs/WORK_BLOCKS.md": "d6e1d2b98a1a9c786eceeb25443e01baefee7b5b7d8edaf111903fcf904f3b7e",
+    "docs/AUTOML_RESEARCH_BRIEF.md": "9616208b66617024bcdcff38f0e017b19d88aa716f366465ab52734b724799c0",
+    "docs/BACKEND_CONTRACT.md": "65c295c7239285f230802b5a3cd5b1db8dba887434d1e40ed99e1b596ae2232d",
+    "docs/CASE_INTAKE.md": "ef229bd4c7c106ae3a8c82a474e1e8cfe7226379f45660ed6d339c4c143da355",
+    "docs/EVIDENCE_REGISTER.md": "1156c627c70d00ea6728ae47e11b9eb67931642d7f91bdc7f96b7d82cb85c427",
+    "docs/LOCAL_ENVIRONMENT.md": "fc249e158f59ab91e9a6724e61d014b19e416b5d932837de0b977b7e9a4ca0e0",
+    "docs/MATHEMATICS_AND_VALIDATION.md": "2db22f744ec63032e4673f3bb0eb1149200a35416fc3d23e7fda999667dac4f2",
+    "docs/NEXT_SESSION.md": "e178ab6caf14192e78ab55d3b636aac6ada3720fe2ed755516a7126a7ca63e10",
+    "docs/ORGANIZER_QUESTIONS.md": "15d6d4f6d263fa89407d7574ab1641452f3f761dd9ed3c904ac5005720d119a7",
+    "docs/QWEN_HARNESS_DESIGN.md": "3e2de1418048a7480e56ec2a6fdc835562c84e3c27ec7141b7b12d41830c0aad",
+    "docs/READ_FIRST.md": "1e52560587c5218de31db50d5f0fd745255b31d502360a864f8532bd0d1c9ed8",
+    "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
+    "docs/RESEARCH_SOURCES.md": "7951f6fb467286d955dbe0c302ade78ae68c5269db1cf35d25f2e81d7a9343f1",
+    "docs/ROADMAP.md": "6bf4ab62992e374aaf3f422240c26097c8dd2e4ac61e1179562b8eb1771edd74",
+    "docs/RUNTIME_AND_FAILURES.md": "2ff538680eae45d88d7fb39e9146023d948face2bc54e6d8a42a42286981f59f",
+    "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
+    "docs/TECHNICAL_SPEC.md": "94ffb887e08c7ee5d064417f533d56a25f808e2ab18cfc580ea4b45e57b92b93",
+    "docs/TEST_MATRIX.md": "1b43ca5d57c42e8116484f545e829b1ae1899afb9eb738d8a6e485405a9aa1f6",
+    "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
+    "docs/WORK_BLOCKS.md": "8cdd4f336336ee6a7960797a422c9240d2333d759b663d5ff4a18c6e53820823",
+    "docs/DOC_REVIEW_RECEIPT.json": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
     "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
+    "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
-    "docs/SOURCE_MANIFEST.json": "e33d59d8fee64f18af55d07060c2e47ea500285ca79af3abb8c55a66376fad76",
+    "docs/SOURCE_MANIFEST.json": "3bf0c82e64340aa49dfd0410e2ad710649b02c0417eb2520cd34b30a3b9eec03",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
-    "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0"
+    "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
+    "docs/WORK_PLAN.json": "3f8011b1669087fdfb1dfc57bcdb7ca53246c70a1a9d03801a892058120d2e64"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -167,5 +189,24 @@
   "platform_strict_observation": {
     "path": "docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
     "sha256": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5"
+  },
+  "product_code_implemented_in_this_revision": false,
+  "model_training_executed_in_this_revision": false,
+  "ml_architecture_comparisons_executed": false,
+  "environment_settings_changed_in_this_revision": false,
+  "new_platform_submission_in_this_revision": false,
+  "constant_target_statistics_fitted_scope": "historical mini only; no trained feature model",
+  "minimal_environment_scope": "historical initial setup receipt; later mini executions tracked in separate receipts",
+  "local_api_status": "API_WAIT_LOCAL; owner ETA within an hour is not actual delivery",
+  "selected_initial_design": "P0 single Qwen controller + deterministic supervisor/evaluator + OS-isolated worker; independent3-role contexts as measured P1",
+  "primary_evaluation_procedure": "FROZEN_REFIT_FULL_DEVELOPMENT; search labels protected, former inner released only to frozen refit, outer always closed; refit within total budget",
+  "full_specification_review": {
+    "path": "docs/DOC_REVIEW_RECEIPT.json",
+    "sha256": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4"
+  },
+  "work_plan": {
+    "path": "docs/WORK_PLAN.json",
+    "sha256": "3f8011b1669087fdfb1dfc57bcdb7ca53246c70a1a9d03801a892058120d2e64",
+    "blocks": 50
   }
 }
