@@ -486,7 +486,7 @@
   },
   "testmini_strict_receipt": {
     "path": "docs/TESTMINI_STRICT_RESULT.json",
-    "sha256": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd",
+    "sha256": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
     "scope": "strict gate verified on loopback; public CSV tested with explicit off; not live Qwen or platform"
   },
   "platform_observation": {
@@ -494,5 +494,11 @@
     "sha256": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "score": 0,
     "api_success_proven": false
+  },
+  "platform_strict_observation": {
+    "path": "docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+    "sha256": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
+    "score": 0,
+    "api_inference": "conditional; not directly verified"
   }
 }

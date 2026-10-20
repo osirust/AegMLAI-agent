@@ -1,0 +1,48 @@
+{
+  "id": "M00-OBS-002",
+  "source": "new owner screenshot and attached ZIP; no direct platform runtime logs",
+  "recorded_at_utc": "2026-10-20T14:35:50.817017+00:00",
+  "platform_submission_observed": true,
+  "filename": "testmini_strict_api.zip",
+  "displayed_score": 0,
+  "displayed_upload_time": "17:32",
+  "displayed_status": "Лучшее решение",
+  "displayed_duration": {
+    "value": 3.2,
+    "unit": "seconds",
+    "column": "Длительность загрузки",
+    "agent_runtime_proven": false
+  },
+  "previous_row_in_new_screenshot": {
+    "filename": "Решение.zip",
+    "displayed_score": 0,
+    "displayed_upload_time": "17:14",
+    "displayed_status": "Успешно",
+    "displayed_upload_duration_seconds": 10.3
+  },
+  "attached_zip_sha256": "c9ffb571136205495cbef5b2da44b3712f85f1d289ac2c343f44108e1f3b908f",
+  "attached_zip_bytes": 5305,
+  "attached_zip_matches_prepared_v3": true,
+  "server_zip_identity_independently_verified": false,
+  "source_sha256": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9",
+  "source_image": {
+    "path": "C:\\Users\\ggdro\\AppData\\Local\\Temp\\codex-clipboard-76cd5721-d5c5-4cbc-b662-12c5a52ccbe0.png",
+    "sha256": "b15bdccec6266be9ff6a7a041e2f6bb816e7453317c5a10f865446a717cf352d"
+  },
+  "execution_exit_code": null,
+  "actual_environment_api_mode": null,
+  "platform_stdout_or_diagnostics_available": false,
+  "api_status": "SUCCESS_INFERRED_CONDITIONALLY_NOT_DIRECTLY_VERIFIED",
+  "csv_status": "SUCCESS_INFERRED_CONDITIONALLY_NOT_DIRECTLY_VERIFIED",
+  "inference": "Positive evidence of strict submission/result. If this source ran with required mode and normal exit0, API success and a validated nonempty CSV follow from code. UI labels alone do not directly establish actual exit0 or environment.",
+  "not_verified": [
+    "actual task count and per-task outputs",
+    "platform exit-code semantics",
+    "provider endpoint/model identity",
+    "tool calling",
+    "LLM code execution",
+    "feature-based ML quality",
+    "AutoResearch"
+  ],
+  "new_test_or_submission_performed_by_agent": false
+}

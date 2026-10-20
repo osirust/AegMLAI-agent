@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "stage": "M00 strict API diagnostic correction",
-  "status": "6 file checks and17 loopback API checks passed; full agent not implemented",
-  "next_stage": "deliver strict ZIP; no automatic resubmission; platform logs/API key pending; then specification discussion",
+  "stage": "M00 strict platform submission observed",
+  "status": "strict ZIP/result shown by owner; API and CSV success conditionally inferred, not directly verified",
+  "next_stage": "explain observation; continue specification on owner instruction; no automatic probe submissions",
   "source_reference_commit": "8f1245fc61ce6ab81e4200e3f9bbab51e6400531",
-  "previous_documentation_commit": "a565821f8069355bc4e5010ce09d0c822d87bf07",
-  "runtime_changed_in_this_stage": true,
+  "previous_documentation_commit": "583237aa86d17a255911294b2be695734facf7bc",
+  "runtime_changed_in_this_stage": false,
   "training_executed": false,
-  "live_llm_calls_executed": false,
+  "live_llm_calls_executed": null,
   "submission_zip_built": true,
   "platform_submitted": true,
   "third_party_python_packages_downloaded_or_installed": false,
@@ -56,7 +56,8 @@
     "mini_loopback_api_checks_passed": 17,
     "sources_unchanged": 14,
     "main49tests": "NOT_RUN",
-    "live_api": "API_WAIT"
+    "live_api": "API_WAIT",
+    "current_update_scope": "source/ZIP/document identity and supplied UI observation only; no new runtime tests"
   },
   "review": {
     "independent_document_review": "completed; corrections read back",
@@ -93,29 +94,30 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "README.md": "b31cf201da1f46bbfcf877323bfe2fd419acd58209fc785d6dff058babfb81bc",
+    "README.md": "1098ecb604aed48c57447098c2f2d54a57290fb493a5e8168e1c23ea5ae8578e",
     "AGENTS.md": "6a609d073f3e12181a26eacff4ce4e31312ec5233afa0a7114899030ca120f05",
-    "PROJECT_STATE.md": "a355092b12910a82b717e4d10ceb59443c308a9c5bb78471c7a665c5748da728",
-    "testmini/README.md": "aee5d34d5bb160125a6cb0461a3dbec72d459a692eeded38eca99156b0fd334f",
+    "PROJECT_STATE.md": "0e50cac1b9b65ae4c43fa3adbf085200884dea416a52fd4bcd56eb878df69356",
+    "testmini/README.md": "733c068801cb943994cee0a8af5814259a391472371f47820a6a313712cd6067",
+    ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
     "docs/AUTOML_RESEARCH_BRIEF.md": "3c2af24d9ce6276312c6fb1037fcb9adbd7b176614e61ebcb8a8c138f703c977",
-    "docs/BACKEND_CONTRACT.md": "5ad9151ee107897988174d5e2f962dd697d675b198f4b0ed090001a455872c0e",
+    "docs/BACKEND_CONTRACT.md": "9fd60a5c23738beac69ffcc16098966e481dbe9f0dd77823bb001f731700811a",
     "docs/CASE_INTAKE.md": "b484cbee84a883b7229eaa5d4b4ccf45b521691530f1633b419927bfb68ce446",
     "docs/LOCAL_ENVIRONMENT.md": "d54478b8ead4d757364ea668cb1a5bf01643626e3f6528d23d6a485964995994",
-    "docs/NEXT_SESSION.md": "fbe2d379b046c09c18a35b571b6ac17edb92882599bc3cc2632ba84dae30744c",
+    "docs/NEXT_SESSION.md": "707b694281a0261826b928e95981a8ecf231d15f8eb5b54cd21c75e64e496385",
     "docs/ORGANIZER_QUESTIONS.md": "a4b8ebf54d144df705648c2be1386a25637e4ab5aa3fbb5c504247c8a21830a0",
-    "docs/READ_FIRST.md": "f3c8c66f5f205108d92062409d4b0d989f22ae163caf4bb3a5b3ea3f97f1b0ed",
-    "docs/ROADMAP.md": "46d4efdc469242b121864a44c0e95f5437b8319bd3c6f3986f8a87df8c0e2ab2",
+    "docs/READ_FIRST.md": "1d4e658a60c6d6ca7b19db1b365774e492f5dec5bd012557014658ddf72475df",
+    "docs/ROADMAP.md": "3ec773060f9736fd57cd131e6ee9f5895262d0cea286bc2e6d940e8cbd4d64e0",
     "docs/TEAM.md": "255936500f530e4e81c56b3185a6672daf54293183fc4c397ef80419ca97d41f",
-    "docs/TECHNICAL_SPEC.md": "669161d707dbf95b706e822aefbc6014db5733573f7b0d59835cfb8be6940a8f",
+    "docs/TECHNICAL_SPEC.md": "525bb22c93355b486230e4401ddcc470466128a4c738e1511ce60c9287bc37a8",
     "docs/TEST_MATRIX.md": "5b007296244452bd06f45ad816c5cc2963a824c5429a1eea22d8c4b57f46c344",
-    "docs/TESTMINI_PLAN.md": "d9b1c5f935bd49547647bad5bb9e76d02cf94eb1bc0aa354aa2195d688208bd4",
-    "docs/WORK_BLOCKS.md": "d3590f8c34580efa6ab2e14e041c8b3d735ca0b2e71230a04965662da0a2cd2d",
-    ".gitignore": "bcbbfcec748e867da867c9718a9d545a24db3d45e7e847e1f55c4624f3bb6a23",
+    "docs/TESTMINI_PLAN.md": "006652630dd58f1a01442cdd3c88298a36bb10c21b6e0d6587ed2291e54d9bdd",
+    "docs/WORK_BLOCKS.md": "d6e1d2b98a1a9c786eceeb25443e01baefee7b5b7d8edaf111903fcf904f3b7e",
     "docs/ENVIRONMENT_RECEIPT.json": "6ccf4b69ee36b5e18acd8bbc6390110e9054bd3f5b971a6f3812e5fd29ba400e",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
-    "docs/SOURCE_MANIFEST.json": "a22225ab71770dfcdb180904f0f6904974e0143195b382d01e82a9983c49326d",
+    "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
+    "docs/SOURCE_MANIFEST.json": "e33d59d8fee64f18af55d07060c2e47ea500285ca79af3abb8c55a66376fad76",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
-    "docs/TESTMINI_STRICT_RESULT.json": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd"
+    "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -147,15 +149,23 @@
     "testmini/check_local.py": "a6631892345f3822dd0116bd24b00829b64088c0b42889da7c560cf8c16e65f9",
     "testmini/solution.py": "81908e49c2eb00f81659cea825371043ec03b991a8bbb446cb8ff05ff75813e9"
   },
-  "platform_submission_evidence": "owner screenshot of historical v2 testmini.zip; score0; API/exitcode UNKNOWN",
-  "current_strict_zip_submitted": false,
+  "platform_submission_evidence": "owner screenshot17:32 strict archive/score0/Best solution;3.2sec upload duration",
+  "current_strict_zip_submitted": true,
   "platform_execution_verified": false,
   "testmini_strict_receipt": {
     "path": "docs/TESTMINI_STRICT_RESULT.json",
-    "sha256": "5bf08bc70d515f837bb8e8d42134f80d74abf8eada5e4941e0d2a8e003786ebd"
+    "sha256": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0"
   },
   "platform_observation": {
     "path": "docs/PLATFORM_OBSERVATION_20261020.json",
     "sha256": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1"
+  },
+  "new_tests_in_this_update": false,
+  "local_live_llm_calls_executed": false,
+  "platform_live_llm_success_inferred_conditionally": true,
+  "platform_live_llm_success_directly_verified": false,
+  "platform_strict_observation": {
+    "path": "docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+    "sha256": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5"
   }
 }

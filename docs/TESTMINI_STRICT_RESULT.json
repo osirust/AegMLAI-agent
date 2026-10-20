@@ -113,10 +113,14 @@
   },
   "default_api_mode": "required",
   "failure_behavior": "exit1 before new CSV; sanitized failed_api_gate diagnostic",
-  "strict_zip_platform_submitted": false,
+  "strict_zip_platform_submitted": true,
   "live_qwen_checked": false,
   "quality_assessed": false,
   "main_49_tests_executed": false,
   "historical_v2_local_result": "docs/TESTMINI_RESULT.json",
-  "historical_platform_observation": "docs/PLATFORM_OBSERVATION_20261020.json"
+  "historical_platform_observation": "docs/PLATFORM_OBSERVATION_20261020.json",
+  "platform_submission_evidence": "owner supplied screenshot; registration/result observed; exitcode and API only conditionally inferred",
+  "platform_observation": "docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+  "platform_api_success_directly_verified": false,
+  "platform_api_success_inferred_conditionally": true
 }
