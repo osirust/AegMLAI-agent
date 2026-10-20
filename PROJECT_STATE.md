@@ -1,5 +1,7 @@
 # Состояние AegML — 20.10.2026
 
+**Ожидание полных review чата2 — по последней команде владельца.** Docker final0e7bed48… получен: фактические локальные прогоны не опровергнуты, но CLI-OWN/ASSERT/RECEIPT/SOURCE остаются OPEN. OOM уже исправлен в411e628. У postfix-H023 нет полного ответа; отправлен запрос только на его завершение. До всех итогов код/проверщики не менять, тесты/ML/API/H03 не запускать. После полного ответа разрешено одним проверяемым этапом исправить подтверждённые замечания. Новых исправлений после411e628 не было.
+
 **H02.4 завершён: PASS_H02_4_LOCAL_CONTAINER_ONLY.** Engine29.9.1/systemd/cgroupv2, digest-pinned Ubuntu24.04/Python3.12.3/dev13direct/45dist. [Квитанция](docs/H024_RECEIPT.md), [профиль](docs/container-profile.json). Ресурсы6/6, повторены после H024-OOM-ATTR-001 с oom/max/oom_kill; literal `python3 solution.py task.md` на двух actual public наборах в Docker PASS; imports13/45 PASS. Штатный агент ещё exit3/incomplete, contract_valid=true, API/tools/research/submission=false, experiments0; нового CSV нет.
 
 **H02.3 после чата2:** три ROLE/DECL/ORDER исправлены и проверены38методов/93сценария/4CLI, bootstrap24/51/37. [Отчёт](docs/H023_REVIEW_FIXES.md). Старые34/76/4 и machineJSON сохранены с историческимSHA; текущий contracts SHA151d5283… . H03/ML/AutoResearch ещё не реализованы.
