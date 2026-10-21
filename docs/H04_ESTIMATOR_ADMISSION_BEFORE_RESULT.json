@@ -1,0 +1,15 @@
+{
+  "status": "EXPECTED_FAILURE_REPRODUCED_OLD_ESTIMATOR_ONLY",
+  "finding": "H04-ESTIMATOR-ADMISSION-001",
+  "old_source_sha256": "3a03623551f4b2ae394f82396d0e8c971330365b6bb77e254662e49cd9ce660e",
+  "old_checker_sha256": "62479eb17b3f3ee98e7e42bc3e6a4c5c2957b9b648c3875076822b1013fdc302",
+  "observed": {
+    "fit_calls_after_expiry": 1,
+    "pool_constructed": true
+  },
+  "remaining_seconds": 0.0,
+  "actual_estimator_training_executed": false,
+  "public_dataset_used": false,
+  "API_calls": 0,
+  "original_sources_modified": false
+}

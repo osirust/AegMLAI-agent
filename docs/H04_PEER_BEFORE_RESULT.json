@@ -1,0 +1,43 @@
+{
+  "status": "BEFORE_THREE_DEFECTS_REPRODUCED",
+  "source_sha256": {
+    "aegml_baseline.py": "4f49a3c5e87def048ad17e334117a20485d7d52babca17e923ebb62bc117e7ee",
+    "solution.py": "cd48247dc3f4061027b7fb92e7d40d6d03b358dddd05aeab454e3533466dc368"
+  },
+  "source_unchanged": true,
+  "checks": [
+    {
+      "id": "H04-SPLIT-ARTIFACT-SIZE-001",
+      "source_rows": 200000,
+      "artifact_json_cap": 1048576,
+      "observed_error": "artifact_byte_limit",
+      "published": false,
+      "defect_reproduced": true
+    },
+    {
+      "id": "H04-CLI-TIMER-001",
+      "exit_code": 2,
+      "timer": {
+        "elapsed_seconds": 0.039636671,
+        "cooperative_only": true
+      },
+      "termination_reason": "invalid_threads",
+      "defect_reproduced": true
+    },
+    {
+      "id": "H04-CLI-PROGRESS-001",
+      "exit_code": 1,
+      "fit_spy_calls": 1,
+      "actual_estimator_fits": 0,
+      "valid_early_csv_preserved": true,
+      "early_csv_sha256": "fa16fee7593996bd02da978e91beaea88226e83a65369e4815a86086796041a6",
+      "reported_contract_valid": false,
+      "reported_submission_valid": false,
+      "reported_feature_model_fitted": false,
+      "defect_reproduced": true
+    }
+  ],
+  "live_api_calls": 0,
+  "model_fit_calls": 0,
+  "synthetic_only": true
+}

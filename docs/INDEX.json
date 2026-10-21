@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "stage": "H03.1-H03.5 data components and trusted local integration",
-  "status": "PASS_H03_COMPONENTS_AND_LOCAL_INTEGRATION_ONLY",
-  "next_stage": "Stop before H04.1; implementation requires next owner command. Contest API including key/info requires a separate explicit command.",
-  "source_reference_commit": "36816b081cea32db1cf9fc74f2e1c5d41a334273",
+  "stage": "H04.1-H04.4 fixed CPU baselines and local repeatability",
+  "status": "PASS_H04_FIXED_BASELINE_ONLY",
+  "next_stage": "H05.1 OS-worker capability admission; H05/H06 authorized with separate gates. Competition API remains unused until owner-authorized prerequisites hold.",
+  "source_reference_commit": "c61cd35e1a3caa9cfbb4164514feec6ee0671a90",
   "previous_documentation_commit": "8e80944866b1a152184a43260f29ba23ec56c857",
   "runtime_changed_in_this_stage": true,
-  "training_executed": false,
+  "training_executed": true,
   "live_llm_calls_executed": 0,
   "submission_zip_built": true,
   "platform_submitted": true,
@@ -50,10 +50,10 @@
     "network_note": "WSL localhost-proxy/NAT warning observed; Linux network not tested"
   },
   "verification": {
-    "status": "PASS_H03_METADATA_AND_PUBLICATION_BINDING_ONLY",
-    "receipt": "docs/H03_PUBLICATION_RESULT.json",
-    "scope": "1163 metadata checks/548 links; final index document/staged source readback checked after adding verification reference; no runtime/API repetition",
-    "sha256": "b51eb82824562c0f312b461efbca579bbd81cf95481e456684aac25ebb181695"
+    "status": "PASS_H04_V2_METADATA_AND_PUBLICATION_ONLY",
+    "receipt": "docs/H04_PUBLICATION_RESULT.json",
+    "scope": "5884 metadata checks, followed by final document/staged-byte readback; ML and API not repeated",
+    "sha256": "57ea26ba871a47a3d4867dace859a86a3f4bb7d1e25a9c7a4d9c53fc88f252d2"
   },
   "review": {
     "independent_document_review": "completed; final content cross-read and automatic metadata checks; no material blocker reported",
@@ -110,9 +110,9 @@
     "scope": "old demo scaffold only; current M00 checks recorded separately"
   },
   "document_sha256": {
-    "AGENTS.md": "f8bb1bc5b24d929f02fae3ebea998d2608e97139cd67c89e2fd6e31a406cc20f",
-    "PROJECT_STATE.md": "db85d672ec321290a1c62493b98f86088b9a9df8c37068453a29547f405a006f",
-    "README.md": "2b83deeca24ee150aa109b46d8c81605dc2c78d07c69a072cd9803f35325d0b8",
+    "AGENTS.md": "4e48e84cb39b0facebc054753b0a6a4f9eb3c76cf3a3ab7e4942ba8aa28bcecd",
+    "PROJECT_STATE.md": "24457b97b71d4e8f3ee887d3899cdeaca1f80b9db1e0ecb2e25d45180cfe1d0d",
+    "README.md": "254f65d961bcdfbdac142a910b45294d2b1dbba76d1e14852e506f7d68c6d69a",
     "docs/API_INSTRUCTIONS_INTAKE.md": "97228c3c58225e135af75ac4ca8d26025509d63d5feee2522230109de5a72a4f",
     "docs/API_LOCAL_SETUP.md": "ca62c8450af612e0906b571fc398f5b2eded671537a18761f6a1af5b1f600744",
     "docs/AUTOML_RESEARCH_BRIEF.md": "c82554b528278ac53273ddfcc87484dcb7875df69e1454454fe1f8c49a61d446",
@@ -123,6 +123,7 @@
     "docs/CHAT1_H024_H05_INTAKE.md": "ce001f3b69835a9e30b8d7c94b8df7ca8cc705c80d0c0b5a303521f3dfaac297",
     "docs/CHAT1_H03_H06_INTAKE.md": "c8f4b52d5a494150defa4e5b4a3add0ac900e9cc5176d2c4326ced8af61c2840",
     "docs/CHAT1_H04_QUALITY_INTAKE.md": "25e0b59101168258321b8e9e3391c8af7d6810bac76bacdcf10a0b463590ca60",
+    "docs/CHAT1_H05_H06_INTAKE.md": "26f2395cb10f00d7418fa1fa98e9cb41708b12d51a52603ae95ac2279bdfdc86",
     "docs/CHAT1_H07_H08_INTAKE.md": "f00edf60a29ab15c4dd423e54cbc12846b62b195c664be80c6fbc0c4c9af4482",
     "docs/CHAT2_REPAIR_REVIEW_INTAKE_20261021.md": "abc1533c5827ee76ccdf5f8e978293e186920784063b8ffc966d4aca52cba50f",
     "docs/DOC_REVIEW_RECEIPT.json": "9b2db3346195b33b34ef3af9d49bf57b560523deaf5b01928090ac8b6dad93f4",
@@ -181,21 +182,50 @@
     "docs/H03_INTEGRATION_RESULT.json": "fff1ec1920569fe8733308fec8ac697c15e70bbcd0590dfe81bb60c5dee870ed",
     "docs/H03_INTEGRATION_V2_RESULT.json": "cffb6ae14d55c7304e0fc3a7cb1f162fc70c7231190dfa7c1632957bf4dc33f0",
     "docs/H03_LITERAL_PLATFORM_CLI_RESULT.json": "dcb9613758ba05537f8c58ed267d1182d15f1259e5dd5562ace4cece2079f983",
+    "docs/H03_PUBLICATION_RESULT.json": "b51eb82824562c0f312b461efbca579bbd81cf95481e456684aac25ebb181695",
     "docs/H03_RECEIPT.md": "19dfabd049b4b806e66aee965848ce249e3e969444559ace57071fa000d859e0",
     "docs/H03_STATIC_REVIEW_RESULT.json": "715faeb638f8cc6a330268bf8491d82e6e5c94a990b4bec79c6bf60eab924f0c",
+    "docs/H041_REGRESSION_RESULT.json": "9273730e2824ff6add764f2cf17798f4b923bbaa1ca7bf0f55b42a746dd55d1c",
+    "docs/H041_REGRESSION_V2_RESULT.json": "ca12e16dc9fc5a38cc7fc4d2f36e0b4704b759361e71f36336967c3941a97762",
+    "docs/H042_CLASSIFICATION_RESULT.json": "4308d1efdbe5e9de68e5fef8a7e128edef1fe5a22182d1cb297a71a44452423c",
+    "docs/H042_CLASSIFICATION_V2_RESULT.json": "7371867cd8cd22672e9491e913123577f84829e5334e87a6f8a18e1040badfb0",
+    "docs/H044_QUALITY_BUILD_RESULT.json": "12128346aa998b90b9c9b3dcb22cf6225ea99e3471159fe7bfa53ee82aa8c8f3",
+    "docs/H044_QUALITY_METHOD_RESULT.json": "cae3098b3df91e7dc37a3440b8da98420eaca3bbac22c76df9d91bca59d4853b",
+    "docs/H044_QUALITY_RESULT.json": "6d8c42b1443ade9a3c582ec71e69dcb826fda91dfd44478848c732848eb26e9a",
+    "docs/H044_QUALITY_V2_RESULT.json": "486f4b7cebe99ea711201234a737a4a9afb65c666dbd4e41aaac8628b2daabc9",
+    "docs/H04_ARTIFACTS_RESULT.json": "9679185967f10e87f3f80814bd07a8d7a9b5fe47c6dda68449961d3e43f58c93",
+    "docs/H04_ARTIFACTS_V2_RESULT.json": "ffe6fbab7261498de2a7151dc166e6c4bf16791a7113443dd7bfd502dc88abbf",
+    "docs/H04_ARTIFACT_COMMIT_BEFORE_RESULT.json": "3fbdb834c55a76cf8d9a39f6e083c5e73736f535f7fea561e761fefc5aee2d3c",
+    "docs/H04_BASELINE_SYNTHETIC_RESULT.json": "64ffcd30edf616079570e38c31a3d15678c8230268b438edfc60ea55b2c44cdd",
+    "docs/H04_BASELINE_SYNTHETIC_V2_RESULT.json": "a7fb84ba664275f881c5f3d5a23a99af25ca7caec6b9745431a15b020e352f5c",
+    "docs/H04_DOCKER_PUBLIC_RESULT.json": "618c8a971dc192aebffd795f0011ad6682a38f532bc1705188a086441abc8a1a",
+    "docs/H04_DOCKER_PUBLIC_V2_RESULT.json": "8c4c9536716fec96bb37ee2965c7036e7a5c3d3ec8af55e90b5d21e5812b1d90",
+    "docs/H04_ESTIMATORS_RESULT.json": "d5d634cd61802eb8ed3fdd3beb0666338b60d60769a34d162e554715378fc629",
+    "docs/H04_ESTIMATORS_V2_RESULT.json": "4171db1b1981cb3cb86b44e971ca471babaf95f4ee5fbce1484d4af2cd76f3ec",
+    "docs/H04_ESTIMATOR_ADMISSION_BEFORE_RESULT.json": "030bcb37666702fc0b6418533693d0ce923ca20f4aabd1413176b19a53cff9ce",
+    "docs/H04_EXTERNAL_ROOT_BEFORE_RESULT.json": "e94abf8172bd75247117bcb5db1074602ec38640f73cd13b34cfbe516cb0baa0",
+    "docs/H04_MATRIX_BIND_BEFORE_RESULT.json": "96330fbe000e145ee2dd8afb8bcb760da88a9748c19386b5e88361824b012d03",
+    "docs/H04_PEER_BEFORE_RESULT.json": "68349f1111459a50316a738e68312e0429d077934eec1042fad03abf6181098a",
+    "docs/H04_QA_FIXTURE_BEFORE_RESULT.json": "bd6f1cab27600290cd3ef46a81151919114779ae606d26888a6b4981246166e2",
+    "docs/H04_RECEIPT.md": "299ffa474b078b8d68ec7c987ebc00f24f3c94aada9ffd5da8349bae7dcef3dd",
+    "docs/H04_STATIC_REVIEW_RESULT.json": "9ec8df2c69816887c652769dc7f848286aea049465bd055c68f97ce21a0ff1ba",
+    "docs/H04_TRAINING_DATA_RESULT.json": "638b026af38a18d2bf3031ba4f1a9fdc2fb9c61ea426deab23f0de59f375243f",
+    "docs/H04_WSL_PUBLIC_RESULT.json": "719d270bfea7502278abeba10af8d60ad0eac9b83f0a4dd1fcbfaaed8dce69dc",
+    "docs/H04_WSL_PUBLIC_V2_RESULT.json": "1124d0e38d1c49083ec22a97cc3cb538e0a039d2798c7da0d315ca7904eeeb3d",
     "docs/LOCAL_ENVIRONMENT.md": "c1a4d7d38f7d56badf6b4dacaac35913b2949ba17d8c19ca6580762cc2dc9fba",
     "docs/LOCAL_PROVIDER_HELPER_RESULT.json": "da1e1bd8021620bddee628d023414362e7403679c26b3d6a94554db90cbd0ffa",
     "docs/LOCAL_PROVIDER_RECEIPT.json": "083228bfa56dff827500942d5f6aec76e7a4fe50a592a9bdba4f3c49f5696527",
     "docs/MATHEMATICS_AND_VALIDATION.md": "bad31ce27da714a831fc6e0e57dcdb746fbaf6fb4f53bfe26505984ef5a27233",
     "docs/MATH_REFERENCE_CHECK.json": "63ee6e4ded2cee36d359e3a7ce6ab4cb4132c65073d049211d3c2a9474baba9f",
-    "docs/NEXT_SESSION.md": "ca15cd9b3b6669e2bcaf1f0f42ccab0f6c7698a556e10083b03bd943c8f23ea9",
+    "docs/NEXT_SESSION.md": "0d28bc96b46b69c64f88b993dc4d38f25a7f97ebdcc425413af13299a442a3cc",
     "docs/OPEN_SOURCE_AGENT_REVIEW.md": "06ad578759b079cf81e360f782b9d48509b80d7ae571d99116a54027c349b21c",
     "docs/OPTIONAL_ARTIFACTS_RESEARCH.md": "4f84f8191d1c1062d7229df93b1d555b82b6627ed488915346c3e9477f88bc08",
     "docs/ORGANIZER_QUESTIONS.md": "5a26b6e63903f490840d681b30a8f5de6834ad168dfc3195bce1cbfe83a6aae5",
+    "docs/ORGANIZER_UPDATES_20261021.md": "52810b944a1e7e91e1780e1ed1beb8fda973336b6aaeb93adb3c81acb52c01d3",
     "docs/PLATFORM_OBSERVATION_20261020.json": "14e47c4d3d71a22dc00969153f412234de235c5949c5488d0185e8da9401bdf1",
     "docs/PLATFORM_STRICT_OBSERVATION_20261020.json": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5",
     "docs/QWEN_HARNESS_DESIGN.md": "fc21efda43542adbc50fccff95a47c9583ac474cb5b1ac8580e487a84c23e34d",
-    "docs/READ_FIRST.md": "0b3fa7bf39b10b5b4bf5e30a5ef6e8051dcc04aab85dd25676a857748d441df9",
+    "docs/READ_FIRST.md": "34715cd1c694e2831519ab821aa3040c806bf272f2feb9a5240fd4bf6fe90d8a",
     "docs/RESEARCH_BACKLOG.md": "f541693731062e25173109e5a3a0207386d51873f265e332e746c99486ff7c73",
     "docs/RESEARCH_PROTOCOL.md": "f6d478c6e51d2a73886f457d970d03ef43af37a1cf120cae0db0d2643bd55fec",
     "docs/RESEARCH_SOURCES.md": "ffcaefad82f179fa8ace7050b44d571e8757c6734aefb9d62e7032d0a5442332",
@@ -204,7 +234,7 @@
     "docs/RUNTIME_AND_FAILURES.md": "48e56e1d604f8658381e58b2834a60684fc3c74317def7e676b18075842cce83",
     "docs/SOURCE_MANIFEST.json": "d491b06471b09712b88cbe39a862ec197773a8490c9b9fc553608c05ba8eb624",
     "docs/TEAM.md": "32a5cbf24c5322a8f427a413a5d6abf4bd2e3c12f15b5d5bf1a26e7db3bee2f8",
-    "docs/TECHNICAL_SPEC.md": "0b716c503f27bc64878a0ca87158ce3af0ce7257d196fd99801cb765352f1053",
+    "docs/TECHNICAL_SPEC.md": "05233fc8a1607cc56c27e3ce8ebdd151e4174e8d1a1de39551d31f210dfca02b",
     "docs/TESTMINI_PLAN.md": "a8e2a8318335aeee125dfd17e256e90e037ae68e00a85856c61113cba048bd80",
     "docs/TESTMINI_RESULT.json": "fd74307de733426c100bc76e050e6510662e21f0c49f6ffe2c58ce3b9fd630a4",
     "docs/TESTMINI_STRICT_RESULT.json": "723a57a60002e3f50509a7f9bb949c0ca126b89e8583d280343f101479dd95e0",
@@ -213,13 +243,14 @@
     "docs/WEB_DISPATCH_20261021.json": "0596c0944feb10ab3db963dfc96f707006fa7e2243825e14baa389283f83f3ed",
     "docs/WEB_RESEARCH_REVIEW.md": "df71e009f4dd48ecc7427154fcf26c80bd871185ff7f2c7f63c970dde5ff716e",
     "docs/WEB_WORKFLOW.md": "76cd4c7b2037d9e9774957267d29167c1a17c9e8a6c6dde3e7cab2237aa2782c",
-    "docs/WORK_BLOCKS.md": "8ec6505e21fef1f620c95edea933a25729673f0f181c4462672707c0fa36c169",
-    "docs/WORK_PLAN.json": "a2e7f6f5ffdec51c54f138538387d40ae58c73e309e9de03a005da0597e2ddb9",
+    "docs/WORK_BLOCKS.md": "6daf827ba707c88843f6ebb7ae83b355a9d2f53a74ff0e4ae78bfea5c39948c6",
+    "docs/WORK_PLAN.json": "bf6e5bc9b4d0038b14dfc3a92613a27ba366d2a0342b16e10f3c9cebe391f108",
     "docs/container-profile.json": "fe24d6635be517ee6df472deffd5511a75d5373b9ec4aa2ed0096d8c41d409fe",
     "docs/environment-lock.json": "c7760d11bc6c38fd7435d30e8dcec33678925f599aaf863f5718dcde07dbb74c",
     "research_packets/CHAT1_FUTURE_RESEARCH.md": "623aad274571ce050fc45af43d78312448357ec88dae00a4f72edf4d0d8aa69f",
     "research_packets/CHAT2_H02_REPAIR_REVIEW.md": "22b0acd830069f37a2fa637f353ff107926264563800c23200b7cb81b9721efb",
-    "research_packets/README.md": "ddd7161f8190a802f3101a407bb0a071e05fe65c91710c42213c66294b44c47f"
+    "research_packets/README.md": "ddd7161f8190a802f3101a407bb0a071e05fe65c91710c42213c66294b44c47f",
+    "docs/H04_SECRET_SCAN_RESULT.json": "ade74f77d31a6fd5b097109f3d4f3707b1a0664089fb5745aff76fc5e1c13b62"
   },
   "unchanged_runtime_file_sha256": {
     "src/aegml/__init__.py": "4b191220cd01b8ace42e3fcffb87ba9f09a429cdc302d28d582fb3c98c779d1e",
@@ -239,7 +270,7 @@
   "self_hash_omitted": true,
   "old_demo_runtime_unchanged": true,
   "constant_target_statistics_fitted": true,
-  "feature_based_ml_training_executed": false,
+  "feature_based_ml_training_executed": true,
   "local_http_stub_checked": true,
   "testmini_receipt": {
     "path": "docs/TESTMINI_RESULT.json",
@@ -271,13 +302,13 @@
     "sha256": "9cd50ab7dce0a8b0b0566587ce7f6325a1567cf959c9ada5c21279ea695a7cb5"
   },
   "product_code_implemented_in_this_revision": true,
-  "model_training_executed_in_this_revision": false,
+  "model_training_executed_in_this_revision": true,
   "ml_architecture_comparisons_executed": false,
   "environment_settings_changed_in_this_revision": false,
   "new_platform_submission_in_this_revision": false,
   "constant_target_statistics_fitted_scope": "historical mini only; no trained feature model",
   "minimal_environment_scope": "historical initial setup receipt; later mini executions tracked in separate receipts",
-  "local_api_status": "LIVE_API_ON_OWNER_COMMAND_ONLY; Qwen and key/info uncalled",
+  "local_api_status": "Competition Qwen and key/info uncalled. H04 API forbidden; future conditional H06 authorization requires admitted H05 and offline H06.",
   "selected_initial_design": "P0 single Qwen controller + deterministic supervisor/evaluator + OS-isolated worker; independent3-role contexts as measured P1",
   "primary_evaluation_procedure": "FROZEN_REFIT_FULL_DEVELOPMENT; search labels protected, former inner released only to frozen refit, outer always closed; refit within total budget",
   "full_specification_review": {
@@ -286,7 +317,7 @@
   },
   "work_plan": {
     "path": "docs/WORK_PLAN.json",
-    "sha256": "f77b8b3fb6049167db53f0ac8aca86beba724f10a564c85b284ddefd4c4cf22a",
+    "sha256": "bf6e5bc9b4d0038b14dfc3a92613a27ba366d2a0342b16e10f3c9cebe391f108",
     "blocks": 50,
     "count": 50,
     "h03_statuses": {
@@ -295,12 +326,18 @@
       "H03.3": "PASS_H03_3_METRICS_SPLITS_ONLY",
       "H03.4": "PASS_H03_4_SUBMISSION_ONLY",
       "H03.5": "PASS_H03_5_LOCAL_INTEGRATION_ONLY"
+    },
+    "h04_statuses": {
+      "H04.1": "PASS_H04_1_REGRESSION_BASELINE_ONLY",
+      "H04.2": "PASS_H04_2_CLASSIFICATION_BASELINE_ONLY",
+      "H04.3": "PASS_H04_3_LOCAL_REPRODUCIBLE_CLI_ONLY",
+      "H04.4": "PASS_H04_4_INNER_DIAGNOSTICS_ONLY"
     }
   },
   "runtime_environment_changed_in_this_stage": false,
-  "runtime_change_scope": "shared logical CSV record guard, BUILT split contract and eight H03 data component modules; no generated worker or provider execution",
-  "new_tests_scope": "scoped component checks, trusted WSL chain and immutable local Docker chain; no model-quality evaluation",
-  "environment_settings_change_scope": "No installation, cap change, global WSL shutdown or AEGYX changes during H03",
+  "runtime_change_scope": "Four H04 modules plus solution orchestration; eight H03 core modules unchanged.",
+  "new_tests_scope": "Scoped tiny component/orchestration checks and actual WSL/Docker fixed-model repetitions; no generated worker or API.",
+  "environment_settings_change_scope": "No installation, cap change, global WSL shutdown or AEGYX changes during H04",
   "local_live_llm_calls_scope": "competition provider API; web research-chat messages are tracked separately",
   "historical_verification_previous_documentation": {
     "status": "PASS_DOCUMENTATION_AND_REFERENCE_SCOPE_ONLY",
@@ -362,15 +399,16 @@
     "do_not_interrupt_running_chat_with_independent_job": true,
     "notifications_before_send": true,
     "automation_created": false,
-    "latest_chat1_research_status": "H03-H08/P2 dossier and H04 quality continuation read through END; primary-source subset checked, no benchmark",
+    "latest_chat1_research_status": "H05-H07 dossier read through END; primary-source subset verified, not a benchmark",
     "original_long_first_messages_byte_exact_retrieved": false,
-    "latest_chat2_status": "All six externally reviewed H03 findings closed in scope",
-    "chat2_review_receipt": "docs/H03_STATIC_REVIEW_RESULT.json",
-    "latest_chat2_read_utc": "2026-10-21 07:48:44 UTC",
+    "latest_chat2_status": "Four H04 blockers closed by complete static postfix",
+    "chat2_review_receipt": "docs/H04_STATIC_REVIEW_RESULT.json",
+    "latest_chat2_read_utc": "2026-10-21 11:23:42 UTC",
     "current_pending_chat_jobs": 0,
     "contest_api_calls": 0
   },
   "development_tooling_sha256": {
+    "scripts/build_h04_quality_report.py": "fd2efb45e4e56558247263e34577dbd5928aec499e1fcd04348bc45486779b99",
     "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c",
     "scripts/check_h024_cli_regressions.py": "a6d8ba7530a178230d7d57e725a99c4e9fabef5d6800a519df741be8cbd7b0a6",
     "scripts/check_h024_container.py": "5a94fc420e2cc4743eadc0c08a341a6defbc1d1c85eb6e6c04540f1105a41223",
@@ -383,6 +421,13 @@
     "scripts/check_h034_submission.py": "65086c87df10d56be77c2c74586c751c12c2cfff7e344f8e37233739149a599d",
     "scripts/check_h03_container.py": "4968b9e55283509669080231917cd1e248c15acf6b2b721f1f5fd69da5cb8588",
     "scripts/check_h03_integration.py": "6f1f21d4fbe06bee38a087a30afd2f9a992f3d99f04576e0c20d40bd6fbaa156",
+    "scripts/check_h04_artifacts.py": "a024c83a539cd848554a2435b577ad0084978ab0b8068544b9304ae491a88c82",
+    "scripts/check_h04_baseline.py": "97b39af5a57f9eb914345c5a210c854a636f817f6344af60fb31168e781be556",
+    "scripts/check_h04_docker.py": "afb3803f9ae6643cc8a7de8ea106c402b1b77a27af48b2a21bdd23500403e813",
+    "scripts/check_h04_estimators.py": "fe47245f4868727286dd1d1a507101d60681607549a987f12621ce66ccaa9429",
+    "scripts/check_h04_public.py": "5bb41e0b2ba3d8ed488c332701a3d472c0bfd05cff3b06098066d024a695ba0c",
+    "scripts/check_h04_quality_report.py": "d2f8b878a09486ec8b7b8959647733228873ce7a946ded917167b3f27c892984",
+    "scripts/check_h04_training_data.py": "0525cd0f7550282d985e496cf3ab438f5a434b7ff55c0c6e80e202b299d24d6e",
     "scripts/local_provider_config.py": "d704dd1e4b9cc9df25e836354c410fc619f02dc861c5ef9377bd93e66ea5b923",
     "scripts/prepare_h024_context.py": "6beb828e8efb98098be4bbd7af4beac5dc3d0ff72db6ecb9c9a633718e4ab9b6",
     "scripts/prepare_h02_environment.py": "60f027c1b17f7419343c2c9a193dd2d1b4048bfed9b1992d6fc61dd4f848e480",
@@ -405,8 +450,8 @@
     "local_links": 243,
     "raw_exported_proof_rechecked": true
   },
-  "previous_project_commit": "36816b081cea32db1cf9fc74f2e1c5d41a334273",
-  "product_code_scope": "H03 trusted data/profile/preprocessing/metrics/splits/writer components; ordinary CLI remains H02.3 exit3/incomplete",
+  "previous_project_commit": "c61cd35e1a3caa9cfbb4164514feec6ee0671a90",
+  "product_code_scope": "Shared trusted H04 baseline CLI, bound fit targets/matrices and guarded artifacts. No generated worker/provider execution.",
   "h02_2_bootstrap": {
     "receipt": "docs/H022_BOOTSTRAP_RESULT.json",
     "sha256": "721cd2b1fd95e3d54acb40fa1c236b2bb5259dd8df6552a090304a6c5cadefe4",
@@ -431,7 +476,7 @@
     "real_requests": 0
   },
   "product_bootstrap_sha256": {
-    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
     "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7"
   },
   "historical_verification_h02_2": {
@@ -471,16 +516,16 @@
     "grammar_scope": "canonical four CSV basenames, one supervised target, explicit RU/EN grammar, eight metric contract schemas; unsupported or conflicting input refuses"
   },
   "product_contract_sha256": {
-    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
     "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
     "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
     "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715"
   },
-  "product_bootstrap_sha256_scope": "Current bytes, component regression evidence in H03; historical values preserved separately",
+  "product_bootstrap_sha256_scope": "Current H04 bytes; historical stage identities preserved separately",
   "latest_document_change": {
     "date": "2026-10-21",
-    "scope": "H03 implemented and checked in scoped local acceptance; six static findings closed; data and historical receipts preserved",
-    "current_route": "H04.1 only on next command",
+    "scope": "H04 fixed baselines, before/after repairs and repeatability accepted in scope",
+    "current_route": "H05.1",
     "contest_api_calls": 0
   },
   "historical_verification_h02_3": {
@@ -566,16 +611,16 @@
     "scope": "identities/history/documents/source binding only; no repeated runtime probes"
   },
   "current_work": {
-    "scope": "H03 component acceptance complete; stop before H04.1",
-    "h03_authorized": true,
-    "h03_components_verified": true,
-    "runtime_scope": "Trusted library chain only; solution.py not an estimator orchestrator",
-    "remaining_confirmed_h03_review_blockers": 0,
-    "api_paused_until_explicit_owner_command": true,
+    "scope": "H04.1-H04.4 fixed CPU baselines and local repeatability",
+    "h04_authorized": true,
+    "h04_verified_in_scope": true,
+    "remaining_confirmed_h04_review_blockers": 0,
+    "h05_h06_authorized_after_h04": true,
+    "h05_status": "PREPARATION_ONLY_NOT_ADMITTED",
+    "h06_status": "SCRATCH_OFFLINE_PREPARATION_ONLY",
+    "contest_api_calls": 0,
     "key_info_called": false,
-    "web_paused_by_owner": false,
-    "foreground_polling_finished": true,
-    "manual_progress_check_target_msk": "2026-10-21 21:00",
+    "manual_progress_check_target_msk": "2026-10-21 18:00",
     "scheduled_automation_created": false,
     "new_submission": false
   },
@@ -630,10 +675,8 @@
     "scope": "90 metadata/history/source/link checks; separate runtime receipts; not full-agent acceptance"
   },
   "current_web_dispatch": {
-    "status": "ALL_REQUESTED_H03_REPLIES_READ_AND_ARCHIVED",
-    "historical_resume_receipt": "docs/WEB_DISPATCH_20261021.json",
-    "review_receipt": "docs/H03_STATIC_REVIEW_RESULT.json",
-    "foreground_polling_finished": true,
+    "status": "H04_POSTFIX_READ_FULLY",
+    "review_receipt": "docs/H04_STATIC_REVIEW_RESULT.json",
     "contest_api_calls": 0
   },
   "historical_stage_before_h03": "H02.3/H02.4 confirmed-review repairs; stop before H03.1",
@@ -734,10 +777,10 @@
     "h031_runtime_runs": 0
   },
   "preprocessing_fit_executed": true,
-  "predictive_estimator_fit_executed": false,
+  "predictive_estimator_fit_executed": true,
   "submission_zip_built_in_this_stage": false,
-  "training_scope": "Predictive estimator training false; preprocessing/TF-IDF fit true",
-  "mini_platform_history_scope": "Earlier submission_zip_built/platform_submitted fields retain historical mini observations, not a new H03 submission",
+  "training_scope": "CatBoost CPU search-fit on T_fit; inner evaluation only. No frozen refit, outer/private quality or AutoResearch.",
+  "mini_platform_history_scope": "submission_zip_built/platform_submitted and current_strict_zip_submitted retain historical mini only; no new H04 platform submission.",
   "h03": {
     "status": "PASS_H03_COMPONENTS_AND_LOCAL_INTEGRATION_ONLY",
     "summary": "docs/H03_RECEIPT.md",
@@ -847,5 +890,217 @@
     "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5"
   },
   "publication_receipt_hash_omitted_from_document_map": "verification field binds the final metadata receipt; omit reciprocal map/self hashes to avoid a cycle",
-  "publication_metadata_self_exclusion": "H03_PUBLICATION_RESULT is generated after the162-file audit; it is bound by verification, not reciprocal document hashing. Other final document bindings refreshed and read back."
+  "publication_metadata_self_exclusion": "H04_PUBLICATION_RESULT generated after final audit; bound by verification, excluded from reciprocal map/self hashes",
+  "historical_stage_before_h04": "H03.1-H03.5 data components and trusted local integration",
+  "historical_status_before_h04": "PASS_H03_COMPONENTS_AND_LOCAL_INTEGRATION_ONLY",
+  "historical_next_stage_before_h04": "Stop before H04.1; implementation requires next owner command. Contest API including key/info requires a separate explicit command.",
+  "historical_verification_before_h04": {
+    "status": "PASS_H03_METADATA_AND_PUBLICATION_BINDING_ONLY",
+    "receipt": "docs/H03_PUBLICATION_RESULT.json",
+    "scope": "1163 metadata checks/548 links; final index document/staged source readback checked after adding verification reference; no runtime/API repetition",
+    "sha256": "b51eb82824562c0f312b461efbca579bbd81cf95481e456684aac25ebb181695"
+  },
+  "historical_current_work_before_h04": {
+    "scope": "H03 component acceptance complete; stop before H04.1",
+    "h03_authorized": true,
+    "h03_components_verified": true,
+    "runtime_scope": "Trusted library chain only; solution.py not an estimator orchestrator",
+    "remaining_confirmed_h03_review_blockers": 0,
+    "api_paused_until_explicit_owner_command": true,
+    "key_info_called": false,
+    "web_paused_by_owner": false,
+    "foreground_polling_finished": true,
+    "manual_progress_check_target_msk": "2026-10-21 21:00",
+    "scheduled_automation_created": false,
+    "new_submission": false
+  },
+  "historical_web_workflow_before_h04": {
+    "chat1": "research and future experiments",
+    "chat2": "independent static review",
+    "model_target_owner": "GPT-5.6 Pro",
+    "model_ui_selection_verified": false,
+    "shared_minimum_any_call_interval_seconds": 60,
+    "active_foreground_read_interval": "approximately five minutes",
+    "on_429": "stop calls, no automatic retry",
+    "do_not_interrupt_running_chat_with_independent_job": true,
+    "notifications_before_send": true,
+    "automation_created": false,
+    "latest_chat1_research_status": "H03-H08/P2 dossier and H04 quality continuation read through END; primary-source subset checked, no benchmark",
+    "original_long_first_messages_byte_exact_retrieved": false,
+    "latest_chat2_status": "All six externally reviewed H03 findings closed in scope",
+    "chat2_review_receipt": "docs/H03_STATIC_REVIEW_RESULT.json",
+    "latest_chat2_read_utc": "2026-10-21 07:48:44 UTC",
+    "current_pending_chat_jobs": 0,
+    "contest_api_calls": 0
+  },
+  "historical_product_bootstrap_sha256_before_h04": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7"
+  },
+  "historical_product_contract_sha256_before_h04": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715"
+  },
+  "historical_latest_document_change_before_h04": {
+    "date": "2026-10-21",
+    "scope": "H03 implemented and checked in scoped local acceptance; six static findings closed; data and historical receipts preserved",
+    "current_route": "H04.1 only on next command",
+    "contest_api_calls": 0
+  },
+  "historical_product_h03_sha256_before_h04": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5"
+  },
+  "historical_current_web_dispatch_before_h04": {
+    "status": "ALL_REQUESTED_H03_REPLIES_READ_AND_ARCHIVED",
+    "historical_resume_receipt": "docs/WEB_DISPATCH_20261021.json",
+    "review_receipt": "docs/H03_STATIC_REVIEW_RESULT.json",
+    "foreground_polling_finished": true,
+    "contest_api_calls": 0
+  },
+  "historical_training_scope_before_h04": "Predictive estimator training false; preprocessing/TF-IDF fit true",
+  "h04": {
+    "status": "PASS_H04_FIXED_BASELINE_ONLY",
+    "summary": "docs/H04_RECEIPT.md",
+    "receipts": {
+      "H04_ARTIFACTS_V2_RESULT.json": {
+        "path": "docs/H04_ARTIFACTS_V2_RESULT.json",
+        "sha256": "ffe6fbab7261498de2a7151dc166e6c4bf16791a7113443dd7bfd502dc88abbf"
+      },
+      "H04_ESTIMATORS_V2_RESULT.json": {
+        "path": "docs/H04_ESTIMATORS_V2_RESULT.json",
+        "sha256": "4171db1b1981cb3cb86b44e971ca471babaf95f4ee5fbce1484d4af2cd76f3ec"
+      },
+      "H04_BASELINE_SYNTHETIC_V2_RESULT.json": {
+        "path": "docs/H04_BASELINE_SYNTHETIC_V2_RESULT.json",
+        "sha256": "a7fb84ba664275f881c5f3d5a23a99af25ca7caec6b9745431a15b020e352f5c"
+      },
+      "H04_WSL_PUBLIC_V2_RESULT.json": {
+        "path": "docs/H04_WSL_PUBLIC_V2_RESULT.json",
+        "sha256": "1124d0e38d1c49083ec22a97cc3cb538e0a039d2798c7da0d315ca7904eeeb3d"
+      },
+      "H04_DOCKER_PUBLIC_V2_RESULT.json": {
+        "path": "docs/H04_DOCKER_PUBLIC_V2_RESULT.json",
+        "sha256": "8c4c9536716fec96bb37ee2965c7036e7a5c3d3ec8af55e90b5d21e5812b1d90"
+      },
+      "H044_QUALITY_V2_RESULT.json": {
+        "path": "docs/H044_QUALITY_V2_RESULT.json",
+        "sha256": "486f4b7cebe99ea711201234a737a4a9afb65c666dbd4e41aaac8628b2daabc9"
+      },
+      "H04_MATRIX_BIND_BEFORE_RESULT.json": {
+        "path": "docs/H04_MATRIX_BIND_BEFORE_RESULT.json",
+        "sha256": "96330fbe000e145ee2dd8afb8bcb760da88a9748c19386b5e88361824b012d03"
+      },
+      "H04_EXTERNAL_ROOT_BEFORE_RESULT.json": {
+        "path": "docs/H04_EXTERNAL_ROOT_BEFORE_RESULT.json",
+        "sha256": "e94abf8172bd75247117bcb5db1074602ec38640f73cd13b34cfbe516cb0baa0"
+      },
+      "H04_ARTIFACT_COMMIT_BEFORE_RESULT.json": {
+        "path": "docs/H04_ARTIFACT_COMMIT_BEFORE_RESULT.json",
+        "sha256": "3fbdb834c55a76cf8d9a39f6e083c5e73736f535f7fea561e761fefc5aee2d3c"
+      },
+      "H04_QA_FIXTURE_BEFORE_RESULT.json": {
+        "path": "docs/H04_QA_FIXTURE_BEFORE_RESULT.json",
+        "sha256": "bd6f1cab27600290cd3ef46a81151919114779ae606d26888a6b4981246166e2"
+      },
+      "H041_REGRESSION_V2_RESULT.json": {
+        "path": "docs/H041_REGRESSION_V2_RESULT.json",
+        "sha256": "ca12e16dc9fc5a38cc7fc4d2f36e0b4704b759361e71f36336967c3941a97762"
+      },
+      "H042_CLASSIFICATION_V2_RESULT.json": {
+        "path": "docs/H042_CLASSIFICATION_V2_RESULT.json",
+        "sha256": "7371867cd8cd22672e9491e913123577f84829e5334e87a6f8a18e1040badfb0"
+      }
+    },
+    "component_counts": {
+      "artifacts": [
+        20,
+        78
+      ],
+      "estimators": [
+        13,
+        48
+      ],
+      "training_data": [
+        17,
+        31
+      ],
+      "orchestration": [
+        14,
+        27
+      ]
+    },
+    "public_quality": {
+      "regression": {
+        "metric": "rmse",
+        "constant": 58.460385733996254,
+        "feature_model": 47.30324429281982
+      },
+      "classification": {
+        "metric": "macro_f1",
+        "constant": 0.048411497730711045,
+        "feature_model": 0.5046438478429278
+      }
+    },
+    "csv_rows": {
+      "regression": 22449,
+      "classification": 41166
+    },
+    "recipe": {
+      "estimator": "CatBoost1.2.8CPU",
+      "iterations": 300,
+      "seed": 42,
+      "threads": 8
+    },
+    "protocol": "NO_REFIT_SEARCH_ONLY",
+    "live_api_calls": 0,
+    "generated_code_executed": false,
+    "official_image_verified": false,
+    "full37_verified": false,
+    "full_10800s_run": false,
+    "outer_quality_evaluated": false,
+    "official_score": null,
+    "new_hypothesis_fits": 0,
+    "externally_closed_ids": [
+      "H04-ARTIFACT-COMMIT-001",
+      "H04-CLI-PUBLISHED-PROGRESS-001",
+      "H04-FIT-MATRIX-BIND-001",
+      "H04-TEMPORAL-RESOLVE-001"
+    ],
+    "history": "Old 13 H04 JSON exports are immutable pre-postfix results, retained beside V2; overlapping counts are not additive.",
+    "publication_receipt": {
+      "path": "docs/H04_PUBLICATION_RESULT.json",
+      "sha256": "57ea26ba871a47a3d4867dace859a86a3f4bb7d1e25a9c7a4d9c53fc88f252d2"
+    },
+    "secret_scan_receipt": {
+      "path": "docs/H04_SECRET_SCAN_RESULT.json",
+      "sha256": "ade74f77d31a6fd5b097109f3d4f3707b1a0664089fb5745aff76fc5e1c13b62"
+    }
+  },
+  "product_h04_sha256": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "product_h03_sha256_scope": "Historical bytes accepted at H03; solution.py superseded by H04, eight H03 core modules unchanged"
 }

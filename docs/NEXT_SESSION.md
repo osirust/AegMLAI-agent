@@ -1,19 +1,22 @@
-# Продолжение AegML: H03 принят в компонентной области
+# Продолжение AegML: H04 принят в своей области, далее H05
 
-Сначала прочитать последнюю команду владельца, [PROJECT_STATE](../PROJECT_STATE.md), [READ_FIRST](READ_FIRST.md), [H03_RECEIPT](H03_RECEIPT.md) и основной раздел9 [ТЗ](TECHNICAL_SPEC.md). Исторические квитанции сохранять.
+Сначала прочитать последнюю команду владельца, [PROJECT_STATE](../PROJECT_STATE.md), [H04_RECEIPT](H04_RECEIPT.md), [READ_FIRST](READ_FIRST.md) и раздел 9 [ТЗ](TECHNICAL_SPEC.md).
 
-21.10 владелец разрешил весь H03.1–H03.5. Предыдущая остановка перед ним снята; после этого блока остановиться перед H04. Профиль, preprocessing, metrics/splits, независимый CSV-validator/writer и registry реализованы как библиотечные компоненты. Четыре дополнительных замечания review воспроизведены и исправлены; текущие локальные компонентные, сквозные WSL и Docker проверки прошли. Повторное static review четырёх findings завершено: все закрыты. Дополнительный destination-binding fix прошёл writer16/73 и свежие chain/Docker; его полный postfix также закрыл finding, remaining0. Актуальный итог смотреть в H03_RECEIPT.
+**Текущий статус:** `PASS_H04_FIXED_BASELINE_ONLY`. После четырёх P0 исправлений прошли A 20/78, E 13/48, root 14/27, новые actual WSL и Docker на двух задачах. TD 17/31 относится к неизменённому компоненту; его работа в новом составе проверена сквозными V2. Полный [postfix-review2](H04_STATIC_REVIEW_RESULT.json) прочитан до END 21.10 в 11:23:42 UTC: четыре P0 CLOSED, remaining=0. Рецензент не повторял runtime-тесты; область — trusted H04.
 
-CLI сохраняет H02.3 exit3/implementation_incomplete до будущего orchestration. Предобработка обучалась, predictive estimator и настоящий frozen refit — нет. Форматные CSV в временных копиях используют константы и не доказывают качество. Полные74+17future сценария, OS-worker H05, официальный образ/full37 и10800s не закрыты компонентным PASS.
+- RMSE mean 58.4604 → CatBoost 47.3032; Macro F1 majority 0.0484115 → CatBoost 0.50464385. CSV 22449/41166 строк.
+- Обучение только T_fit, оценка inner; WSL oracle sklearn прошёл. Docker с declared nested paths сохранил идентичные прогнозы. Это фиксированный baseline, не AutoResearch и не outer/frozen-refit оценка.
+- Основные квитанции: [WSL V2](H04_WSL_PUBLIC_V2_RESULT.json), [Docker V2](H04_DOCKER_PUBLIC_V2_RESULT.json), [synthetic V2](H04_BASELINE_SYNTHETIC_V2_RESULT.json), [quality V2](H044_QUALITY_V2_RESULT.json).
+- Старые 13 JSON и EXPORT_MANIFEST неизменны; 12 новых экспортов учитывает отдельный ignored EXPORT_V2_MANIFEST. История H02/H03 — в [H03_RECEIPT](H03_RECEIPT.md) и [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md).
 
-**API не вызывать, включая /key/info, до отдельной команды владельца.** Ключ и его fingerprint не печатать, не передавать чатам, не включать в Git/ZIP. Реальных локальных Qwen-запросов0. Наличие ключа не означает разрешение live-запроса. После команды экономный маршрут: H06.1 моки → H06.2 один безопасный tool и продолжение диалога; AutoResearch H07 только после H04/H05/H06. Ответ /key/info подтверждает остаток, а не модель/tools; RPM/TPM/тарифы пока UNKNOWN.
+**Ближайший шаг:** H05.1 → последующие H05 → H06 с отдельными gates по уже полученной команде владельца. Полный список 50 подпунктов и зависимости остаются в [WORK_BLOCKS](WORK_BLOCKS.md); неподтверждённые full-agent тесты не закрывать соседним PASS.
 
-Чат1 исследует следующие этапы, чат2 проверяет текущие изменения. Во время активной работы root проверяет готовность примерно раз в5минут; общий интервал любых read/status/send обоим чатам≥60сек. При429 остановить обращения, без автоматического retry. Не посылать независимое задание поверх работающего; предупреждать перед отправкой. Автоматизация не создана. Целевая GPT-5.6Pro выбрана владельцем, UI-подтверждения нет.
+**Подготовка будущего:** H05 observer в WSL/Docker увидел ABI 7 и безопасный seccomp-контроль, parent неизменён, cleanup подтверждён; Docker unshare возвращает EPERM с неизвестной причиной. H06 scratch16/70, HTTP0. Оба результата — только PREPARATION_ONLY, не production и не H05 admission. [Досье H05/H06](CHAT1_H05_H06_INTAKE.md) — обзор и проект приёмки.
 
-[Досье H03–H06](CHAT1_H03_H06_INTAKE.md) и [H07–H08](CHAT1_H07_H08_INTAKE.md) отделяют проверенные первичные источники от гипотез. Первая выдача длинного ответа была усечена, продолжения с END сохранены отдельно: не объявлять исходный длинный ответ полученным byte-for-byte. Дополнительный H04-ответ прочитан с продолжением до END: [quality intake](CHAT1_H04_QUALITY_INTAKE.md).
+**API=0, включая /key/info.** На H04 API запрещён. Условная команда владельца допускает первый короткий live H06.2 лишь после готовности исполнения H05 и offline/mock H06; эти предпосылки ещё не приняты. Ключ/fingerprint не читать для отчёта, не выводить и не включать в Git/ZIP. Моки и наличие ключа не live PASS. Generated code не исполнять до подтверждённой H05.1.
 
-Среду не переустанавливать: отдельная WSL AegML-Hackathon/Python3.12.3; MLvenv /home/aegml/venvs/aegml-ml-py312. Локальный Docker20GiB/noSwap/quota8 — приближение, не официальный образ. Before/rollback в [container-profile](container-profile.json). Без новой команды не менять caps/globalshutdown.
+Среду не переустанавливать: AegML-Hackathon на E, Python 3.12.3, MLvenv /home/aegml/venvs/aegml-ml-py312. Локальный Docker 20 GiB/quota 8/no-swap не официальный image/full37; профиль в [container-profile](container-profile.json). Официальные 32 GB,10800 s, private/score, frozen refit, AutoResearch и полный worker boundary остаются непроверенными.
 
-AEGYX INDEX81 остаётся OWNER_PAUSE_BEFORE_SOURCE3: default Ubuntu/AEGYX не запускать и не менять. Исторические две P1-рекомендации H02.4 checker не закрывать несвязанным H03 PASS. Ручная цель21.10.2026 21:00МСК — проверка достигнутого, без автоматического сабмита и обещаний score.
+Веб: root — диспетчер research1/review2; общий интервал обращений≥60 сек, при 429 остановка; предупреждать перед отправкой и не перебивать активное задание. Фоновых автоматизаций и автоматического сабмита нет. Ручной ориентир 21.10 18:00 МСК не является гарантией срока/score.
 
-Последний metadata audit: [H03_PUBLICATION_RESULT](H03_PUBLICATION_RESULT.json),1163проверки/548локальныхссылок,31историческаяквитанция и20экспортов сохранены. Это не новый runtime-эксперимент. Следующий малый блок — **H04.1**, только по команде владельца; H03 без новых причин не повторять.
+AEGYX INDEX81: OWNER_PAUSE_BEFORE_SOURCE3. Default Ubuntu/AEGYX, его исходники/venv и global caps не менять без новой команды.

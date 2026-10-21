@@ -1,0 +1,422 @@
+{
+  "status": "PASS_H04_ARTIFACTS_ONLY",
+  "scope": "synthetic trusted artifact filesystem/data-only component",
+  "python": "3.12.3",
+  "source_sha256": {
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "scripts/check_h04_artifacts.py": "a024c83a539cd848554a2435b577ad0084978ab0b8068544b9304ae491a88c82",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "model_fit_calls": 0,
+  "live_api_calls": 0,
+  "network_used": false,
+  "generated_code_executed": false,
+  "full_H05_accepted": false,
+  "official_image_verified": false,
+  "test_methods_run": 20,
+  "behavior_cases_checked": 78,
+  "behavior_cases_passed": 78,
+  "cases": [
+    {
+      "test": "__main__.ArtifactChecks.test_canonical_json_and_complete_provenance_survive_roundtrip",
+      "case": "canonical_utf8_json_code_config_split_prediction_provenance",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_directory_fsync_failure_after_commit_is_separate_warning",
+      "case": "H04_ARTIFACT_COMMIT_001_directory_fsync_warning_link",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_directory_fsync_failure_after_commit_is_separate_warning",
+      "case": "H04_ARTIFACT_COMMIT_001_directory_fsync_warning_replace",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_exclusive_publication_race_preserves_racer",
+      "case": "destination_created_during_write_is_not_overwritten",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_finalizing_reserve_and_same_shared_clock",
+      "case": "work_exhaustion_refuses_before_file_creation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_finalizing_reserve_and_same_shared_clock",
+      "case": "explicit_finalizing_can_use_original_reserve_without_reset",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_finalizing_reserve_and_same_shared_clock",
+      "case": "final_deadline_exhaustion_still_refuses_finalizing",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_fresh_task_local_private_directory_and_no_resume",
+      "case": "fresh_task_local_run_and_private_modes",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_fresh_task_local_private_directory_and_no_resume",
+      "case": "existing_run_refused_without_touching_owned_file",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_positive_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_negative_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_object",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_nonstring_key",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_cycle",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_invalid_json_refuses_before_any_publication",
+      "case": "invalid_json_huge_integer",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_json_exclusive_and_only_owned_record_update",
+      "case": "exclusive_json_preserves_old_bytes_and_mtime",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_json_exclusive_and_only_owned_record_update",
+      "case": "owned_unchanged_json_update_is_explicit_and_atomic",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_json_exclusive_and_only_owned_record_update",
+      "case": "unregistered_existing_json_cannot_be_adopted_or_overwritten",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_manifest_hashes_private_records_without_label_values_or_absolute_paths",
+      "case": "manifest_has_verified_hashes_shared_timer_and_no_raw_predictions",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_no_budget_reset_or_credential_metadata_or_payload_logging",
+      "case": "different_budget_instance_cannot_reset_prediction_deadline",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_no_budget_reset_or_credential_metadata_or_payload_logging",
+      "case": "missing_shared_budget_refuses_before_new_directory",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_no_budget_reset_or_credential_metadata_or_payload_logging",
+      "case": "credential_keys_refused_static_errors_and_no_stdout_payload",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_numeric_label_and_vector_data_only_predictions",
+      "case": "prediction_roundtrip_numeric",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_numeric_label_and_vector_data_only_predictions",
+      "case": "prediction_roundtrip_label",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_numeric_label_and_vector_data_only_predictions",
+      "case": "prediction_roundtrip_vector",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_numeric_label_and_vector_data_only_predictions",
+      "case": "prediction_artifact_is_immutable",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_persistent_temporary_cleanup_failure_is_explicit_and_reconcilable",
+      "case": "H04_ARTIFACT_COMMIT_001_two_cleanup_failures_never_accept_empty_manifest",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_post_commit_lstat_failure_keeps_known_owned_inode_registration",
+      "case": "H04_ARTIFACT_COMMIT_001_postcommit_lstat_link",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_post_commit_lstat_failure_keeps_known_owned_inode_registration",
+      "case": "H04_ARTIFACT_COMMIT_001_postcommit_lstat_replace",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_post_link_unlink_failure_once_keeps_registered_commit",
+      "case": "H04_ARTIFACT_COMMIT_001_unlink_once_committed_and_cleanup_verified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_postcommit_cleanup_never_unlinks_replaced_foreign_inode",
+      "case": "H04_ARTIFACT_COMMIT_001_cleanup_refuses_foreign_replaced_inode",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_precommit_fsync_failure_and_expiry_preserve_previous",
+      "case": "file_fsync_failure_preserves_old_valid_record",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_precommit_fsync_failure_and_expiry_preserve_previous",
+      "case": "shared_deadline_expiring_before_publish_preserves_old_record",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_empty",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_duplicate",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_bool_index",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_negative_index",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_float_index",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_overflow_index",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_inf",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_mixed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_ragged",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_bool_value",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_dict_vector",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_empty_vector",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_string_vector",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_empty_label",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "invalid_prediction_nul_label",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "prediction_row_limit_refuses_instead_of_truncating",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_prediction_shape_indices_finiteness_and_row_caps",
+      "case": "prediction_byte_limit_cleans_partial_private_file",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_record_detects_content_replacement_symlink_and_hardlink",
+      "case": "same_size_modified_json_cannot_be_updated",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_record_detects_content_replacement_symlink_and_hardlink",
+      "case": "registered_file_replaced_by_symlink_is_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_record_detects_content_replacement_symlink_and_hardlink",
+      "case": "registered_file_external_hardlink_is_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "invalid_run_id_traversal",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "invalid_run_id_uppercase",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "invalid_run_id_empty",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "invalid_run_id_suffix",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "missing_task_is_static_error_and_no_new_run",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "directory_task_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_run_id_and_task_sources_are_validated_before_creation",
+      "case": "oversize_task_refused_before_run_creation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_63",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_64",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_65",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_66",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_67",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "unsafe_artifact_name_68",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "existing_output_symlink_cannot_modify_external_file",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "record_outside_run_refused_even_when_file_exists",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_safe_names_symlinks_and_outside_record",
+      "case": "run_directory_symlink_replacement_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "utf8_byte_cap_uses_bytes_not_codepoints",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "per_run_count_limit_keeps_prior_record",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "aggregate_run_bytes_cap_counts_previous_artifacts",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "invalid_limits_bool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "invalid_limits_zero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.ArtifactChecks.test_utf8_metadata_cap_count_total_bytes_and_limits",
+      "case": "invalid_limits_over_cap",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256_after": {
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "scripts/check_h04_artifacts.py": "a024c83a539cd848554a2435b577ad0084978ab0b8068544b9304ae491a88c82",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_unchanged": true,
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "unittest_skips": []
+}

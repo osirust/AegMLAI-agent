@@ -1,0 +1,37 @@
+{
+  "status": "PASS_H04_STATIC_REVIEW_ONLY",
+  "source": "Owner-authorized ChatGPT web chat 2",
+  "thread_id": "6ad79467-4e88-83ed-9aee-9794ce7f2d9b",
+  "message_id": "3ca78653-31ff-4855-bf78-b443e33dc666",
+  "retrieved_utc": "2026-10-21 11:23:42 UTC",
+  "complete_response_retrieved": true,
+  "transport_limit_chars": 18000,
+  "response_chars": 12865,
+  "response_sha256": "03fbab9c251dcae87d26e3afc9dd4f4fb8062970028c367a5401d75743dc0d03",
+  "response_end_marker": true,
+  "reviewer_executed_tests": false,
+  "reviewer_independently_computed_source_sha": false,
+  "remaining_blockers": 0,
+  "closed_ids": [
+    "H04-FIT-MATRIX-BIND-001",
+    "H04-TEMPORAL-RESOLVE-001",
+    "H04-CLI-PUBLISHED-PROGRESS-001",
+    "H04-ARTIFACT-COMMIT-001"
+  ],
+  "scope": "Trusted H04 fixed baseline production corrections only; execution receipts are team results, not independent reviewer runs",
+  "source_sha256": {
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57"
+  },
+  "not_accepted": [
+    "H05 OS boundary",
+    "Qwen API/tools",
+    "Generated worker",
+    "Official image/full37",
+    "10800 second run",
+    "Frozen refit",
+    "Outer/private quality"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "EXPECTED_FAILURE_REPRODUCED_OLD_SOURCE_ONLY",
+  "finding": "H04-FIT-MATRIX-BIND-001",
+  "old_estimator_sha256": "4182d9119f09101ad35483d50e8a5ee43b0632fa48d6958cf52f43bb19097cd3",
+  "old_checker_sha256": "d0475497ef03e2983afcdf49ded2a9c53a6c8ffc50550390fa25d9a4e90bee30",
+  "dependency_sha256": {
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715"
+  },
+  "fit_rows": 3,
+  "test_rows": 3,
+  "equal_row_indices": true,
+  "different_matrix_content": true,
+  "pool_calls": 1,
+  "fit_spy_calls": 1,
+  "post_spy_error": "incomplete_estimator_fit",
+  "actual_estimator_fits": 0,
+  "API_calls": 0,
+  "synthetic_only": true
+}

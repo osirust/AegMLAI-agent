@@ -1,0 +1,379 @@
+{
+  "status": "PASS_H04_ACTUAL_DOCKER_ONLY",
+  "image": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+  "cases": [
+    {
+      "task_type": "regression",
+      "status": "PASS_ACTUAL_H04_DOCKER_BASELINE_ONLY",
+      "container_name": "aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-1",
+      "literal_container_argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "container_profile": {
+        "container_id": "b26c550f19e4a6940413a0af377b8fc444a1ab4e0633ab50c7c5fd65a2440ec7",
+        "profile_verified_before_start": true,
+        "memory_bytes": 21474836480,
+        "memory_swap_bytes": 21474836480,
+        "cpu_quota": 8,
+        "pids_limit": 256,
+        "uid": 1000,
+        "rootfs_readonly": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "network": "none",
+        "mount_destinations": [
+          "/work",
+          "/tmp"
+        ],
+        "scratch": "owned_disk_backed"
+      },
+      "elapsed_seconds_including_python_startup": 14.038702376000003,
+      "report_sha256": "5846e779701e5dc96c46e9ce96f3f6095960463a6caeae52a1b2d9ddaaed07a2",
+      "manifest_sha256": "ed4bacd989185baf5f35e96f02e3228e91b3f877a4286f8ba04d4fb906a4a282",
+      "report_path": "/home/aegml/checks/h04-docker-20261021/h04-docker-672c62ae3bc74e9a90de386901a4cb5d/regression-work/.aegml-run-a11bac7220ae4ff595decc4f08e96faa/baseline-report.json",
+      "submission_path": "/home/aegml/checks/h04-docker-20261021/h04-docker-672c62ae3bc74e9a90de386901a4cb5d/regression-work/submission.csv",
+      "submission_sha256": "ee57ae887177f01a2aba013d47e0105ee461e943ce0b9781bf93cea123831ab4",
+      "submission_rows": 22449,
+      "input_layout": {
+        "mode": "declared_nested",
+        "paths_by_role": {
+          "train": "regression/participants/train.csv",
+          "test": "regression/participants/test.csv",
+          "data_dictionary": "regression/participants/data_dictionary.csv",
+          "sample_submission": "regression/participants/sample_submission.csv"
+        },
+        "all_resolved_explicitly": true,
+        "flat_fallback_used": false
+      },
+      "quality": {
+        "metric": "rmse",
+        "direction": "minimize",
+        "constant": 58.460385733996254,
+        "feature_model": 47.30324429281982,
+        "improvement": 11.157141441176435,
+        "selected": "feature_model",
+        "inner_rows": 12946,
+        "model_fit_calls": 1,
+        "constant_fit_calls": 1,
+        "outer_quality_evaluated": false,
+        "official_score": null
+      },
+      "wsl_repeat": {
+        "status": "MATCHED_SOURCE_SPLIT_RECIPE_PREDICTIONS_AND_ORACLE",
+        "predictions": {
+          "constant-inner.csv": {
+            "row_count": 12946,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "model-inner.csv": {
+            "row_count": 12946,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "constant-test.csv": {
+            "row_count": 22449,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "model-test.csv": {
+            "row_count": 22449,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          }
+        },
+        "model_state_sha_comparison": "not_required_run_metadata_may_differ"
+      },
+      "outcome": {
+        "schema_version": "baseline_outcome.v1",
+        "phase": "H04",
+        "status": "baseline_completed",
+        "contract_valid": true,
+        "submission_valid": true,
+        "feature_model_fitted": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "research_completed": false,
+        "live_api_calls": 0,
+        "official_score": null,
+        "warnings": [
+          "fixed_baseline_only",
+          "official_image_unverified",
+          "H05_boundary_not_verified"
+        ],
+        "termination_reason": "fixed_baseline_complete",
+        "inner_metric": {
+          "name": "rmse",
+          "constant": 58.460385733996254,
+          "feature_model": 47.30324429281982,
+          "improvement": 11.157141441176435
+        },
+        "selected": "feature_model",
+        "submission_sha256": "ee57ae887177f01a2aba013d47e0105ee461e943ce0b9781bf93cea123831ab4",
+        "submission_rows": 22449,
+        "run_directory": ".aegml-run-a11bac7220ae4ff595decc4f08e96faa",
+        "manifest_sha256": "ed4bacd989185baf5f35e96f02e3228e91b3f877a4286f8ba04d4fb906a4a282",
+        "exit_code": 0,
+        "progress_phase": "baseline_completed",
+        "timer": {
+          "total_seconds": 900.0,
+          "reserve_seconds": 60.0,
+          "elapsed_seconds": 13.487384824,
+          "remaining_seconds": 886.512615176,
+          "work_remaining_seconds": 826.512615176,
+          "cooperative_only": true
+        }
+      },
+      "original_inputs_unchanged": true,
+      "staged_sources_unchanged": true
+    },
+    {
+      "task_type": "classification",
+      "status": "PASS_ACTUAL_H04_DOCKER_BASELINE_ONLY",
+      "container_name": "aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-2",
+      "literal_container_argv": [
+        "python3",
+        "solution.py",
+        "task.md"
+      ],
+      "container_profile": {
+        "container_id": "7f94cf9d66af57de6c1c0ffe9f9910536d46eacd1181121d27e7923bb6ce5d83",
+        "profile_verified_before_start": true,
+        "memory_bytes": 21474836480,
+        "memory_swap_bytes": 21474836480,
+        "cpu_quota": 8,
+        "pids_limit": 256,
+        "uid": 1000,
+        "rootfs_readonly": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "network": "none",
+        "mount_destinations": [
+          "/work",
+          "/tmp"
+        ],
+        "scratch": "owned_disk_backed"
+      },
+      "elapsed_seconds_including_python_startup": 32.27925597400002,
+      "report_sha256": "87ce6ae6a0b45db45b35a334a81d1f666ac645146c77b5da528ad591b157225e",
+      "manifest_sha256": "20d5cbcf28f3cbe84abcad5702eea3fe13cda9b56931531e500610256ec34c5a",
+      "report_path": "/home/aegml/checks/h04-docker-20261021/h04-docker-672c62ae3bc74e9a90de386901a4cb5d/classification-work/.aegml-run-cd813458bccd4357a22e7ccd59eabb9a/baseline-report.json",
+      "submission_path": "/home/aegml/checks/h04-docker-20261021/h04-docker-672c62ae3bc74e9a90de386901a4cb5d/classification-work/submission.csv",
+      "submission_sha256": "66363794a0ac97053269ae2b33f688a28e0e8adb4c4334be6535fbadf1dfb22b",
+      "submission_rows": 41166,
+      "input_layout": {
+        "mode": "declared_nested",
+        "paths_by_role": {
+          "train": "multiclass/participants/train.csv",
+          "test": "multiclass/participants/test.csv",
+          "data_dictionary": "multiclass/participants/data_dictionary.csv",
+          "sample_submission": "multiclass/participants/sample_submission.csv"
+        },
+        "all_resolved_explicitly": true,
+        "flat_fallback_used": false
+      },
+      "quality": {
+        "metric": "macro_f1",
+        "direction": "maximize",
+        "constant": 0.048411497730711045,
+        "feature_model": 0.5046438478429278,
+        "improvement": 0.45623235011221674,
+        "selected": "feature_model",
+        "inner_rows": 14028,
+        "model_fit_calls": 1,
+        "constant_fit_calls": 1,
+        "outer_quality_evaluated": false,
+        "official_score": null
+      },
+      "wsl_repeat": {
+        "status": "MATCHED_SOURCE_SPLIT_RECIPE_PREDICTIONS_AND_ORACLE",
+        "predictions": {
+          "constant-inner.csv": {
+            "row_count": 14028,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "model-inner.csv": {
+            "row_count": 14028,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "constant-test.csv": {
+            "row_count": 41166,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          },
+          "model-test.csv": {
+            "row_count": 41166,
+            "matches": true,
+            "maximum_absolute_numeric_difference": 0.0,
+            "relative_tolerance": 1e-10,
+            "absolute_tolerance": 1e-12
+          }
+        },
+        "model_state_sha_comparison": "not_required_run_metadata_may_differ"
+      },
+      "outcome": {
+        "schema_version": "baseline_outcome.v1",
+        "phase": "H04",
+        "status": "baseline_completed",
+        "contract_valid": true,
+        "submission_valid": true,
+        "feature_model_fitted": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "research_completed": false,
+        "live_api_calls": 0,
+        "official_score": null,
+        "warnings": [
+          "fixed_baseline_only",
+          "official_image_unverified",
+          "H05_boundary_not_verified"
+        ],
+        "termination_reason": "fixed_baseline_complete",
+        "inner_metric": {
+          "name": "macro_f1",
+          "constant": 0.048411497730711045,
+          "feature_model": 0.5046438478429278,
+          "improvement": 0.45623235011221674
+        },
+        "selected": "feature_model",
+        "submission_sha256": "66363794a0ac97053269ae2b33f688a28e0e8adb4c4334be6535fbadf1dfb22b",
+        "submission_rows": 41166,
+        "run_directory": ".aegml-run-cd813458bccd4357a22e7ccd59eabb9a",
+        "manifest_sha256": "20d5cbcf28f3cbe84abcad5702eea3fe13cda9b56931531e500610256ec34c5a",
+        "exit_code": 0,
+        "progress_phase": "baseline_completed",
+        "timer": {
+          "total_seconds": 900.0,
+          "reserve_seconds": 60.0,
+          "elapsed_seconds": 31.829439113,
+          "remaining_seconds": 868.170560887,
+          "work_remaining_seconds": 808.170560887,
+          "cooperative_only": true
+        }
+      },
+      "original_inputs_unchanged": true,
+      "staged_sources_unchanged": true
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-1",
+      "container_id": "b26c550f19e4a6940413a0af377b8fc444a1ab4e0633ab50c7c5fd65a2440ec7",
+      "status": "owned_removed",
+      "verified": true,
+      "inspect_returncode": 0,
+      "inspect_timed_out": false,
+      "remove_returncode": 0,
+      "remove_timed_out": false,
+      "absence_checks": [
+        {
+          "filter": "name=^/aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-1$",
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "filter": "id=b26c550f19e4a6940413a0af377b8fc444a1ab4e0633ab50c7c5fd65a2440ec7",
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    },
+    {
+      "name": "aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-2",
+      "container_id": "7f94cf9d66af57de6c1c0ffe9f9910536d46eacd1181121d27e7923bb6ce5d83",
+      "status": "owned_removed",
+      "verified": true,
+      "inspect_returncode": 0,
+      "inspect_timed_out": false,
+      "remove_returncode": 0,
+      "remove_timed_out": false,
+      "absence_checks": [
+        {
+          "filter": "name=^/aegml-h024-cli-5e28dfa9f2ef40218f197e58922990ee-2$",
+          "returncode": 0,
+          "timed_out": false
+        },
+        {
+          "filter": "id=7f94cf9d66af57de6c1c0ffe9f9910536d46eacd1181121d27e7923bb6ce5d83",
+          "returncode": 0,
+          "timed_out": false
+        }
+      ]
+    }
+  ],
+  "unresolved_resources": [],
+  "source_policy": "frozen_root_and_identical_staging",
+  "pilot_time_limit_seconds": 900,
+  "reserve_seconds": 60,
+  "threads": 8,
+  "capture_scope": "postcapture bound for trusted quiet CLI; not H05 streaming",
+  "daemon_log_driver": "none",
+  "receipt_creation": "held_exclusive_fd_before_docker",
+  "python_optimize": 0,
+  "live_api_calls": 0,
+  "new_official_submission": false,
+  "official_image_verified": false,
+  "H05_boundary_accepted": false,
+  "refit_executed": false,
+  "source_sha256": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "checker_sha256": "afb3803f9ae6643cc8a7de8ea106c402b1b77a27af48b2a21bdd23500403e813",
+  "h024_helper_sha256": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b",
+  "wsl_reference_sha256": "1124d0e38d1c49083ec22a97cc3cb538e0a039d2798c7da0d315ca7904eeeb3d",
+  "image_inspection": {
+    "Id": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+    "Os": "linux",
+    "Architecture": "amd64",
+    "official_platform_image_verified": false
+  },
+  "stage": "/home/aegml/checks/h04-docker-20261021/h04-docker-672c62ae3bc74e9a90de386901a4cb5d",
+  "source_sha256_after": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "root_source_changed": false
+}

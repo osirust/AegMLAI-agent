@@ -1,0 +1,33 @@
+{
+  "status": "BEFORE_EXTERNAL_ROOT_DEFECTS_REPRODUCED",
+  "cases": [
+    {
+      "case": "unresolved_table_becomes_IID",
+      "invalid_declaration_accepted": true,
+      "policy": "iid_nested_regression_v1",
+      "strategy": "explicit"
+    },
+    {
+      "case": "unresolved_table_mixed_with_valid",
+      "invalid_declaration_accepted": true,
+      "policy": "temporal_periods_v1",
+      "strategy": "temporal"
+    },
+    {
+      "case": "final_commit_then_work_budget_expired",
+      "exit_code": 124,
+      "writer_calls": 2,
+      "model_csv_committed": true,
+      "reported_sha_is_stale_constant": true,
+      "current_model_csv_independently_valid": true,
+      "actual_model_fit_calls": 0
+    }
+  ],
+  "source_sha256": {
+    "aegml_baseline.py": "3c0e3af94479e6c4c842c15e16c255ccbba9b227ab1cefafc54c2f1470bac851",
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "check_h04_baseline.py": "5d22994008c492ebd668f615a026ae330962d5a22ccd936e08780d4cc895af04"
+  },
+  "live_api_calls": 0,
+  "actual_model_fit_calls": 0
+}

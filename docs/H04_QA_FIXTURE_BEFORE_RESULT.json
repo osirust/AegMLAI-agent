@@ -1,0 +1,35 @@
+{
+  "status": "REPRODUCED_CHECKER_FIXTURE_SNAPSHOT_FAILURE",
+  "source_sha256": "654711594f1adb3176b21dfda7f40eba99d9a550fe1be54c84115950d2d2a13f",
+  "cases": [
+    {
+      "test": "h04_checker.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_unresolved_temporal_table_False",
+      "status": "PASS"
+    },
+    {
+      "test": "h04_checker.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_unresolved_temporal_table_True",
+      "status": "PASS"
+    },
+    {
+      "test": "h04_checker.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_valid_temporal_table_still_temporal",
+      "status": "PASS"
+    },
+    {
+      "test": "h04_checker.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_absent_temporal_declaration_still_explicit_IID",
+      "status": "PASS"
+    }
+  ],
+  "failures": [
+    {
+      "test": "h04_checker.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "detail": "Traceback (most recent call last):\n  File \"/mnt/e/work/AegMLAI-agent/scripts/check_h04_baseline.py\", line 140, in tearDown\n    self.assertTrue(snapshots(fixture.root) == fixture.before, \"synthetic source bytes/mtime changed\")\nAssertionError: False is not true : synthetic source bytes/mtime changed\n"
+    }
+  ],
+  "errors": [],
+  "ml_fits": 0,
+  "live_api_calls": 0
+}

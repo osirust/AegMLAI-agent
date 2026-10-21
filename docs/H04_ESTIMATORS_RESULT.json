@@ -1,0 +1,318 @@
+{
+  "status": "PASS_H04_ESTIMATOR_TINY_ONLY",
+  "python": "3.12.3",
+  "catboost": "1.2.8",
+  "test_methods_run": 11,
+  "cases_checked": 35,
+  "cases_passed": 35,
+  "cases": [
+    {
+      "test": "__main__.EstimatorChecks.test_binary_classifier_loss_and_probability_orientation",
+      "case": "tiny_binary_Logloss_and_original_class_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "mandatory_shared_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "expired_budget_propagates_without_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_iterations_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_iterations_301",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_threads_9",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_threads_True",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_seed_-1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "corrupt_CSR_indices_refused_before_native_backend",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_class_mapping_mutation_and_defensive_metadata",
+      "case": "metadata_properties_are_defensive_copies",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_class_mapping_mutation_and_defensive_metadata",
+      "case": "class_map_mutation_rejected_before_decoding",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_active_split_binding",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_source_file_bytes_verified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_trained_statistics_sha256",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_feature_order_sha256",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "raw_target_vector_cannot_bypass_TargetBatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "bad_regression_target_nonfinite_regression_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "bad_regression_target_invalid_regression_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fractional_numeric_class_labels_are_restored",
+      "case": "tiny_fractional_class_codes_are_encoded_and_restored",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_multiclass_labels_probabilities_and_roworder",
+      "case": "tiny_multiclass_restores_001_NA_unicode_and_explicit_probability_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_pool_construction_expiry_denies_actual_fit",
+      "case": "H04-ESTIMATOR-ADMISSION-001_expired_after_Pool_never_starts_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_prepared_feature_order_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_prediction_preprocessing_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_invalid_prepared_row_indices",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_invalid_prepared_schema",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "numeric_infinity_refused_before_CatBoost",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "learned_leaf_mutation_changes_model_state_digest",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_real_regression_native_fit_predict_and_parameters",
+      "case": "tiny_regression_real10trees_native_finite_nonconstant_predictions",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_sparse_text_route_without_densification",
+      "case": "tiny_CSR_TFIDF_real_fit_preserves_sparse_input",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_unknown_category_and_explicit_numeric_nan",
+      "case": "native_unknown_category_and_numeric_NaN_supported",
+      "status": "PASS"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "tiny_fits": [
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.061457984000000465,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "691a3099c087fe54c1cf13df8b03eafcdcbe73a4885cde538fccd242469f13df",
+      "model_sha256": "d4a4ab188a81d29370def535a8b7b7d0d2d0f79c0fd81be9fbb8949c5dc796d2",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003542936999998858,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "907692b933a60244e2991425678a7b243780ee196b5d4621895d61a7363bf119",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003262094000000104,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "a836d2142ffef44a890d547f5b1b0c2f24c3a6423f54b7b1f4386679d3a28e41",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0028421290000011368,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "2598d1e87a443e9ce1420ec6a3587e93582adedbf62994c382bf5c1f2079760b",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.002675754000001973,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "66318660b90c506bfba2f3204178155b704eb5c9156319ff4b68e54dfa22c16e",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0026638990000051876,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "c73d2fadac1c5cfea91a11332f41d0ee0894e78600cf120c0aeb63e782eff705",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "csr",
+      "iterations": 10,
+      "fit_seconds": 0.003007173999996837,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "5629f62464508843171b805389c681a4dd2c271785ab7cccddabec9f057a3673",
+      "model_sha256": "c405a9a4a4e4e1bf13bd8a2e9ce4c88ce89eb4b3ac8679d7e26ad81bec598186",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0024303220000021497,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "a52af9dd00413394d457c710f971fa09c687de891bf8844828f1c69311804369",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    }
+  ],
+  "source_sha256": {
+    "aegml_estimators.py": "4182d9119f09101ad35483d50e8a5ee43b0632fa48d6958cf52f43bb19097cd3",
+    "scripts/check_h04_estimators.py": "d0475497ef03e2983afcdf49ded2a9c53a6c8ffc50550390fa25d9a4e90bee30",
+    "aegml_training_data.py": "cfbe696e12a296127e737a7f7380dabb4143bc06caa3fd70810143d95db83f47",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_sha256_after": {
+    "aegml_estimators.py": "4182d9119f09101ad35483d50e8a5ee43b0632fa48d6958cf52f43bb19097cd3",
+    "scripts/check_h04_estimators.py": "d0475497ef03e2983afcdf49ded2a9c53a6c8ffc50550390fa25d9a4e90bee30",
+    "aegml_training_data.py": "cfbe696e12a296127e737a7f7380dabb4143bc06caa3fd70810143d95db83f47",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_unchanged": true,
+  "API_calls": 0,
+  "public_dataset_model_fits": 0,
+  "tiny_iterations": 10,
+  "production_default_iterations": 300,
+  "model_quality_claimed": false,
+  "refit_executed": false,
+  "H05_boundary_verified": false,
+  "peak_RSS_MiB_process": 161.0546875
+}

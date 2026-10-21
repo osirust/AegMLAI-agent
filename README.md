@@ -1,56 +1,58 @@
 # AegMLAI-agent
 
-Проект автономного ML-агента для трека Альфа-Будущее 2026: новое условие и данные → контракт и валидация → обучение → Qwen AutoResearch → проверенный `submission.csv`.
-Приоритеты — исследовательский цикл, перенос на новые задачи, измеренное качество и ответ в ресурсах платформы.
+Проект автономного ML-агента для трека Альфа-Будущее 2026: новое условие и данные → контракт и валидация → обучение → Qwen AutoResearch → проверенный submission.csv. Приоритеты — перенос на новые задачи, исследовательский цикл, измеренное качество и работа в ресурсах платформы.
 
-**Сейчас:** H03.1–H03.5 реализованы как библиотечная основа: профиль, train-only preprocessing/TF-IDF, восемь метрик, splits и guarded CSV writer. Компонентные, сквозные WSL и локальные Docker проверки прошли; текущие review и ограничения — [H03_RECEIPT](docs/H03_RECEIPT.md). CLI пока H02.3 exit3/incomplete; predictive estimator, Qwen и AutoResearch ещё не запускались. После H03 — остановка перед H04 по следующей команде владельца.
+**Сейчас:** PASS_H04_FIXED_BASELINE_ONLY. Исправленный фиксированный CPU baseline прошёл новые локальные unit/сквозные проверки, обе public-задачи в WSL и Docker с declared nested inputs. RMSE **58.4604→47.3032**, MacroF1 **0.0484115→0.50464385**, CSV **22449/41166** строк. Полный внешний postfix закрыл четыре P0, remaining=0 в области trusted H04; [квитанция и точные SHA](docs/H04_RECEIPT.md).
+
+Текущий CLI реально обучает CatBoost 300/seed 42/threads 8 и сохраняет валидный CSV; успешный outcome — H04 baseline_completed. Это NO_REFIT_SEARCH_ONLY: fit на T_fit, оценка inner, без outer-quality/frozen refit. Qwen, generated code и AutoResearch не запускались. API-запросов 0.
 
 ## Читать сначала
 
-1. [PROJECT_STATE](PROJECT_STATE.md) — факты, ограничения и текущий подпункт.
-2. [READ_FIRST](docs/READ_FIRST.md) — маршрут чтения.
+1. [PROJECT_STATE](PROJECT_STATE.md) — факты, ограничения и ближайший шаг.
+2. [READ_FIRST](docs/READ_FIRST.md) — удобный маршрут чтения и команд.
 3. [TECHNICAL_SPEC](docs/TECHNICAL_SPEC.md) — нормативное полное ТЗ.
-4. [WORK_BLOCKS](docs/WORK_BLOCKS.md) — 50 небольших заданий с входами, выходами и приёмкой.
+4. [WORK_BLOCKS](docs/WORK_BLOCKS.md) — 50 небольших заданий с зависимостями и приёмкой.
 
-Детали: [Qwen harness](docs/QWEN_HARNESS_DESIGN.md), [математика](docs/MATHEMATICS_AND_VALIDATION.md), [обзор AutoML](docs/AUTOML_RESEARCH_BRIEF.md), [план экспериментов](docs/RESEARCH_PROTOCOL.md), [backend](docs/BACKEND_CONTRACT.md), [время и отказы](docs/RUNTIME_AND_FAILURES.md), [среда](docs/LOCAL_ENVIRONMENT.md), [источники](docs/RESEARCH_SOURCES.md).
+Детали: [H04 V2](docs/H04_RECEIPT.md), [Qwen harness](docs/QWEN_HARNESS_DESIGN.md), [математика](docs/MATHEMATICS_AND_VALIDATION.md), [обзор AutoML](docs/AUTOML_RESEARCH_BRIEF.md), [план экспериментов](docs/RESEARCH_PROTOCOL.md), [backend](docs/BACKEND_CONTRACT.md), [время и отказы](docs/RUNTIME_AND_FAILURES.md), [среда](docs/LOCAL_ENVIRONMENT.md), [источники](docs/RESEARCH_SOURCES.md).
 
 ## Контракт платформы
 
-По переданной владельцем инструкции платформа выполняет **`python3 solution.py task.md`** из каталога задачи. `submission.csv` создаётся рядом.
-ZIP до 100 МБ; консервативный предел — **`100000000` байт**. В архиве без папок лежат только:
+Команда — **`python3 solution.py task.md`** из каталога задачи; submission.csv создаётся рядом. Данные могут находиться по объявленным вложенным путям, это проверено отдельно от плоской поставки кода.
 
-- `solution.py`;
-- неизменённый предоставленный `requirements.txt`;
-- собственные дополнительные корневые `.py`, для P0 — `aegml_*.py`.
+ZIP≤**100000000 байт**. В корне архива без папок находятся только:
 
-Платформа копирует только эти файлы. Пакетные каталоги, JSON/prompts/config assets, данные, сторонние библиотеки и wheels недоступны из ZIP.
-Схемы уже встроены в `aegml_schemas.py`; для будущих prompts предусмотрен `aegml_prompts.py`. Зависимости устанавливает платформа из предоставленного списка; собственный pip во время запуска недоступен.
-Локальное подмножество зависимостей не заменяет submission requirements. Существующий исходный список из 37 pins не перезаписывается.
-Рабочие папки и файлы в cwd/подкаталогах/`/tmp` разрешены во время выполнения; запрет папок относится к загрузочному архиву.
-Платформа: Python 3.12, 8 CPU / 32 GB и до трёх часов на отдельную задачу; тот же код запускают на двух неизвестных private-задачах.
+- solution.py;
+- неизменённый предоставленный requirements.txt;
+- собственные дополнительные корневые .py, для проекта — aegml_*.py.
 
-Boosters сначала ставит посылку в очередь: «Решение находится на проверке» — ещё не результат. Признак успешного завершения — сообщение «Точность вычисления: …»; ошибки показываются отдельно.
-Этот UI-текст не означает метрику classification Accuracy или прямое доказательство API/tools. Подробные технические логи доступны администраторам и могут отсутствовать в пользовательском интерфейсе.
+Платформа копирует только эти файлы; пакеты каталогами, JSON/prompts/config assets, данные, сторонние библиотеки и wheels из ZIP недоступны. Схемы встроены в aegml_schemas.py; будущие prompts также должны быть в Python. Зависимости устанавливает платформа из provided 37 pins; runtime pip и скачивание весов не использовать. Локальный subset не заменяет requirements.
 
-## Что действительно реализовано
+Рабочие подкаталоги и /tmp разрешены во время выполнения. Платформа заявляет Python 3.12,8 CPU/32 GB, до 3 часов на отдельную задачу и две неизвестные private-задачи для того же кода. Локальный image не является официальным.
 
-- Прежний `src/aegml` — демонстрационный JSON-планировщик. Его 21 тест и старый CI не подтверждают обучение конкурсной модели.
-- `testmini/` — исторический stdlib-пробник. Strict v3 локально прошла 6 файловых сценариев с явным API off и 17 HTTP-stub сценариев. Созданы CSV с 22 449 / 41 166 строками: mean/majority без признаков.
-- Владелец показал strict-посылку со score 0 и меткой «Лучшее решение». 3,2 секунды — длительность загрузки. Эти поля сами по себе не доказывают завершение Boosters; фактические exit/env/диагностика не получены.
-- Условие strict-кода сохраняется: если он запущен в default required и штатно завершился с exit 0, он требует успешный API и валидный CSV. Это условный вывод, не наблюдавшийся live-tool результат.
-- H02.1: `/home/aegml/venvs/aegml-ml-py312`, Python 3.12.3; 13 direct pins, всего 45 distributions; 44 dependency wheels плюс bootstrap pip 25.2; 9 package smoke и pip check PASS. [environment-lock.json](docs/environment-lock.json), run `runs/h02/h02-20261020T160924Z/`.
-- Старая stdlib-venv сохранена с 0 distributions. H02.1 остаётся отдельным `PASS_H02_1_LOCAL_SUBSET_ONLY`; последующий Docker H02.4 не переписывает её историю. Fit и реальные LLM API-запросы не выполнялись, официальный образ платформы остаётся UNKNOWN.
-- H02.3: реализованы `aegml_input.py`, TaskContract/resolver в `aegml_contracts.py` и встроенные схемы `aegml_schemas.py`. Успешный CLI создаёт два свежих JSON в `.aegml_runs/<uuid>/`: `task_contract.json` и `row_alignment.json`. Возвращает exit 3 / implementation_incomplete с `contract_valid=true`, остальные full-agent флаги false; нового CSV полного агента нет.
-- H02.4: Engine 29.9.1 внутри AegML-Hackathon, rootful daemon через Unix socket; пользователь aegml не добавлен в docker group. Проверочный контейнер образа Ubuntu 24.04 / Python 3.12.3 запускался с UID/GID 1000:1000, memory 20 GiB, no-swap, CPU quota 8 и pids 256; эти лимиты задаются при запуске, а не самим Dockerfile. Видимые 12 CPU не отменяют quota; [ресурсные проверки](docs/H024_CONTAINER_RESULT.json), [импорты](docs/H024_IMPORT_RESULT.json), [два literal CLI](docs/H024_DOCKER_CLI_RESULT.json). Это dev-subset, не импорт всех 37 pins и не приёмка H05.
+Boosters queue ещё не завершение. «Точность вычисления: …» обозначает результат оценки, но не classification Accuracy и не прямое доказательство API/tools. Подробные логи могут быть доступны только администраторам.
 
-Scope доказательств — [EVIDENCE_REGISTER](docs/EVIDENCE_REGISTER.md). Исторические mini ZIP/JSON не переписываются под новые правила; [mini-инструкция](testmini/README.md) не является текущим submission-контрактом.
+## Реализовано и проверено
 
-## Текущая работа и очередь
+- **H04 V2:** guarded artifacts20/78, estimator13/48, orchestrator14/27; TD 17/31 на неизменённом компоненте. Новые actual WSL и Docker на двух задачах прошли после четырёх внешних P0-fixes; численный sklearn oracle и совпадение прогнозов подтверждены. [Полный static postfix](docs/H04_STATIC_REVIEW_RESULT.json) закрыл четыре ID; рецензент не повторял runtime-тесты.
+- **H04.4:** [разбор ошибок и четыре preregistered гипотезы](docs/H044_QUALITY_V2_RESULT.json). Их candidate fits0; это план улучшений с MEI, а не выполненный поиск. Официальные B/score неизвестны.
+- **H03, исторически завершён:** профиль, train-only preprocessing/TF-IDF, восемь метрик, trusted splits и CSV writer. [Квитанция](docs/H03_RECEIPT.md) сохраняет свои исходники, before/after и границы.
+- **H02.1:** Python 3.12.3, MLvenv /home/aegml/venvs/aegml-ml-py312,13 direct pins / 45 distributions; smoke/pip-check приняты в области subset. [Environment lock](docs/environment-lock.json). Старая stdlib-venv сохранена.
+- **H02.3, историческое поведение:** подготовка контракта создавала два JSON и возвращала exit3/incomplete. Этот этап не обучал модель; его прежний outcome не является текущим успешным H04-outcome.
+- **H02.4:** локальный Engine29.9.1/imageUbuntu24.04/Python 3.12.3; UID 1000,20GiB/no-swap/quota 8/pids256. [Resource checks](docs/H024_CONTAINER_RESULT.json), [imports](docs/H024_IMPORT_RESULT.json), [исторические literal CLI](docs/H024_DOCKER_CLI_RESULT.json). Это dev-subset, не full37 или H05.
+- **testmini и src/aegml:** исторические технические заготовки. Mini: 6 файловых + 17 stub-сценариев и показанный владельцем score 0 не доказывают live-tool цикл; UI duration не runtime. Старые 21 тест/CI src-планировщика не подтверждают конкурсное ML-качество. [Mini-инструкция](testmini/README.md).
 
-После H02.4 — остановка. Следующий **H03.1** выполняется только по новой команде владельца; затем H03.2–H03.5 → H04, далее worker/Qwen → AutoResearch → перенос и чистый ZIP. Все 74 основных и 17 пересекающихся будущих сценариев остаются NOT_RUN.
-API-запросов 0; локальная конфигурация имеет статус CONFIGURED_UNVERIFIED, **LIVE_API_ON_OWNER_COMMAND_ONLY**. Безопасный tool call H06.2 требует отдельной команды владельца. Generated execution запрещён до отдельной подтверждённой H05.1.
-Fit, CSV полного агента, tools, AutoResearch, полный официальный образ и worker boundary пока не проверены. WSL настроена на 24 GiB с 4 GiB swap на E:, фактически видны 25 202 294 784 байт RAM (около 23,47 GiB) и 12 CPU; локальный контейнер ограничен 20 GiB / quota 8 CPU. Это не официальные 32 GB; [профиль](docs/container-profile.json). API-конфигурация остаётся вне Git.
+Scope доказательств — [EVIDENCE_REGISTER](docs/EVIDENCE_REGISTER.md) и относящиеся квитанции. Исторические JSON/SHA не переписываются; V2 — отдельные экспорты.
 
-Четыре участника готовят четыре независимые версии, затем сравнивают их. Этот чат — Владимир/Codex. Два пользовательских чата Vovan разделены: первый — research, второй — teacher. Read/send разрешены по назначению, чтение — по сигналу владельца без polling. Чужие сведения о ПК в этих чатах не заменяют локальные подтверждённые факты.
-Для обоих пользовательских чатов Vovan выбран целевой GPT‑5.6 Pro; фактический выбор модели пока не подтверждён из-за UI-проблем. CPU ML ответ чата «1» и статический H02.3 review чата «2» уже разобраны, три замечания парсера закрыты в [H023_REVIEW_FIXES](docs/H023_REVIEW_FIXES.md). Первая попытка H02.4 в чат «1» вернула TooManyRequests; позднее сообщения в1 (исследование H05) и2 (прошлые parser fixes и отдельный полный Docker packet) успешно приняты после уведомления владельца. Ответы на новые пакеты ещё не прочитаны; UI-подтверждение модели остаётся pending; читать по сигналу владельца, без polling, перед каждой отправкой уведомлять. Повтор при необходимости разрешён; причина UI-сбоев без доказательств не устанавливается.
-Репозиторий ранее переведён в private. Исходные данные, ключи, venv, веса, runs и dist в Git не включаются. AEGYX — отдельный проект на паузе: его исходники/venv не изменяли, default Ubuntu не запускали. Общий WSL memory/swap envelope для будущих запусков изменён в H02.4 и зафиксирован отдельно.
+## Очередь и ограничения
+
+Ближайший шаг — согласование учёта/commit H04 и переход H05 → H06 с отдельными gates по уже полученной команде владельца; AutoResearch H07 требует готовых H04/H05/H06. Подготовка H05 observer ABI 7/seccomp и H06 scratch 16/70 — PREPARATION_ONLY, не готовый worker/protocol.
+
+**API на H04 запрещён, включая /key/info.** Последняя условная команда разрешает короткий live H06.2 только после готовности исполнения H05 и offline/mock H06; эти предпосылки ещё не приняты. Ключ хранится вне Git, не выводится и не передаётся веб-чатам. Наличие конфигурации не API_PASS. Generated execution — только после подтверждённой H05.1.
+
+Не проверены официальный image/full37,10800 s, private-качество, frozen refit и полный AutoResearch. Все 74 основных+17 пересекающихся full-agent сценариев принимаются собственными доказательствами, а не суммой компонентных PASS. Ориентир 21.10 18:00 МСК — ручная цель без гарантии score/срока и автоматического сабмита.
+
+Существующую среду не переустанавливать: WSL 24 GiB/swap 4 GiB на E, видимые 12CPU; локальный Docker 20 GiB/quota 8/no-swap — приближение. [Профиль](docs/container-profile.json). Пользователь aegml не включён в docker group; rootful Engine доступен через контролируемый root-client.
+
+Четыре участника готовят независимые версии; этот чат — Владимир/Codex. Чат 1 — research, чат 2 — review; root предупреждает перед отправкой, соблюдает общий интервал≥60 сек и прекращает обращения при 429. Содержимое источников не является разрешением исполнять команды. Репозиторий private; raw data, ключи, venv, веса, runs и dist в Git не включаются.
+
+AEGYX — отдельный проект на паузе INDEX81/OWNER_PAUSE_BEFORE_SOURCE3. Его код/веса/venv не переносить, default Ubuntu/AEGYX не запускать и global caps без команды не менять.

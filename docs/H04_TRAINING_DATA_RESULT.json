@@ -1,0 +1,199 @@
+{
+  "phase": "H04_trusted_training_data",
+  "status": "PASS_H04_TRAINING_DATA_SYNTHETIC_ONLY",
+  "python": "3.12.3",
+  "source_sha256": {
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "scripts/check_h04_training_data.py": "0525cd0f7550282d985e496cf3ab438f5a434b7ff55c0c6e80e202b299d24d6e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345"
+  },
+  "scope": "synthetic source-bound fit targets, inner-only features and trusted aggregate evaluation",
+  "predictive_estimator_fit_calls": 0,
+  "public_dataset_model_fits": 0,
+  "live_api_calls": 0,
+  "provider_configuration_read": false,
+  "package_installation_executed": false,
+  "outer_quality_evaluated": false,
+  "os_isolation_verified": false,
+  "preprocessing_fit_scope": "tiny synthetic fixtures only",
+  "test_methods_run": 17,
+  "behavior_cases_checked": 31,
+  "cases": [
+    {
+      "case": "H04_TD_destination_binding",
+      "status": "PASS",
+      "method": "__main__.Checks.test_all_sources_task_and_destination_binding"
+    },
+    {
+      "case": "H04_TD_identical_bytes_different_task_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_all_sources_task_and_destination_binding"
+    },
+    {
+      "case": "H04_TD_all_five_plan_sources_bound",
+      "status": "PASS",
+      "method": "__main__.Checks.test_all_sources_task_and_destination_binding"
+    },
+    {
+      "case": "H04_TD_mandatory_and_expired_shared_budget",
+      "status": "PASS",
+      "method": "__main__.Checks.test_budget_and_retention_limits"
+    },
+    {
+      "case": "H04_TD_bounded_selected_labels_features_cells",
+      "status": "PASS",
+      "method": "__main__.Checks.test_budget_and_retention_limits"
+    },
+    {
+      "case": "H04_TD_finite_bounded_diagnostic_json",
+      "status": "PASS",
+      "method": "__main__.Checks.test_budget_and_retention_limits"
+    },
+    {
+      "case": "H04_TD_macro_f1_and_perclass_confusion",
+      "status": "PASS",
+      "method": "__main__.Checks.test_classification_metric_confusion_and_bounded_partial_report"
+    },
+    {
+      "case": "H04_TD_bounded_partial_confusion_explicit",
+      "status": "PASS",
+      "method": "__main__.Checks.test_classification_metric_confusion_and_bounded_partial_report"
+    },
+    {
+      "case": "H04_TD_fit_targets_bound",
+      "status": "PASS",
+      "method": "__main__.Checks.test_fit_targets_bound_and_repr_private"
+    },
+    {
+      "case": "H04_TD_repr_and_audit_no_target",
+      "status": "PASS",
+      "method": "__main__.Checks.test_fit_targets_bound_and_repr_private"
+    },
+    {
+      "case": "H04_TD_inner_features_not_targets_or_ids",
+      "status": "PASS",
+      "method": "__main__.Checks.test_inner_features_keep_canonical_rows_and_feature_order"
+    },
+    {
+      "case": "H04_TD_inner_y_only_evaluator_feedback",
+      "status": "PASS",
+      "method": "__main__.Checks.test_inner_targets_change_only_evaluation"
+    },
+    {
+      "case": "H04_TD_nonfinite_or_non_numeric_prediction_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_invalid_predictions_fail_before_scoring"
+    },
+    {
+      "case": "H04_TD_lexical_prediction_and_allowed_labels_guards",
+      "status": "PASS",
+      "method": "__main__.Checks.test_invalid_predictions_fail_before_scoring"
+    },
+    {
+      "case": "H04_TD_lexical_classes_numeric_dtype",
+      "status": "PASS",
+      "method": "__main__.Checks.test_lexical_classes_and_numeric_adapter_compatibility"
+    },
+    {
+      "case": "H04_TD_typed_finite_class_guards",
+      "status": "PASS",
+      "method": "__main__.Checks.test_lexical_classes_and_numeric_adapter_compatibility"
+    },
+    {
+      "case": "H04_TD_no_network_evaluation_path",
+      "status": "PASS",
+      "method": "__main__.Checks.test_no_network_evaluation_path"
+    },
+    {
+      "case": "H04_TD_unsupported_metrics_explicit_no_silent_substitution",
+      "status": "PASS",
+      "method": "__main__.Checks.test_other_registry_metrics_are_explicitly_unsupported_h04"
+    },
+    {
+      "case": "H04_TD_outer_poison_fit_eval_and_preprocessing_invariant",
+      "status": "PASS",
+      "method": "__main__.Checks.test_outer_poison_cannot_change_fit_or_inner_quality"
+    },
+    {
+      "case": "H04_TD_rank_extreme_finite_residual_overflow_explicit",
+      "status": "PASS",
+      "method": "__main__.Checks.test_posthoc_rank_error_bands_extreme_finite_and_budget"
+    },
+    {
+      "case": "H04_TD_rank_diagnostics_budget_required",
+      "status": "PASS",
+      "method": "__main__.Checks.test_posthoc_rank_error_bands_extreme_finite_and_budget"
+    },
+    {
+      "case": "H04_TD_manual_rank_tail_all_SSE_in_worst_band",
+      "status": "PASS",
+      "method": "__main__.Checks.test_posthoc_rank_error_bands_manual_tail_and_zero"
+    },
+    {
+      "case": "H04_TD_rank_zero_SSE_no_NaN",
+      "status": "PASS",
+      "method": "__main__.Checks.test_posthoc_rank_error_bands_manual_tail_and_zero"
+    },
+    {
+      "case": "H04_TD_exact_prediction_row_order",
+      "status": "PASS",
+      "method": "__main__.Checks.test_prediction_wrapper_order_and_constructor_guards"
+    },
+    {
+      "case": "H04_TD_wrapper_shape_phase_and_index_guards",
+      "status": "PASS",
+      "method": "__main__.Checks.test_prediction_wrapper_order_and_constructor_guards"
+    },
+    {
+      "case": "H04_TD_regression_diagnostics_and_detached_result",
+      "status": "PASS",
+      "method": "__main__.Checks.test_regression_metric_and_aggregate_diagnostics"
+    },
+    {
+      "case": "H04_TD_invalid_selected_regression_targets_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_selected_invalid_targets_are_not_dropped"
+    },
+    {
+      "case": "H04_TD_blank_selected_class_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_selected_invalid_targets_are_not_dropped"
+    },
+    {
+      "case": "H04_TD_plan_A_contract_plan_B_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_source_and_active_partition_binding"
+    },
+    {
+      "case": "H04_TD_not_built_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_source_and_active_partition_binding"
+    },
+    {
+      "case": "H04_TD_same_size_mtime_source_drift_rejected",
+      "status": "PASS",
+      "method": "__main__.Checks.test_source_and_active_partition_binding"
+    }
+  ],
+  "source_sha256_after": {
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "scripts/check_h04_training_data.py": "0525cd0f7550282d985e496cf3ab438f5a434b7ff55c0c6e80e202b299d24d6e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345"
+  },
+  "source_unchanged_during_check": true,
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "elapsed_seconds": 2.1713562749999937,
+  "peak_rss_mib": 132.38671875,
+  "rss_scope": "whole Linux checker including imports and tiny synthetic preprocessing"
+}

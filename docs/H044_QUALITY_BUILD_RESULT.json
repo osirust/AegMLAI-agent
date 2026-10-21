@@ -1,0 +1,28 @@
+{
+  "schema_version": "h04_quality_build_receipt.v1",
+  "status": "PASS_H04_ACTUAL_AGGREGATE_BUILD_ONLY",
+  "captured_at_utc": "2026-10-21T10:28:20.386574+00:00",
+  "python": "3.12.3",
+  "builder_sha256": "fd2efb45e4e56558247263e34577dbd5928aec499e1fcd04348bc45486779b99",
+  "checker_sha256": "d2f8b878a09486ec8b7b8959647733228873ce7a946ded917167b3f27c892984",
+  "synthetic_method_receipt_sha256": "cae3098b3df91e7dc37a3440b8da98420eaca3bbac22c76df9d91bca59d4853b",
+  "input_actual_baseline_receipt_sha256": "719d270bfea7502278abeba10af8d60ad0eac9b83f0a4dd1fcbfaaed8dce69dc",
+  "input_report_sha256": {
+    "regression": "9273730e2824ff6add764f2cf17798f4b923bbaa1ca7bf0f55b42a746dd55d1c",
+    "classification": "4308d1efdbe5e9de68e5fef8a7e128edef1fe5a22182d1cb297a71a44452423c"
+  },
+  "output_relative_path": "runs/quality/baseline-report.json",
+  "output_sha256": "6d8c42b1443ade9a3c582ec71e69dcb826fda91dfd44478848c732848eb26e9a",
+  "output_bytes": 37618,
+  "actual_builder_exit_code": 0,
+  "directory_fsync_warning": false,
+  "current_core_source_hashes_validated": true,
+  "input_report_paths_published": false,
+  "original_raw_data_read_by_builder": false,
+  "new_training_calls": 0,
+  "live_api_calls": 0,
+  "outer_quality_evaluated": false,
+  "frozen_refit_performed": false,
+  "hypotheses_implementation_status": "PREREGISTERED_NOT_IMPLEMENTED_NOT_TESTED",
+  "quality_scope": "two previously measured source-bound inner baseline reports; no independently repeated model fit by this builder"
+}

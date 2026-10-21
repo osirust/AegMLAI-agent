@@ -1,0 +1,67 @@
+{
+  "status": "PASS_SYNTHETIC_QUALITY_METHOD_CHECKS_ONLY",
+  "scope": "synthetic aggregate fixtures; NOT measured model quality or an actual dataset comparison",
+  "python": "3.12.3",
+  "test_methods_run": 9,
+  "behavior_cases_checked": 9,
+  "cases": [
+    {
+      "case": "H04_QUALITY_current_source_hash_and_fixed_cli_failure",
+      "status": "PASS",
+      "method": "__main__.Checks.test_actual_current_source_hash_and_failure_stdout_no_private_paths"
+    },
+    {
+      "case": "H04_QUALITY_cross_task_consistency_MacroF1_and_synthetic_CLI_gate",
+      "status": "PASS",
+      "method": "__main__.Checks.test_cross_task_pair_and_versions_and_fixed_not_accuracy"
+    },
+    {
+      "case": "H04_QUALITY_diagnostic_shape_integrity",
+      "status": "PASS",
+      "method": "__main__.Checks.test_diagnostic_contracts_refuse_missing_bands_bad_confusion"
+    },
+    {
+      "case": "H04_QUALITY_synthetic_directions_and_tail_weakclass_observations",
+      "status": "PASS",
+      "method": "__main__.Checks.test_directions_observations_and_not_measured_quality"
+    },
+    {
+      "case": "H04_QUALITY_negative_and_zero_gain_preserved",
+      "status": "PASS",
+      "method": "__main__.Checks.test_negative_and_zero_improvements_not_omitted"
+    },
+    {
+      "case": "H04_QUALITY_atomic_exclusive_private_output",
+      "status": "PASS",
+      "method": "__main__.Checks.test_new_atomic_output_preserved_on_repeat_and_no_temp"
+    },
+    {
+      "case": "H04_QUALITY_phase_counts_source_config_eval_gain_refusals",
+      "status": "PASS",
+      "method": "__main__.Checks.test_phase_call_count_source_and_config_refusals"
+    },
+    {
+      "case": "H04_QUALITY_preregistered_MEI_Tfit_only_and_allowlisted_output",
+      "status": "PASS",
+      "method": "__main__.Checks.test_preregistration_single_changes_MEI_and_no_leakage_claim"
+    },
+    {
+      "case": "H04_QUALITY_strict_bounded_source_reader",
+      "status": "PASS",
+      "method": "__main__.Checks.test_strict_reader_bytecap_duplicate_NaN_and_symlink"
+    }
+  ],
+  "source_sha256": {
+    "scripts/build_h04_quality_report.py": "fd2efb45e4e56558247263e34577dbd5928aec499e1fcd04348bc45486779b99",
+    "scripts/check_h04_quality_report.py": "d2f8b878a09486ec8b7b8959647733228873ce7a946ded917167b3f27c892984"
+  },
+  "source_sha256_after": {
+    "scripts/build_h04_quality_report.py": "fd2efb45e4e56558247263e34577dbd5928aec499e1fcd04348bc45486779b99",
+    "scripts/check_h04_quality_report.py": "d2f8b878a09486ec8b7b8959647733228873ce7a946ded917167b3f27c892984"
+  },
+  "source_unchanged": true,
+  "new_training_calls": 0,
+  "live_api_calls": 0,
+  "failures": [],
+  "errors": []
+}

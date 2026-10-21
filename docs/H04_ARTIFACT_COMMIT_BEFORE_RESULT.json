@@ -1,0 +1,28 @@
+{
+  "status": "BEFORE_ARTIFACT_POSTLINK_COMMIT_GAP_REPRODUCED",
+  "finding": "EXTERNAL_REVIEW_ID_PENDING_FULL_REPLY",
+  "scope": "synthetic trusted artifact publication failure only",
+  "source_sha256": {
+    "aegml_artifacts.py": "1bdb1991d3c49dd70e60150c6927e4f4c72e0bfa075fc718b7c26212bd7b1d75",
+    "scripts/check_h04_artifacts.py": "b8b371b2a999efdd5fbf31af33546518d940c435dc940a5c1ae4a7f72f98cf59",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_unchanged": true,
+  "observed": {
+    "fault_injections": 1,
+    "write_error": "artifact_write_failed",
+    "destination_exists": true,
+    "destination_valid_json": true,
+    "destination_sha256": "d12df96e8d922d035ca400abb39171428d8596f829f9bad5d707ef1c145e372c",
+    "destination_hardlink_count": 1,
+    "temporary_files_remaining": 0,
+    "manifest_record_count": 0,
+    "record_error": "unregistered_artifact",
+    "retry_error": "artifact_exists",
+    "original_task_unchanged": true
+  },
+  "model_fit_calls": 0,
+  "live_api_calls": 0,
+  "generated_code_executed": false
+}

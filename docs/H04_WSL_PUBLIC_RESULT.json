@@ -1,0 +1,169 @@
+{
+  "status": "PASS_H04_ACTUAL_PUBLIC_WSL_ONLY",
+  "backend": "WSL_FRESH_PROCESS",
+  "cases": [
+    {
+      "task_type": "regression",
+      "status": "PASS_ACTUAL_H04_BASELINE_ONLY",
+      "outcome": {
+        "schema_version": "baseline_outcome.v1",
+        "phase": "H04",
+        "status": "baseline_completed",
+        "contract_valid": true,
+        "submission_valid": true,
+        "feature_model_fitted": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "research_completed": false,
+        "live_api_calls": 0,
+        "official_score": null,
+        "warnings": [
+          "fixed_baseline_only",
+          "official_image_unverified",
+          "H05_boundary_not_verified"
+        ],
+        "termination_reason": "fixed_baseline_complete",
+        "inner_metric": {
+          "name": "rmse",
+          "constant": 58.460385733996254,
+          "feature_model": 47.30324429281982,
+          "improvement": 11.157141441176435
+        },
+        "selected": "feature_model",
+        "submission_sha256": "ee57ae887177f01a2aba013d47e0105ee461e943ce0b9781bf93cea123831ab4",
+        "submission_rows": 22449,
+        "run_directory": ".aegml-run-548641afd6b4499995295c6a09e3c7d6",
+        "manifest_sha256": "815aec9f9aae90d5f1a5c3f94559c2935f606a1d58cba304523d5b3edc4069d1",
+        "exit_code": 0,
+        "progress_phase": "baseline_completed",
+        "timer": {
+          "total_seconds": 900.0,
+          "reserve_seconds": 60.0,
+          "elapsed_seconds": 10.94801476,
+          "remaining_seconds": 889.05198524,
+          "work_remaining_seconds": 829.05198524,
+          "cooperative_only": true
+        }
+      },
+      "report_path": "/home/aegml/checks/h04-public-20261021/stages-attempt1/regression/.aegml-run-548641afd6b4499995295c6a09e3c7d6/baseline-report.json",
+      "report_sha256": "9273730e2824ff6add764f2cf17798f4b923bbaa1ca7bf0f55b42a746dd55d1c",
+      "submission_path": "/home/aegml/checks/h04-public-20261021/stages-attempt1/regression/submission.csv",
+      "submission_rows": 22449,
+      "submission_sha256": "ee57ae887177f01a2aba013d47e0105ee461e943ce0b9781bf93cea123831ab4",
+      "source_sha256": {
+        "task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      "elapsed_seconds_including_python_startup": 11.043814700000013,
+      "oracle": {
+        "status": "PASS_ACTUAL_INNER_SKLEARN_ORACLE",
+        "values": {
+          "constant": 58.460385733996254,
+          "model": 47.30324429281982
+        },
+        "inner_rows": 12946,
+        "outer_targets_retained_or_scored": false
+      },
+      "outer_quality_evaluated": false,
+      "official_score": null
+    },
+    {
+      "task_type": "classification",
+      "status": "PASS_ACTUAL_H04_BASELINE_ONLY",
+      "outcome": {
+        "schema_version": "baseline_outcome.v1",
+        "phase": "H04",
+        "status": "baseline_completed",
+        "contract_valid": true,
+        "submission_valid": true,
+        "feature_model_fitted": true,
+        "api_verified": false,
+        "tools_verified": false,
+        "research_completed": false,
+        "live_api_calls": 0,
+        "official_score": null,
+        "warnings": [
+          "fixed_baseline_only",
+          "official_image_unverified",
+          "H05_boundary_not_verified"
+        ],
+        "termination_reason": "fixed_baseline_complete",
+        "inner_metric": {
+          "name": "macro_f1",
+          "constant": 0.048411497730711045,
+          "feature_model": 0.5046438478429278,
+          "improvement": 0.45623235011221674
+        },
+        "selected": "feature_model",
+        "submission_sha256": "66363794a0ac97053269ae2b33f688a28e0e8adb4c4334be6535fbadf1dfb22b",
+        "submission_rows": 41166,
+        "run_directory": ".aegml-run-dae813ff797b4b08ac5d427c1dd677cb",
+        "manifest_sha256": "7828ffcb5123681dbb527456c9c42c370cbbce5c9cfd1a859fbed63196f024fd",
+        "exit_code": 0,
+        "progress_phase": "baseline_completed",
+        "timer": {
+          "total_seconds": 900.0,
+          "reserve_seconds": 60.0,
+          "elapsed_seconds": 27.4076509,
+          "remaining_seconds": 872.5923491,
+          "work_remaining_seconds": 812.5923491,
+          "cooperative_only": true
+        }
+      },
+      "report_path": "/home/aegml/checks/h04-public-20261021/stages-attempt1/classification/.aegml-run-dae813ff797b4b08ac5d427c1dd677cb/baseline-report.json",
+      "report_sha256": "4308d1efdbe5e9de68e5fef8a7e128edef1fe5a22182d1cb297a71a44452423c",
+      "submission_path": "/home/aegml/checks/h04-public-20261021/stages-attempt1/classification/submission.csv",
+      "submission_rows": 41166,
+      "submission_sha256": "66363794a0ac97053269ae2b33f688a28e0e8adb4c4334be6535fbadf1dfb22b",
+      "source_sha256": {
+        "task.md": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      "elapsed_seconds_including_python_startup": 27.576494517000015,
+      "oracle": {
+        "status": "PASS_ACTUAL_INNER_SKLEARN_ORACLE",
+        "values": {
+          "constant": 0.048411497730711045,
+          "model": 0.5046438478429278
+        },
+        "inner_rows": 14028,
+        "outer_targets_retained_or_scored": false
+      },
+      "outer_quality_evaluated": false,
+      "official_score": null
+    }
+  ],
+  "source_sha256": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "1bdb1991d3c49dd70e60150c6927e4f4c72e0bfa075fc718b7c26212bd7b1d75",
+    "aegml_baseline.py": "3c0e3af94479e6c4c842c15e16c255ccbba9b227ab1cefafc54c2f1470bac851",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "4182d9119f09101ad35483d50e8a5ee43b0632fa48d6958cf52f43bb19097cd3",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h04_public.py": "5bb41e0b2ba3d8ed488c332701a3d472c0bfd05cff3b06098066d024a695ba0c"
+  },
+  "live_api_calls": 0,
+  "new_official_submission": false,
+  "official_score_computed": false,
+  "official_image_verified": false,
+  "pilot_time_limit_seconds": 900,
+  "reserve_seconds": 60,
+  "threads": 8,
+  "capture_scope": "trusted short logs, postcapture size validation; not H05 log enforcement",
+  "source_unchanged": true,
+  "original_inputs_unchanged": true
+}

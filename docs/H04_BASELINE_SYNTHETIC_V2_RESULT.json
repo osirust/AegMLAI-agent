@@ -1,0 +1,240 @@
+{
+  "status": "PASS_H04_BASELINE_SYNTHETIC_ONLY",
+  "python": "3.12.3",
+  "source_sha256": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h04_baseline.py": "97b39af5a57f9eb914345c5a210c854a636f817f6344af60fb31168e781be556"
+  },
+  "scope": "synthetic trusted fixed-baseline orchestration, no public fit",
+  "public_model_fit_calls": 0,
+  "live_api_calls": 0,
+  "generated_code_executed": false,
+  "official_image_verified": false,
+  "full_H05_accepted": false,
+  "test_methods_run": 14,
+  "behavior_cases_checked": 27,
+  "behavior_cases_passed": 27,
+  "cases": [
+    {
+      "test": "__main__.BaselineChecks.test_better_mock_candidate_applies_mapping_exactly_once",
+      "case": "mock_better_distinct_predictions_mapping_once_sample",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_better_mock_candidate_applies_mapping_exactly_once",
+      "case": "mock_better_distinct_predictions_mapping_once_test",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_last_published_SHA_survives_postcommit_errors",
+      "case": "external_current_published_sha_work_expired",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_last_published_SHA_survives_postcommit_errors",
+      "case": "external_current_published_sha_validation_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_last_published_SHA_survives_postcommit_errors",
+      "case": "external_current_published_sha_precommit_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_unresolved_temporal_table_False",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_unresolved_temporal_table_True",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_valid_temporal_table_still_temporal",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_external_temporal_table_unknown_column_never_becomes_IID",
+      "case": "external_absent_temporal_declaration_still_explicit_IID",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_failure_progress_is_factual_and_early_output_remains_valid",
+      "case": "H04_CLI_PROGRESS_failure_after_early_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_failure_progress_is_factual_and_early_output_remains_valid",
+      "case": "H04_CLI_PROGRESS_failure_after_early_prediction",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_generic_temporal_renaming_iid_and_unresolved_time_refusal",
+      "case": "renamed_six_period_regression_exact_chronological_partition",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_generic_temporal_renaming_iid_and_unresolved_time_refusal",
+      "case": "no_time_declaration_has_explicit_named_iid_policy",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_generic_temporal_renaming_iid_and_unresolved_time_refusal",
+      "case": "declared_unresolved_temporal_split_does_not_fall_back_iid",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_literal_platform_cli_fresh_flat_root_with_one_tiny300_model",
+      "case": "literal_python3_solution_task_cold_flatcopy_300trees_synthetic_classification",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_parse_failure_and_expiry_keep_original_shared_budget",
+      "case": "H04_CLI_TIMER_original_budget_after_parse_threads",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_parse_failure_and_expiry_keep_original_shared_budget",
+      "case": "H04_CLI_TIMER_original_budget_after_parse_path",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_parse_failure_and_expiry_keep_original_shared_budget",
+      "case": "H04_CLI_TIMER_budget_exception_without_returned_config_uses_exc_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_progress_cannot_be_reused_from_another_run",
+      "case": "nonempty_progress_is_not_accepted_as_prior_success",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_real_classification_restores_literal_labels_and_output_schema",
+      "case": "real_tiny10_macroF1_restores_001_NA_unicode_labels",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_real_outer_target_poison_does_not_change_search_or_predictions",
+      "case": "real_tiny10_outer_y_poison_invariant_fit_inner_test_predictions",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_real_regression_full_chain_temporal_and_provenance",
+      "case": "real_tiny10_regression_inner_metrics_and_published_csv",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_source_mismatch_refuses_before_new_target_retention",
+      "case": "source_bytes_changed_after_contract_are_rejected_by_target_loader",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_split_metadata_and_membership_data_files_are_bounded",
+      "case": "H04_SPLIT_ARTIFACT_metadata_only_plus_three_membership_csvs",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_split_metadata_and_membership_data_files_are_bounded",
+      "case": "H04_SPLIT_ARTIFACT_200k_membership_stream_fits_without_large_json",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_worse_and_tied_feature_candidates_preserve_constant_bytes_and_mtime",
+      "case": "mock_worse_keeps_early_constant_sha_and_mtime",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.BaselineChecks.test_worse_and_tied_feature_candidates_preserve_constant_bytes_and_mtime",
+      "case": "mock_tie_keeps_early_constant_sha_and_mtime",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256_after": {
+    "solution.py": "a71a8474359b7b620148cf1db026b0baf5b993084744be304de33a3976030f57",
+    "aegml_artifacts.py": "ca40ae8779b16f2d6c12e7bf2d10b5653a007a71d55d44b376aae3d68bdd3b88",
+    "aegml_baseline.py": "8e68fa7a9f68a55a179eb11275f5b966119c6e80d4271dc997daa77b3537906e",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h04_baseline.py": "97b39af5a57f9eb914345c5a210c854a636f817f6344af60fb31168e781be556"
+  },
+  "source_unchanged": true,
+  "direct_actual_synthetic_fits": [
+    {
+      "scope": "synthetic_only",
+      "task_type": "classification",
+      "rows": 38,
+      "iterations": 10,
+      "threads": 2,
+      "status": "PASS",
+      "model_sha256": "c87e694f2edfc6ce4407dc90bc848287711d581cf78cb2cfc6f83d873f204a8d"
+    },
+    {
+      "scope": "synthetic_only",
+      "task_type": "regression",
+      "rows": 40,
+      "iterations": 10,
+      "threads": 2,
+      "status": "PASS",
+      "model_sha256": "e5ed31345514e64c5ff684870b408bec003b30a22593fd1e180af32cdbd86a92"
+    },
+    {
+      "scope": "synthetic_only",
+      "task_type": "regression",
+      "rows": 40,
+      "iterations": 10,
+      "threads": 2,
+      "status": "PASS",
+      "model_sha256": "b4fd09f48a8c06002325011620fa558f7c9c2a811270f00a9cf43c88df2aee36"
+    },
+    {
+      "scope": "synthetic_only",
+      "task_type": "regression",
+      "rows": 40,
+      "iterations": 10,
+      "threads": 2,
+      "status": "PASS",
+      "model_sha256": "267a9979ace8cef8f32855e1640b1d5b4b773ec8d756124fb8b84104bbff4dc8"
+    }
+  ],
+  "literal_cli_checks": [
+    {
+      "command": "python3 solution.py task.md",
+      "synthetic_only": true,
+      "exit_code": 0,
+      "status": "baseline_completed",
+      "source_and_inputs_unchanged": true,
+      "stderr_bytes": 0,
+      "actual_model_fit_calls": 1
+    }
+  ],
+  "direct_actual_synthetic_fit_calls": 4,
+  "literal_cli_invocations": 1,
+  "network_events": [],
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "unittest_skips": []
+}

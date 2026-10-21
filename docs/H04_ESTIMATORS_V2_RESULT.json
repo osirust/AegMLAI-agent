@@ -1,0 +1,395 @@
+{
+  "status": "PASS_H04_ESTIMATOR_TINY_ONLY",
+  "python": "3.12.3",
+  "catboost": "1.2.8",
+  "test_methods_run": 13,
+  "cases_checked": 48,
+  "cases_passed": 48,
+  "cases": [
+    {
+      "test": "__main__.EstimatorChecks.test_binary_classifier_loss_and_probability_orientation",
+      "case": "tiny_binary_Logloss_and_original_class_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "mandatory_shared_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "expired_budget_propagates_without_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_iterations_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_iterations_301",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_threads_9",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_threads_True",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "bad_config_seed_-1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_budget_config_and_sparse_structure_guards",
+      "case": "corrupt_CSR_indices_refused_before_native_backend",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_class_mapping_mutation_and_defensive_metadata",
+      "case": "metadata_properties_are_defensive_copies",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_class_mapping_mutation_and_defensive_metadata",
+      "case": "class_map_mutation_rejected_before_decoding",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_correct_equal_N_fit_real_tiny_positive",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_raw_test_equal_N_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_raw_fit_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_missing_factory_token_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_swapped_test_data_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_changed_category_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_wrong_row_space_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_equal_fit_test_size",
+      "case": "H04-FIT-MATRIX-BIND-001_in_place_numeric_mutation_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_sparse_mutation_and_factory_guards",
+      "case": "H04-FIT-MATRIX-BIND-001_CSR_witness_without_toarray",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_sparse_mutation_and_factory_guards",
+      "case": "H04-FIT-MATRIX-BIND-001_mutated_CSR_data_refused_before_Pool",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_sparse_mutation_and_factory_guards",
+      "case": "H04-FIT-MATRIX-BIND-001_factory_rejects_raw_test_frame",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_sparse_mutation_and_factory_guards",
+      "case": "H04-FIT-MATRIX-BIND-001_factory_rejects_caller_asserted_view",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_matrix_binding_sparse_mutation_and_factory_guards",
+      "case": "H04-FIT-MATRIX-BIND-001_factory_rejects_unbound_split",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "target_provenance_mismatch_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_active_split_binding",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_source_file_bytes_verified",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_trained_statistics_sha256",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "preprocessing_audit_mismatch_feature_order_sha256",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "raw_target_vector_cannot_bypass_TargetBatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "bad_regression_target_nonfinite_regression_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fit_provenance_and_targets_fail_before_backend_fit",
+      "case": "bad_regression_target_invalid_regression_target",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_fractional_numeric_class_labels_are_restored",
+      "case": "tiny_fractional_class_codes_are_encoded_and_restored",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_multiclass_labels_probabilities_and_roworder",
+      "case": "tiny_multiclass_restores_001_NA_unicode_and_explicit_probability_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_pool_construction_expiry_denies_actual_fit",
+      "case": "H04-ESTIMATOR-ADMISSION-001_expired_after_Pool_never_starts_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_prepared_feature_order_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_prediction_preprocessing_mismatch",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_invalid_prepared_row_indices",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "prepared_tamper_invalid_prepared_schema",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "numeric_infinity_refused_before_CatBoost",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_prepared_schema_and_state_tampering",
+      "case": "learned_leaf_mutation_changes_model_state_digest",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_real_regression_native_fit_predict_and_parameters",
+      "case": "tiny_regression_real10trees_native_finite_nonconstant_predictions",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_sparse_text_route_without_densification",
+      "case": "tiny_CSR_TFIDF_real_fit_preserves_sparse_input",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.EstimatorChecks.test_unknown_category_and_explicit_numeric_nan",
+      "case": "native_unknown_category_and_numeric_NaN_supported",
+      "status": "PASS"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "tiny_fits": [
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.05697895099999073,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "691a3099c087fe54c1cf13df8b03eafcdcbe73a4885cde538fccd242469f13df",
+      "model_sha256": "7b8afcf3c2674955b0580742b11a00806f11e6a6709eb494cb35310edb54ce05",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003259681999992381,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "84b4ed497c5a0da74bcc87c780ef0478ce3e8afef03f8f8c7e6aa3f959e83401",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0025952890000269235,
+      "fit_rows": 3,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "dc6dea1e41e80da5dd8bc8ff7babdd203c5da4f20890ed45bb1361ae0b7318d3",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0032617620000223724,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "f31803645faf28a06a69fe5cb3740675f463ae5ca43573038f9d061f32c2c70b",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003223577999989402,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "3a692a1b3036cabd2dc8e18e4ad1ac43c9707d3e20a8cc6fe91b31aefcd5feb6",
+      "model_sha256": "8176ce357cdca0b0b3c6e7825710f2e41880b57ad64f01c45ad4e8479c365396",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003068740000003345,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "f57055f17d1874be4b6f3b449ef0cc7bc5edfcb5827c8fe547d143c1dc1d5f75",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.003134384999981421,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "a149adab3827ffaba5cb7297b7762747448d470a6e385df98fadb5b1d6c286a9",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "classification",
+      "format": "csr",
+      "iterations": 10,
+      "fit_seconds": 0.003600072000011778,
+      "fit_rows": 19,
+      "effective_parameters_sha256": "5629f62464508843171b805389c681a4dd2c271785ab7cccddabec9f057a3673",
+      "model_sha256": "508323e442cb5b171642b7d492eb1c5f24e63655058ff9703c64849acaf17bb0",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    },
+    {
+      "task_type": "regression",
+      "format": "native_dataframe",
+      "iterations": 10,
+      "fit_seconds": 0.0032319219999976667,
+      "fit_rows": 18,
+      "effective_parameters_sha256": "4b1502876add81af13194ef7009e6fe0389b799b64db1d5c09cdb4acedb2ccf2",
+      "model_sha256": "e17af82d7aa6796c8bddc94f560a6d7df2de5c992ec498649374fd63e3b51fdb",
+      "source_unchanged": true,
+      "synthetic_only": true,
+      "no_public_model_fit": true
+    }
+  ],
+  "source_sha256": {
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "scripts/check_h04_estimators.py": "fe47245f4868727286dd1d1a507101d60681607549a987f12621ce66ccaa9429",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_sha256_after": {
+    "aegml_estimators.py": "530d80a62332f122fa3e9602e27c8f0fd619d2e7a2cdbe2020beb442f7a10943",
+    "scripts/check_h04_estimators.py": "fe47245f4868727286dd1d1a507101d60681607549a987f12621ce66ccaa9429",
+    "aegml_training_data.py": "b1475aa12b3f16820aefcb8f2b97481ccd587b70fa23cae006b8db36a4b6caee",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "source_unchanged": true,
+  "API_calls": 0,
+  "public_dataset_model_fits": 0,
+  "tiny_iterations": 10,
+  "production_default_iterations": 300,
+  "model_quality_claimed": false,
+  "refit_executed": false,
+  "H05_boundary_verified": false,
+  "peak_RSS_MiB_process": 161.35546875
+}
