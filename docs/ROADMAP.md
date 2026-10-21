@@ -7,7 +7,7 @@
 | H00 | Источники, ТЗ, доказательства и минимальная среда | Документы готовы; отдельная stdlib-WSL проверена в своём scope |
 | H01 | Обзор, математика, harness и план сравнения | Проектирование готово; эксперименты NOT_RUN |
 | H02 | Пакеты, entrypoint, TaskContract, Docker/profile | H02.1 LOCAL_SUBSET, H02.2 BOOTSTRAP_ONLY, H02.3 CONTRACT_ONLY и H02.4 LOCAL_CONTAINER_ONLY подтверждены в своих областях |
-| H03 | Профиль, преобразования, метрики, split и CSV | NOT_RUN полного агента |
+| H03 | Профиль, преобразования, метрики, split и CSV | Локальные компоненты и сквозная цепочка прошли; внешний review/текущие границы — [H03_RECEIPT](H03_RECEIPT.md) |
 | H04 | CPU-модели обеих задач и разбор ошибок | NOT_RUN |
 | H05 | OS-worker, срок, ресурсы и восстановление | NOT_RUN полного worker boundary; H02.4 подтвердил только локальные canary |
 | H06 | Qwen, replay, live safe-tool и отказы | CONFIGURED_UNVERIFIED; live только по команде; mini не заменяет tools |
@@ -18,8 +18,8 @@
 | H11 | Сравнение замороженных версий команды | План четырёх независимых версий; готовые конкурсные версии ещё не оценены |
 | H12 | Preflight, отправка и финальные доказательства | NOT_RUN полного агента; mini-наблюдения отдельно |
 
-По командам владельца завершены H02.1 LOCAL_SUBSET, H02.2 BOOTSTRAP_ONLY, H02.3 CONTRACT_ONLY и **H02.4 — PASS_H02_4_LOCAL_CONTAINER_ONLY**. H02.4: 6/6 ресурсных canary, импорты 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач; [квитанция](H024_RECEIPT.md). После трёх исправлений review текущий parser прошёл 38 методов / 93 сценария / 4 CLI, bootstrap — 24/51/37; [H023_REVIEW_FIXES](H023_REVIEW_FIXES.md). Старые 34/76/4 и H022-квитанции сохранены историческими. CLI пока создаёт только два JSON с contract_valid=true и exit 3 / implementation_incomplete, не новый CSV.
-Следующий **H03.1**, затем H03.2–H03.5 → H04 выполняются по новым отдельным командам. ML-venv, старая stdlib-venv и история сохраняются; все 74 основных + 17 пересекающихся будущих сценариев остаются NOT_RUN.
+По командам владельца завершены H02.1 LOCAL_SUBSET, H02.2 BOOTSTRAP_ONLY, H02.3 CONTRACT_ONLY и **H02.4 — PASS_H02_4_LOCAL_CONTAINER_ONLY**. H02.4: 6/6 ресурсных canary, импорты 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач; [квитанция](H024_RECEIPT.md). Текущий TaskContract прошёл43/108/6, bootstrap24/51/37; [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md). Прежние34/76 и38/93, а также H022-квитанции сохранены историческими. CLI пока создаёт только два JSON с contract_valid=true и exit 3 / implementation_incomplete, не новый CSV.
+Весь H03.1–H03.5 разрешён отдельной командой21.10. После его приёмки следующий H04 выполняется только по новой команде. ML-venv, старая stdlib-venv и история сохраняются; все 74 основных + 17 пересекающихся будущих сценариев остаются NOT_RUN.
 H06.1 возможен offline; API-запросов 0, **LIVE_API_ON_OWNER_COMMAND_ONLY**. H06.2 после отдельной команды проверит безопасный tool отдельно от ML. H07 требует H04 + H05 + H06; локальный Docker H02.4 готов, но generated code запрещён до отдельной H05.1. Полный официальный образ, OS-worker boundary и трёхчасовой прогон ещё не проверены.
 Полные серии на 24/30/72/90 часов — арифметика будущей работы, не обещанная длительность проекта и не автоматически разрешённые запуски.
 

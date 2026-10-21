@@ -1,0 +1,400 @@
+{
+  "status": "PASS_H03_4_SUBMISSION_COMPONENT_ONLY",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "test_methods_run": 15,
+  "behavior_cases_checked": 68,
+  "behavior_cases_passed": 68,
+  "cases": [
+    {
+      "test": "__main__.SubmissionChecks.test_actual_public_full_synthetic_predictions_only",
+      "case": "actual_full_writer_Регрессия",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_actual_public_full_synthetic_predictions_only",
+      "case": "actual_full_writer_Многоклассовая классификация",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_binary_probability_positive_label",
+      "case": "positive_probability_requires_explicit_orientation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_binary_probability_positive_label",
+      "case": "correct_binary_positive_probability",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_contract_sample_permutation_and_target_first",
+      "case": "task_sample_order_targets_first_raw_ID_permutation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_contract_sample_permutation_and_target_first",
+      "case": "source_hash_change_before_schema_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_empty",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_header_only",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_extra_index",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_wrong_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_normalized_id",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_duplicate_id",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_missing_row",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_extra_row",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_extra_cell",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_infinity",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_empty_prediction",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_invalid_utf8",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_malformed_quote",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_invalid_csv_matrix",
+      "case": "reject_nul",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_io_failure_before_replace_preserves_old",
+      "case": "fsync_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_io_failure_before_replace_preserves_old",
+      "case": "replace_failure",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_io_failure_before_replace_preserves_old",
+      "case": "directory_fsync_failure_after_valid_commit_is_explicit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_label_vocabulary_and_literal_NA",
+      "case": "literal_NA_valid_class_and_unicode_raw_id",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_label_vocabulary_and_literal_NA",
+      "case": "label_rejected_unknown",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_label_vocabulary_and_literal_NA",
+      "case": "label_rejected_None",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_label_vocabulary_and_literal_NA",
+      "case": "label_rejected_True",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_label_vocabulary_and_literal_NA",
+      "case": "label_rejected_nan",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_numpy_class_order_accepted",
+      "case": "numpy_estimator_classes_order_not_boolean_tested",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_positional_output_only_ids",
+      "case": "explicit_positional_output_only_template_IDs",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_missing",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_extra",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_generator",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_strings",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_boolean",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "predict_reject_nonfinite",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "schema_reject_empty",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "schema_reject_repeated_map",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "schema_reject_bool_map",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "schema_reject_wrong_ids",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_prediction_shape_types_and_schema_rejection",
+      "case": "schema_reject_mutable",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "explicit_class_order_probability_publication",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_wrong_class_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_unspecified_class_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_bad_sum",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_out_of_range",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_nonfinite",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_wrong_width",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_probability_mapping_and_range",
+      "case": "probability_reject_boolean",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_stale_output_digest",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_forged_digest_test_nonidentity",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_sample_map_wrong_actual_ids",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_wrong_count",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_wrong_order",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_bool_mapping",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_valid_TEST_identity_with_permuted_sample",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_valid_SAMPLE_actual_nonidentity",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_review_mapping_bound_to_contract_and_actual_ids",
+      "case": "mapping_bind_SAMPLE_rehashed_wrong_map",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_size_record_and_deadline_limits",
+      "case": "writer_byte_limit_preserves_old",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_size_record_and_deadline_limits",
+      "case": "logical_multiline_record_bound",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_size_record_and_deadline_limits",
+      "case": "shared_deadline_expiry_keeps_old",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_size_record_and_deadline_limits",
+      "case": "missing_budget_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_summary_streaming_memory_and_budget",
+      "case": "large_ID_summary_avoids_full_JSON_allocation",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_summary_streaming_memory_and_budget",
+      "case": "expiry_during_summary_cannot_return_VALID",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_symlink_and_external_candidate_rejected",
+      "case": "existing_output_symlink_not_followed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_symlink_and_external_candidate_rejected",
+      "case": "external_candidate_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.SubmissionChecks.test_valid_fresh_atomic_numeric_and_sha",
+      "case": "numeric_full_publication_and_independent_sha",
+      "status": "PASS"
+    }
+  ],
+  "actual_public": [
+    {
+      "dataset": "Регрессия",
+      "status": "PASS_WRITER_FIXTURE_ONLY",
+      "row_count": 22449,
+      "bytes": 177656,
+      "submission_sha256": "87f080b960b99ec1e5b4ce273d79628bdb6418480650d79a7140418a56937e12",
+      "source_sha256_preserved": true,
+      "seconds": 1.1730482610000195,
+      "peak_rss_mib_process": 87.48828125,
+      "predictions_origin": "synthetic constants for format checks, NOT trained baseline",
+      "quality_metric_computed": false,
+      "original_input_directory_written": false
+    },
+    {
+      "dataset": "Многоклассовая классификация",
+      "status": "PASS_WRITER_FIXTURE_ONLY",
+      "row_count": 41166,
+      "bytes": 524062,
+      "submission_sha256": "1d48ebbc5487800102fc361274c00a1291890dbd1fba67bae0502afa8be7f3a4",
+      "source_sha256_preserved": true,
+      "seconds": 1.0072222499999839,
+      "peak_rss_mib_process": 87.48828125,
+      "predictions_origin": "synthetic constants for format checks, NOT trained baseline",
+      "quality_metric_computed": false,
+      "original_input_directory_written": false
+    }
+  ],
+  "source_sha256": {
+    "aegml_submission.py": "ca4f1cde24f8a9cdd7a58e076473f7ef4c71c8f57ca3b26eb08647d2d192ec6a",
+    "scripts/check_h034_submission.py": "d80b2a8eb8ec42f398c5a230f58e2899b506479a483fdd61260fd00df35f7bca",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715"
+  },
+  "source_sha256_after": {
+    "aegml_submission.py": "ca4f1cde24f8a9cdd7a58e076473f7ef4c71c8f57ca3b26eb08647d2d192ec6a",
+    "scripts/check_h034_submission.py": "d80b2a8eb8ec42f398c5a230f58e2899b506479a483fdd61260fd00df35f7bca",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715"
+  },
+  "source_unchanged": true,
+  "failures": [],
+  "errors": [],
+  "skips": 0,
+  "live_api_calls": 0,
+  "model_fit_calls": 0,
+  "official_platform_image_verified": false,
+  "H05_boundary_accepted": false,
+  "new_official_submission": false
+}

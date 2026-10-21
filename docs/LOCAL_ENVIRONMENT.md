@@ -1,8 +1,8 @@
 # Локальная среда и развёртывание на платформе
 
-Редакция 20.10.2026. **Текущий результат — PASS_H02_4_LOCAL_CONTAINER_ONLY**: Engine/локальный образ, 6/6 ресурсных canary, пакетная проверка 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач. [Квитанция H02.4](H024_RECEIPT.md), [профиль](container-profile.json). Следующий H03.1 начинается только по новой команде владельца.
+Редакция 21.10.2026. Среда H02.4 сохранена как **PASS_H02_4_LOCAL_CONTAINER_ONLY**: Engine/локальный образ, 6/6 ресурсных canary, пакетная проверка 13 прямых pins / 45 distributions / Python 3.12.3 и literal Docker CLI двух actual public-задач. [Квитанция H02.4](H024_RECEIPT.md), [профиль](container-profile.json). Владелец разрешил весь H03.1–H03.5; библиотечные компоненты реализованы, текущие review fixes и свежая общая перепроверка ещё выполняются. [Сводка H03](H03_RECEIPT.md) обновляется отдельно и пока не объявляет окончательную готовность агента.
 
-H02.3 после полного review прошёл43метода/108сценариев/6CLI, bootstrap24/51/37; CLI-checker11/17mock и2actualDocker: [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md). Старые38/93/4 сохранены историческими. Прежние H023 34/76/4 и H022-квитанции сохранены историческими. Обучение, реальные LLM-запросы и новый CSV полного агента не выполнялись.
+H02.3 после полного review прошёл43метода/108сценариев/6CLI, bootstrap24/51/37; CLI-checker11/17mock и2actualDocker: [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md). Старые38/93/4 сохранены историческими. Прежние H023 34/76/4 и H022-квитанции сохранены историческими. В H03 реально обучались состояния предобработки и TF‑IDF; predictive estimator, реальные LLM-запросы и официальный submission не выполнялись. Writer проверен на форматных константах в рабочих копиях.
 
 ## 1. Что действительно существует
 
@@ -11,10 +11,11 @@ H02.3 после полного review прошёл43метода/108сцена�
 | Windows-ПК | Ryzen 5 9600X, 12 логических CPU, заявленные 32 GiB DDR5 и RTX 5070 Ti 16 GB; в inventory 33 410 088 960 байт физической памяти; Windows 11 Pro | Это не объём свободной RAM процесса и не измерение скорости модели |
 | WSL2 | AegML-Hackathon, Ubuntu 24.04.5, пользователь aegml; VHD на E:/WSL/AegML-Hackathon | Отдельная WSL сама по себе не подтверждает H05 worker boundary |
 | Старая stdlib-venv | Python 3.12.3, /home/aegml/venvs/aegml-py312; 0 сторонних distributions, сохранена | Историческая минимальная среда, не полный requirements |
-| ML-venv H02.1 | /home/aegml/venvs/aegml-ml-py312; 13 direct pins / 45 distributions, 9 smoke и pip check PASS | Fit и полный официальный образ не проверены |
+| ML-venv H02.1 | /home/aegml/venvs/aegml-ml-py312; 13 direct pins / 45 distributions, 9 smoke и pip check PASS | H03 fit предобработки выполнен; predictive estimator и полный официальный образ не проверены |
 | Установочные артефакты | 44 dependency wheels и bootstrap pip; исходные версии/пути/SHA в [environment-lock.json](environment-lock.json) | Wheels/pip нельзя включать в submission ZIP |
-| TaskContract H02.3 | Resolver, target/type/metric/ID, finite schemas и направленные карты; текущие [43/108/6](H02_REVIEW_REPAIRS.md) | Профиль признаков, метрики, folds и ML отсутствуют |
+| TaskContract H02.3 | Resolver, target/type/metric/ID, finite schemas и направленные карты; историческая приёмка — [H02_REVIEW_REPAIRS](H02_REVIEW_REPAIRS.md) | H03 добавил профиль, numerical metrics/splits, preprocessing и writer; текущие fixes — [H03_RECEIPT](H03_RECEIPT.md) |
 | Текущий CLI | Два свежих JSON task_contract/row_alignment, exit 3 / implementation_incomplete, contract_valid=true | API/tools/research/submission false, experiments 0; нового CSV нет |
+| H03 library foundation | Профиль, train-only preprocessing, metrics/splits и trusted writer; отдельные локальные квитанции в [H03_RECEIPT](H03_RECEIPT.md) | Компоненты и свежая trusted-цепочка WSL/Docker прошли; относящиеся post-fix review завершены. CLI ещё не подключён как полный агент |
 | WSL ресурсы H02.4 | Configured memory 24 GiB; замер 25 202 294 784 байт RAM ≈ 23,47 GiB; swap 4 GiB на E:, CPU 12 | Память гостя после накладных расходов и общий cap не равны свободной памяти модели |
 | Docker Engine | 29.9.1, rootful, Unix socket, cgroup v2/systemd; daemon запускается systemd | Пользователь aegml не добавлен в docker group; вложенный Docker платформы не предполагается |
 | Docker storage | /var/lib/docker внутри Linux VHD AegML-Hackathon на E: | Docker Desktop и второй backend не готовились |
@@ -29,7 +30,7 @@ Python 3.12.3 — patch-релиз ветки 3.12; замена на 3.12.0 н�
 | --- | --- | --- |
 | Windows/Codex | Основной Git, редактор, документация | E:/work/AegMLAI-agent |
 | Исходные материалы | Неизменяемые файлы кейса | drive-download-20261019T181414Z-1-001 внутри проекта |
-| WSL/Python | Две сохранённые venv; проверки без fit | AegML-Hackathon, Linux VHD на E: |
+| WSL/Python | Две сохранённые venv; H03 проверки с fit предобработки, без predictive estimator/Qwen | AegML-Hackathon, Linux VHD на E: |
 | Docker | Один локальный Engine, образ и временные canary-контейнеры | /var/lib/docker; факты в [H024_RECEIPT](H024_RECEIPT.md) |
 | Будущий ML staging | Экспорт конкретного commit, а не отдельный расходящийся master | `/home/aegml/aegml_workspace/<commit>/` — PLANNED |
 | Будущие input snapshots/cache | Копии с source SHA и временные ML-артефакты | /home/aegml/aegml_data/, /home/aegml/cache/ — PLANNED |
@@ -83,15 +84,17 @@ H05.1 отдельно проверит полный worker boundary до нед
 
 Ключ получен от владельца. Private config вне Git, UID1000/0700/0600: [LOCAL_PROVIDER_RECEIPT](LOCAL_PROVIDER_RECEIPT.json). Статус CONFIGURED_UNVERIFIED_NO_LIVE_REQUESTS, реальных API-запросов 0. **LIVE_API_ON_OWNER_COMMAND_ONLY**: только после отдельной команды «протестить по API». Импорт SDK или проверка локального файла не равны проверке аутентификации.
 
-H02.1–H02.4 выполнены без реального LLM API и без обучения. H06.1 offline-протокол остаётся отдельным подпунктом, H06.2 после команды проверит безопасную цепочку action → result → продолжение без generated ML. Используется выданный API; другие модели через собственные ключи запрещены. Допустимость локальной той же Qwen UNKNOWN, веса сейчас не скачиваются.
+H02.1–H02.4 выполнены без реального LLM API и без обучения; H03 обучает только состояния предобработки. H06.1 offline mock/replay остаётся отдельным подпунктом; H06.2 следует после него и только после отдельной команды проверит безопасную цепочку action → result → продолжение без generated ML. Любой REST `/key/info` вне `/v1` тоже ждёт будущего разрешения владельца. Используется выданный API; другие модели через собственные ключи запрещены. Допустимость локальной той же Qwen UNKNOWN, веса сейчас не скачиваются. Полный AutoResearch H07 идёт после H04/H05/H06 и их приёмок.
 
 ## 7. Что осталось непроверенным
 
-Следующий этап — **H03.1 по новой команде владельца**. Профили признаков, preprocessing, metric adapters, folds и CSV writer ещё не выполнены. Fit, live API/tools, AutoResearch, полный process-tree/hard-timeout boundary и официальный образ также не проверены. Все 74 основных и 17 пересекающихся HARN-T остаются NOT_RUN; текущие H02 component PASS не закрывают их целиком.
+Текущая разрешённая работа — **весь H03.1–H03.5**. Профиль, preprocessing, numerical metrics/splits и CSV writer существуют; H03.1 external static postfix review закрыт. Сейчас усиливаются BUILT-binding production loader и metrics/validation; mapping fix writer локально прошёл. Production loader требует BUILT TaskContract и связанный SplitPlan, а low-level caller-asserted DataFrame API остаётся отдельным режимом. Первый WSL library-chain и Docker harness прошли на предыдущем core; после исправлений нужны свежие квитанции. Подробности — в обновляемой [сводке H03](H03_RECEIPT.md), без раннего итогового PASS.
+
+Predictive fit, live API/tools, AutoResearch, полный process-tree/hard-timeout boundary, официальный образ и все 37 installed pins не проверены. Component PASS не закрывает целиком 74 основных и 17 пересекающихся HARN-T сценариев. Ресурсные настройки H02.4 этой работой не менялись.
 
 У организаторов остаются image/Dockerfile, actual env/версии, доступные OS-примитивы, трактовка exitcode и last/best selection. Подробные логи могут быть только у администраторов; не предполагать их наличие в пользовательском UI. [ORGANIZER_QUESTIONS](ORGANIZER_QUESTIONS.md) — неотправленный черновик.
 
-Историческая запись обмена H02.4: на момент первичной отправки ответы ещё не были прочитаны. Теперь оба полных review получены и учтены в H02_REVIEW_REPAIRS; новые сохранённые пакеты1/2 НЕ отправлены, веб остановлен владельцем.
+Исторические ответы H02.4 получены и учтены в H02_REVIEW_REPAIRS. Веб возобновлён владельцем 21.10; текущий H03-review ведёт root. Это не разрешение на live API и не изменение локальных caps.
 
 ## 8. Точный submission-контракт из платформенного TXT
 

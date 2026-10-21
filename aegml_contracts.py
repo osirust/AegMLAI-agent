@@ -723,7 +723,7 @@ def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds
             "metric": {"name": name, "direction": direction, "prediction_kind": kind,
                        "parameters": parameters, "label_policy": "sklearn_labels_none" if task_type == "classification" else None,
                        "positive_label": positive, "class_order": class_order,
-                       "target_scale": "original", "adapter_version": "registry.v1_pending_H03",
+                       "target_scale": "original", "adapter_version": "metrics.v1",
                        "finite_policy": "finite_only", "evidence": metric_evidence},
             "prediction_schema": {"columns": sample_columns, "id_columns": ids, "target_columns": [target],
                                   "kind": kind, "output_order": order,
@@ -753,6 +753,48 @@ def build_task_contract(task_path, *, budget=None, threads=8, time_limit_seconds
     except ContractError as exc:
         exc.budget = budget
         raise
+
+
+def attach_split_plan(contract, plan, *, budget):
+    """Bind a trusted H03 plan to a copy; no labels, refit or OS grant is made.
+
+    The original resolver contract stays NOT_BUILT. Publish the enriched copy
+    once, after explicit plan creation; this never rebuilds a split implicitly.
+    """
+    from aegml_schemas import validate_task_contract, SchemaError
+    from aegml_validation import SplitPlan
+    from aegml_metrics import ADAPTER_VERSION, metric_spec
+    if budget is None or not callable(getattr(budget, "require", None)):
+        raise ContractError("missing_shared_budget")
+    budget.require()
+    if not isinstance(contract, TaskContract) or not isinstance(plan, SplitPlan):
+        raise ContractError("invalid_split_binding", budget=budget)
+    payload, alignment = contract.to_dict(), contract.alignment
+    try:
+        validate_task_contract(payload)
+        if (plan.source_sha256 != payload["provenance"]["source_sha256"]
+                or plan.train_rows != alignment["row_counts"]["train"]
+                or plan.train_sha256 != payload["provenance"]["source_sha256"]["train"]):
+            raise ContractError("split_contract_source_mismatch", budget=budget)
+        spec = metric_spec(payload["metric"]["name"])
+        if (spec.direction != payload["metric"]["direction"]
+                or spec.prediction_kind != payload["metric"]["prediction_kind"]
+                or spec.task_type != payload["task_type"]):
+            raise ContractError("metric_registry_mismatch", budget=budget)
+        payload["metric"]["adapter_version"] = ADAPTER_VERSION
+        payload["split_policy"] = {
+            "status": "BUILT", "strategy": plan.strategy, "source": "trusted_validation.v1",
+            "policy_id": plan.policy_id, "partition_sha256": plan.partition_sha256,
+            "schema_sha256": plan.schema_sha256, "train_sha256": plan.train_sha256,
+            "train_rows": plan.train_rows, "seed": plan.seed,
+            "row_counts": {"fit": len(plan.fit_indices), "inner": len(plan.inner_indices),
+                           "outer": len(plan.outer_indices)},
+        }
+        validate_task_contract(payload)
+        budget.require()
+        return TaskContract(payload, alignment)
+    except SchemaError:
+        raise ContractError("invalid_task_contract", budget=budget) from None
 
 
 def publish_task_contract(contract, *, budget=None):

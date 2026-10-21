@@ -1,0 +1,83 @@
+{
+  "status": "PASS_H03_LOCAL_CONTAINER_COMPONENTS_ONLY",
+  "image": "sha256:95e451e558d36beade7ffb1c64045a34cf152f9daac57336166e023c745cef0b",
+  "owner": "7646b0f8b8294a0c88fdcf15fb112cce",
+  "source_sha256": {
+    "solution.py": "0a6a30ccf53a95cb75a96c8edf7d449fdd393e573027a1188c9adc7189d0f177",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_preprocessing.py": "436bbc5da74d724f8604b23444e152b1007fb571af2d217d7c659b5b8abf4f09",
+    "aegml_profile.py": "3d7976378677a15d40706628375174cf01bd84993f11b42894c55bf6365ebbce",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "aegml_submission.py": "42692226bd5aae056c2340aa189d793b32add3b3c8495502ee54d04ed98c2524",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h023_contract.py": "a00c8c36be3da323acc6f00bfc583efcaf930b15af257004f0d56128c8df333c",
+    "scripts/check_h03_integration.py": "6f1f21d4fbe06bee38a087a30afd2f9a992f3d99f04576e0c20d40bd6fbaa156",
+    "scripts/check_h03_container.py": "4968b9e55283509669080231917cd1e248c15acf6b2b721f1f5fd69da5cb8588",
+    "scripts/check_h024_platform_cli.py": "946f940febd24f313871835f8e927f27f5c2f1c09162ba6fbb84832984c79e5b"
+  },
+  "source_policy": "frozen_root_and_staging",
+  "input_sha256": {
+    "drive-download-20261019T181414Z-1-001/Регрессия/task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+    "drive-download-20261019T181414Z-1-001/Регрессия/train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+    "drive-download-20261019T181414Z-1-001/Регрессия/test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+    "drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+    "drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+    "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+    "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+    "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+    "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+    "drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+  },
+  "local_dev_subset_only": true,
+  "official_image_verified": false,
+  "full_H05_verified": false,
+  "live_api_calls": 0,
+  "model_fit_calls": 0,
+  "generated_code_executed": false,
+  "capture_scope": "postcapture size check for trusted short component test logs",
+  "wrapper_sha256": "4968b9e55283509669080231917cd1e248c15acf6b2b721f1f5fd69da5cb8588",
+  "stage": "/home/aegml/checks/h03-20261021T060520Z/h03-container-7646b0f8b8294a0c88fdcf15fb112cce",
+  "resource_before_start": {
+    "Memory": 21474836480,
+    "MemorySwap": 21474836480,
+    "NanoCpus": 8000000000,
+    "PidsLimit": 256,
+    "ReadonlyRootfs": true,
+    "NetworkMode": "none",
+    "CapDrop": [
+      "ALL"
+    ]
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_bytes": 137,
+  "stderr_bytes": 1291,
+  "integration_receipt_sha256": "c00aa3de641dad808876ab0f8c97f815ed2736a49237f50787b036e80b9def41",
+  "integration_receipt": "/home/aegml/checks/h03-20261021T060520Z/h03-container-7646b0f8b8294a0c88fdcf15fb112cce/integration-result.json",
+  "integration_status": "PASS_H03_INTEGRATION_ONLY",
+  "source_unchanged": true,
+  "inputs_unchanged": true,
+  "cleanup": {
+    "name": "aegml-h024-cli-7646b0f8b8294a0c88fdcf15fb112cce-1",
+    "container_id": "6a22ffbe987f9ef85f22181fa3a7726d0103484ff795af84d2bf53c8ec4fcf2f",
+    "status": "verified_absent",
+    "verified": true,
+    "inspect_returncode": 1,
+    "inspect_timed_out": false,
+    "absence_checks": [
+      {
+        "filter": "name=^/aegml-h024-cli-7646b0f8b8294a0c88fdcf15fb112cce-1$",
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "filter": "id=6a22ffbe987f9ef85f22181fa3a7726d0103484ff795af84d2bf53c8ec4fcf2f",
+        "returncode": 0,
+        "timed_out": false
+      }
+    ]
+  }
+}

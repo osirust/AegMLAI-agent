@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "spec_revision_date": "2026-10-20",
-  "status": "H02.3/H02.4 full-review repairs checked; H03.1 NOT_RUN by owner; originals preserved; no ML/live Qwen",
+  "status": "H03 library components and trusted WSL/Docker chain passed; scoped static review closed; originals preserved; no predictive estimator/live Qwen",
   "repository_source_head_before_spec": "a2258ca57fa39f272e33a9cef9f80b0cc50f5ee8",
   "local_source_root_hint": "drive-download-20261019T181414Z-1-001",
   "sources": {
@@ -730,5 +730,7 @@
     "current_applied_finding": "H024-OOM-ATTR-001 only; six probes rechecked",
     "chat2_new_reply_read": false
   },
-  "latest_repair_evidence": "docs/H02_REVIEW_REPAIRS.md"
+  "latest_repair_evidence": "docs/H02_REVIEW_REPAIRS.md",
+  "latest_h03_evidence": "docs/H03_RECEIPT.md",
+  "latest_h03_static_review": "docs/H03_STATIC_REVIEW_RESULT.json"
 }

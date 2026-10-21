@@ -1,0 +1,4678 @@
+{
+  "status": "PASS_H03_METADATA_AND_PUBLICATION_BINDING_ONLY",
+  "checks_count": 1163,
+  "checks": [
+    {
+      "check": "document_binding:AGENTS.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:README.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/API_LOCAL_SETUP.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CASE_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_AGENT_COMPARISON_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_CPU_ML_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_H024_H05_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/CHAT2_REPAIR_REVIEW_INTAKE_20261021.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/DOC_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/ENVIRONMENT_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H022_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H022_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_ATTEMPT2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_REVIEW_BASELINE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_REVIEW_FIXES_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H023_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_FINAL_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H024_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_FINAL_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_PUBLICATION_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H031_RECORD_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H034_DESTINATION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H034_SUBMISSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H034_SUMMARY_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CONTAINER_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/H03_STATIC_REVIEW_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/LOCAL_PROVIDER_HELPER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/MATH_REFERENCE_CHECK.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/NEXT_SESSION.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/PLATFORM_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/ROADMAP.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/ROUTE_CORRECTION_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TEAM.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TESTMINI_PLAN.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TESTMINI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/TEST_MATRIX.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/VOVAN_MENTOR_PROMPT.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/WEB_RESEARCH_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/WEB_WORKFLOW.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/WORK_PLAN.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:docs/environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "document_binding:research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "document_binding:research_packets/README.md",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:solution.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:solution.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "runtime_disk_binding:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "executed_vs_staged_source:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h024_cli_regressions.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h024_container.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h024_platform_cli.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h02_bootstrap.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h031_profile.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h032_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h033_metrics_validation.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h034_submission.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h03_container.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/local_provider_config.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/prepare_h024_context.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/prepare_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "checker_disk_and_stage:scripts/review_h02_receipt.py",
+      "passed": true
+    },
+    {
+      "check": "named_source_set_size:download12",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/baseline.py",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Регрессия/task.md",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Регрессия/test.csv",
+      "passed": true
+    },
+    {
+      "check": "original:download12:drive-download-20261019T181414Z-1-001/Регрессия/train.csv",
+      "passed": true
+    },
+    {
+      "check": "named_source_set_size:extended14",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/baseline.py",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/task.md",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/test.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Многоклассовая классификация/train.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Регрессия/data_dictionary.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Регрессия/sample_submission.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Регрессия/task.md",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Регрессия/test.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:drive-download-20261019T181414Z-1-001/Регрессия/train.csv",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:Альфа Хак_AutoML .pdf",
+      "passed": true
+    },
+    {
+      "check": "original:extended14:baseline.py",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/DOC_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/ENVIRONMENT_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H022_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H022_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_ATTEMPT2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_REVIEW_BASELINE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_REVIEW_FIXES_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H023_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_FINAL_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H024_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/H02_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/LOCAL_PROVIDER_HELPER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/ROUTE_CORRECTION_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/TESTMINI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "historical_json_unchanged:docs/TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H034_SUBMISSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H031_RECORD_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H034_SUMMARY_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_CONTAINER_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H034_DESTINATION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "export_identity:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256:scripts/check_h031_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H031_PROFILE_RESULT.json:source_sha256_after:scripts/check_h031_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:scripts/check_h032_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:scripts/check_h032_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H032_PREPROCESSING_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256:scripts/check_h033_metrics_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H033_METRICS_VALIDATION_RESULT.json:source_sha256_after:scripts/check_h033_metrics_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256:scripts/check_h034_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256_after:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256_after:scripts/check_h034_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H034_SUBMISSION_V2_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_INTEGRATION_V2_RESULT.json:source_sha256_after:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:scripts/check_h03_container.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_V2_RESULT.json:source_sha256:scripts/check_h024_platform_cli.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTAINER_INTEGRATION_V2_RESULT.json:source_sha256_after:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_CONTRACT_REGRESSION_RESULT.json:source_sha256_after:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256:scripts/check_h02_bootstrap.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_BOOTSTRAP_REGRESSION_RESULT.json:source_sha256_after:scripts/check_h02_bootstrap.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_pass:H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256_after:solution.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256_after:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256_after:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256_after:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "receipt_source_binding:H03_LITERAL_PLATFORM_CLI_RESULT.json:source_sha256_after:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "container_child_exact_sha",
+      "passed": true
+    },
+    {
+      "check": "container_exit_timeout_cleanup",
+      "passed": true
+    },
+    {
+      "check": "full_chain:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "full_chain:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "work_plan_50_unique",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H00.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H00.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H00.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H01.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H01.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H01.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H01.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H01.5",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H02.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H02.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H02.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H02.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H03.1",
+      "passed": true
+    },
+    {
+      "check": "H03_status_synchronized:H03.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H03.2",
+      "passed": true
+    },
+    {
+      "check": "H03_status_synchronized:H03.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H03.3",
+      "passed": true
+    },
+    {
+      "check": "H03_status_synchronized:H03.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H03.4",
+      "passed": true
+    },
+    {
+      "check": "H03_status_synchronized:H03.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H03.5",
+      "passed": true
+    },
+    {
+      "check": "H03_status_synchronized:H03.5",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H04.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H04.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H04.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H04.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H05.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H05.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H05.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H05.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H06.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H06.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H06.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H06.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H07.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H07.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H07.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H07.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H08.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H08.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H08.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H08.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H09.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H09.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H09.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H09.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H10.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H10.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H10.3",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H10.4",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H11.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H11.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H12.1",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H12.2",
+      "passed": true
+    },
+    {
+      "check": "work_block_id:H12.3",
+      "passed": true
+    },
+    {
+      "check": "stop_H04_not_run",
+      "passed": true
+    },
+    {
+      "check": "matrix_rows:T-",
+      "passed": true
+    },
+    {
+      "check": "matrix_not_automatically_closed:T-",
+      "passed": true
+    },
+    {
+      "check": "matrix_rows:HARN-T",
+      "passed": true
+    },
+    {
+      "check": "matrix_not_automatically_closed:HARN-T",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:.env.example",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:.gitattributes",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:.github/workflows/ci.yml",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:.gitignore",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:AGENTS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:Dockerfile.dev",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:PROJECT_STATE.md:docs/H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:PROJECT_STATE.md:docs/CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:PROJECT_STATE.md:docs/CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:PROJECT_STATE.md:docs/CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:testmini/README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:README.md:docs/H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_metrics.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_profile.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_submission.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:aegml_validation.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:constraints-platform.txt",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_INSTRUCTIONS_INTAKE.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_INSTRUCTIONS_INTAKE.md:API_LOCAL_SETUP.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_INSTRUCTIONS_INTAKE.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/API_LOCAL_SETUP.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_LOCAL_SETUP.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_LOCAL_SETUP.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/API_LOCAL_SETUP.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/AUTOML_RESEARCH_BRIEF.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/BACKEND_CONTRACT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CASE_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CASE_INTAKE.md:SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CASE_INTAKE.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CASE_INTAKE.md:ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_AGENT_COMPARISON_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_AGENT_COMPARISON_INTAKE.md:OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_CPU_ML_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_CPU_ML_INTAKE.md:../runs/h02/h023-20261020T181029Z/chat1-cpu-ml-reply.txt",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_CPU_ML_INTAKE.md:OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_CPU_ML_INTAKE.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_CPU_ML_INTAKE.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_H024_H05_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H024_H05_INTAKE.md:H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H024_H05_INTAKE.md:H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H024_H05_INTAKE.md:H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H03_H06_INTAKE.md:../runs/h03/h031-20261021-attempt2/profile-result.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H03_H06_INTAKE.md:../runs/h03/h032-20261021-attempt2.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H04_QUALITY_INTAKE.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H07_H08_INTAKE.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H07_H08_INTAKE.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H07_H08_INTAKE.md:OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H07_H08_INTAKE.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT1_H07_H08_INTAKE.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/CHAT2_REPAIR_REVIEW_INTAKE_20261021.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/CHAT2_REPAIR_REVIEW_INTAKE_20261021.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/DOC_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/ENVIRONMENT_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:DOC_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:TESTMINI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:PLATFORM_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:WEB_WORKFLOW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H022_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:LOCAL_PROVIDER_HELPER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_ATTEMPT2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:CHAT1_CPU_ML_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/EVIDENCE_REGISTER.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H022_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:../solution.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:../aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:H022_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:../scripts/check_h02_bootstrap.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H022_RECEIPT.md:OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H022_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_ATTEMPT2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:../aegml_input.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:../aegml_schemas.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:../aegml_contracts.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:../solution.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:H023_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:../scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:H023_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:H023_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:H023_ATTEMPT2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_RECEIPT.md:CHAT1_CPU_ML_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_REVIEW_BASELINE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_REVIEW_FIXES.md:H023_REVIEW_FIXES_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_REVIEW_FIXES.md:H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_REVIEW_FIXES.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H023_REVIEW_FIXES.md:H023_REVIEW_BASELINE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_REVIEW_FIXES_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_REVIEW_FIXES_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H023_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_FINAL_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:../Dockerfile.dev",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:CHAT1_H024_H05_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H024_RECEIPT.md:TEST_MATRIX.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H024_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../requirements-h02.txt",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../constraints-platform.txt",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:H02_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../scripts/prepare_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../scripts/check_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_RECEIPT.md:../scripts/review_h02_receipt.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_FINAL_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_PUBLICATION_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REVIEW_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H02_REVIEW_REPAIRS.md:H02_REPAIR_FINAL_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H031_RECORD_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H034_DESTINATION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H034_SUBMISSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H034_SUMMARY_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_CHAT2_REVIEW_INTAKE.md:H03_STATIC_REVIEW_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_CHAT2_REVIEW_INTAKE.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CONTAINER_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_DESTINATION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H031_RECORD_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUMMARY_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H031_PROFILE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_INTEGRATION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTRACT_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_BOOTSTRAP_REGRESSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_LITERAL_PLATFORM_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H031_RECORD_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUMMARY_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_DESTINATION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H034_SUBMISSION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/H03_RECEIPT.md:H03_CONTAINER_INTEGRATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/H03_STATIC_REVIEW_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/INDEX.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_CONTAINER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/LOCAL_ENVIRONMENT.md:ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/LOCAL_PROVIDER_HELPER_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/LOCAL_PROVIDER_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/MATHEMATICS_AND_VALIDATION.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/MATHEMATICS_AND_VALIDATION.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/MATHEMATICS_AND_VALIDATION.md:MATH_REFERENCE_CHECK.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/MATHEMATICS_AND_VALIDATION.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/MATH_REFERENCE_CHECK.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/NEXT_SESSION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/NEXT_SESSION.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/OPEN_SOURCE_AGENT_REVIEW.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/OPEN_SOURCE_AGENT_REVIEW.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/OPEN_SOURCE_AGENT_REVIEW.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/OPEN_SOURCE_AGENT_REVIEW.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/PLATFORM_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/QWEN_HARNESS_DESIGN.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/QWEN_HARNESS_DESIGN.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/QWEN_HARNESS_DESIGN.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H02_REPAIR_FINAL_REVIEW.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/READ_FIRST.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:OPEN_SOURCE_AGENT_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_BACKLOG.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_PROTOCOL.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RESEARCH_SOURCES.md:WEB_WORKFLOW.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/ROADMAP.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/ROADMAP.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/ROUTE_CORRECTION_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/RUNTIME_AND_FAILURES.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TEAM.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TEAM.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:../research_packets/README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:ENVIRONMENT_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H022_BOOTSTRAP_ATTEMPT1_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:TESTMINI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:CHAT1_AGENT_COMPARISON_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:ROUTE_CORRECTION_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H023_REVIEW_BASELINE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_IMPORT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_OOM_GUARD_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H024_CONTAINER_FINAL_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H032_PARTITION_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H032_PREPROCESSING_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H034_MAPPING_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H034_SUBMISSION_V2_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H033_METRICS_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H033_METRICS_VALIDATION_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:API_INSTRUCTIONS_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TECHNICAL_SPEC.md:OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TESTMINI_PLAN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:../testmini/README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TESTMINI_PLAN.md:PLATFORM_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TESTMINI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/TEST_MATRIX.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TEST_MATRIX.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TEST_MATRIX.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TEST_MATRIX.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/TEST_MATRIX.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/VOVAN_MENTOR_PROMPT.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/WEB_RESEARCH_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_RESEARCH_REVIEW.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_RESEARCH_REVIEW.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_RESEARCH_REVIEW.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_RESEARCH_REVIEW.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/WEB_WORKFLOW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT1_H03_H06_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT1_H07_H08_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT1_H04_QUALITY_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:WEB_RESEARCH_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT1_CPU_ML_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:H023_REVIEW_FIXES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT1_H024_H05_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:../research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:../research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:RESEARCH_BACKLOG.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WEB_WORKFLOW.md:CHAT2_REPAIR_REVIEW_INTAKE_20261021.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:WORK_PLAN.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:WORK_BLOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:ENVIRONMENT_RECEIPT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:AUTOML_RESEARCH_BRIEF.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_SOURCES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H022_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H023_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H024_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H03_RECEIPT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:H03_CHAT2_REVIEW_INTAKE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:QWEN_HARNESS_DESIGN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:BACKEND_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:LOCAL_ENVIRONMENT.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RUNTIME_AND_FAILURES.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TEST_MATRIX.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TEAM.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TEAM.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:MATHEMATICS_AND_VALIDATION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:ORGANIZER_QUESTIONS.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:EVIDENCE_REGISTER.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:TECHNICAL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:RESEARCH_PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:docs/WORK_BLOCKS.md:OPTIONAL_ARTIFACTS_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/WORK_PLAN.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/container-profile.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:docs/environment-lock.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:examples/demo.csv",
+      "passed": true
+    },
+    {
+      "check": "synthetic_csv_only:examples/demo.csv",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:examples/task.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:pyproject.toml",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:requirements-h02.txt",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:research_packets/CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/CHAT2_H02_REPAIR_REVIEW.md:../docs/H02_REPAIR_TYPEINTRO_BEFORE_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/CHAT2_H02_REPAIR_REVIEW.md:../docs/H02_REPAIR_CONTRACT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/CHAT2_H02_REPAIR_REVIEW.md:../docs/H02_REPAIR_BOOTSTRAP_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/CHAT2_H02_REPAIR_REVIEW.md:../docs/H02_REPAIR_CLI_REGRESSIONS_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/CHAT2_H02_REPAIR_REVIEW.md:../docs/H02_REPAIR_DOCKER_CLI_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:research_packets/README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:../docs/WEB_DISPATCH_20261021.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:CHAT1_FUTURE_RESEARCH.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:CHAT2_H02_REPAIR_REVIEW.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:../PROJECT_STATE.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:../docs/NEXT_SESSION.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:research_packets/README.md:../docs/H02_REVIEW_REPAIRS.md",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h023_contract.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h024_cli_regressions.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h024_container.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h024_platform_cli.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h02_bootstrap.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h031_profile.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h032_preprocessing.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h033_metrics_validation.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h034_submission.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h03_container.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/check_h03_integration.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/local_provider_config.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/prepare_h024_context.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/prepare_h02_environment.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:scripts/review_h02_receipt.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:solution.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/__main__.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/cli.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/config.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/contracts.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/profiling.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/providers.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:src/aegml/runner.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:testmini/README.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:testmini/README.md:../docs/READ_FIRST.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:testmini/README.md:../docs/TESTMINI_STRICT_RESULT.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:testmini/README.md:../docs/TESTMINI_PLAN.md",
+      "passed": true
+    },
+    {
+      "check": "local_link:testmini/README.md:../docs/PLATFORM_STRICT_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "local_link:testmini/README.md:../docs/PLATFORM_OBSERVATION_20261020.json",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:testmini/build_zip.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:testmini/check_api.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:testmini/check_local.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:testmini/solution.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:tests/test_core.py",
+      "passed": true
+    },
+    {
+      "check": "publication_path_allowlist:tests/test_providers.py",
+      "passed": true
+    },
+    {
+      "check": "exact_secret_scan",
+      "passed": true
+    },
+    {
+      "check": "requirements_original_bytes",
+      "passed": true
+    }
+  ],
+  "staged_file_count": 162,
+  "local_links_checked": 548,
+  "historical_result_receipts_unchanged": 31,
+  "exported_receipts": 20,
+  "current_receipt_source_bindings": 152,
+  "secret_scan": {
+    "status": "PASS_EXACT_PRIVATE_SECRET_NOT_IN_PUBLICATION",
+    "files_scanned": 162,
+    "leaked_paths": [],
+    "private_file_mode": "0o600",
+    "private_file_uid": 1000,
+    "key_value_or_fingerprint_emitted": false,
+    "live_api_calls": 0
+  },
+  "index_self_hash_omitted": true,
+  "index_verification_field_scope": "Updated to bind this receipt after checks; no reciprocal self-hash",
+  "script_sha256": "7986a9e8fd4b4f0d87a7804f078422a6e7e281c070c30303bf56c7f6c998ae18",
+  "runtime_checks_repeated": false,
+  "live_api_calls": 0,
+  "new_submission": false
+}

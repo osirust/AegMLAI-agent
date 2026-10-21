@@ -1,0 +1,57 @@
+{
+  "status": "PASS_H03_STATIC_REVIEW_SCOPES_ONLY",
+  "reviews": [
+    {
+      "stage": "H031_FIRST",
+      "message_id": "a74e15d8-daba-4770-8741-c9d1321646ad",
+      "transport_characters": 18582,
+      "archive_path": "runs\\h03\\h03-20261021T060520Z\\chat2-h031-first-full-review.txt",
+      "archive_sha256": "a115893b48efcd7c129fc3f67eb175855f8083da7b376564edae63c77a72ad98",
+      "archive_bytes": 30247,
+      "conclusion": "ONE_RECORD_GUARD_BLOCKER"
+    },
+    {
+      "stage": "H031_POSTFIX",
+      "message_id": "b9c84a04-3f86-4270-9f9f-afb9a4bf2c39",
+      "transport_characters": 9887,
+      "archive_path": "runs\\h03\\h03-20261021T060520Z\\chat2-h031-postfix-full-review-CLOSED.txt",
+      "archive_sha256": "a6db9c9c38358d37cad9d69b798954b0d9a4d570e9371a02565268fb0575b590",
+      "archive_bytes": 16206,
+      "conclusion": "CLOSED_NO_REMAINING_P0"
+    },
+    {
+      "stage": "H032_H035_FIRST",
+      "message_id": "6763fc38-c3c8-4d10-b191-e89713dce4b5",
+      "transport_characters": 18092,
+      "archive_path": "runs\\h03\\h03-20261021T060520Z\\chat2-h032-h035-first-full-review.txt",
+      "archive_sha256": "31389cb62b998da127f081eca9fecc62a9bd1905e7d5c0c77a14d10d015898a4",
+      "archive_bytes": 27816,
+      "conclusion": "FOUR_BLOCKERS"
+    },
+    {
+      "stage": "H032_H035_POSTFIX",
+      "message_id": "f0a10156-d6c0-413b-9f73-6dbdaa8429db",
+      "transport_characters": 13182,
+      "archive_path": "runs\\h03\\h03-20261021T060520Z\\chat2-h032-h035-postfix-full-review.txt",
+      "archive_sha256": "2df41c7e45d6946e39812db666daa4a3af2d001fbe2cf31f5f0b54fa59a07631",
+      "archive_bytes": 20383,
+      "conclusion": "FOUR_CLOSED_NO_REMAINING_IN_SCOPE"
+    },
+    {
+      "stage": "DESTINATION_POSTFIX",
+      "message_id": "b2073b6d-3dee-4fbb-ae04-086b5aa7de18",
+      "transport_characters": 5280,
+      "archive_path": "runs\\h03\\h03-20261021T060520Z\\chat2-destination-postfix-full-review.txt",
+      "archive_sha256": "9a834e1db45725ad1891cb08d741b09e65ee8aab2acf81fc17d371d951e2596f",
+      "archive_bytes": 8372,
+      "conclusion": "DESTINATION_CLOSED_NO_REMAINING_IN_SCOPE"
+    }
+  ],
+  "remaining_confirmed_blockers_in_reviewed_scopes": 0,
+  "reviewer_recomputed_file_sha256": false,
+  "reviewer_independently_executed_runtime": false,
+  "live_api_calls": 0,
+  "runtime_receipts_scope": "Local team checks; static review is independent code analysis, not a second runtime execution",
+  "QA_raw_ID_external_static_closure": false,
+  "QA_raw_ID_local_before_after_verified": true
+}

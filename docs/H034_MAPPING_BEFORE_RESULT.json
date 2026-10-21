@@ -1,0 +1,20 @@
+{
+  "status": "BEFORE_REPRODUCED",
+  "source_sha256": "4d08a91b1acfc08f4cac180b57a82cd2fa95b8f500a4918de74974b0e283c453",
+  "cases": [
+    {
+      "case": "stale_mapping_hash",
+      "unexpected_publication": true,
+      "contradicts_test_order": true,
+      "old_file_preserved": false
+    },
+    {
+      "case": "coforged_mapping_hash",
+      "unexpected_publication": true,
+      "contradicts_test_order": true,
+      "old_file_preserved": false
+    }
+  ],
+  "live_api_calls": 0,
+  "predictions_synthetic": true
+}

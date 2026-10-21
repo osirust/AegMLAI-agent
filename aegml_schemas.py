@@ -144,6 +144,23 @@ _SPLIT_PROPERTIES = {
     "strategy": {"const": "deferred_to_H03"},
     "source": {"const": "project_policy"},
 }
+_BUILT_SPLIT_PROPERTIES = {
+    "status": {"const": "BUILT"},
+    "strategy": {"enum": ["temporal", "stratified", "explicit"]},
+    "source": {"const": "trusted_validation.v1"},
+    "policy_id": _NONBLANK_STRING,
+    "partition_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "train_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "train_rows": {"type": "integer", "minimum": 3, "maximum": 2_000_000},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 4_294_967_295},
+    "row_counts": {
+        "type": "object", "additionalProperties": False,
+        "required": ["fit", "inner", "outer"],
+        "properties": {name: {"type": "integer", "minimum": 1, "maximum": 2_000_000}
+                       for name in ("fit", "inner", "outer")},
+    },
+}
 _CONSTRAINT_PROPERTIES = {
     "time_limit_seconds": {
         "type": "number",
@@ -180,10 +197,11 @@ _TASK_PROPERTIES = {
         "properties": _PREDICTION_PROPERTIES,
     },
     "split_policy": {
-        "type": "object",
-        "required": list(_SPLIT_PROPERTIES),
-        "additionalProperties": False,
-        "properties": _SPLIT_PROPERTIES,
+        "oneOf": [
+            {"type": "object", "required": list(properties),
+             "additionalProperties": False, "properties": properties}
+            for properties in (_SPLIT_PROPERTIES, _BUILT_SPLIT_PROPERTIES)
+        ],
     },
     "constraints": {
         "type": "object",
@@ -259,6 +277,14 @@ def _require_finite_json(payload: object) -> None:
 
 def _require_cross_field_consistency(payload: dict) -> None:
     metric = payload["metric"]
+    split = payload["split_policy"]
+    if split["status"] == "BUILT":
+        if (type(split["train_rows"]) is not int or type(split["seed"]) is not int
+                or any(type(n) is not int for n in split["row_counts"].values())
+                or sum(split["row_counts"].values()) != split["train_rows"]
+                or split["train_sha256"] != payload["provenance"]["source_sha256"].get("train")
+                or split["train_rows"] != payload["provenance"]["row_mapping"]["row_counts"]["train"]):
+            raise SchemaError()
     expected_type, expected_direction, expected_kind = _METRIC_RULES[metric["name"]]
     if (
         payload["task_type"] != expected_type

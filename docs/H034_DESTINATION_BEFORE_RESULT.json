@@ -1,0 +1,10 @@
+{
+  "status": "BEFORE_REPRODUCED",
+  "source_sha256": "ca4f1cde24f8a9cdd7a58e076473f7ef4c71c8f57ca3b26eb08647d2d192ec6a",
+  "identical_source_bytes": true,
+  "published_in_original_instead_of_current_task": true,
+  "old_original_csv_modified": true,
+  "current_task_missing_submission": true,
+  "temporary_synthetic_fixtures_only": true,
+  "live_api_calls": 0
+}

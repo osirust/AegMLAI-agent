@@ -26,6 +26,7 @@ MAX_HEADER_COLUMNS = 4096
 MAX_HEADER_NAME_CHARS = 256
 MAX_HEADER_CHARS = 1 << 20
 MAX_CSV_LINE_CHARS = 4 << 20
+MAX_CSV_RECORD_CHARS = 1 << 20
 MAX_ID_CHARS = 4096
 MAX_RETAINED_ID_CHARS = 128 << 20
 _CHUNK_BYTES = 1 << 16
@@ -300,9 +301,12 @@ def _header(values, role):
 
 
 @contextmanager
-def _csv_reader(path, root, role, limit, budget, expected_sha=None):
+def _csv_reader(path, root, role, limit, budget, expected_sha=None,
+                max_record_chars=MAX_CSV_RECORD_CHARS):
     # TextIOWrapper newline='' preserves CSV's own newline/quoted-field rules.
     _require(budget)
+    if type(max_record_chars) is not int or not 0 < max_record_chars <= MAX_CSV_RECORD_CHARS:
+        raise InputError("invalid_csv_record_limit", {"role": role})
     try:
         with _binary(path, root, role, limit) as binary:
             checked = _CheckedReader(binary, role, limit, budget)
@@ -316,7 +320,8 @@ def _csv_reader(path, root, role, limit, budget, expected_sha=None):
                     header = _header(next(csv.reader([first_line], delimiter=",", strict=True)), role)
                 except StopIteration:
                     raise InputError("empty_csv", {"role": role}) from None
-                reader = csv.reader(_lines(text, role), delimiter=",", strict=True)
+                lines = _LogicalRecordLines(text, role, max_record_chars, budget)
+                reader = _BoundedCSVRows(csv.reader(lines, delimiter=",", strict=True), lines)
                 yield reader, header
                 if expected_sha is not None and checked.digest.hexdigest() != expected_sha:
                     raise InputError("source_changed", {"role": role})
@@ -355,6 +360,48 @@ def _lines(text, role):
         if len(line) > MAX_CSV_LINE_CHARS:
             raise InputError("csv_line_limit", {"role": role})
         yield line
+
+
+class _LogicalRecordLines:
+    """Bound all physical fragments consumed for one logical CSV record.
+
+    A record with many tiny quoted multiline fields must fail before the CSV
+    parser can allocate an arbitrarily long list of fields. Header size has
+    its own separate bound in _csv_reader.
+    """
+
+    def __init__(self, text, role, maximum, budget):
+        self.text, self.role, self.maximum, self.budget = text, role, maximum, budget
+        self.characters = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        _require(self.budget)
+        remaining = self.maximum - self.characters
+        physical_limit = min(MAX_CSV_LINE_CHARS, remaining)
+        line = self.text.readline(physical_limit + 1)
+        if not line:
+            raise StopIteration
+        if len(line) > remaining:
+            raise InputError("csv_record_limit", {"role": self.role, "limit_chars": self.maximum})
+        if len(line) > MAX_CSV_LINE_CHARS:
+            raise InputError("csv_line_limit", {"role": self.role})
+        self.characters += len(line)
+        return line
+
+
+class _BoundedCSVRows:
+    def __init__(self, reader, lines):
+        self.reader, self.lines = reader, lines
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.lines.characters = 0
+        return next(self.reader)
 
 
 def _dictionary(path, root, budget, expected_sha):

@@ -1,0 +1,33 @@
+{
+  "finding": "H032-PARTITION-BIND-001",
+  "status": "EXPECTED_BUG_REPRODUCED",
+  "scope": "synthetic six-row fixture; old production snapshot",
+  "active_contract_partition_sha256": "8bad19d819b362507e71f5f67e6f135d1d9b0ec2040088b9e249954993a0ba01",
+  "requested_partition_sha256": "6f95dcf4d3c000fdbe153841c1f6c8606a3b1ce7e04f81ea29a13392c5e4f663",
+  "active_fit_indices": [
+    0,
+    1
+  ],
+  "requested_fit_indices": [
+    4,
+    5
+  ],
+  "returned_fit_indices": [
+    4,
+    5
+  ],
+  "active_outer_features_returned": true,
+  "returned_columns": [
+    "x",
+    "cat",
+    "words"
+  ],
+  "same_source_for_A_and_B": true,
+  "positive_A_A_median": 2.0,
+  "before_source_sha256": "d35821dff64dfe5c8d66cab5335db766a1c724350b007104ce8ba423e0bbc5e5",
+  "before_checker_sha256": "c3273a7f68cb3f4d33675fdc20942d30c72f591e2da2e56a189e634de6b8cb2e",
+  "model_fits": 0,
+  "preprocessing_fit_for_control": true,
+  "API_calls": 0,
+  "project_source_modified": false
+}

@@ -1,0 +1,662 @@
+{
+  "phase": "H03.3/H03.5",
+  "status": "PASS_H033_METRICS_VALIDATION_ONLY",
+  "python": "3.12.3",
+  "scope": "eight numerical metrics, frozen trusted splits, phase/iteration metadata; no fitted model or outer quality",
+  "source_sha256": {
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h033_metrics_validation.py": "e4a4ad4748ba21e3d5314bb572a5464025d8462561744afd9248f4e6cdd9019c"
+  },
+  "fit_calls": 0,
+  "live_api_calls": 0,
+  "package_installation_executed": false,
+  "official_image_verified": false,
+  "full_H05_accepted": false,
+  "refit_executed": false,
+  "child_environment_controlled_no_provider_config_read": true,
+  "test_methods_run": 26,
+  "behavior_cases_checked": 86,
+  "behavior_cases_passed": 86,
+  "cases": [
+    {
+      "test": "__main__.Checks.test_actual_public_classification_split",
+      "case": "actual_public_classification_split_only_no_outer_quality",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_actual_public_regression_split",
+      "case": "actual_public_regression_split_only_no_outer_quality",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_early_stop_only_within_fit_and_temporal_order",
+      "case": "early_stop_12_train_3_holdout_excludes_4_5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_exact_eight_registry_and_immutable_specs",
+      "case": "exact_eight_no_silent_RMSLE_MAPE_or_alias",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_fractional_class_codes_follow_explicit_classification_contract",
+      "case": "H033-METRIC-LABEL-001_fractional_codes_are_discrete_labels",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_frozen_early_stop_provenance_revalidated",
+      "case": "frozen_iterations_bind_to_fit_side_early_stop_partition",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_h035_contract_split_binding_copy_and_source_identity",
+      "case": "H035_numeric_registry_and_split_binding_without_mutating_resolver_contract",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_hand_regression_and_global_oof",
+      "case": "RMSE_sqrt2_MAE1_and_SSE_weighted_OOF",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_installed_sklearn_oracles_without_fit",
+      "case": "pinned_sklearn152_metric_oracles_no_fit",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_6",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_7",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_8",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_9",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_invalid_partition_rejected",
+      "case": "invalid_partition_10",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_literal_and_numeric_class_labels",
+      "case": "NA_null_001_literals_and_numeric_labels_preserved",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_logloss_clipping_is_float64_explicit_and_finite",
+      "case": "logloss_float64_endpoint_clipping_not_silent_normalization",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_macro_weighted_accuracy_binary_are_distinct",
+      "case": "hand_accuracy_union",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_macro_weighted_accuracy_binary_are_distinct",
+      "case": "hand_macro_f1_union",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_macro_weighted_accuracy_binary_are_distinct",
+      "case": "hand_weighted_f1_union",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_macro_weighted_accuracy_binary_are_distinct",
+      "case": "hand_binary_f1_B",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_macro_weighted_accuracy_binary_are_distinct",
+      "case": "hand_binary_f1_A",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_phase_grants_freeze_iterations_and_refit_not_claimed",
+      "case": "search_fit_only_then_frozen_development_no_outer_feedback",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_primary_union_and_fixed10_diagnostic",
+      "case": "primary_labels_None_not_fixed10_or_micro",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_float32_roundoff_and_shared_tolerance",
+      "case": "float32_softmax_roundoff_accepted_without_normalizing",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_float32_roundoff_and_shared_tolerance",
+      "case": "probability_sum_beyond_shared_tolerance_refused",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_order_logloss_and_auc_orientation",
+      "case": "explicit_probability_class_order_and_positive_label",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_bad_probability_5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_missing_duplicate_or_unknown_class_order_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_missing_duplicate_or_unknown_class_order_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "reject_missing_duplicate_or_unknown_class_order_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_probability_rejections_and_undefined_auc",
+      "case": "AUC_single_class_is_undefined_not_zero",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_rare_class_refusal_never_drops_labels",
+      "case": "rare_class_infeasible_22",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_rare_class_refusal_never_drops_labels",
+      "case": "rare_class_infeasible_6",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_rare_class_refusal_never_drops_labels",
+      "case": "rare_class_infeasible_15",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_6",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_7",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "bad_regression_input_8",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "reject_metric_contract_direction",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "reject_metric_contract_target_scale",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "reject_metric_contract_finite_policy",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "reject_metric_contract_prediction_kind",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_regression_invalid_finite_shape_and_contract",
+      "case": "reject_metric_contract_parameters",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_unknown_truth_1D",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_unknown_truth_2D",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_declared_1D_valid_control",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_no_declared_order_explicit_positive_still_allowed",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_reordered_2D_valid_control",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_known_single_class_undefined_1D",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_auc_declared_classes_checked_in_every_shape",
+      "case": "H035-AUC-CLASS-001_known_single_class_undefined_2D",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_finite_fold_sum_overflow_has_finite_RMSE",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_zero_SSE_control",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_overflowing_SSE_sum_unequal_count_weighting",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_0",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_1",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_2",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_3",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_4",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_5",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_6",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_invalid_fold_stats_7",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_review_oof_finite_sum_overflow_scale_safe",
+      "case": "H033-OOF-FINITE-001_shared_expired_budget_control",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_source_change_and_shared_expired_budget",
+      "case": "source_changed_rejected_and_no_new_timer_on_expiry",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_stratified_nested_reproducible_and_every_class_present",
+      "case": "stratified_exact_counts_seed_repeat_and_all_classes",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_bad_period_policy_no_unknown_coverage",
+      "case": "invalid_temporal_policy_fit_periods",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_bad_period_policy_no_unknown_coverage",
+      "case": "invalid_temporal_policy_inner_periods",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_bad_period_policy_no_unknown_coverage",
+      "case": "invalid_temporal_policy_outer_periods",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_bad_period_policy_no_unknown_coverage",
+      "case": "invalid_temporal_policy_fit_periods",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_bad_period_policy_no_unknown_coverage",
+      "case": "temporal_requires_explicit_column_no_public_name_guess",
+      "status": "PASS"
+    },
+    {
+      "test": "__main__.Checks.test_temporal_plan_chronology_full_partition_and_identity",
+      "case": "temporal_public_rule_123_4_5_no_random_substitution",
+      "status": "PASS"
+    }
+  ],
+  "public_input_checks": [
+    {
+      "dataset": "classification",
+      "status": "PASS_PUBLIC_SPLIT_ONLY",
+      "row_count": 87670,
+      "partition_counts": {
+        "fit": 56108,
+        "inner": 14028,
+        "outer": 17534
+      },
+      "partition_sha256": "32576585334f36943b656dbe48879cac196fcabc3bcc12d026edc058e8bdf794",
+      "source_sha256": {
+        "data_dictionary": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+        "sample_submission": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e",
+        "task": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+        "test": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "train": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0"
+      },
+      "schema_sha256": "fa933253dd7d28f703734663df7995b758b6c50c91f9a10d7caafbf53fd1f074",
+      "train_bytes": 16567584,
+      "split_elapsed_seconds": 0.771380841999985,
+      "seed": 42,
+      "strategy": "stratified",
+      "outer_quality_evaluated": false,
+      "raw_identifiers_or_target_rows_included": false,
+      "model_fit_calls": 0,
+      "live_api_calls": 0,
+      "os_boundary_verified": false,
+      "class_count": 10,
+      "minimum_class_support_each_partition": 10,
+      "source_unchanged": true,
+      "source_sha256_before": {
+        "task.md": "eebb55ebb8deb8257a2c012330ecc015e8d3a0bc3619c40da6c2a6ab200709bf",
+        "train.csv": "171a8915070b7575b729a32f70a45d1ad7b6f43c65b4ce12a0a68af30d5cb4e0",
+        "test.csv": "b825449603931b5f05a8855e3d92b57775221c93ed4730ac6b4c75b9ea608862",
+        "data_dictionary.csv": "13d2651c5fe02b7fc30f0e7290af45606aad5de76c2f7b69217abc270dbbcef4",
+        "sample_submission.csv": "4d23642fcff01e49b0ef5a9f018b2381c12fad97282fa586285ad49b01e9623e"
+      },
+      "old_csv_preserved_or_absent": true,
+      "elapsed_seconds": 3.745842936999992,
+      "peak_rss_mib": 55.1171875,
+      "rss_scope": "whole fresh Linux child: imports, contracts, full-source reads, partition checks; ru_maxrss KiB / 1024"
+    },
+    {
+      "dataset": "regression",
+      "status": "PASS_PUBLIC_SPLIT_ONLY",
+      "row_count": 53308,
+      "partition_counts": {
+        "fit": 22054,
+        "inner": 12946,
+        "outer": 18308
+      },
+      "partition_sha256": "b5f68d502fd252801a7f4be0fbdfcb9ae2cbf2e448e59e3ce1c2ed21a15de1b3",
+      "source_sha256": {
+        "data_dictionary": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+        "sample_submission": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1",
+        "task": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+        "test": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "train": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775"
+      },
+      "schema_sha256": "9d1e3f0cc261f731b01e25fb3718719f83b732ad257217bc973f6c60cfea4433",
+      "train_bytes": 43416931,
+      "split_elapsed_seconds": 1.6367032919999929,
+      "seed": 42,
+      "strategy": "temporal",
+      "outer_quality_evaluated": false,
+      "raw_identifiers_or_target_rows_included": false,
+      "model_fit_calls": 0,
+      "live_api_calls": 0,
+      "os_boundary_verified": false,
+      "periods": {
+        "fit": [
+          1,
+          2,
+          3
+        ],
+        "inner": [
+          4
+        ],
+        "outer": [
+          5
+        ]
+      },
+      "source_unchanged": true,
+      "source_sha256_before": {
+        "task.md": "33f743ead4840336856cb9db8e25867f44512231beebff927326e8580e14d9d0",
+        "train.csv": "096dac951cf44fade5417ddd0465c41beee3009663dbea34e8d464a4d3c7f775",
+        "test.csv": "a7c64db92a07e1a5b1e7f637bdd434da7a5e98a1676c854ec6a645c9e5827095",
+        "data_dictionary.csv": "ffd7a8574fa4b203c43915e26a53e4072637c0dce8f1e6e7bcf93374a89a26a3",
+        "sample_submission.csv": "0016b18d58c47bbbe842556b4957ba215b3ad50121c9923260537d936a09eae1"
+      },
+      "old_csv_preserved_or_absent": true,
+      "elapsed_seconds": 5.653167566999997,
+      "peak_rss_mib": 43.19140625,
+      "rss_scope": "whole fresh Linux child: imports, contracts, full-source reads, partition checks; ru_maxrss KiB / 1024"
+    }
+  ],
+  "all_requested_public_sources_verified": true,
+  "metric_oracles": [
+    {
+      "metric": "accuracy",
+      "own": 0.5,
+      "sklearn": 0.5,
+      "encoding": "explicit finite fractional class vocabulary -> discrete index",
+      "finding": "H033-METRIC-LABEL-001",
+      "fit_executed": false
+    },
+    {
+      "metric": "macro_f1",
+      "own": 0.3333333333333333,
+      "sklearn": 0.3333333333333333,
+      "encoding": "explicit finite fractional class vocabulary -> discrete index",
+      "finding": "H033-METRIC-LABEL-001",
+      "fit_executed": false
+    },
+    {
+      "metric": "binary_f1",
+      "own": 0.6666666666666666,
+      "sklearn": 0.6666666666666666,
+      "encoding": "explicit finite fractional class vocabulary -> discrete index",
+      "finding": "H033-METRIC-LABEL-001",
+      "fit_executed": false
+    },
+    {
+      "metric": "rmse",
+      "own": 4.07838116969813,
+      "sklearn": 4.0783811696981305,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "mae",
+      "own": 3.45386146803161,
+      "sklearn": 3.4538614680316106,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "accuracy",
+      "own": 0.19672131147540983,
+      "sklearn": 0.19672131147540983,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "macro_f1",
+      "own": 0.1983179192481518,
+      "sklearn": 0.1983179192481518,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "weighted_f1",
+      "own": 0.18939379442620008,
+      "sklearn": 0.18939379442620008,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "binary_f1",
+      "own": 0.358974358974359,
+      "sklearn": 0.358974358974359,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "roc_auc",
+      "own": 0.3492063492063492,
+      "sklearn": 0.34920634920634924,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    },
+    {
+      "metric": "log_loss",
+      "own": 1.3889180731120925,
+      "sklearn": 1.3889180731120925,
+      "sklearn_version": "1.5.2",
+      "fit_executed": false
+    }
+  ],
+  "public_child_invocations": [
+    {
+      "dataset": "classification",
+      "exit_code": 0,
+      "scope": "full public read-only split metadata; no outer quality"
+    },
+    {
+      "dataset": "regression",
+      "exit_code": 0,
+      "scope": "full public read-only split metadata; no outer quality"
+    }
+  ],
+  "source_sha256_after": {
+    "aegml_metrics.py": "c697a4b421efe31dbbffcecd0d7229467bad5ebb48dff444ad03868104d06345",
+    "aegml_validation.py": "3d6200cd982b3e94cecc21df7d9b5417eb634a821046b14cb122f03f1334cbd5",
+    "aegml_input.py": "64ad6eb5b8bee5f22d71d88bbb1ea38e82e4821e49594e64f66fd1a5007e7bdb",
+    "aegml_contracts.py": "c20b9002447f2350f0c03a30696fe97dde7b605196d2d06f13a6bbd72be580f7",
+    "aegml_schemas.py": "0e385034dfd0ddfdb186a4aa2f9e1cd43b33ce83ba9dc28ced5365b76d826715",
+    "requirements.txt": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "scripts/check_h033_metrics_validation.py": "e4a4ad4748ba21e3d5314bb572a5464025d8462561744afd9248f4e6cdd9019c"
+  },
+  "source_unchanged_during_check": true,
+  "unittest_failures": [],
+  "unittest_errors": [],
+  "unittest_skips": []
+}

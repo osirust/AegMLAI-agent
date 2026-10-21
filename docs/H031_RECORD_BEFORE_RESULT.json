@@ -1,0 +1,12 @@
+{
+  "status": "EXPECTED_UNBOUNDED_LOGICAL_RECORD_BEHAVIOR_REPRODUCED",
+  "finding": "H031-CSV-RECORD-001",
+  "input_bytes": 600035,
+  "logical_fields_materialized_before_width_check": 100002,
+  "physical_fragments_consumed": 100001,
+  "bounded_test_fixture": true,
+  "actual_OOM_attempted": false,
+  "live_api_calls": 0,
+  "source_modified": false,
+  "prior_setup_attempt": "IndentationError before imports or runtime check; not case failure"
+}

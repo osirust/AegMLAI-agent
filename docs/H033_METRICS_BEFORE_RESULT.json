@@ -1,0 +1,30 @@
+{
+  "scope": "synthetic numerical reproductions only; no model/API/data-source reads",
+  "source_sha256": {
+    "aegml_metrics.py": "5db3db3bdf60e173ac15eb1136b1f3fea761c46642c1739c523552789cc822f3",
+    "check_h033_metrics_validation.py": "57e6b0d4ff9c642abd86f9bc109fa9680f52b683d84372faa669ab11ec0adc5e"
+  },
+  "fit_calls": 0,
+  "live_api_calls": 0,
+  "observations": [
+    {
+      "format": "one_dimensional",
+      "status": "ACCEPTED",
+      "value": 1.0,
+      "finding": "H035-AUC-CLASS-001"
+    },
+    {
+      "format": "two_dimensional",
+      "status": "REFUSED",
+      "code": "invalid_binary_class_contract",
+      "finding": "H035-AUC-CLASS-001"
+    },
+    {
+      "status": "REFUSED",
+      "code": "metric_overflow",
+      "finding": "H033-OOF-FINITE-001",
+      "hand_expected_finite_rmse": 1e+154
+    }
+  ],
+  "status": "BEFORE_FINDINGS_REPRODUCED"
+}

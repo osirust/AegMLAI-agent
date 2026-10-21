@@ -1,27 +1,35 @@
 # Исследования заранее: очередь и доказательства
 
-Владелец разрешил чату «1» исследовать несколько будущих этапов одновременно и сохранять результат. Это разрешение на исследование. **Реализация остановлена перед H03.1** последним уточнением владельца; H03.1 и последующие приёмки NOT_RUN. Чат «2» анализирует текущие изменения. Модель GPT‑5.6 Pro выбрана владельцем как целевая, фактическое UI-переключение не подтверждено.
+Актуально на **21.10.2026**: владелец разрешил весь H03.1–H03.5; компонентные, интеграционные и Docker-проверки выполнены локально, их область и квитанции учитываются в [H03_RECEIPT](H03_RECEIPT.md). **Следующая граница — остановка перед H04** до отдельной команды владельца. Разрешение чату «1» исследовать будущие этапы не разрешает их реализацию. Live Qwen и `/key/info` требуют отдельной команды владельца. Модель GPT‑5.6 Pro выбрана владельцем как целевая для веб-чатов, фактическое UI-переключение не подтверждено.
 
 ## Состояние передачи
 
-Подготовлен единый расширенный запрос на H03–H08 с условиями платформы, точными provided pins, вопросами и форматом доказательств. Локальная копия: `runs/h02/h02-review-repair-20261020T195535Z/chat1-future-research-prompt.txt` (ignored). Первая новая отправка вернула Too many requests; встроенный браузер не загрузил существующий разговор. Это не подтверждённое принятие запроса. 21.10 владелец возобновил веб и оба пакета приняты с интервалом94сек; [подтверждения](WEB_DISPATCH_20261021.json). Ответы ещё не прочитаны, research findings не приняты автоматически. Причина429 UNKNOWN. Не объявлять будущее исследование выполненным без полного ответа. Готовые тексты: [чат1](../research_packets/CHAT1_FUTURE_RESEARCH.md) и [чат2](../research_packets/CHAT2_H02_REPAIR_REVIEW.md).
+Досье чата «1» по H03–H08/P2 прочитано по трём ignored-снимкам в `runs/h03/h03-20261021T060520Z/`: `chat1-dossier-prefix-TRUNCATED.txt`, `chat1-dossier-part2.txt`, `chat1-dossier-part3-END.txt`. [Разбор H03–H06](CHAT1_H03_H06_INTAKE.md) сохраняет свой ранний частичный снимок; [разбор H07/H08/P2](CHAT1_H07_H08_INTAKE.md) учитывает завершающую часть. Тематический охват получен, но побайтовая полнота первоначального первого сообщения не доказана. Проверена только явно указанная в этих разборах часть первичных утверждений; гипотезы не стали экспериментами или измеренным выигрышем.
+
+Дополнительный H04-ответ прочитан до END: prefix20000символов (`cad10ec9…`) и запрошенное продолжение6164символа (`85e33a42…`). [Quality intake](CHAT1_H04_QUALITY_INTAKE.md) сохраняет пять сверенных primary-source claims, все H1–H9 и stop rules. Исходное длинное сообщение byte-for-byte не получено; архивы частей сохранены. MEI0.5%/.003 и бюджеты300/900/1800сек — предложения, не принятые критерии или измеренный выигрыш. Чат2 закрыл четыре замечания и отдельно destination-bind; [полный review intake](H03_CHAT2_REVIEW_INTAKE.md). Новых заданий нет; foreground polling завершён вместе с H03.
+
+### История передачи 20–21.10
+
+Единый запрос H03–H08 сохранён в `runs/h02/h02-review-repair-20261020T195535Z/chat1-future-research-prompt.txt` (ignored). Первая новая отправка вернула Too many requests; встроенный браузер не загрузил существующий разговор, принятие запроса тогда не было подтверждено. 21.10 владелец возобновил веб и оба пакета приняты с интервалом 94 сек; [подтверждения](WEB_DISPATCH_20261021.json). Причина прежнего 429 остаётся UNKNOWN. Исторические тексты: [чат1](../research_packets/CHAT1_FUTURE_RESEARCH.md) и [чат2](../research_packets/CHAT2_H02_REPAIR_REVIEW.md); их прежние stop/unsent фразы не задают текущий статус.
 
 ## Пакеты одного исследования
 
 | ID | Этап и вопросы | Требуемый сохраняемый результат | Статус |
 | --- | --- | --- | --- |
-| FUT-RES-01 | H03: полный streaming input, fit-only статистика, null/missing, категории/текст, численная устойчивость метрик, ID/order и непустой atomic CSV | Источники + контракт данных + положительные/отрицательные контроли; отдельно исследовательские и защищённые строки | SENT_WAITING_REPLY |
-| FUT-RES-02 | H04: CatBoost1.2.8, LightGBM4.6.0, XGBoost2.1.4, sklearn1.5.2; AutoGluon1.3.1, FLAML2.3.6, LightAutoML0.4.2 | Матрица применимости при CPU8/трёх часах и доступной памяти; минимум равнобюджетных абляций | SENT_WAITING_REPLY |
-| FUT-RES-03 | H04: MacroF1/редкие классы, regression original-scale RMSE, веса, target transforms, ансамбли, frozen refit и стоимость финализации | Измеримая гипотеза/контроль/stop rule, без утечки outer и обещаний улучшения | SENT_WAITING_REPLY |
-| FUT-RES-04 | H05: OS-граница без предположения nested Docker, UID/proc/FD/secret, сеть, дерево процессов, RAM/PID/time/log bounds | Capability-gated варианты и dummy adversarial acceptance; локальные canaries не объявлять full H05 | SENT_WAITING_REPLY |
-| FUT-RES-05 | H06: Qwen transport/tools без обязательного mcp, malformed/partial replies, retries/budget/redaction/context | Контракты и mocks; service capabilities остаются UNKNOWN до отдельного live разрешения | SENT_WAITING_REPLY |
-| FUT-RES-06 | H07: AIDE и сходные ML-агенты, search tree/journal/repair/select/rollback; fixed/AutoML/one-shot/feedback/multirole | Official repo/paper/license/version, извлечённый механизм, ограничения переноса и сравнимые бюджеты | SENT_WAITING_REPLY |
-| FUT-RES-07 | H08: новые задачи, injection, adaptive validation overfit, multiple comparisons, seed/effect size, clean-room packaging | Диагностические fixtures и gates, отдельно runtime/quality/officialscore | SENT_WAITING_REPLY |
-| FUT-RES-08 | P2: собственные малые архитектуры с нуля и поддерживаемая доставка компонентов | Только обоснованные кандидаты после рабочего агента; без автоматического переноса AEGYX/весов | SENT_WAITING_REPLY |
+| FUT-RES-01 | H03: полный streaming input, fit-only статистика, null/missing, категории/текст, численная устойчивость метрик, ID/order и непустой atomic CSV | Источники + контракт данных + положительные/отрицательные контроли; отдельно исследовательские и защищённые строки | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-02 | H04: CatBoost1.2.8, LightGBM4.6.0, XGBoost2.1.4, sklearn1.5.2; AutoGluon1.3.1, FLAML2.3.6, LightAutoML0.4.2 | Матрица применимости при CPU8/трёх часах и доступной памяти; минимум равнобюджетных абляций | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-03 | H04: MacroF1/редкие классы, regression original-scale RMSE, веса, target transforms, ансамбли, frozen refit и стоимость финализации | Измеримая гипотеза/контроль/stop rule, без утечки outer и обещаний улучшения | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-04 | H05: OS-граница без предположения nested Docker, UID/proc/FD/secret, сеть, дерево процессов, RAM/PID/time/log bounds | Capability-gated варианты и dummy adversarial acceptance; локальные canaries не объявлять full H05 | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-05 | H06: Qwen transport/tools без обязательного mcp, malformed/partial replies, retries/budget/redaction/context | Контракты и mocks; service capabilities остаются UNKNOWN до отдельного live разрешения | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-06 | H07: AIDE и сходные ML-агенты, search tree/journal/repair/select/rollback; fixed/AutoML/one-shot/feedback/multirole | Official repo/paper/license/version, извлечённый механизм, ограничения переноса и сравнимые бюджеты | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-07 | H08: новые задачи, injection, adaptive validation overfit, multiple comparisons, seed/effect size, clean-room packaging | Диагностические fixtures и gates, отдельно runtime/quality/officialscore | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+| FUT-RES-08 | P2: собственные малые архитектуры с нуля и поддерживаемая доставка компонентов | Только обоснованные кандидаты после рабочего агента; без автоматического переноса AEGYX/весов | DOSSIER_READ_PRIMARY_SUBSET_VERIFIED_NOT_BENCHMARKED |
+
+Этот статус описывает получение общего досье и проверку части его первичных ссылок. Он не означает независимую проверку каждого утверждения строки, выполненный benchmark, приёмку H04–H08/P2 или завершение отдельного дополнительного запроса H04.
 
 ## Проверенные ориентиры основного Codex
 
-Это краткое чтение первичных источников, а не завершение пакетов выше и не измерение выигрыша.
+Это историческое краткое чтение первичных источников; более поздние проверки части досье перечислены в двух intake выше. Оно не является измерением выигрыша.
 
 - Python3.12 `csv.reader` возвращает строки без автоматического определения числовых типов; поэтому смысл пустой ячейки, `NA` и `null` должен задавать наш контракт. [Python CSV](https://docs.python.org/3.12/library/csv.html).
 - Python3.12 JSON поддерживает `allow_nan=False`; нечисловые JSON-значения NaN/Infinity нельзя молча публиковать в доказательствах. Размеры входов и выходов ограничиваются отдельно. [Python JSON](https://docs.python.org/3.12/library/json.html).
@@ -39,4 +47,4 @@
 5. Менять ТЗ только после проверки рекомендации и в разрешённом scope. Ключи, raw CSV/ID/закрытые метки в веб-чаты не передавать. Перед новым сообщением уведомлять владельца; не прерывать самостоятельной задачей незавершённый запрос.
 
 
-Правило возобновления веб-чатов: общий интервал не менее60сек между любыми обращениями к чатам1/2, включая read/status/send и браузерное чтение; это не отдельный лимит на каждый чат. Запросы последовательно, без пакетного параллельного опроса. Не опрашивать занятый чат циклом. При429 прекратить обращения и сообщить владельцу; автоматических retries/автоматизаций не создавать. Это локальное консервативное правило работы, не утверждение о published service rate limit и не доказательство причины прежнего429. Сейчас действует owner stop: ничего не отправлять до возобновления.
+Текущий порядок веб-работы: основной Codex — единый диспетчер; делегированные агенты самостоятельно к чатам не обращаются. Во время активной работы допускается проверка прогресса примерно раз в 5 минут. Общий интервал между **любыми** read/status/send и браузерными чтениями обоих чатов — не менее 60 сек; обращения последовательные. Новый независимый запрос не добавлять в занятый чат. При 429 прекратить обращения и сообщить владельцу; автоматических retries и фоновых автоматизаций не создавать. Это локальное правило работы, не опубликованный лимит сервиса и не установленная причина прежнего 429. Ожидание веб-ответа не разрешает H04 или live API.

@@ -1,0 +1,18 @@
+{
+  "status": "EXPECTED_PRE_FIX_FAILURES_REPRODUCED",
+  "cases": [
+    {
+      "finding": "H034-SUMMARY-001",
+      "old_returned_valid_after_budget_expired": true,
+      "status": "EXPECTED_FAILURE_REPRODUCED"
+    },
+    {
+      "finding": "H034-CLASSORDER-001",
+      "old_numpy_class_order_unhandled_ValueError": true,
+      "status": "EXPECTED_FAILURE_REPRODUCED"
+    }
+  ],
+  "live_api_calls": 0,
+  "model_fit_calls": 0,
+  "original_sources_changed": false
+}
