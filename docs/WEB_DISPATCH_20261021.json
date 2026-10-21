@@ -40,7 +40,14 @@
         "type": "text",
         "text": "{\"threadId\":\"6ad79467-4e88-83ed-9aee-9794ce7f2d9b\"}"
       }
-    ]
+    ],
+    "reply_status": "FULL_STATIC_REPLY_READ_FROM_OWNER_ATTACHMENT",
+    "reply_source_sha256": "35df4029032607f2e0fc5ea358e47847ac718831736459ad824ba886ccb3338f",
+    "reply_chars": 13536,
+    "reply_message_id": null,
+    "reply_intake": "docs/CHAT2_REPAIR_REVIEW_INTAKE_20261021.md",
+    "review_remaining_blockers": 0,
+    "reply_read_web_requests": 0
   },
   "h031_files_created": 0,
   "h031_runtime_runs": 0,
@@ -48,9 +55,10 @@
   "case_code_changed": false,
   "historical_saved_packets_unchanged": true,
   "new_platform_submissions": 0,
-  "status": "BOTH_SENDS_ACCEPTED_REPLIES_NOT_READ",
+  "status": "BOTH_SENDS_ACCEPTED_CHAT2_REPLY_READ_LOCALLY_CHAT1_NOT_READ",
   "actual_interval_after_chat1_end_seconds": 94.0,
   "total_web_requests_this_dispatch": 2,
   "new_http429_observed": false,
-  "no_web_reads_this_dispatch": true
+  "no_web_reads_this_dispatch": true,
+  "local_owner_attachment_replies_read": 1
 }
