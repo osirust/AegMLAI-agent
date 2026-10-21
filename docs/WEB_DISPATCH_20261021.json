@@ -1,0 +1,56 @@
+{
+  "schema_version": "web-dispatch.v1",
+  "date_msk": "2026-10-21",
+  "owner_authorized_web_resume": true,
+  "owner_authorized_h031": false,
+  "owner_authorized_live_case_api": false,
+  "minimum_interval_seconds_all_chat_requests": 60,
+  "polling_performed": false,
+  "model_selection_verified": false,
+  "requested_model": "GPT-5.6 Pro selected by owner previously",
+  "chat1": {
+    "thread_id": "6ad788f9-2598-83ed-bee4-97abfb3b9bed",
+    "status": "SEND_ACCEPTED_REPLY_NOT_READ",
+    "source_packet": "research_packets/CHAT1_FUTURE_RESEARCH.md",
+    "source_sha256": "623aad274571ce050fc45af43d78312448357ec88dae00a4f72edf4d0d8aa69f",
+    "exact_dispatched_prompt_sha256": "249ad90e34bce0e3532cd977c1ec1b45ebc9cd5c071802bb6d130dbc86f0fff1",
+    "started_utc": "2026-10-21 05:44:47 UTC",
+    "ended_utc": "2026-10-21 05:44:49 UTC",
+    "tool_is_error": false,
+    "acceptance_evidence": [
+      {
+        "type": "text",
+        "text": "{\"threadId\":\"6ad788f9-2598-83ed-bee4-97abfb3b9bed\"}"
+      }
+    ],
+    "exact_dispatched_prompt_bytes": 9801
+  },
+  "chat2": {
+    "thread_id": "6ad79467-4e88-83ed-9aee-9794ce7f2d9b",
+    "status": "SEND_ACCEPTED_REPLY_NOT_READ",
+    "source_packet": "research_packets/CHAT2_H02_REPAIR_REVIEW.md",
+    "source_sha256": "22b0acd830069f37a2fa637f353ff107926264563800c23200b7cb81b9721efb",
+    "exact_dispatched_prompt_sha256": "1c4689eaf53bfee55fa459db06a21b2489163782c6782ba7c82c8a53e91eb4be",
+    "exact_dispatched_prompt_bytes": 76863,
+    "started_utc": "2026-10-21 05:46:23 UTC",
+    "ended_utc": "2026-10-21 05:46:24 UTC",
+    "tool_is_error": false,
+    "acceptance_evidence": [
+      {
+        "type": "text",
+        "text": "{\"threadId\":\"6ad79467-4e88-83ed-9aee-9794ce7f2d9b\"}"
+      }
+    ]
+  },
+  "h031_files_created": 0,
+  "h031_runtime_runs": 0,
+  "live_qwen_calls": 0,
+  "case_code_changed": false,
+  "historical_saved_packets_unchanged": true,
+  "new_platform_submissions": 0,
+  "status": "BOTH_SENDS_ACCEPTED_REPLIES_NOT_READ",
+  "actual_interval_after_chat1_end_seconds": 94.0,
+  "total_web_requests_this_dispatch": 2,
+  "new_http429_observed": false,
+  "no_web_reads_this_dispatch": true
+}

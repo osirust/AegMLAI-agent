@@ -4,20 +4,20 @@
 
 ## Состояние передачи
 
-Подготовлен единый расширенный запрос на H03–H08 с условиями платформы, точными provided pins, вопросами и форматом доказательств. Локальная копия: `runs/h02/h02-review-repair-20261020T195535Z/chat1-future-research-prompt.txt` (ignored). Первая новая отправка вернула Too many requests; встроенный браузер не загрузил существующий разговор. Это не подтверждённое принятие запроса. Повтор разрешён после возобновления владельцем: в последнем сообщении он остановил веб до продолжения после сна. Причина429 UNKNOWN. Не объявлять будущее исследование выполненным без полного ответа. Готовые тексты: [чат1](../research_packets/CHAT1_FUTURE_RESEARCH.md) и [чат2](../research_packets/CHAT2_H02_REPAIR_REVIEW.md).
+Подготовлен единый расширенный запрос на H03–H08 с условиями платформы, точными provided pins, вопросами и форматом доказательств. Локальная копия: `runs/h02/h02-review-repair-20261020T195535Z/chat1-future-research-prompt.txt` (ignored). Первая новая отправка вернула Too many requests; встроенный браузер не загрузил существующий разговор. Это не подтверждённое принятие запроса. 21.10 владелец возобновил веб и оба пакета приняты с интервалом94сек; [подтверждения](WEB_DISPATCH_20261021.json). Ответы ещё не прочитаны, research findings не приняты автоматически. Причина429 UNKNOWN. Не объявлять будущее исследование выполненным без полного ответа. Готовые тексты: [чат1](../research_packets/CHAT1_FUTURE_RESEARCH.md) и [чат2](../research_packets/CHAT2_H02_REPAIR_REVIEW.md).
 
 ## Пакеты одного исследования
 
 | ID | Этап и вопросы | Требуемый сохраняемый результат | Статус |
 | --- | --- | --- | --- |
-| FUT-RES-01 | H03: полный streaming input, fit-only статистика, null/missing, категории/текст, численная устойчивость метрик, ID/order и непустой atomic CSV | Источники + контракт данных + положительные/отрицательные контроли; отдельно исследовательские и защищённые строки | PREPARED_NOT_DELIVERED |
-| FUT-RES-02 | H04: CatBoost1.2.8, LightGBM4.6.0, XGBoost2.1.4, sklearn1.5.2; AutoGluon1.3.1, FLAML2.3.6, LightAutoML0.4.2 | Матрица применимости при CPU8/трёх часах и доступной памяти; минимум равнобюджетных абляций | PREPARED_NOT_DELIVERED |
-| FUT-RES-03 | H04: MacroF1/редкие классы, regression original-scale RMSE, веса, target transforms, ансамбли, frozen refit и стоимость финализации | Измеримая гипотеза/контроль/stop rule, без утечки outer и обещаний улучшения | PREPARED_NOT_DELIVERED |
-| FUT-RES-04 | H05: OS-граница без предположения nested Docker, UID/proc/FD/secret, сеть, дерево процессов, RAM/PID/time/log bounds | Capability-gated варианты и dummy adversarial acceptance; локальные canaries не объявлять full H05 | PREPARED_NOT_DELIVERED |
-| FUT-RES-05 | H06: Qwen transport/tools без обязательного mcp, malformed/partial replies, retries/budget/redaction/context | Контракты и mocks; service capabilities остаются UNKNOWN до отдельного live разрешения | PREPARED_NOT_DELIVERED |
-| FUT-RES-06 | H07: AIDE и сходные ML-агенты, search tree/journal/repair/select/rollback; fixed/AutoML/one-shot/feedback/multirole | Official repo/paper/license/version, извлечённый механизм, ограничения переноса и сравнимые бюджеты | PREPARED_NOT_DELIVERED |
-| FUT-RES-07 | H08: новые задачи, injection, adaptive validation overfit, multiple comparisons, seed/effect size, clean-room packaging | Диагностические fixtures и gates, отдельно runtime/quality/officialscore | PREPARED_NOT_DELIVERED |
-| FUT-RES-08 | P2: собственные малые архитектуры с нуля и поддерживаемая доставка компонентов | Только обоснованные кандидаты после рабочего агента; без автоматического переноса AEGYX/весов | PREPARED_NOT_DELIVERED |
+| FUT-RES-01 | H03: полный streaming input, fit-only статистика, null/missing, категории/текст, численная устойчивость метрик, ID/order и непустой atomic CSV | Источники + контракт данных + положительные/отрицательные контроли; отдельно исследовательские и защищённые строки | SENT_WAITING_REPLY |
+| FUT-RES-02 | H04: CatBoost1.2.8, LightGBM4.6.0, XGBoost2.1.4, sklearn1.5.2; AutoGluon1.3.1, FLAML2.3.6, LightAutoML0.4.2 | Матрица применимости при CPU8/трёх часах и доступной памяти; минимум равнобюджетных абляций | SENT_WAITING_REPLY |
+| FUT-RES-03 | H04: MacroF1/редкие классы, regression original-scale RMSE, веса, target transforms, ансамбли, frozen refit и стоимость финализации | Измеримая гипотеза/контроль/stop rule, без утечки outer и обещаний улучшения | SENT_WAITING_REPLY |
+| FUT-RES-04 | H05: OS-граница без предположения nested Docker, UID/proc/FD/secret, сеть, дерево процессов, RAM/PID/time/log bounds | Capability-gated варианты и dummy adversarial acceptance; локальные canaries не объявлять full H05 | SENT_WAITING_REPLY |
+| FUT-RES-05 | H06: Qwen transport/tools без обязательного mcp, malformed/partial replies, retries/budget/redaction/context | Контракты и mocks; service capabilities остаются UNKNOWN до отдельного live разрешения | SENT_WAITING_REPLY |
+| FUT-RES-06 | H07: AIDE и сходные ML-агенты, search tree/journal/repair/select/rollback; fixed/AutoML/one-shot/feedback/multirole | Official repo/paper/license/version, извлечённый механизм, ограничения переноса и сравнимые бюджеты | SENT_WAITING_REPLY |
+| FUT-RES-07 | H08: новые задачи, injection, adaptive validation overfit, multiple comparisons, seed/effect size, clean-room packaging | Диагностические fixtures и gates, отдельно runtime/quality/officialscore | SENT_WAITING_REPLY |
+| FUT-RES-08 | P2: собственные малые архитектуры с нуля и поддерживаемая доставка компонентов | Только обоснованные кандидаты после рабочего агента; без автоматического переноса AEGYX/весов | SENT_WAITING_REPLY |
 
 ## Проверенные ориентиры основного Codex
 
