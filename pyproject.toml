@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "aegml-agent"
 version = "0.1.0"
-description = "Minimal, inspectable preparation scaffold for the AegML hackathon team"
+description = "Tabular ML agent developed for the Alfa-Budushchee 2026 hackathon"
 requires-python = ">=3.11"
 dependencies = []
 
